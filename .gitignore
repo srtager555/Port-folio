@@ -178,6 +178,10 @@ dist
 
 node_modules
 
+### build ###
+
+build
+
 *.sublime*
 
 psd
