@@ -1,16 +1,25 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Poppins, Yaldevi, Luxurious Roman, 
+Noto Sans Display, Shippori Mincho */
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Noto+Sans+Display:ital,wght@0,300;0,400;1,400&family=Poppins&family=Shippori+Mincho&family=Yaldevi&display=swap");
+
+/* :root {
+    --color-primary: #00bcd4;
+    --color-secundary: #f50057;
+} */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+   height: 100vh;
+   width: 100vw;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-    font-size: 50px;
+   font-size: 50px;
 }
