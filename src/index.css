@@ -14,3 +14,10 @@ Noto Sans Display, Shippori Mincho */
    font-family: 'Yaldevi', sans-serif;
 }
 
+.container {
+    height: 110vh;
+}
+.observer {
+    height: 150vh;
+    background-color: blue;
+}
