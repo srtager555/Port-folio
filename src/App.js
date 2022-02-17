@@ -1,10 +1,16 @@
 import React from "react";
+import { Home } from "./containers/home";
+import { LestTalk } from "./containers/lestTalk";
+import { Projects } from "./containers/projects";
+
 import './index.css'
 
 function App() {
     return (
         <>
-            <h1>Hello word!</h1>
+            <Home />
+            <Projects />
+            <LestTalk />
         </>
     );
 }
