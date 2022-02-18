@@ -2,9 +2,9 @@ import React from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 
-export function Home() {
+export function Home({ l }) {
     return (
-        <div id="home" className="container container-home">
+        <div ref={l} id="home" className="container container-home">
             <div className="container__title">
                 <div className="container__title-image">
                     <img src="https://i.ibb.co/X5Wg7S5/kda.jpg" alt="kda Ahri" />

@@ -1,6 +1,7 @@
 import React from "react";
 
 export function Navbar() {
+
     return (
         <nav className="nav__container">
             <div className="nav__background"></div>
@@ -13,7 +14,7 @@ export function Navbar() {
                 <div className="nav__links">
                     <a href="#home">Home</a>
                     <a href="#projects">Projects</a>
-                    <a href="/about-me">About Me</a>
+                    <a href="#about-me">About Me</a>
                     <a href="#lest-talk">Lest Talk</a>
                 </div>
                 <div className="equalizer">

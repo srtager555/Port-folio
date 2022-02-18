@@ -1,9 +1,9 @@
 import React from "react";
 import WrappingLetters from "wrapping-letters-react";
 
-export function LestTalk() {
+export function LestTalk({ l }) {
     return (
-        <div id="lest-talk" className="container container_lestTalk">
+        <div ref={l} id="lest-talk" className="container container_lestTalk">
             <div className="button-mail">
                 <a href="mailto:srtager555@gmail.com">
                     <WrappingLetters
