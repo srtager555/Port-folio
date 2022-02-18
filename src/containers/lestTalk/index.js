@@ -3,7 +3,7 @@ import WrappingLetters from "wrapping-letters-react";
 
 export function LestTalk() {
     return (
-        <div className="container">
+        <div id="lest-talk" className="container container_lestTalk">
             <div className="button-mail">
                 <a href="mailto:srtager555@gmail.com">
                     <WrappingLetters

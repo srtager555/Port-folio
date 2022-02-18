@@ -3,7 +3,7 @@ import WrappingLetters from "wrapping-letters-react";
 
 export function Projects() {
     return (
-        <div className="container container-projects">
+        <div id="projects" className="container container-projects">
             <div className="container container__background-projects"></div>
             <div className="container__text">
                 <WrappingLetters

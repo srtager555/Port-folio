@@ -7,6 +7,9 @@ Noto Sans Display, Shippori Mincho */
     --color-secundary: #f50057;
 } */
 
+html {
+    scroll-behavior: smooth;
+}
 * {
    margin: 0;
    padding: 0;
@@ -15,9 +18,14 @@ Noto Sans Display, Shippori Mincho */
 }
 
 .container {
-    height: 110vh;
+    position: relative;
+    height: 60vh;
 }
-.observer {
+.container .container__background-projects {
+    position: absolute;
+}
+
+/* .observer {
     height: 150vh;
     background-color: blue;
-}
+} */
