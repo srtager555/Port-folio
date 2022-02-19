@@ -2,7 +2,7 @@ import React from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 
-export function Home({ l }) {
+export function HomeContainer({ l }) {
     return (
         <div ref={l} id="home" className="container container-home">
             <div className="container__title">

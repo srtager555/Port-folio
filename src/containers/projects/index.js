@@ -1,7 +1,7 @@
 import React from "react";
 import WrappingLetters from "wrapping-letters-react";
 
-export function Projects({ l }) {
+export function ProjectsContainer({ l }) {
     return (
         <div ref={l} id="projects" className="container container-projects">
             <div className="container container__background-projects"></div>
