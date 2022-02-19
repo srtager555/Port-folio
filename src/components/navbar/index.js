@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
 
@@ -7,7 +8,7 @@ export function Navbar() {
             <div className="nav__background"></div>
             <div className="nav__logo">
                 <a href="/">
-                    <img src="https://i.imgur.com/qZQXxQZ.png" alt="logo" />
+                    <img width={50} src="https://ttager.netlify.app/img/logo-new-top.png" alt="logo" />
                 </a>
             </div>
             <div className="nav__content">
@@ -16,6 +17,7 @@ export function Navbar() {
                     <a href="#projects">Projects</a>
                     <a href="#about-me">About Me</a>
                     <a href="#lest-talk">Lest Talk</a>
+                    <Link to="a">-a</Link>
                 </div>
                 <div className="equalizer">
                     <div className="equalizer__bar"></div>
