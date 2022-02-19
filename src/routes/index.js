@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "../pages/home";
 
 import { Navbar } from "../components/navbar";
+import { Background } from "../components/background";
 
 export function Router() {
     const homeRef = useRef(null);
@@ -18,6 +19,7 @@ export function Router() {
 
     return (
         <>
+            <Background />
             <Navbar />
             <Routes>
                 <Route path="/" element={<HomePage homeRef={homeRef} projectsRef={projectsRef} lestTalkRef={lestTalkRef} />} />
