@@ -8,21 +8,29 @@ Noto Sans Display, Shippori Mincho */
 } */
 
 html {
-    scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
+/* body {
+   background: rgb(255, 255, 255);
+   background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(153, 226, 201, 1) 100%
+   );
+} */
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: 'Yaldevi', sans-serif;
+   font-family: "Yaldevi", sans-serif;
 }
 
 .container {
-    position: relative;
-    height: 60vh;
+   position: relative;
+   height: 60vh;
 }
 .container .container__background-projects {
-    position: absolute;
+   position: absolute;
 }
 
 /* .observer {
