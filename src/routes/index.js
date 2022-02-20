@@ -21,10 +21,12 @@ export function Router() {
         <>
             <Background />
             <Navbar />
-            <Routes>
-                <Route path="/" element={<HomePage homeRef={homeRef} projectsRef={projectsRef} lestTalkRef={lestTalkRef} />} />
-                <Route path="*" element={<div>404</div>} />
-            </Routes>
+            <div className="container-content">
+                <Routes>
+                    <Route path="/" element={<HomePage homeRef={homeRef} projectsRef={projectsRef} lestTalkRef={lestTalkRef} />} />
+                    <Route path="*" element={<div>404</div>} />
+                </Routes>
+            </div>
         </>
 
     )
