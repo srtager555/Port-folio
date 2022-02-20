@@ -10,16 +10,17 @@ export function Navbar() {
     function handleOpenMenu() {
         setIsOpen(!isOpen);
     };
-
+    
     const handleIsMobile = () => {
-        if (window.innerWidth > 575) {
+        // console.log(window.innerWidth);
+        if (window.innerWidth > 580) {
             setIsMobile(false);
         } else {
             setIsMobile(true);
         }
     }
-
     useEffect(() => {
+        handleIsMobile();
         window.addEventListener("resize", handleIsMobile);
         return () => {
             window.removeEventListener("resize", handleIsMobile);
@@ -54,7 +55,7 @@ export function Navbar() {
                     <>
                         <div onClick={handleOpenMenu} className={`nav__button--open__menu ${isOpen ? "open" : ""}`}>
                             <span className="nav__button--open__menu-word">
-                                Menu
+                                {!isOpen? "Menu" : "Close"}
                             </span>
                         </div>
                         <div className={`nav__content ${isOpen ? "open" : ""}`}>

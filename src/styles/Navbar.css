@@ -75,6 +75,7 @@
     cursor: pointer;
     text-transform: uppercase;
     font-family: 'Noto Sans Display';
+    font-weight: 300;
 }
 
 .nav__background.open {
