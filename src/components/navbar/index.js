@@ -13,7 +13,7 @@ export function Navbar() {
     
     const handleIsMobile = () => {
         // console.log(window.innerWidth);
-        if (window.innerWidth > 580) {
+        if (window.innerWidth > 630) {
             setIsMobile(false);
         } else {
             setIsMobile(true);

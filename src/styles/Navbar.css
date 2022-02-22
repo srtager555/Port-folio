@@ -86,7 +86,11 @@
     transition: 1s;
 }
 .nav__background.open ~ .container-content {
-    opacity: .15;
+    opacity: .10;
+}
+.nav__background.open ~ .container-content .container__title .container__title-hero {
+    color: #000;
+    transition: 1s;
 }
 
 .nav__container .nav__content {
