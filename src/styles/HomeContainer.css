@@ -17,10 +17,10 @@
     /* margin-bottom: -50px; */
     width: 212px;
 }
+
 /* .container__title  */
 .container-home 
 .container__title-image > img {
-    
     width: 100%;
 }
 
@@ -68,11 +68,13 @@
     width: 100%;
 }
 .container__description .container__text {
-    width: 455px;
+    max-width: 455px;
     margin: 0 auto;
+    width: 79%;
 }
 .container__description .container__text span {
     font-family: 'Noto Sans Display', sans-serif;
+    word-spacing: 1.5px
 }
 
 .container__slider {
@@ -146,5 +148,70 @@
     }
     100% {
         left: 0px;
+    }
+}
+
+@media (max-width: 630px) {
+    .container-home .container__title .container__title-hero .container__name {
+        font-size: 80px;
+    }
+    .container-home .container__title .container__title-hero .container__job {
+        font-size: 25px;
+    }
+}
+@media (max-width: 555px) {
+    .container-home .container__title .container__title-hero .container__name {
+        font-size: 75px;
+    }
+    .container-home .container__title .container__title-hero .container__job {
+        font-size: 25px;
+    }
+}
+@media (max-width: 510px) {}
+@media (max-width: 510px) {
+    .container-home 
+    .container__title-image.mobile {
+        top: 35%;
+        left: 38%;
+        width: 320px;
+    }
+    .container.container-home {
+        padding-bottom: 6%;
+        align-items: flex-start;
+    }
+    .container-home .container__title {
+        align-items: flex-start;
+        padding-left: 21px;
+    }
+    .container-home .container__title .container__title-hero .container__name {
+        font-size: 85px;
+        width: 320px;
+        margin-bottom: 220px;
+    }
+    .container-home .container__title .container__title-hero .container__job {
+        font-size: 35px;
+    }
+    .container__slider {
+        margin-top: 45px;
+    }
+}
+@media (max-width: 420px) {
+    .container-home 
+    .container__title-image.mobile {
+        top: 35%;
+        left: 32%;
+        width: 259px;
+    }
+    .container-home .container__title {
+        margin-top: 0;
+        padding-left: 21px;
+    }
+    .container-home .container__title .container__title-hero .container__name {
+        font-size: 70px;
+        width: 258px;
+        margin-bottom: 175px;
+    }
+    .container-home .container__title .container__title-hero .container__job {
+        font-size: 25px;
     }
 }

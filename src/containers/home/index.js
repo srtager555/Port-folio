@@ -1,17 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 import "../../styles/HomeContainer.css";
 
 
 export function HomeContainer({ l }) {
+    const [isMobile, setIsMobile] = useState(false);
+
+    const handleIsMobile = () => {
+        // console.log(window.innerWidth);
+        if (window.innerWidth > 510) {
+            setIsMobile(false);
+        } else {
+            setIsMobile(true);
+        }
+    }
+    useEffect(() => {
+        handleIsMobile();
+        window.addEventListener("resize", handleIsMobile);
+        return () => {
+            window.removeEventListener("resize", handleIsMobile);
+        };
+    }, []);
+
     return (
         <>
             <div ref={l} id="home" className="container container-home">
                 <div className="container__title">
-                    <div className="container__title-image">
-                        <img src="https://i.ibb.co/DfXG6HT/IMG-9113-2.jpg" alt="kda Ahri" />
-                    </div>
+
+                    {isMobile ? (
+                        <div className="container__title-image mobile">
+                            <img src=
+                                "https://i.ibb.co/YDnX5r8/mobile-home-image.jpg"
+                                alt="kda Ahri" />
+                        </div>
+                    ) : (
+                        <div className="container__title-image">
+                            <img src=
+                                "https://i.ibb.co/f8RVct5/home-image.jpg"
+                                alt="kda Ahri" />
+                        </div>
+
+                    )}
                     <div className="container__title-hero">
                         <div className="container__name">
                             <WrappingLetters
