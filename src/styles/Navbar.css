@@ -21,7 +21,13 @@
     align-items: center;
     padding: 0.5rem 1rem;
     z-index: 10; 
+
+    mix-blend-mode: exclusion;
 }
+/* 
+.nav__container .nav__logo  {
+    mix-blend-mode: exclusion;
+} */
 .nav__container .nav__logo > a{
     font-family: 'Poppins';
     font-size: 27px;
