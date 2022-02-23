@@ -1,0 +1,19 @@
+.container.container-projects {
+    height: 300vh;
+}
+
+.container .container__background-projects {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;   
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+       145deg,
+       rgba(255, 255, 255, 1) 0%,
+       rgba(153, 226, 201, 1) 100%
+    );
+    filter: invert(1);
+    z-index: -1;
+}
