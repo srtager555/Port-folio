@@ -11,11 +11,11 @@ export function Router() {
     const projectsRef = useRef(null);
     const lestTalkRef = useRef(null);
 
-    useEffect(() => {
-        console.log(homeRef.current);
-        console.log(projectsRef.current);
-        console.log(lestTalkRef.current);
-    }, [])
+    // useEffect(() => {
+    //     console.log(homeRef.current);
+    //     console.log(projectsRef.current);
+    //     console.log(lestTalkRef.current);
+    // }, [])
 
     return (
         <>
