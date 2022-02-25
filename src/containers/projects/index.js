@@ -16,10 +16,9 @@ export function ProjectsContainer({ l }) {
     const ProjectsElementRef = useRef(null);
     const SliderProjectsRef = useRef(null);
 
-    const initialMarginLeft = (innerWidth * 1.1);
+    const initialMarginLeft = (window.innerWidth * 1.1);
     const windowHeight = window.innerHeight;
     const leftMargin = initialMarginLeft + windowHeight;
-
 
     const projects = [
         {
@@ -41,16 +40,12 @@ export function ProjectsContainer({ l }) {
 
     const recentProjects = projects.slice(projects.length - 5, projects.length - 1);
 
-    // const [projectElementWidth, setProjectElementWidth] = useState(250);
-    // const [projectElementMargin, setProjectElementMargin] = useState(150);
-
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
         marginLeft: `${leftMargin}px`,
     });
 
     const [ProjectsHeight, setProjectsHeight] = useState({
         height: `${((recentProjects.length * (250 + 150) - 150) + leftMargin) + (window.innerHeight * 1.7)}px`,
-        // height: `${((recentProjects.length * (projectElementWidth + projectElementMargin) - projectElementMargin) + leftMargin) + (window.innerHeight * 1.7)}px`,
     });
 
     function handleScrollMoventToLeft() {
@@ -69,24 +64,13 @@ export function ProjectsContainer({ l }) {
             height: `${((recentProjects.length * (projectElementWidthOutPx + projectElementMarginOutPx) - projectElementMarginOutPx) + leftMargin) + (windowHeight * 1.7)}px`,
         });
     }
-
+    
     useEffect(() => {
         window.addEventListener("scroll", handleHeightProjectSection);
-
-        return () => {
-            window.removeEventListener("scroll", handleHeightProjectSection);
-        }
-    }, [])
-
-    // console.log(ProjectsHeight.height);
-    // console.log(projectElementWidth, "b");
-    // console.log(projectElementMargin, "b");
-
-
-    useEffect(() => {
         window.addEventListener("scroll", handleScrollMoventToLeft);
         return () => {
             window.removeEventListener("scroll", handleScrollMoventToLeft);
+            window.removeEventListener("scroll", handleHeightProjectSection);
         }
     }, [])
 
