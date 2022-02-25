@@ -5,13 +5,13 @@ import { ProjectsContainer } from "../../containers/projects";
 import { LestTalkContainer } from "../../containers/lestTalk";
 import { AboutMeContainer } from "../../containers/aboutMe";
 
-export function HomePage({ homeRef, projectsRef, lestTalkRef }) {
+export function HomePage() {
     return (
         <>
-            <HomeContainer l={homeRef} />
-            <ProjectsContainer l={projectsRef} />
+            <HomeContainer />
+            <ProjectsContainer />
             <AboutMeContainer />
-            <LestTalkContainer l={lestTalkRef} />
+            <LestTalkContainer  />
         </>
     );
 }  
