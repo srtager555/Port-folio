@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ProjectsElementList, recentProjects } from "../../contexts/projectsContexts";
+import { recentProjects } from "../../contexts/projectsContexts";
 
 export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef }) {
 

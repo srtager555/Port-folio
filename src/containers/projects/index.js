@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
+import { ProjectsElement } from "../../components/projectElement/";
+
+import { recentProjects } from "../../contexts/projectsContexts";
+
 import "../../styles/Projects.css";
 
 function strucutureTitle({ letter, cssClass, ...props }) {
@@ -11,7 +15,7 @@ function strucutureTitle({ letter, cssClass, ...props }) {
     )
 }
 
-export function ProjectsContainer({ l }) {
+export function ProjectsContainer() {
     const ProjectsRef = useRef(null);
     const ProjectsElementRef = useRef(null);
     const SliderProjectsRef = useRef(null);
@@ -19,26 +23,6 @@ export function ProjectsContainer({ l }) {
     const initialMarginLeft = (window.innerWidth * 1.1);
     const windowHeight = window.innerHeight;
     const leftMargin = initialMarginLeft + windowHeight;
-
-    const projects = [
-        {
-            img: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-        },
-        {
-            img: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-        },
-        {
-            img: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-        },
-        {
-            img: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-        },
-        {
-            img: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-        },
-    ]
-
-    const recentProjects = projects.slice(projects.length - 5, projects.length - 1);
 
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
         marginLeft: `${leftMargin}px`,
@@ -64,7 +48,7 @@ export function ProjectsContainer({ l }) {
             height: `${((recentProjects.length * (projectElementWidthOutPx + projectElementMarginOutPx) - projectElementMarginOutPx) + leftMargin) + (windowHeight * 1.7)}px`,
         });
     }
-    
+
     useEffect(() => {
         window.addEventListener("scroll", handleHeightProjectSection);
         window.addEventListener("scroll", handleScrollMoventToLeft);
@@ -75,7 +59,7 @@ export function ProjectsContainer({ l }) {
     }, [])
 
     return (
-        <div ref={l} ref={ProjectsRef} style={ProjectsHeight} id="projects" className="container container-projects">
+        <div ref={ProjectsRef} style={ProjectsHeight} id="projects" className="container container-projects">
             <div className="container container__background-projects">
             </div>
             <div className="container__text--heightPositionControl">
@@ -92,20 +76,7 @@ export function ProjectsContainer({ l }) {
             </div>
             {/* <div className="container__projectsInfo"></div> */}
             <div className="container__projects-scrollSlider">
-                <div ref={SliderProjectsRef} style={ViewProjectsScroll} className="container__projects-scrollSlider-item">
-                    <div className="container__image-projects__scrollSlider">
-                        <img src="https://i.ibb.co/X5Wg7S5/kda.jpg" alt="kda Ahri" />
-                    </div>
-                    <div ref={ProjectsElementRef} className="container__image-projects__scrollSlider">
-                        <img src="https://i.ibb.co/X5Wg7S5/kda.jpg" alt="kda Ahri" />
-                    </div>
-                    <div className="container__image-projects__scrollSlider">
-                        <img src="https://i.ibb.co/X5Wg7S5/kda.jpg" alt="kda Ahri" />
-                    </div>
-                    <div className="container__image-projects__scrollSlider">
-                        <img src="https://i.ibb.co/X5Wg7S5/kda.jpg" alt="kda Ahri" />
-                    </div>
-                </div>
+                <ProjectsElement SliderProjectsRef={SliderProjectsRef} ViewProjectsScroll={ViewProjectsScroll} ProjectsElementRef={ProjectsElementRef} />
             </div>
         </div>
     )
