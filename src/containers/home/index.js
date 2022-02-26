@@ -8,7 +8,6 @@ export function HomeContainer({ l }) {
     const [isMobile, setIsMobile] = useState(false);
 
     const handleIsMobile = () => {
-        // console.log(window.innerWidth);
         if (window.innerWidth > 510) {
             setIsMobile(false);
         } else {
