@@ -2,32 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { recentProjects } from "../../contexts/projectsContexts";
-import { MOBILE_SIZE } from "../../contexts/constVarible";
+import { IS_MOBILE } from "../../contexts/constVarible";
 
 export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef }) {
-    const [isMobile, setIsMobile] = useState(false);
 
     const mobileCard = cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, mobileCardElement);
     const desktopCard = cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, desktopCardElement);
 
-    function handleIsMobile() {
-        if (window.innerWidth > MOBILE_SIZE) {
-            setIsMobile(false);
-        } else {
-            setIsMobile(true);
-        }
-    }
-
-    useEffect(() => {
-        handleIsMobile();
-        window.addEventListener("resize", handleIsMobile);
-
-        return () => {
-            window.removeEventListener("resize", handleIsMobile);
-        }
-    }, [])
-
-    const projectCard = isMobile ? mobileCard : desktopCard;
+    const projectCard = IS_MOBILE ? mobileCard : desktopCard;
 
     return projectCard;
 }
