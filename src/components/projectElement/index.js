@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { recentProjects } from "../../contexts/projectsContexts";
 
@@ -14,9 +15,7 @@ export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, Project
                             <div key={`project-${index}`} className="container__image-projects__scrollSlider">
                                 <img src={element.PrincipalImageMobile} alt="kda Ahri" />
                             </div> :
-                            <div key={
-                                `project-${index}`
-                            } ref={ProjectsElementRef} className="container__image-projects__scrollSlider">
+                            <div key={`project-${index}`} ref={ProjectsElementRef} className="container__image-projects__scrollSlider">
                                 <img src={element.PrincipalImageMobile} alt="kda Ahri" />
                             </div>
                     )

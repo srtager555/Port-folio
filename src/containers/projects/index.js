@@ -7,6 +7,7 @@ import { recentProjects } from "../../contexts/projectsContexts";
 
 import "../../styles/Projects.css";
 
+
 function strucutureTitle({ letter, cssClass, ...props }) {
     return (
         <div className="project-words" {...props}>
@@ -25,13 +26,14 @@ export function ProjectsContainer() {
     const windowHeight = window.innerHeight;
     const leftMargin = initialMarginLeft + windowHeight;
     const heightMultiplier = 1.8;
+    const recentProjectsLength = recentProjects.length;
 
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
         marginLeft: `${leftMargin}px`,
     });
 
     const [ProjectsHeight, setProjectsHeight] = useState({
-        height: `${((recentProjects.length * (250 + 150) - 150) + leftMargin) + (window.innerHeight * heightMultiplier)}px`,
+        height: `${((recentProjectsLength * (250 + 150) - 150) + leftMargin) + (window.innerHeight * heightMultiplier)}px`,
     });
 
     const [isVisible, setIsVisible] = useState(false);
@@ -52,7 +54,6 @@ export function ProjectsContainer() {
         }
     }
 
-
     function hendleObserProjects(entries) {
         const [entry] = entries;
 
@@ -72,7 +73,7 @@ export function ProjectsContainer() {
         // console.log(SliderProjectsRef.current.childNodes[0].getBoundingClientRect().left);
 
         setProjectsHeight({
-            height: `${((recentProjects.length * (projectElementWidthOutPx + projectElementMarginOutPx) - projectElementMarginOutPx) + leftMargin) + (windowHeight * heightMultiplier)}px`,
+            height: `${((recentProjectsLength * (projectElementWidthOutPx + projectElementMarginOutPx) - projectElementMarginOutPx) + leftMargin) + (windowHeight * heightMultiplier)}px`,
         });
     }
 
@@ -97,7 +98,6 @@ export function ProjectsContainer() {
     useEffect(() => {
         window.addEventListener("scroll", handleHeightProjectSection);
         window.addEventListener("scroll", handleScrollMoventToLeft);
-
 
         return () => {
             window.removeEventListener("scroll", handleHeightProjectSection);
