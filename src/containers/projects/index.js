@@ -96,6 +96,10 @@ export function ProjectsContainer() {
     }, [ProjectObserverRef, options]);
 
     useEffect(() => {
+        // intilize the projects height and the projects margin
+        handleHeightProjectSection();
+        handleScrollMoventToLeft();
+
         window.addEventListener("scroll", handleHeightProjectSection);
         window.addEventListener("scroll", handleScrollMoventToLeft);
 
