@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { NAVBAR_MOBILE_SIZE } from "../../contexts/constVarible";
+
 import "../../styles/Navbar.css";
 
 export function Navbar() {
@@ -13,7 +15,7 @@ export function Navbar() {
     
     const handleIsMobile = () => {
         // console.log(window.innerWidth);
-        if (window.innerWidth > 510) {
+        if (window.innerWidth > NAVBAR_MOBILE_SIZE) {
             setIsMobile(false);
         } else {
             setIsMobile(true);
