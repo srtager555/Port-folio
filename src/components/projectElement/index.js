@@ -10,7 +10,7 @@ export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, Project
             {
                 recentProjects.map((element, index) => {
                     return (
-                        (index > 1) ?
+                        (index === 1) ?
                             <div key={`project-${index}`} className="container__image-projects__scrollSlider">
                                 <img src={element.PrincipalImageMobile} alt="kda Ahri" />
                             </div> :
