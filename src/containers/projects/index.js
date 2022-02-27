@@ -24,13 +24,14 @@ export function ProjectsContainer() {
     const initialMarginLeft = (window.innerWidth * 1.1);
     const windowHeight = window.innerHeight;
     const leftMargin = initialMarginLeft + windowHeight;
+    const heightMultiplier = 1.8;
 
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
         marginLeft: `${leftMargin}px`,
     });
 
     const [ProjectsHeight, setProjectsHeight] = useState({
-        height: `${((recentProjects.length * (250 + 150) - 150) + leftMargin) + (window.innerHeight * 1.7)}px`,
+        height: `${((recentProjects.length * (250 + 150) - 150) + leftMargin) + (window.innerHeight * heightMultiplier)}px`,
     });
 
     const [isVisible, setIsVisible] = useState(false);
@@ -63,7 +64,6 @@ export function ProjectsContainer() {
     }
 
     function handleHeightProjectSection() {
-        let heightMultiplier = 2;
 
         let projectElementWidthOutPx = parseInt(window.getComputedStyle(ProjectsElementRef.current).getPropertyValue("width").replace("px", ""));
         let projectElementMarginOutPx = parseInt(window.getComputedStyle(ProjectsElementRef.current).getPropertyValue("margin-left").replace("px", ""));
