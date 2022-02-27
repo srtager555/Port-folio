@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { recentProjects } from "../../contexts/projectsContexts";
 
 export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef }) {
+
 
     return (
         <div ref={SliderProjectsRef} style={ViewProjectsScroll} className="container__projects-scrollSlider-item">
