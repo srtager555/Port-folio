@@ -109,3 +109,12 @@
    .container__image-projects__scrollSlider:nth-child(1) {
    margin-left: 0;
 }
+.container.container-projects .container__projectsInfo {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 100%;
+   height: 100%;
+   background-color: #fff2;
+   overflow: hidden;
+}

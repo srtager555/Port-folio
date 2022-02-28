@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
+import { PreviewProjectsInfo } from "../../components/previewProjectsInfo";
 import { ProjectsElement } from "../../components/projectElement/";
 
 import { recentProjects } from "../../contexts/projectsContexts";
@@ -38,6 +39,7 @@ export function ProjectsContainer() {
 
     const [isVisible, setIsVisible] = useState(false);
 
+    // function about the scroll on projects
     function handleScrollMoventToLeft() {
         const halfWindowHeight = -(parseInt(ProjectsHeight.height.replace("px", "")));
         let projectTop = ProjectsRef.current.getBoundingClientRect().top;
@@ -54,7 +56,21 @@ export function ProjectsContainer() {
         }
     }
 
-    function hendleObserProjects(entries) {
+    function handleHeightProjectSection() {
+
+        let projectElementWidthOutPx = parseInt(window.getComputedStyle(ProjectsElementRef.current).getPropertyValue("width").replace("px", ""));
+        let projectElementMarginOutPx = parseInt(window.getComputedStyle(ProjectsElementRef.current).getPropertyValue("margin-left").replace("px", ""));
+
+        //this comment is about a auto centering of the projects element
+        // console.log(SliderProjectsRef.current.childNodes[0].getBoundingClientRect().left);
+
+        setProjectsHeight({
+            height: `${((recentProjectsLength * (projectElementWidthOutPx + projectElementMarginOutPx) - projectElementMarginOutPx) + leftMargin) + (windowHeight * heightMultiplier)}px`,
+        });
+    }
+
+    // Observer function about the scroll on projects
+    function handleObserProjects(entries) {
         const [entry] = entries;
 
         if (entry.isIntersecting) {
@@ -64,27 +80,19 @@ export function ProjectsContainer() {
         }
     }
 
-    function handleHeightProjectSection() {
-
-        let projectElementWidthOutPx = parseInt(window.getComputedStyle(ProjectsElementRef.current).getPropertyValue("width").replace("px", ""));
-        let projectElementMarginOutPx = parseInt(window.getComputedStyle(ProjectsElementRef.current).getPropertyValue("margin-left").replace("px", ""));
-        
-        //this comment is about a auto centering of the projects element
-        // console.log(SliderProjectsRef.current.childNodes[0].getBoundingClientRect().left);
-
-        setProjectsHeight({
-            height: `${((recentProjectsLength * (projectElementWidthOutPx + projectElementMarginOutPx) - projectElementMarginOutPx) + leftMargin) + (windowHeight * heightMultiplier)}px`,
-        });
+    function previewProjects() {
     }
 
-    const options = {
-        root: null,
-        rootMargin: `0px`,
-        threshold: 0.5,
-    }
+
 
     useEffect(() => {
-        const observer = new IntersectionObserver(hendleObserProjects, options);
+        const options = {
+            root: null,
+            rootMargin: `0px`,
+            threshold: 0.5,
+        }
+
+        const observer = new IntersectionObserver(handleObserProjects, options);
         if (ProjectObserverRef.current) {
             observer.observe(ProjectObserverRef.current);
         }
@@ -93,7 +101,7 @@ export function ProjectsContainer() {
                 observer.unobserve(ProjectObserverRef.current);
             }
         }
-    }, [ProjectObserverRef, options]);
+    }, [ProjectObserverRef]);
 
     useEffect(() => {
         // intilize the projects height and the projects margin
@@ -125,10 +133,10 @@ export function ProjectsContainer() {
                     />
                 </div>
             </div>
-            {/* <div className="container__projectsInfo"></div> */}
+            <PreviewProjectsInfo />
             <div className={`container__projects-scrollSlider ${isVisible ? "visible" : ""}`}>
                 <ProjectsElement SliderProjectsRef={SliderProjectsRef} ViewProjectsScroll={ViewProjectsScroll} ProjectsElementRef={ProjectsElementRef} />
             </div>
         </div>
     )
-} 
+}
