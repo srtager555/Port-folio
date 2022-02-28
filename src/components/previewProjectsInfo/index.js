@@ -3,14 +3,14 @@ import WrappingLetters from "wrapping-letters-react";
 
 import { recentProjects } from "../../contexts/projectsContexts"
 
-export function PreviewProjectsInfo() {
+export function PreviewProjectsInfo({ infoToShow = [] }) {
     return <div className="container__projectsInfo">
         <div className="container__projectsInfo--container__content">
             <div className="container__projectsInfo--background__image"></div>
             <div className="container__projectsInfo--container__content--text">
                 <div className="container-tittle">
                     <WrappingLetters
-                        word={recentProjects[0].Title}
+                        word={infoToShow.Title}
                         wordOptions={[{
                             ClassToAdd: "project-words",
                             PerWord: true,
@@ -19,7 +19,7 @@ export function PreviewProjectsInfo() {
                 </div>
                 <div className="container-date">
                     <WrappingLetters
-                        word={recentProjects[0].Date}
+                        word={infoToShow.Date}
                         wordOptions={[{
                             ClassToAdd: "project-words",
                         }]}

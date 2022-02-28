@@ -39,6 +39,8 @@ export function ProjectsContainer() {
 
     const [isVisible, setIsVisible] = useState(false);
 
+    const [showPreviewProject, setShowPreviewProject] = useState([]);    
+
     // function about the scroll on projects
     function handleScrollMoventToLeft() {
         const halfWindowHeight = -(parseInt(ProjectsHeight.height.replace("px", "")));
@@ -80,10 +82,9 @@ export function ProjectsContainer() {
         }
     }
 
-    function previewProjects() {
+    function previewProjects(event) {
+        setShowPreviewProject(recentProjects.find(project => project.Id === event.path[1].id))
     }
-
-
 
     useEffect(() => {
         const options = {
@@ -133,10 +134,17 @@ export function ProjectsContainer() {
                     />
                 </div>
             </div>
-            <PreviewProjectsInfo />
+            <PreviewProjectsInfo infoToShow={showPreviewProject} />
             <div className={`container__projects-scrollSlider ${isVisible ? "visible" : ""}`}>
-                <ProjectsElement SliderProjectsRef={SliderProjectsRef} ViewProjectsScroll={ViewProjectsScroll} ProjectsElementRef={ProjectsElementRef} />
+                <ProjectsElement
+                    SliderProjectsRef={SliderProjectsRef}
+                    ViewProjectsScroll={ViewProjectsScroll}
+                    ProjectsElementRef={ProjectsElementRef}
+                    PreviewProjects={() => previewProjects(event)}
+                />
             </div>
         </div>
     )
 }
+
+
