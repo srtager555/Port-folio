@@ -28,6 +28,7 @@ export function ProjectsContainer() {
     const leftMargin = initialMarginLeft + windowHeight;
     const heightMultiplier = 1.8;
     const recentProjectsLength = recentProjects.length;
+    const defaultInfoProject = { Title: '.', Date: '.'}
 
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
         marginLeft: `${leftMargin}px`,
@@ -38,8 +39,8 @@ export function ProjectsContainer() {
     });
 
     const [isVisible, setIsVisible] = useState(false);
-
-    const [showPreviewProject, setShowPreviewProject] = useState([]);    
+    const [showPreviewProject, setShowPreviewProject] = useState(defaultInfoProject);
+    const [selectedProject, setSelectedProject] = useState(false);
 
     // function about the scroll on projects
     function handleScrollMoventToLeft() {
@@ -84,6 +85,21 @@ export function ProjectsContainer() {
 
     function previewProjects(event) {
         setShowPreviewProject(recentProjects.find(project => project.Id === event.path[1].id))
+        setSelectedProject(true);
+        setIsVisible(false);
+
+        function hiddenPreviewProject() {
+            setSelectedProject(false);
+            setIsVisible(true);
+            // setTimeout(() => {
+            //     setShowPreviewProject(defaultInfoProject);
+            // }, 600)
+
+            window.removeEventListener("scroll", hiddenPreviewProject);
+        
+        }
+
+        window.addEventListener("scroll", hiddenPreviewProject);
     }
 
     useEffect(() => {
@@ -122,7 +138,7 @@ export function ProjectsContainer() {
         <div ref={ProjectsRef} style={ProjectsHeight} id="projects" className="container container-projects">
             <div className="container container__background-projects">
             </div>
-            <div className="container__text--heightPositionControl">
+            <div className={`container__text--heightPositionControl ${selectedProject? "invisible" : ""}`}>
                 <div ref={ProjectObserverRef} className="container__text">
                     <WrappingLetters
                         word="I have worked in"
@@ -134,7 +150,7 @@ export function ProjectsContainer() {
                     />
                 </div>
             </div>
-            <PreviewProjectsInfo infoToShow={showPreviewProject} />
+            <PreviewProjectsInfo infoToShow={showPreviewProject} selectedProjetc={selectedProject} />
             <div className={`container__projects-scrollSlider ${isVisible ? "visible" : ""}`}>
                 <ProjectsElement
                     SliderProjectsRef={SliderProjectsRef}
@@ -146,5 +162,3 @@ export function ProjectsContainer() {
         </div>
     )
 }
-
-
