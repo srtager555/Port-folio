@@ -5,6 +5,7 @@ import { PreviewProjectsInfo } from "../../components/previewProjectsInfo";
 import { ProjectsElement } from "../../components/projectElement/";
 
 import { recentProjects } from "../../contexts/projectsContexts";
+import { IS_MOBILE } from "../../contexts/constVarible";
 
 import "../../styles/Projects.css";
 
@@ -85,21 +86,30 @@ export function ProjectsContainer() {
 
     function previewProjects(event) {
         setShowPreviewProject(recentProjects.find(project => project.Id === event.path[1].id))
-        // setSelectedProject(true);
         setIsVisible(false);
 
-        function hiddenPreviewProject() {
-            setSelectedProject(false);
-            setIsVisible(true);
-            // setTimeout(() => {
-            //     setShowPreviewProject(defaultInfoProject);
-            // }, 600)
-
-            window.removeEventListener("scroll", hiddenPreviewProject);
-
+        function imageLoaded() {
+            if (event.srcElement.currentSrc === showPreviewProject.BackgroundImageMobile) {
+                setSelectedProject(true);
+            }
         }
 
-        window.addEventListener("scroll", hiddenPreviewProject);
+        if (IS_MOBILE) {
+            imageLoaded();
+            function hiddenPreviewProject() {
+                setSelectedProject(false);
+                setIsVisible(true);
+                // setTimeout(() => {
+                //     setShowPreviewProject(defaultInfoProject);
+                // }, 600)
+
+                window.removeEventListener("scroll", hiddenPreviewProject);
+            }
+
+            window.addEventListener("scroll", hiddenPreviewProject);
+        } else {
+
+        }
     }
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ function structureInfoProject({ letter, cssClass, ...props }) {
 }
 
 export function PreviewProjectsInfo({ infoToShow, selectedProjetc, setSelectedProject }) {
+
     return <div className="container__projectsInfo">
         <div className={`container__projectsInfo--container__content ${selectedProjetc ? "visible" : ""}`}>
             <div className="container__projectsInfo--background__image">
