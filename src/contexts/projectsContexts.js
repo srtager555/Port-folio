@@ -36,7 +36,7 @@ export function ProjectsElementList() {
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
             BackgroundImageDesktop: "",
-            BackgroundImageMobile: "",
+            BackgroundImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -44,7 +44,7 @@ export function ProjectsElementList() {
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
             ],
             Link: "https://www.google.com",
-            Date: "2020-01-01",
+            Date: "01 01 2020",
         }),
         new ProjectElement({
             Title: "Wrapping Letters",
@@ -53,7 +53,7 @@ export function ProjectsElementList() {
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/rHtcHGY/bosque.jpg",
             BackgroundImageDesktop: "",
-            BackgroundImageMobile: "",
+            BackgroundImageMobile: "https://i.ibb.co/rHtcHGY/bosque.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -61,7 +61,7 @@ export function ProjectsElementList() {
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
             ],
             Link: "https://www.google.com",
-            Date: "2020-01-01",
+            Date: "01 01 2020",
         }),
         new ProjectElement({
             Title: "Wrapping Letters HomePage",
@@ -70,7 +70,7 @@ export function ProjectsElementList() {
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
             BackgroundImageDesktop: "",
-            BackgroundImageMobile: "",
+            BackgroundImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -78,7 +78,7 @@ export function ProjectsElementList() {
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
             ],
             Link: "https://www.google.com",
-            Date: "2020-01-01",
+            Date: "01 01 2020",
         }),
         new ProjectElement({
             Title: "Rynyk",
@@ -87,7 +87,7 @@ export function ProjectsElementList() {
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
             BackgroundImageDesktop: "",
-            BackgroundImageMobile: "",
+            BackgroundImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -95,7 +95,7 @@ export function ProjectsElementList() {
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
             ],
             Link: "https://www.google.com",
-            Date: "2020-01-01",
+            Date: "01 01 2020",
         }),
         new ProjectElement({
             Title: "Port-folio",
@@ -104,7 +104,7 @@ export function ProjectsElementList() {
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
             BackgroundImageDesktop: "",
-            BackgroundImageMobile: "",
+            BackgroundImageMobile:"https://i.ibb.co/2Zcw0X4/flor.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -112,7 +112,7 @@ export function ProjectsElementList() {
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
             ],
             Link: "https://www.google.com",
-            Date: "2020-01-01",
+            Date: "01 01 2020",
         }),
 
     ];
