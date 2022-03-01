@@ -9,15 +9,13 @@ function structureInfoProject({ letter, cssClass, ...props }) {
     </div>
 }
 
-export function PreviewProjectsInfo({ infoToShow, selectedProjetc}) {
+export function PreviewProjectsInfo({ infoToShow, selectedProjetc, setSelectedProject }) {
     return <div className="container__projectsInfo">
         <div className={`container__projectsInfo--container__content ${selectedProjetc ? "visible" : ""}`}>
             <div className="container__projectsInfo--background__image">
-                <img src={infoToShow.BackgroundImageMobile} alt={infoToShow.Title} />
+                <img onLoad={() => setSelectedProject(true)} src={infoToShow.BackgroundImageMobile} alt={infoToShow.Title} />
             </div>
-            <div className="container__projectsInfo--continer__gradientBG">
-
-            </div>
+            <div className="container__projectsInfo--continer__gradientBG"></div>
             <div className="container__projectsInfo--container__content--text">
                 <div className="container-title">
                     <WrappingLetters

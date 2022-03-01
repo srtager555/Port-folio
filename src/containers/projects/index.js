@@ -28,7 +28,7 @@ export function ProjectsContainer() {
     const leftMargin = initialMarginLeft + windowHeight;
     const heightMultiplier = 1.8;
     const recentProjectsLength = recentProjects.length;
-    const defaultInfoProject = { Title: '.', Date: '.'}
+    const defaultInfoProject = { Title: '.', Date: '.' }
 
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
         marginLeft: `${leftMargin}px`,
@@ -85,7 +85,7 @@ export function ProjectsContainer() {
 
     function previewProjects(event) {
         setShowPreviewProject(recentProjects.find(project => project.Id === event.path[1].id))
-        setSelectedProject(true);
+        // setSelectedProject(true);
         setIsVisible(false);
 
         function hiddenPreviewProject() {
@@ -96,7 +96,7 @@ export function ProjectsContainer() {
             // }, 600)
 
             window.removeEventListener("scroll", hiddenPreviewProject);
-        
+
         }
 
         window.addEventListener("scroll", hiddenPreviewProject);
@@ -138,7 +138,7 @@ export function ProjectsContainer() {
         <div ref={ProjectsRef} style={ProjectsHeight} id="projects" className="container container-projects">
             <div className="container container__background-projects">
             </div>
-            <div className={`container__text--heightPositionControl ${selectedProject? "invisible" : ""}`}>
+            <div className={`container__text--heightPositionControl ${selectedProject ? "invisible" : ""}`}>
                 <div ref={ProjectObserverRef} className="container__text">
                     <WrappingLetters
                         word="I have worked in"
@@ -150,7 +150,11 @@ export function ProjectsContainer() {
                     />
                 </div>
             </div>
-            <PreviewProjectsInfo infoToShow={showPreviewProject} selectedProjetc={selectedProject} />
+            <PreviewProjectsInfo
+                infoToShow={showPreviewProject}
+                selectedProjetc={selectedProject}
+                setSelectedProject={setSelectedProject}
+            />
             <div className={`container__projects-scrollSlider ${isVisible ? "visible" : ""}`}>
                 <ProjectsElement
                     SliderProjectsRef={SliderProjectsRef}
