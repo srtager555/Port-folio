@@ -84,18 +84,17 @@ export function ProjectsContainer() {
         }
     }
 
-    function previewProjects(event) {
-        setShowPreviewProject(recentProjects.find(project => project.Id === event.path[1].id))
+    function previewProjects(event, mouseOver) {
+        setShowPreviewProject(recentProjects.find(project => project.Id === event.target.parentElement.id))
         setIsVisible(false);
 
         function imageLoaded() {
-            if (event.srcElement.currentSrc === showPreviewProject.BackgroundImageMobile) {
+            if (event.target.currentSrc === showPreviewProject.BackgroundImageMobile) {
                 setSelectedProject(true);
             }
         }
 
         if (IS_MOBILE) {
-            imageLoaded();
             function hiddenPreviewProject() {
                 setSelectedProject(false);
                 setIsVisible(true);
@@ -108,7 +107,12 @@ export function ProjectsContainer() {
 
             window.addEventListener("scroll", hiddenPreviewProject);
         } else {
-
+            if(mouseOver) {
+                imageLoaded();
+            } else {
+                setSelectedProject(false);
+                setIsVisible(true);
+            }
         }
     }
 
@@ -170,7 +174,7 @@ export function ProjectsContainer() {
                     SliderProjectsRef={SliderProjectsRef}
                     ViewProjectsScroll={ViewProjectsScroll}
                     ProjectsElementRef={ProjectsElementRef}
-                    PreviewProjects={() => previewProjects(event)}
+                    PreviewProjects={previewProjects}
                 />
             </div>
         </div>
