@@ -52,7 +52,7 @@ export function ProjectsElementList() {
             Id: "p01",
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/rHtcHGY/bosque.jpg",
-            BackgroundImageDesktop: "",
+            BackgroundImageDesktop: "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
             BackgroundImageMobile: "https://i.ibb.co/rHtcHGY/bosque.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -69,7 +69,7 @@ export function ProjectsElementList() {
             Id: "p02",
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
-            BackgroundImageDesktop: "",
+            BackgroundImageDesktop: "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
             BackgroundImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -86,7 +86,7 @@ export function ProjectsElementList() {
             Id: "p03",
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-            BackgroundImageDesktop: "",
+            BackgroundImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
             BackgroundImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -103,7 +103,7 @@ export function ProjectsElementList() {
             Id: "p04",
             PrincipalImageDesktop: "",
             PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-            BackgroundImageDesktop: "",
+            BackgroundImageDesktop: "https://i.ibb.co/tCVxqdT/project-portfolio-next-Post.jpg",
             BackgroundImageMobile:"https://i.ibb.co/2Zcw0X4/flor.jpg",
             GaleryImages: [
                 "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
