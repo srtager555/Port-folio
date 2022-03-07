@@ -95,12 +95,11 @@ export function ProjectsContainer() {
         }
 
         if (IS_MOBILE) {
+            imageLoaded();
+
             function hiddenPreviewProject() {
                 setSelectedProject(false);
                 setIsVisible(true);
-                // setTimeout(() => {
-                //     setShowPreviewProject(defaultInfoProject);
-                // }, 600)
 
                 window.removeEventListener("scroll", hiddenPreviewProject);
             }
