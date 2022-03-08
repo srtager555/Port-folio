@@ -1,0 +1,54 @@
+.container.container_lestTalk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.container_lestTalk .container__social_networks {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 10px;
+}
+
+.container.container_lestTalk .container__social_networks h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.container.container_lestTalk .container__social_networks .container_networks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+} 
+
+.container.container_lestTalk .container__social_networks .container_networks a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 19px;
+}
+.container.container_lestTalk .container__social_networks .container_networks a .container-text {
+    overflow: hidden;
+}
+.container.container_lestTalk .container__social_networks .container_networks a .container-text:nth-child(2) {
+    position: absolute;
+}
+
+.container.container_lestTalk .container__social_networks .container_networks a .container-text .social-network-letter {
+    display: inline-block;
+}
