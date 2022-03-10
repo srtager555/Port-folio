@@ -3,6 +3,33 @@
     justify-content: center;
     align-items: center;
 }
+.container.container_lestTalk .button-mail {
+    position: relative;
+}
+.container.container_lestTalk .button-mail .border-letstalk {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 2px;
+    background-color: #000000;
+}
+.container.container_lestTalk .button-mail a {
+    display: inline-block;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 70px;
+}
+
+.container.container_lestTalk .button-mail a .container__text .button-mail-letter {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+.container.container_lestTalk .button-mail a .container__text .button-mail-letter.button-mail-letter_exclamation {
+    font-family: 'Noto Sans Display', sans-serif;
+    font-style: italic;
+}
 
 .container.container_lestTalk .container__social_networks {
     position: absolute;
@@ -15,19 +42,21 @@
     flex-direction: column;
     width: 100%;
     max-width: 320px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .container.container_lestTalk .container__social_networks h2 {
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
+    font-family: 'Noto Sans Display';
+    font-weight: 300;
 }
 
 .container.container_lestTalk .container__social_networks .container_networks {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 10px;
     width: 100%;
 } 
 
@@ -42,13 +71,19 @@
     text-transform: uppercase;
     font-size: 19px;
 }
-.container.container_lestTalk .container__social_networks .container_networks a .container-text {
+.container.container_lestTalk .container__social_networks .container_networks a .container__text {
     overflow: hidden;
 }
-.container.container_lestTalk .container__social_networks .container_networks a .container-text:nth-child(2) {
+.container.container_lestTalk .container__social_networks .container_networks a .container__text:nth-child(2) {
     position: absolute;
 }
 
-.container.container_lestTalk .container__social_networks .container_networks a .container-text .social-network-letter {
+.container.container_lestTalk .container__social_networks .container_networks a .container__text .social-network-letter {
     display: inline-block;
+    font-family: 'Noto Sans Display';
 }
+
+.container.container_lestTalk .container__social_networks .container_networks a .container__text:nth-child(2) .social-network-letter {
+    transform: translateY(200%);
+}
+
