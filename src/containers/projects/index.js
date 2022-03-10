@@ -148,10 +148,10 @@ export function ProjectsContainer() {
     }, [])
 
     return (
-        <div ref={ProjectsRef} style={ProjectsHeight} id="projects" className="container container-projects">
+        <div ref={ProjectsRef} style={ProjectsHeight} className="container container-projects">
             <div className="container container__background-projects">
             </div>
-            <div className={`container__text--heightPositionControl ${selectedProject ? "invisible" : ""}`}>
+            <div  id="projects" className={`container__text--heightPositionControl ${selectedProject ? "invisible" : ""}`}>
                 <div ref={ProjectObserverRef} className="container__text">
                     <WrappingLetters
                         word="I have worked in"
