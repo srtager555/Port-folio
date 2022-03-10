@@ -44,7 +44,6 @@ export function Navbar() {
                         <div className="nav__links">
                             <a href="#home">Home</a>
                             <a href="#projects">Projects</a>
-                            <a href="#about-me">About Me</a>
                             <a href="#lest-talk">Lest Talk!</a>
                         </div>
                         <div className="equalizer">
@@ -64,7 +63,6 @@ export function Navbar() {
                             <div className="nav__links">
                                 <a href="#home">Home</a>
                                 <a href="#projects">Projects</a>
-                                <a href="#about-me">About Me</a>
                                 <a href="#lest-talk">Lest Talk!</a>
                             </div>
                             <div className="equalizer">
