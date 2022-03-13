@@ -28,6 +28,18 @@ export function ProjectElement({
    this.Date = Date;
 }
 
+export function ImageWithText({ Image = "", Title = "", Description = "" }) {
+   this.Image = Image;
+   this.Title = Title;
+   this.Description = Description;
+
+   return {
+      Image,
+      Title,
+      Description,
+   };
+}
+
 export function ProjectsElementList() {
    return [
       new ProjectElement({
@@ -57,17 +69,15 @@ export function ProjectsElementList() {
          PrincipalImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
          BackgroundImageDesktop:
             "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
-         BackgroundImageMobile: "https://i.ibb.co/7rS0L4Y/Ahri-de-perfil.jpg",
+         BackgroundImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
          GaleryImages: [
             "https://i.ibb.co/GQsrPwx/imagen-22222.jpg",
-            [
-               "https://i.ibb.co/NyHtQvP/1f27e04cf95f16d51ad26911036b848a95e939a7.jpg",
-               {
-                  title: "Simplify the code",
-                  description:
-                     "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
-               },
-            ],
+            new ImageWithText({
+               Image: "https://i.ibb.co/NyHtQvP/1f27e04cf95f16d51ad26911036b848a95e939a7.jpg",
+               Title: "Simplify the code",
+               Description:
+                  "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
+            }),
             "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
             "https://i.ibb.co/D7zxN2W/sample-0551ec7be9c60314a85918c1385b4172.jpg",
             "https://i.ibb.co/348wz9h/PACIAL-OWEN-FISICA.png",
