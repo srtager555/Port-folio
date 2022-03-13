@@ -25,13 +25,26 @@ function cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, 
 }
 
 function desktopCardElement(ProjectsElementRef, element, index, callback) {
-    return <Link id={element.Id} onMouseEnter={(event) => callback(event, true)} onMouseLeave={(event) => callback(event, false)} to={`project_${index}`} key={`project-${index}`} ref={index === 1 ? ProjectsElementRef : null} className="container__image-projects__scrollSlider">
+    return <Link
+        id={element.Id}
+        to={`${element.Id}`} key={`project-${index}`}
+        onMouseEnter={(event) => callback(event, true)}
+        onMouseLeave={(event) => callback(event, false)}
+        ref={index === 1 ? ProjectsElementRef : null}
+        className="container__image-projects__scrollSlider"
+    >
         <img src={element.PrincipalImageMobile} alt="kda Ahri" />
     </Link>
 }
 
 function mobileCardElement(ProjectsElementRef, element, index, callback) {
-    return <button id={element.Id} onClick={callback} key={`project-${index}`} ref={index === 1 ? ProjectsElementRef : null} className="container__image-projects__scrollSlider">
+    return <button
+        id={element.Id}
+        onClick={callback}
+        key={`project-${index}`}
+        ref={index === 1 ? ProjectsElementRef : null}
+        className="container__image-projects__scrollSlider"
+    >
         <img src={element.PrincipalImageMobile} alt="kda Ahri" />
     </button>
 }

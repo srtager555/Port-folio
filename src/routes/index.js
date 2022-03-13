@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { HomePage } from "../pages/home";
+import { ProjectPage } from "../pages/projects";
 
 import { Navbar } from "../components/navbar";
 import { Background } from "../components/background";
@@ -22,6 +23,7 @@ export function Router() {
             <div className="container-content">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/:id" element={<ProjectPage />} />
                     <Route path="*" element={<NotMatch />} />
                 </Routes>
             </div>
