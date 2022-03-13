@@ -49,7 +49,8 @@ export function ProjectsElementList() {
       }),
       new ProjectElement({
          Title: "Wrapping Letters",
-         Description: " Description",
+         Description:
+            "Hello! I’m a young developer, my specialty is front-end development. I invite you to see my projects are simple, but interesting.",
          Id: "wrapping-letters",
          Job: ["code devepoler", "react"],
          PrincipalImageDesktop: "",
