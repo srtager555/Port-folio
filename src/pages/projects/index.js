@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
 import { useParams } from "react-router-dom";
 
@@ -10,31 +10,51 @@ import {
 import "../../styles/ProjectPage.css";
 
 function ImageProcess({ project, index }) {
-    return  project.GaleryImages.map((image) => {
-        if (typeof image === "string") {
-           return <img key={`image ${index}`} className="project-image" src={image} alt="" />;
-        } else {
-           if (!image instanceof ImageProcess) {
-              throw new Error(
-                 "ImageProcess: image must be a string or an ImageProcess"
-              );
-           }
-           return <div key={`image ${index}`} className="project__image-container">
-                 <div className="project__image-container__text">
-                     <h3 className="project__image-container__text__title">{image.Title}</h3>
-                     <p className="project__image-container__text__description">{image.Description}</p>
-                 </div>
-                 <img className="project__image" src={image.Image} alt="" />
-           </div>;
-        }
-    });
+   return project.GaleryImages.map((image) => {
+      if (typeof image === "string") {
+         return (
+            <div className="project__image">
+               <img
+                  key={`image ${index}`}
+                  className="project__image-img"
+                  src={image}
+                  alt=""
+               />
+            </div>
+         );
+      } else {
+         if (!image instanceof ImageWithText) {
+            throw new Error(
+               "ImageWithText: image must be a string or an ImageWithText"
+            );
+         }
+         return (
+            <div key={`image ${index}`} className="project__image">
+               <div className="project__image-container__text">
+                  <h3 className="project__image-container__text-title">
+                     {image.Title}
+                  </h3>
+                  <p className="project__image-container__text-description">
+                     {image.Description}
+                  </p>
+               </div>
+               <img className="project__image-img" src={image.Image} alt="" />
+            </div>
+         );
+      }
+   });
 }
 
-export function ProjectPage() {
+export function ProjectPage({ handleRouteChange }) {
    //get information from the path of the url and put it in the variable
    const { id } = useParams();
+
    //get the information from the context
    const project = ProjectsElementList().find((project) => project.Id === id);
+
+   useEffect(() => {
+      handleRouteChange();
+   }, [id]);
 
    return (
       <div className="container project">
@@ -61,7 +81,7 @@ export function ProjectPage() {
             </div>
          </header>
          <div className="project__content">
-                  <ImageProcess project={project} />
+            <ImageProcess project={project} />
          </div>
       </div>
    );
