@@ -5,6 +5,7 @@
    position: relative;
    width: 100%;
    height: 100vh;
+   margin-bottom: 200px;
 }
 .project__header .project__container-info__header {
    display: flex;
@@ -70,13 +71,30 @@
    left: 0;
    width: 100%;
    height: 50%;
-   background: rgb(0, 0, 0);
+   background: rgb(3, 3, 3);
    background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0) 100%
+      rgba(3, 3, 3, 1) 0%,
+      rgba(3, 3, 3, 0) 100%
    );
 }
 .project__header .project__background img {
    height: 101%;
+}
+
+.project__content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   max-width: 805px;
+   width: 100%;
+}
+
+.project__image {
+   width: 100%;
+   margin-bottom: 225px;
+}
+.project__image img {
+   width: 100%;
 }
