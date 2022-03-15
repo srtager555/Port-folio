@@ -26,7 +26,7 @@ export function Router() {
 
    return (
       <>
-         <Navbar />
+         <Navbar handleRouteChange={handleRouteChange} />
          <Background />
          <div className="container-content">
             <Routes>
