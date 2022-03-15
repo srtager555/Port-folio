@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { NAVBAR_MOBILE_SIZE } from "../../contexts/constVarible";
 
+import { Link } from "react-router-dom";
+
 import "../../styles/Navbar.css";
 
 export function Navbar() {
@@ -35,9 +37,9 @@ export function Navbar() {
             <div className={`nav__background ${isOpen ? "open" : ""}`}></div>
             <nav className="nav__container">
                 <div className="nav__logo">
-                    <a href="/">
+                    <Link to="/">
                         &&
-                    </a>
+                    </Link>
                 </div>
                 {!isMobile ? (
                     <>
