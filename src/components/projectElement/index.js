@@ -27,7 +27,7 @@ function cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, 
 function desktopCardElement(ProjectsElementRef, element, index, callback) {
     return <Link
         id={element.Id}
-        to={`${element.Id}`} key={`project-${index}`}
+        to={`p/${element.Id}`} key={`project-${index}`}
         onMouseEnter={(event) => callback(event, true)}
         onMouseLeave={(event) => callback(event, false)}
         ref={index === 1 ? ProjectsElementRef : null}

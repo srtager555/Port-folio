@@ -53,7 +53,7 @@ function itsShowTime(selectedProjetc, setSelectedProject, infoToShow) {
 }
 function anchorMobile(infoToShow) {
     return <div className="container__actionButton">
-        <Link to={`${infoToShow.Id || "/"}`} className="container-anchor">
+        <Link to={`p/${infoToShow.Id || "/"}`} className="container-anchor">
             <WrappingLetters
                 word="go to see"
                 wordOptions={[{
