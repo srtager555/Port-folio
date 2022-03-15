@@ -16,7 +16,7 @@ function NotMatch() {
 }
 
 export function Router() {
-   function handleRouteChange() {
+   function handleResetScroll() {
       window.scrollTo(0, 0);
    }
 
@@ -32,9 +32,9 @@ export function Router() {
             <Routes>
                <Route path="/" element={<HomePage />} />
                <Route
-                  path="/:id"
+                  path="/p/:id"
                   element={
-                     <ProjectPage handleRouteChange={handleRouteChange} />
+                     <ProjectPage handleResetScroll={handleResetScroll} />
                   }
                />
                <Route path="*" element={<NotMatch />} />
