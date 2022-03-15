@@ -9,7 +9,7 @@
       rgba(255, 255, 255, 1) 0%,
       rgba(153, 226, 201, 1) 100%
    );
-   transition: background-color 0.5s;
+   transition: all 0.5s;
 }
 
 .container.container-background.background--project {
