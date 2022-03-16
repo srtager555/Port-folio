@@ -21,12 +21,12 @@ export function Router() {
    }
 
    useEffect(() => {
-      handleRouteChange();
+      handleResetScroll();
    })
 
    return (
       <>
-         <Navbar handleRouteChange={handleRouteChange} />
+         <Navbar handleResetScroll={handleResetScroll} />
          <Background />
          <div className="container-content">
             <Routes>

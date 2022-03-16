@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import "../../styles/Navbar.css";
 
-export function Navbar({ handleRouteChange }) {
+export function Navbar({ handleResetScroll }) {
    const [isOpen, setIsOpen] = useState(false);
    const [isMobile, setIsMobile] = useState(false);
 
@@ -35,7 +35,7 @@ export function Navbar({ handleRouteChange }) {
          <div className={`nav__background ${isOpen ? "open" : ""}`}></div>
          <nav className="nav__container">
             <div className="nav__logo">
-               <Link onClick={handleRouteChange} to="/">
+               <Link onClick={handleResetScroll} to="/">
                   &&
                </Link>
             </div>

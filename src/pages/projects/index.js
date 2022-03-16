@@ -45,15 +45,20 @@ function ImageProcess({ project, index }) {
    });
 }
 
-export function ProjectPage({ handleRouteChange }) {
-   //get information from the path of the url and put it in the variable
+export function ProjectPage({ handleResetScroll }) {
    const { id } = useParams();
-
-   //get the information from the context
    const project = ProjectsElementList().find((project) => project.Id === id);
 
+   if (!project) {
+      return <div>404</div>;
+   }
+   ProjectsElementList().length
+   const postIndex = ProjectsElementList().findIndex((project) => project.Id === id);
+   const nextPostIndex = ProjectsElementList()[postIndex + 1] <= (ProjectsElementList().length - 1) ? ProjectsElementList()[postIndex + 1] : ProjectsElementList()[0];
+   console.log(nextPostIndex)
+   
    useEffect(() => {
-      handleRouteChange();
+      handleResetScroll();
    }, [id]);
 
    return (
