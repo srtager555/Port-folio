@@ -1,3 +1,5 @@
+import { projectsList } from "./projectsList";
+
 export function ProjectElement({
    Title = "",
    Description = "",
@@ -11,6 +13,7 @@ export function ProjectElement({
    GaleryImages = [],
 
    Link = "",
+   Available = true,
    Date = "",
 }) {
    this.Title = Title;
@@ -26,8 +29,10 @@ export function ProjectElement({
 
    this.Link = Link;
    this.Date = Date;
+   this.Available = Available;
 }
 
+// This prototype is used to add text in the image of the projects and verify if the image is intance of it
 export function ImageWithText({ Image = "", Title = "", Description = "" }) {
    this.Image = Image;
    this.Title = Title;
@@ -40,117 +45,60 @@ export function ImageWithText({ Image = "", Title = "", Description = "" }) {
    };
 }
 
-export function ProjectsElementList() {
-   return [
-      new ProjectElement({
-         Title: " Title",
-         Description: " Description",
-         Id: "title",
-         PrincipalImageDesktop: "",
-         PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-         BackgroundImageDesktop: "",
-         BackgroundImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-         GaleryImages: [
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         ],
-         Link: "https://www.google.com",
-         Date: "01 01 2020",
-      }),
-      new ProjectElement({
-         Title: "Wrapping Letters",
-         Description:
-            "Hello! I’m a young developer, my specialty is front-end development. I invite you to see my projects are simple, but interesting.",
-         Id: "wrapping-letters",
-         Job: ["code devepoler", "react"],
-         PrincipalImageDesktop: "",
-         PrincipalImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
-         BackgroundImageDesktop:
-            "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
-         BackgroundImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
-         GaleryImages: [
-            "https://i.ibb.co/GQsrPwx/imagen-22222.jpg",
-            new ImageWithText({
-               Image: "https://i.ibb.co/NyHtQvP/1f27e04cf95f16d51ad26911036b848a95e939a7.jpg",
-               Title: "Simplify the code",
-               Description:
-                  "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
-            }),
-            "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
-            "https://i.ibb.co/D7zxN2W/sample-0551ec7be9c60314a85918c1385b4172.jpg",
-            "https://i.ibb.co/348wz9h/PACIAL-OWEN-FISICA.png",
-            "https://i.ibb.co/Pz0fZY2/wenas.jpg",
-         ],
-         Link: "https://www.google.com",
-         Date: "01 01 2020",
-      }),
-      new ProjectElement({
-         Title: "Wrapping Letters HomePage",
-         Description: " Description",
-         Id: "wrapping-letters-homepage",
-         PrincipalImageDesktop: "",
-         PrincipalImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
-         BackgroundImageDesktop:
-            "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
-         BackgroundImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
-         GaleryImages: [
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         ],
-         Link: "https://www.google.com",
-         Date: "01 01 2020",
-      }),
-      new ProjectElement({
-         Title: "Rynyk",
-         Description: " Description",
-         Id: "rynyk",
-         PrincipalImageDesktop: "",
-         PrincipalImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-         BackgroundImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
-         BackgroundImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-         GaleryImages: [
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            [
-               "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-               {
-                  title: "Simplify the code",
-                  description:
-                     "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
-               },
-            ],
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         ],
-         Link: "https://www.google.com",
-         Date: "01 01 2020",
-      }),
-      new ProjectElement({
-         Title: "Port-folio",
-         Description: " Description",
-         Id: "port-folio",
-         PrincipalImageDesktop: "",
-         PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-         BackgroundImageDesktop:
-            "https://i.ibb.co/tCVxqdT/project-portfolio-next-Post.jpg",
-         BackgroundImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-         GaleryImages: [
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         ],
-         Link: "https://www.google.com",
-         Date: "01 01 2020",
-      }),
-   ];
-}
+function InstanceElementList(projects) {
+   this.projects = projects || [];
+};
 
-const ProjectList = ProjectsElementList();
-export const recentProjects = ProjectList.slice(
-   ProjectList.length - 4,
-   ProjectList.length
-);
+InstanceElementList.prototype.getProjects = function () {
+   return this.projects
+};
+InstanceElementList.prototype.getAvailableProjects = function () {
+   return this.getProjects().filter((projects) => projects.Available === true);
+};
+
+InstanceElementList.prototype.a = function () {
+   return () => console.log(this.projects, "a" )
+};
+
+InstanceElementList.prototype.getRecentProjects = function () {
+   return this.getProjects().slice(
+      this.getProjects().length - 4,
+      this.getProjects().length
+   );
+};
+
+InstanceElementList.prototype.getRecentProjectsAvailable = function () {
+   return this.getAvailableProjects().slice(
+      this.getAvailableProjects().length - 4,
+      this.getAvailableProjects().length
+   );
+};
+
+InstanceElementList.prototype.getProjectById = function (id) {
+   return this.getProjects().find((project) => project.Id === id);
+};
+
+InstanceElementList.prototype.getProjectIndexById = function (id) {
+   return this.getProjects().findIndex((project) => project.Id === id);
+};
+InstanceElementList.prototype.getProjectIndexAvailableById = function (id) {
+   return this.getAvailableProjects().findIndex((project) => project.Id === id);
+};
+
+InstanceElementList.prototype.getNextProjectAvailableById = function (id) {
+   let postIndex = this.getProjectIndexAvailableById(id);
+
+   return this.getAvailableProjects()[postIndex + 1] <= this.getAvailableProjects()
+      ? this.getAvailableProjects()[postIndex + 1]
+      : this.getAvailableProjects()[0];
+};
+
+InstanceElementList.prototype.getNextProjectById = function (id) {
+   let postIndex = this.getProjectIndexById(id);
+
+   return this[postIndex + 1] <= this
+      ? this[postIndex + 1]
+      : this[0];
+};
+
+export const ProjectsElementList = new InstanceElementList(projectsList);
