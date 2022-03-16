@@ -6,44 +6,10 @@ import {
    ProjectsElementList,
    ImageWithText,
 } from "../../contexts/projectsContexts";
+import { ImageProcess } from "../../components/projectImage";
 
 import "../../styles/ProjectPage.css";
 
-function ImageProcess({ project, index }) {
-   return project.GaleryImages.map((image) => {
-      if (typeof image === "string") {
-         return (
-            <div className="project__image">
-               <img
-                  key={`image ${index}`}
-                  className="project__image-img"
-                  src={image}
-                  alt=""
-               />
-            </div>
-         );
-      } else {
-         if (!image instanceof ImageWithText) {
-            throw new Error(
-               "ImageWithText: image must be a string or an ImageWithText"
-            );
-         }
-         return (
-            <div key={`image ${index}`} className="project__image">
-               <div className="project__image-container__text">
-                  <h3 className="project__image-container__text-title">
-                     {image.Title}
-                  </h3>
-                  <p className="project__image-container__text-description">
-                     {image.Description}
-                  </p>
-               </div>
-               <img className="project__image-img" src={image.Image} alt="" />
-            </div>
-         );
-      }
-   });
-}
 
 export function ProjectPage({ handleResetScroll }) {
    const { id } = useParams();
