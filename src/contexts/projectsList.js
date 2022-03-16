@@ -39,12 +39,12 @@ export const projectsList = [
                "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
          }),
          "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
+         "https://i.ibb.co/348wz9h/PACIAL-OWEN-FISICA.png",
          new ImageWithText({
             Image: "https://i.ibb.co/D7zxN2W/sample-0551ec7be9c60314a85918c1385b4172.jpg",
             Title: "I want money",
             Description: "I want money for my projects",
          }),
-         "https://i.ibb.co/348wz9h/PACIAL-OWEN-FISICA.png",
          "https://i.ibb.co/Pz0fZY2/wenas.jpg",
       ],
       Link: "https://www.google.com",
