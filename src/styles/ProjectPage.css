@@ -98,3 +98,30 @@
 .project__image img {
    width: 100%;
 }
+.project__image .project__image-container__text {
+   position: relative;
+   width: 60%;
+   color: #fff;
+   margin-bottom: 21px;
+   margin-left: 26px;
+}
+.project__image .project__image-container__text::before {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 60%;
+   height: 1px;
+   background: #fff;
+}
+.project__image .project__image-container__text .project__image-container__text-title {
+   font-size: 18px;
+   font-weight: 200;
+   margin-bottom: 13px;
+}
+.project__image .project__image-container__text .project__image-container__text-description { 
+   font-size: 13px;
+   font-weight: 200;
+   font-family: "Noto sans display", sans-serif;
+   padding-bottom: 14px;
+}
