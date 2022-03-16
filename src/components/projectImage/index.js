@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 import { ImageWithText } from "../../contexts/projectsContexts";
@@ -7,16 +7,26 @@ export function ImageProcess({ project, containerWitdh }) {
    /*
     Hay que ejecutar el llamado de las imagenes solo una vez, puede ser con un useEffect que
     llame a un function que haga ese trabajo y que retorne la infomacion dentro de un array,
-    Luego usar la informacion para verificar que clases llevara el componente
+    Luego usar la informacion para verificar que clases llevara el componente, esto debe
+    ser dentro de un useState para que haya una actualizacion en el componente.
    */
 
-   return project.GaleryImages.map((image, index) => {
-      let i = new Image();
-      i.src = typeof image === "string" ? image : image.Image;
-      let height = i.naturalHeight;
-      let width = i.naturalWidth;
-      console.log(height, width, index);
+   async function loadImage() {
+    // La funcion A tiene que cargar la imagen y la funcion b tiene que entregar el alto y ancho.
 
+      return project.GaleryImages.map((image) => {
+         let i = new Image();
+         i.src = typeof image === "string" ? image : image.Image;
+         let height = i.naturalHeight;
+         let width = i.naturalWidth;
+
+         return [width, height];
+      });
+   }
+
+   useEffect(() => {}, []);
+
+   return project.GaleryImages.map((image, index) => {
       if (typeof image === "string") {
          return (
             <div className="project__image">
