@@ -47,14 +47,14 @@ function ImageProcess({ project, index }) {
 
 export function ProjectPage({ handleResetScroll }) {
    const { id } = useParams();
-   const project = ProjectsElementList().find((project) => project.Id === id);
+
+   const project = ProjectsElementList.getProjectById(id);
 
    if (!project) {
       return <div>404</div>;
    }
-   ProjectsElementList().length
-   const postIndex = ProjectsElementList().findIndex((project) => project.Id === id);
-   const nextPostIndex = ProjectsElementList()[postIndex + 1] <= (ProjectsElementList().length - 1) ? ProjectsElementList()[postIndex + 1] : ProjectsElementList()[0];
+
+   const nextPostIndex = ProjectsElementList.getNextProjectAvailableById(id);
    console.log(nextPostIndex)
    
    useEffect(() => {
