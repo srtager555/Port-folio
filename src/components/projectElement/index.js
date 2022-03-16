@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { recentProjects } from "../../contexts/projectsContexts";
+import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { IS_MOBILE } from "../../contexts/constVarible";
 
 export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects }) {
@@ -17,7 +17,7 @@ export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, Project
 function cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, callback) {
     return <div ref={SliderProjectsRef} style={ViewProjectsScroll} className="container__projects-scrollSlider-item">
         {
-            recentProjects.map((element, index) => (
+            ProjectsElementList.getRecentProjectsAvailable().map((element, index) => (
                 callback(ProjectsElementRef, element, index, PreviewProjects)
             ))
         }

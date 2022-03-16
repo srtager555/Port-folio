@@ -4,7 +4,7 @@ import WrappingLetters from "wrapping-letters-react";
 import { PreviewProjectsInfo } from "../../components/previewProjectsInfo";
 import { ProjectsElement } from "../../components/projectElement/";
 
-import { recentProjects } from "../../contexts/projectsContexts";
+import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { IS_MOBILE } from "../../contexts/constVarible";
 
 import "../../styles/Projects.css";
@@ -28,7 +28,8 @@ export function ProjectsContainer() {
     const windowHeight = window.innerHeight;
     const leftMargin = initialMarginLeft + windowHeight;
     const heightMultiplier = 1.8;
-    const recentProjectsLength = recentProjects.length;
+    const recentProjectsLength = ProjectsElementList.getRecentProjectsAvailable().length;
+    const recentProjects = ProjectsElementList.getRecentProjects()
     const defaultInfoProject = { Title: '.', Date: '.' }
 
     const [ViewProjectsScroll, setViewProjectsScroll] = useState({
