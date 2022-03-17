@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+// import { resolveHref } from "next/dist/shared/lib/router/router";
+import React, { useEffect, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 import { ImageWithText } from "../../contexts/projectsContexts";
 
 export function ImageProcess({ project, containerWitdh }) {
+   const [imageWidth, setImageWidth] = useState([]);
+   const [isLoading, setIsLoading] = useState(false);
+
    /*
     Hay que ejecutar el llamado de las imagenes solo una vez, puede ser con un useEffect que
     llame a un function que haga ese trabajo y que retorne la infomacion dentro de un array,
@@ -11,20 +15,33 @@ export function ImageProcess({ project, containerWitdh }) {
     ser dentro de un useState para que haya una actualizacion en el componente.
    */
 
-   async function loadImage() {
-    // La funcion A tiene que cargar la imagen y la funcion b tiene que entregar el alto y ancho.
-
-      return project.GaleryImages.map((image) => {
+   useEffect(() => {
+      let arrayOfPromise = project.GaleryImages.map((image, index) => {
          let i = new Image();
          i.src = typeof image === "string" ? image : image.Image;
-         let height = i.naturalHeight;
-         let width = i.naturalWidth;
-
-         return [width, height];
+         return new Promise((resolve, reject) => {
+            fetch(i.src).then((response) => {
+               if (response.ok)
+                  i.onload = (aaa) => {
+                     console.log(aaa);
+                     let height = i.naturalHeight;
+                     let width = i.naturalWidth;
+                     resolve([width, height, index]);
+                  };
+               else reject("XD");
+            });
+         });
       });
-   }
 
-   useEffect(() => {}, []);
+      Promise.all(arrayOfPromise)
+         .then((value) => {
+            console.log(value);
+            setImageWidth(value);
+         })
+         .catch((err) => {
+            console.log(err);
+         });
+   }, []);
 
    return project.GaleryImages.map((image, index) => {
       if (typeof image === "string") {
