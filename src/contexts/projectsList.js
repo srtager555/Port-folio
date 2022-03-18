@@ -39,6 +39,21 @@ export const projectsList = [
                "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
          }),
          "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
+         new ImageWithText({
+            Image: "https://i.ibb.co/9nP0vGK/coven.jpg",
+            Title: "This is another test",
+            Description: "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd"
+         }),
+         new ImageWithText({
+            Image: "https://i.ibb.co/9nP0vGK/coven.jpg",
+            Title: "This is another test",
+            Description: "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd"
+         }),
+         new ImageWithText({
+            Image: "https://i.ibb.co/xSQbqVd/hu-Tao-background-mobil.jpg",
+            Title: "This is another test",
+            Description: "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd"
+         }),
          "https://i.ibb.co/348wz9h/jijija.png",
          new ImageWithText({
             Image: "https://i.ibb.co/D7zxN2W/sample-0551ec7be9c60314a85918c1385b4172.jpg",
@@ -46,6 +61,12 @@ export const projectsList = [
             Description: "I want money for my projects",
          }),
          "https://i.ibb.co/Pz0fZY2/wenas.jpg",
+         new ImageWithText({
+            Image: "https://i.ibb.co/HnqQk3C/Orbeeana-Face.jpg",
+            Title: "This is a test",
+            Description:
+               "Una vaca se valanceaba en la tela de una araña, y como miraba que la tela aguataba llamo a otra vaca y eran, dos vacas que se valanceaban en la tela de una araña y como miraban que aguantaban llamaron a otra vaca.",
+         }),
       ],
       Link: "https://www.google.com",
       Date: "01 01 2020",
