@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { ImageProcess } from "../../components/projectImage";
+import { NextPost } from "../../components/nextPost";
 
 import "../../styles/ProjectPage.css";
 
@@ -62,6 +63,7 @@ export function ProjectPage({ handleResetScroll }) {
          <div ref={containerContentRef} className="project__content">
             <ImageProcess containerWitdh={containerContentSize} project={project} />
          </div>
+         <NextPost data={nextPostIndex} />
       </div>
    );
 }
