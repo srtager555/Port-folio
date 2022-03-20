@@ -143,7 +143,6 @@
    padding-bottom: 14px;
 }
 
-
 @media (min-width: 560px) {
    .project__image.project__image-container.project__image-container--not_wrapp {
       flex-wrap: nowrap;
@@ -155,13 +154,12 @@
    .project__image .project__image-container__text {
       max-width: 60%;
       width: auto;
-      margin:0 26px;
+      margin: 0 26px;
       margin-bottom: 26px;
    }
    .project__content .project__image:nth-child(even) {
       flex-direction: row-reverse;
    }
-
 }
 
 .nextPost__container {
@@ -192,28 +190,87 @@
    flex-direction: column-reverse;
    mix-blend-mode: difference;
 }
-.nextPost__container .nextPost__background .nextPost__container--nextWord span:nth-child(1) {
+.nextPost__container
+   .nextPost__background
+   .nextPost__container--nextWord
+   span:nth-child(1) {
    font-size: 120px;
    font-weight: 200;
 }
-.nextPost__container .nextPost__background .nextPost__container--nextWord span:nth-child(2) {
+.nextPost__container
+   .nextPost__background
+   .nextPost__container--nextWord
+   span:nth-child(2) {
    font-size: 30px;
    font-family: "Shippori Mincho", serif;
    margin-bottom: -15px;
 }
 .nextPost__container .nextPost__container--info {
    display: flex;
-   justify-content:center;
-   align-items: center;  
+   justify-content: center;
+   align-items: center;
 }
-.nextPost__container--info__title {
+.nextPost__container
+   .nextPost__container--info
+   :is(.nextPost__container--info__title, .nextPost__container--info__typeJob) {
    font-size: 16px;
    text-transform: uppercase;
    font-family: "Noto sans display", sans-serif;
    font-weight: 200;
 }
-
-.nextPost__container--info__margin__bar, 
-.nextPost__container--info__typeJob {
+.nextPost__container
+   .nextPost__container--info
+   :is(.nextPost__container--info__margin__bar, .nextPost__container--info__typeJob) {
    display: none;
+}
+
+@media (min-width: 610px) {
+   .nextPost__container {
+      max-width: 815px;
+      width: 100%;
+   }
+   .nextPost__container .nextPost__background .nextPost__container--nextWord {
+      top: 0%;
+      bottom: auto;
+      left: 3%;
+      transform: translateY(-50%);
+      align-items: flex-start;
+      flex-direction: row;
+   }
+   .nextPost__container
+      .nextPost__background
+      .nextPost__container--nextWord
+      span:nth-child(1) {
+      font-size: 146px;
+      font-weight: 200;
+   }
+   .nextPost__container
+      .nextPost__background
+      .nextPost__container--nextWord
+      span:nth-child(2) {
+      font-size: 30px;
+      font-family: "Shippori Mincho", serif;
+      margin-top: 8%;
+      margin-left: 5%;
+   }
+   .nextPost__container .nextPost__background {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+   }
+   .nextPost__container
+      .nextPost__container--info
+      :is(.nextPost__container--info__title, .nextPost__container--info__typeJob) {
+      font-size: 19px;
+      display: block;
+   }
+   .nextPost__container
+      .nextPost__container--info
+      .nextPost__container--info__margin__bar {
+      display: inline-block;
+      width: 27%;
+      height: 1px;
+      background-color: #fff;
+      margin: 0 15px;
+   }
 }

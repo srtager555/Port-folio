@@ -1,4 +1,4 @@
-const MOBILE_SIZE = 510;
+const MOBILE_SIZE = 610;
 const TABLET_SIZE = 1024;
 const MOBILE_DEVICE_SIZE = 1024;
 
@@ -8,13 +8,13 @@ let IS_MOBILE = true;
 let IS_MOBILE_DEVICE = true;
 
 window.addEventListener("resize", isMobile)
-window.addEventListener("resize", isMobile)
+window.addEventListener("resize", isMobileDevice)
 
 function isMobile() {
     IS_MOBILE = window.innerWidth < MOBILE_DEVICE_SIZE;
 }
 function isMobileDevice() {
-    IS_MOBILE = window.innerWidth < MOBILE_DEVICE_SIZE;
+    IS_MOBILE_DEVICE = window.innerWidth < MOBILE_SIZE;
 }
 
 

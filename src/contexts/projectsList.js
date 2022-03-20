@@ -72,9 +72,10 @@ export const projectsList = [
       Date: "01 01 2020",
    }),
    new ProjectElement({
-      Title: "Wrapping Letters HomePage",
-      Description: "Description",
+      Title: "WL Website",
+      Description: "Wrapping letters is a good library, but any library need a good documentation. I design and develop the site of this library, Enjoy Xd.",
       Id: "wrapping-letters-homepage",
+      Job: ["Front-End devepoler", "react"],
       PrincipalImageDesktop: "",
       PrincipalImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       BackgroundImageDesktop:
@@ -93,6 +94,7 @@ export const projectsList = [
       Title: "Rynyk",
       Description: " Description",
       Id: "rynyk",
+      Job: ["IA developer", "Python"],
       PrincipalImageDesktop: "",
       PrincipalImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
       BackgroundImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
@@ -117,6 +119,7 @@ export const projectsList = [
       Title: "Port-folio",
       Description: " Description",
       Id: "port-folio",
+      Job: ["Front-End devepoler", "react"],
       PrincipalImageDesktop: "",
       PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
       BackgroundImageDesktop:

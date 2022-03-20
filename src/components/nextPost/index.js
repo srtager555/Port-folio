@@ -9,9 +9,7 @@ export function NextPost({ data }) {
    let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
 
    useEffect(() => {
-      console.log(data);
-      console.log(data.Title);
-      console.log(dataIndex < 10);
+       console.log(IS_MOBILE_DEVICE)
    }, []);
    return (
       <Link to={`/p/${data.Id}`} className="nextPost__container">
@@ -20,7 +18,7 @@ export function NextPost({ data }) {
                src={
                   IS_MOBILE_DEVICE
                      ? data.BackgroundImageMobile
-                     : BackgroundImageDesktop
+                     : data.BackgroundImageDesktop
                }
             />
             <div className="nextPost__container--nextWord">
