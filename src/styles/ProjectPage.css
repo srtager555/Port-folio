@@ -163,3 +163,57 @@
    }
 
 }
+
+.nextPost__container {
+   display: block;
+   max-width: 300px;
+   width: 100%;
+   margin: 0 auto;
+   padding-bottom: 150px;
+   color: #fff;
+   text-decoration: none;
+}
+.nextPost__container .nextPost__background {
+   position: relative;
+   width: 100%;
+   margin-bottom: 70px;
+}
+.nextPost__container .nextPost__background img {
+   width: 100%;
+}
+
+.nextPost__container .nextPost__background .nextPost__container--nextWord {
+   position: absolute;
+   bottom: -30%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   align-items: center;
+   flex-direction: column-reverse;
+   mix-blend-mode: difference;
+}
+.nextPost__container .nextPost__background .nextPost__container--nextWord span:nth-child(1) {
+   font-size: 120px;
+   font-weight: 200;
+}
+.nextPost__container .nextPost__background .nextPost__container--nextWord span:nth-child(2) {
+   font-size: 30px;
+   font-family: "Shippori Mincho", serif;
+   margin-bottom: -15px;
+}
+.nextPost__container .nextPost__container--info {
+   display: flex;
+   justify-content:center;
+   align-items: center;  
+}
+.nextPost__container--info__title {
+   font-size: 16px;
+   text-transform: uppercase;
+   font-family: "Noto sans display", sans-serif;
+   font-weight: 200;
+}
+
+.nextPost__container--info__margin__bar, 
+.nextPost__container--info__typeJob {
+   display: none;
+}

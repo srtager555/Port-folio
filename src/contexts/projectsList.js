@@ -76,10 +76,10 @@ export const projectsList = [
       Description: "Description",
       Id: "wrapping-letters-homepage",
       PrincipalImageDesktop: "",
-      PrincipalImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
+      PrincipalImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       BackgroundImageDesktop:
          "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
-      BackgroundImageMobile: "https://i.ibb.co/b2JvX8R/coven-2x.jpg",
+      BackgroundImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       GaleryImages: [
          "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
          "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
