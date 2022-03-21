@@ -170,6 +170,7 @@
    padding-bottom: 150px;
    color: #fff;
    text-decoration: none;
+   cursor: pointer;
 }
 .nextPost__container .nextPost__background {
    position: relative;
