@@ -4,7 +4,7 @@ import WrappingLetters from "wrapping-letters-react";
 
 import { ImageWithText } from "../../contexts/projectsContexts";
 
-export function ImageProcess({ project, containerWitdh }) {
+export function ImageProcess({ project, containerWitdh, setA }) {
    const [imageWidth, setImageWidth] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
 
@@ -15,7 +15,10 @@ export function ImageProcess({ project, containerWitdh }) {
          return new Promise((resolve, reject) => {
             i.onload = () => {
                let width = i.naturalWidth;
-               resolve([width, index]);
+
+               setTimeout(()=>{
+                  resolve([width, index]);
+               }, 2000)
             };
          });
       });
@@ -24,11 +27,12 @@ export function ImageProcess({ project, containerWitdh }) {
          .then((value) => {
             setImageWidth(value);
             setIsLoading(false);
+            setA(true)
          })
          .catch((err) => {
             console.log(err);
          });
-   }, []);
+   }, [project]);
 
    const a = isLoading ? (
       <span>Xd</span>
@@ -46,14 +50,12 @@ export function ImageProcess({ project, containerWitdh }) {
                </div>
             );
          } else {
-            if (!image instanceof ImageWithText) {
-               throw new Error(
-                  "ImageWithText: image must be a string or an ImageWithText"
-               );
-            }
 
-            let imageW = imageWidth.find((a) => a[1] === index);
-            let imageWrap = imageW[0] <= containerWitdh * 0.6 ? true : false;
+            let imageW = imageWidth.find((a) => a[1] === index) || [800];
+            console.log(imageW)
+            let imageSize = imageW[0]
+            // console.log(imageSize)
+            let imageWrap = imageSize <= containerWitdh * 0.6 ? true : false;
 
             return (
                <div

@@ -1,18 +1,25 @@
 import React, { useEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { IS_MOBILE_DEVICE } from "../../contexts/constVarible";
 
-export function NextPost({ data }) {
+export function NextPost({ data, setA }) {
    let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
+   const navigate = useNavigate()
 
-   useEffect(() => {
-       console.log(IS_MOBILE_DEVICE)
-   }, []);
+   function changeNextRoute() {
+      console.log("?")
+      setA(false)
+      setTimeout(()=>{
+         navigate(`/p/${data.Id}`)
+         console.log("?")
+      }, 2000)
+   }
+   
    return (
-      <Link to={`/p/${data.Id}`} className="nextPost__container">
+      <div onClick={changeNextRoute} className="nextPost__container">
          <div className="nextPost__background">
             <img
                src={
@@ -35,6 +42,6 @@ export function NextPost({ data }) {
                {data.Job[0]}
             </span>
          </div>
-      </Link>
+      </div>
    );
 }

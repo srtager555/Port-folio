@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { HomePage } from "../pages/home";
@@ -16,12 +16,19 @@ function NotMatch() {
 }
 
 export function Router() {
+   const [a, setA] = useState(true)
    function handleResetScroll() {
       window.scrollTo(0, 0);
    }
 
+   useEffect(()=>{
+      console.log("Loaded", a)
+      // setA(false)
+   })
+
    useEffect(() => {
       handleResetScroll();
+      // console.log("Hola?")
    })
 
    return (
@@ -34,7 +41,7 @@ export function Router() {
                <Route
                   path="/p/:id"
                   element={
-                     <ProjectPage handleResetScroll={handleResetScroll} />
+                     <ProjectPage handleResetScroll={handleResetScroll} setA={setA} />
                   }
                />
                <Route path="*" element={<NotMatch />} />
