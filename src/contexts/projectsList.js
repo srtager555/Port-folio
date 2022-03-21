@@ -25,7 +25,7 @@ export const projectsList = [
          "Hello! I’m a young developer, my specialty is front-end development. I invite you to see my projects are simple, but interesting.",
       Id: "wrapping-letters",
       Job: ["code devepoler", "react"],
-      PrincipalImageDesktop: "",
+      PrincipalImageDesktop: "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
       PrincipalImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
       BackgroundImageDesktop:
          "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
@@ -76,7 +76,7 @@ export const projectsList = [
       Description: "Wrapping letters is a good library, but any library need a good documentation. I design and develop the site of this library, Enjoy Xd.",
       Id: "wrapping-letters-homepage",
       Job: ["Front-End devepoler", "react"],
-      PrincipalImageDesktop: "",
+      PrincipalImageDesktop: "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
       PrincipalImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       BackgroundImageDesktop:
          "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
@@ -95,7 +95,7 @@ export const projectsList = [
       Description: " Description",
       Id: "rynyk",
       Job: ["IA developer", "Python"],
-      PrincipalImageDesktop: "",
+      PrincipalImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
       PrincipalImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
       BackgroundImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
       BackgroundImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
@@ -120,7 +120,7 @@ export const projectsList = [
       Description: " Description",
       Id: "port-folio",
       Job: ["Front-End devepoler", "react"],
-      PrincipalImageDesktop: "",
+      PrincipalImageDesktop: "https://i.ibb.co/tCVxqdT/project-portfolio-next-Post.jpg",
       PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
       BackgroundImageDesktop:
          "https://i.ibb.co/tCVxqdT/project-portfolio-next-Post.jpg",
