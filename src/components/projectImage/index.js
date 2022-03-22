@@ -1,8 +1,5 @@
-// import { resolveHref } from "next/dist/shared/lib/router/router";
 import React, { useEffect, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
-
-import { ImageWithText } from "../../contexts/projectsContexts";
 
 export function ImageProcess({ project, containerWitdh, setA }) {
    const [imageWidth, setImageWidth] = useState([]);
@@ -52,9 +49,7 @@ export function ImageProcess({ project, containerWitdh, setA }) {
          } else {
 
             let imageW = imageWidth.find((a) => a[1] === index) || [800];
-            console.log(imageW)
             let imageSize = imageW[0]
-            // console.log(imageSize)
             let imageWrap = imageSize <= containerWitdh * 0.6 ? true : false;
 
             return (

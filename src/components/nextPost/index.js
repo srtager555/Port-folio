@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { IS_MOBILE_DEVICE } from "../../contexts/constVarible";
@@ -10,11 +10,9 @@ export function NextPost({ data, setA }) {
    const navigate = useNavigate()
 
    function changeNextRoute() {
-      console.log("?")
       setA(false)
       setTimeout(()=>{
          navigate(`/p/${data.Id}`)
-         console.log("?")
       }, 2000)
    }
    

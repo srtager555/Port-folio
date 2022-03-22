@@ -9,14 +9,13 @@ import { HeaderProjects } from "../../components/headerProjects";
 
 import "../../styles/ProjectPage.css";
 
-export function ProjectPage({ handleResetScroll, setA }) {
+export function ProjectPage({ handleResetScroll, setLoader }) {
    const containerContentRef = useRef(null);
 
    const { id } = useParams();
    const project = ProjectsElementList.getProjectById(id);
 
    const [containerContentSize, setContainerContetSize] = useState(0);
-   const [projectLoaded, setProjectLoaded] = useState(true);
 
    if (!project) {
       return <div>404</div>;
@@ -28,13 +27,10 @@ export function ProjectPage({ handleResetScroll, setA }) {
       setContainerContetSize(containerContentRef.current.offsetWidth);
    }
 
-   // useEffect(() => {
-   //    console.log("Loaded?");
-   // });
-
-   // useEffect(() => {
-   //    handleResetScroll();
-   // }, [id]);
+   useEffect(() => {
+      setLoader(false)
+      handleResetScroll();
+   }, [id]);
 
    useEffect(() => {
       handleContainerSize();
@@ -44,9 +40,6 @@ export function ProjectPage({ handleResetScroll, setA }) {
 
    return (
       <>
-         {/* <div className={`container loader ${projectLoaded ? "loading" : ""}`}>
-            <span>Loading.. XDXDXD</span>
-         </div> */}
          <div className="container project">
             <div className="container__scrollProgress">
                <div className="container__scrollProgress__bar"></div>
@@ -57,10 +50,10 @@ export function ProjectPage({ handleResetScroll, setA }) {
                <ImageProcess
                   containerWitdh={containerContentSize}
                   project={project}
-                  setA={setA}
+                  setLoader={setLoader}
                />
             </div>
-            <NextPost data={nextPostIndex} setA={setA} />
+            <NextPost data={nextPostIndex} setLoader={setLoader} />
          </div>
       </>
    );
