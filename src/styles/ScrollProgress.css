@@ -34,3 +34,12 @@
        bottom: 10%;
     }
 }
+
+@media (min-width: 1280px) {
+    .container__scrollProgress {
+        transform: translateX(-50%) rotate(90deg);
+        left: 10%;
+        top: 50%;
+        width: 36%;
+    }
+}
