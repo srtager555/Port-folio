@@ -8,6 +8,7 @@ import { NextPost } from "../../components/nextPost";
 import { HeaderProjects } from "../../components/headerProjects";
 
 import "../../styles/ProjectPage.css";
+import { ScrollProgress } from "../../components/ScrollProgress";
 
 export function ProjectPage({ handleResetScroll, setLoader }) {
    const containerContentRef = useRef(null);
@@ -41,10 +42,7 @@ export function ProjectPage({ handleResetScroll, setLoader }) {
    return (
       <>
          <div className="container project">
-            <div className="container__scrollProgress">
-               <div className="container__scrollProgress__bar"></div>
-               <div className="container__scrollProgress__smallBar"></div>
-            </div>
+           <ScrollProgress />
             <HeaderProjects project={project} />
             <div ref={containerContentRef} className="project__content">
                <ImageProcess
