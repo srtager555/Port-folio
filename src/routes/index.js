@@ -6,6 +6,7 @@ import { ProjectPage } from "../pages/projects";
 
 import { Navbar } from "../components/navbar";
 import { Background } from "../components/background";
+import { LoadScreen } from "../components/loadScreen";
 
 function NotMatch() {
    return (
@@ -16,23 +17,23 @@ function NotMatch() {
 }
 
 export function Router() {
-   const [a, setA] = useState(true)
+   const [loader, setLoader] = useState(false)
    function handleResetScroll() {
       window.scrollTo(0, 0);
    }
 
    useEffect(()=>{
-      console.log("Loaded", a)
-      // setA(false)
-   })
-
+      setLoader(true)
+   }, [])
+   
    useEffect(() => {
+      console.log("Loaded", loader)
       handleResetScroll();
-      // console.log("Hola?")
    })
 
    return (
       <>
+      <LoadScreen loaded={loader}/>
          <Navbar handleResetScroll={handleResetScroll} />
          <Background />
          <div className="container-content">
@@ -41,7 +42,7 @@ export function Router() {
                <Route
                   path="/p/:id"
                   element={
-                     <ProjectPage handleResetScroll={handleResetScroll} setA={setA} />
+                     <ProjectPage handleResetScroll={handleResetScroll} setLoader={setLoader} />
                   }
                />
                <Route path="*" element={<NotMatch />} />
