@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
-export function ImageProcess({ project, containerWitdh, setA }) {
+export function ImageProcess({ project, containerWitdh, setLoader }) {
    const [imageWidth, setImageWidth] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +24,7 @@ export function ImageProcess({ project, containerWitdh, setA }) {
          .then((value) => {
             setImageWidth(value);
             setIsLoading(false);
-            setA(true)
+            setLoader(true)
          })
          .catch((err) => {
             console.log(err);

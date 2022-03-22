@@ -5,15 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { IS_MOBILE_DEVICE } from "../../contexts/constVarible";
 
-export function NextPost({ data, setA }) {
+export function NextPost({ data, setLoader }) {
    let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
    const navigate = useNavigate()
 
    function changeNextRoute() {
-      setA(false)
+      setLoader(false)
       setTimeout(()=>{
          navigate(`/p/${data.Id}`)
-      }, 2000)
+      }, 1000)
    }
    
    return (
