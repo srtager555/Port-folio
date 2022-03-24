@@ -10,7 +10,7 @@ import { HeaderProjects } from "../../components/headerProjects";
 import "../../styles/ProjectPage.css";
 import { ScrollProgress } from "../../components/ScrollProgress";
 
-export function ProjectPage({ handleResetScroll, setLoader }) {
+export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    const containerContentRef = useRef(null);
 
    const { id } = useParams();
@@ -35,6 +35,8 @@ export function ProjectPage({ handleResetScroll, setLoader }) {
 
    useEffect(() => {
       handleContainerSize();
+      setInHome(false)
+
       window.addEventListener("resize", handleContainerSize);
       return () => window.removeEventListener("resize", handleContainerSize);
    }, []);

@@ -20,6 +20,8 @@ function NotMatch() {
 
 export function Router() {
    const [loader, setLoader] = useState(false);
+   const [inHome, setInHome] = useState(false);
+
    function handleResetScroll() {
       window.scrollTo(0, 0);
    }
@@ -28,9 +30,12 @@ export function Router() {
       setLoader(true);
    }, []);
 
+   //This guy reset any scroll when you change the route(The content of the page)
    useEffect(() => {
-      console.log("Loaded", loader);
+      //This guy probaly is not the best way to do this, but it works
       handleResetScroll();
+
+      console.log(inHome)
    });
 
    return (
@@ -38,16 +43,17 @@ export function Router() {
          <LoadScreen loaded={loader} />
          <Background />
          <div className={`opacity-container ${loader ? "active" : ""}`}>
-            <Navbar handleResetScroll={handleResetScroll} />
+            <Navbar handleResetScroll={handleResetScroll} inHome={inHome} />
             <div className="container-content">
                <Routes>
-                  <Route path="/" element={<HomePage />} />
+                  <Route path="/" element={<HomePage setInHome={setInHome} />} />
                   <Route
                      path="/p/:id"
                      element={
                         <ProjectPage
                            handleResetScroll={handleResetScroll}
                            setLoader={setLoader}
+                           setInHome={setInHome}
                         />
                      }
                   />
