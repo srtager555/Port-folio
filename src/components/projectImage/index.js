@@ -12,10 +12,7 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
          return new Promise((resolve, reject) => {
             i.onload = () => {
                let width = i.naturalWidth;
-
-               setTimeout(()=>{
                   resolve([width, index]);
-               }, 2000)
             };
          });
       });
