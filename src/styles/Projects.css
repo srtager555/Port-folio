@@ -203,7 +203,7 @@
    align-items: start;
    flex-direction: column;
    width: 95%;
-   height: 100%;
+   min-height: 100%;
    margin: 0 auto;
 }
 .container.container-projects
