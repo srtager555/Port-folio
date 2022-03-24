@@ -6,4 +6,5 @@
 .opacity-container.active {
     opacity: 1;
     visibility: visible;
+    transition-delay:  0.8s;
 }
