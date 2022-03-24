@@ -13,7 +13,6 @@ export function LoadScreen({ loaded }) {
           setLoadEnded(false)
       }
    }, [loaded]);
-   console.log(loaded, "b");
    return (
       <div className={`container loader ${loadEnded ? "" : "loading"}`}>
          <span>{loaded ? "Loaded" : "Loading..."}</span>
