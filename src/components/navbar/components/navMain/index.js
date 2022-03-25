@@ -17,11 +17,7 @@ export function NavMain({ handleResetScroll }) {
                      &&
                   </Link>
                </div>
-               <div className="equalizer">
-                  <div className="equalizer__bar"></div>
-                  <div className="equalizer__bar"></div>
-                  <div className="equalizer__bar"></div>
-               </div>
+
             </div>
             <div className="nav__container--cta">
                <a href="#home">let's talk!</a>

@@ -45,11 +45,6 @@ export function NavHome({ handleResetScroll }) {
                      <a href="#projects">Projects</a>
                      <a href="#lest-talk">Lest Talk!</a>
                   </div>
-                  <div className="equalizer">
-                     <div className="equalizer__bar"></div>
-                     <div className="equalizer__bar"></div>
-                     <div className="equalizer__bar"></div>
-                  </div>
                </>
             ) : (
                <>
@@ -68,11 +63,6 @@ export function NavHome({ handleResetScroll }) {
                         <a href="#home">Home</a>
                         <a href="#projects">Projects</a>
                         <a href="#lest-talk">Lest Talk!</a>
-                     </div>
-                     <div className="equalizer">
-                        <div className="equalizer__bar"></div>
-                        <div className="equalizer__bar"></div>
-                        <div className="equalizer__bar"></div>
                      </div>
                   </div>
                </>

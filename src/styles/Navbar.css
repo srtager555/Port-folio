@@ -37,10 +37,11 @@
 .nav__container.home {
    height: 52px;
    padding: 0.5rem 1rem;
+   max-width: 1024px;
 }
 .nav__container .nav__container--main {
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
    height: 100%;
    width: calc(40% - 1.1rem);
