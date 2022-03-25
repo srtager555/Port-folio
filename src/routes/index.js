@@ -26,14 +26,16 @@ export function Router() {
       window.scrollTo(0, 0);
    }
 
-   useEffect(() => {
-      setLoader(true);
-   }, []);
-
+   // useEffect(() => {
+   //    setLoader(true);
+   // }, []);
+   
    //This guy reset any scroll when you change the route(The content of the page)
    useEffect(() => {
       //This guy probaly is not the best way to do this, but it works
       handleResetScroll();
+      console.log("a")
+      console.log(loader)
    });
 
    return (
@@ -44,7 +46,7 @@ export function Router() {
             <Navbar handleResetScroll={handleResetScroll} inHome={inHome} />
             <div className="container-content">
                <Routes>
-                  <Route path="/" element={<HomePage setInHome={setInHome} />} />
+                  <Route path="/" element={<HomePage setInHome={setInHome} setLoader={setLoader} />} />
                   <Route
                      path="/p/:id"
                      element={

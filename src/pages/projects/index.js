@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
 import { useParams } from "react-router-dom";
 
@@ -28,15 +28,17 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
       setContainerContetSize(containerContentRef.current.offsetWidth);
    }
 
-   useEffect(() => {
-      setLoader(false)
+   useLayoutEffect(() => {
+      handleContainerSize();
+      setInHome(false);
+   }, []);
+
+   useLayoutEffect(() => {
+      setLoader(false);
       handleResetScroll();
    }, [id]);
 
    useEffect(() => {
-      handleContainerSize();
-      setInHome(false)
-
       window.addEventListener("resize", handleContainerSize);
       return () => window.removeEventListener("resize", handleContainerSize);
    }, []);
@@ -44,7 +46,7 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    return (
       <>
          <div className="container project">
-           <ScrollProgress />
+            <ScrollProgress />
             <HeaderProjects project={project} />
             <div ref={containerContentRef} className="project__content">
                <ImageProcess
