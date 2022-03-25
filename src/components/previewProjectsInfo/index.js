@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
-import { IS_MOBILE } from "../../contexts/constVarible";
+import { IS_MOBILE_DEVICE, IS_MOBILE } from "../../contexts/constVarible";
 
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ function itsShowTime(selectedProjetc, setSelectedProject, infoToShow) {
             <div className="container__projectsInfo--background__image">
                 <img
                     onLoad={() => setSelectedProject(true)}
-                    src={IS_MOBILE ? infoToShow.BackgroundImageMobile : infoToShow.BackgroundImageDesktop}
+                    src={IS_MOBILE_DEVICE ? infoToShow.BackgroundImageMobile : infoToShow.BackgroundImageDesktop}
                     alt={infoToShow.Title}
                 />
             </div>
