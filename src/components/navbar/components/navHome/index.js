@@ -32,7 +32,7 @@ export function NavHome({ handleResetScroll }) {
    return (
       <>
          <div className={`nav__background ${isOpen ? "open" : ""}`}></div>
-         <nav className="nav__container">
+         <nav className="nav__container home">
             <div className="nav__logo">
                <Link onClick={handleResetScroll} to="/">
                   &&

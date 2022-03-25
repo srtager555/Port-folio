@@ -1,0 +1,72 @@
+.nav__background__container {
+   position: fixed;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
+   max-width: 1280px;
+   height: 85px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 10;
+   mix-blend-mode: exclusion;
+}
+.nav__background__container .nav__background--main {
+   height: 100%;
+   width: 195px;
+   background-color: #fff;
+}
+
+.nav__container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.1rem;
+    z-index: 10;
+    max-width: 1280px;
+    mix-blend-mode: exclusion;
+}
+.nav__container.home {
+    height: 52px;
+    padding: 0.5rem 1rem;
+ }
+.nav__container .nav__container--main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 150px;
+}
+.nav__container :is(.nav__logo > a, .nav__container--main .nav__logo a ) {
+    font-family: "Poppins";
+    font-size: 27px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+}
+.nav__container .nav__container--main .nav__logo > a {
+    font-size: 35px;
+}
+.nav__container .nav__container--cta {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.nav__container .nav__container--cta > a {
+    font-family: "Yaldevi", sans-serif;
+    font-size: 31px;
+    font-weight: 100;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
