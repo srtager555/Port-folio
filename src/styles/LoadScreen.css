@@ -18,3 +18,9 @@
     visibility: visible;
     transition: all 0.2s ease-in-out;
 }
+
+.container.loader.loader--exit {
+    opacity: 1;
+    top: 100%;
+    transition: all 1250ms cubic-bezier(.44,.43,.53,.97);
+}
