@@ -82,7 +82,7 @@
    align-items: center;
    visibility: hidden;
    opacity: 0;
-   transition: all 100ms ease, opacity 200ms;
+   transition:  opacity 200ms;
    /* padding-left: 110%; */
 }
 
@@ -163,7 +163,7 @@
    height: 100%;
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-start;
    overflow: hidden;
    z-index: -1;
 }
@@ -199,8 +199,8 @@
    .container__projectsInfo--container__content
    .container__projectsInfo--container__content--text {
    display: flex;
-   justify-content: end;
-   align-items: start;
+   justify-content: flex-end;
+   align-items: flex-start;
    flex-direction: column;
    width: 95%;
    min-height: 100%;
