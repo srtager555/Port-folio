@@ -75,7 +75,7 @@ export const projectsList = [
       Title: "WL Website",
       Description: "Wrapping letters is a good library, but any library need a good documentation. I design and develop the site of this library, Enjoy Xd.",
       Id: "wrapping-letters-homepage",
-      Job: ["Front-End devepoler", "react"],
+      Job: ["Front devepoler", "react"],
       PrincipalImageDesktop: "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
       PrincipalImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       BackgroundImageDesktop:
