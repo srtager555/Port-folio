@@ -93,7 +93,7 @@
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
-   height: 30%;
+   height: 264px;
    overflow: hidden;
 }
 .container.loader
@@ -165,9 +165,6 @@
    }
 }
 @media (max-width: 410px) {
-    .container.loader .loader--placeholder .loader--placeholder--innerLetter {
-      height: 40%;
-   }
    .container.loader .loader--successText {
       font-size: 150px;
    }
