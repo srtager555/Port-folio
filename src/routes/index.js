@@ -34,7 +34,6 @@ export function Router() {
    useEffect(() => {
       //This guy probaly is not the best way to do this, but it works
       handleResetScroll();
-      console.log(inHome)
    });
 
    return (

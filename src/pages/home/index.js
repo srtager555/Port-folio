@@ -16,7 +16,6 @@ export function HomePage({ setInHome, setLoader }) {
    useEffect(() => {
       setTimeout(() => {
          setLoader(true);
-         console.log("b");
       }, 1000);
    }, []);
 
