@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
+import { getRandomPhrase } from "../../contexts/randomPhrases";
 
 import "../../styles/LoadScreen.css";
 
 export function LoadScreen({ loaded, inHome }) {
-   const [loadEnded, setLoadEnded] = useState(false);
    const [arrClassAnimeCont, setArrClassAnimeCont] = useState([]);
    const [arrClassRoutes, setArrClassRoutes] = useState([]);
    const [arrClassAnimExit, setArrClassAnimExit] = useState([]);
+   const [randomPhrase, setRandomPhrase] = useState("");
 
    function handleLoadEnd() {
-      setArrClassAnimExit(["loader--placeholder--loaderEnded"])
+      setArrClassAnimExit(["loader--placeholder--loaderEnded"]);
       setTimeout(() => {
          setArrClassAnimeCont(["loader--exit"]); // loader--exit
          setTimeout(() => {
@@ -22,8 +23,6 @@ export function LoadScreen({ loaded, inHome }) {
    useEffect(() => {
       if (inHome) setArrClassRoutes(["home--style"]);
       else setArrClassRoutes([""]);
-      console.log(inHome);
-      console.log(arrClassRoutes);
    }, [inHome]);
 
    useLayoutEffect(() => {
@@ -31,9 +30,8 @@ export function LoadScreen({ loaded, inHome }) {
    }, [loaded]);
 
    useEffect(() => {
-      if (loaded) {
-         handleLoadEnd();
-      }
+      if (loaded) handleLoadEnd();
+      else setRandomPhrase(getRandomPhrase());
    }, [loaded]);
 
    return (
@@ -54,7 +52,7 @@ export function LoadScreen({ loaded, inHome }) {
          </div>
 
          <div className="loader--randomPhrase">
-            <span>A random phrase Xd, its a good idea...</span>
+            <span>{randomPhrase}</span>
          </div>
       </div>
    );
