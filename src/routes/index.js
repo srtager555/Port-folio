@@ -34,13 +34,12 @@ export function Router() {
    useEffect(() => {
       //This guy probaly is not the best way to do this, but it works
       handleResetScroll();
-      console.log("a")
-      console.log(loader)
+      console.log(inHome)
    });
 
    return (
       <>
-         <LoadScreen loaded={loader} />
+         <LoadScreen loaded={loader} inHome={inHome} />
          <Background />
          <div className={`opacity-container ${loader ? "active" : ""}`}>
             <Navbar handleResetScroll={handleResetScroll} inHome={inHome} />
