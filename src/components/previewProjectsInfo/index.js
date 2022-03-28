@@ -22,7 +22,7 @@ function itsShowTime(selectedProjetc, setSelectedProject, infoToShow) {
             <div className="container__projectsInfo--background__image">
                 <img
                     onLoad={() => setSelectedProject(true)}
-                    src={IS_MOBILE_DEVICE ? infoToShow.BackgroundImageMobile : infoToShow.BackgroundImageDesktop}
+                    src={IS_MOBILE_DEVICE() ? infoToShow.BackgroundImageMobile : infoToShow.BackgroundImageDesktop}
                     alt={infoToShow.Title}
                 />
             </div>
@@ -46,7 +46,7 @@ function itsShowTime(selectedProjetc, setSelectedProject, infoToShow) {
                         }]}
                         structure={structureInfoProject} />
                 </div>
-                {IS_MOBILE ? anchorMobile(infoToShow) : null}
+                {IS_MOBILE() ? anchorMobile(infoToShow) : null}
             </div>
         </div>
     </div>;
