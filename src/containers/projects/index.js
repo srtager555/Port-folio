@@ -125,8 +125,8 @@ export function ProjectsContainer() {
             setSelectedProject(true);
          }
       }
-
-      if (IS_MOBILE) {
+      
+      if (IS_MOBILE()) {
          imageLoaded();
 
          function hiddenPreviewProject() {

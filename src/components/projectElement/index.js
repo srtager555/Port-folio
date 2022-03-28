@@ -9,7 +9,7 @@ export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, Project
     const mobileCard = cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, mobileCardElement);
     const desktopCard = cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, desktopCardElement);
 
-    const projectCard = IS_MOBILE ? mobileCard : desktopCard;
+    const projectCard = IS_MOBILE() ? mobileCard : desktopCard;
 
     return projectCard;
 }
