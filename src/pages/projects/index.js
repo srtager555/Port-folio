@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
-import WrappingLetters from "wrapping-letters-react";
 import { useParams } from "react-router-dom";
 
 import { ProjectsElementList } from "../../contexts/projectsContexts";

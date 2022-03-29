@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import WrappingLetters from "wrapping-letters-react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ProjectsElementList } from "../../contexts/projectsContexts";
@@ -22,7 +21,7 @@ export function NextPost({ data, setLoader }) {
             <div className="nextPost__background">
                <img
                   src={
-                     IS_MOBILE_DEVICE
+                     IS_MOBILE_DEVICE()
                         ? data.BackgroundImageMobile
                         : data.BackgroundImageDesktop
                   }
