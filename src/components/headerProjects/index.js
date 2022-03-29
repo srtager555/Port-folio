@@ -20,7 +20,7 @@ function HeaderDescription({ project }) {
 function HeaderImage({ project }) {
    return (
       <div className="project__background">
-         <img src={IS_MOBILE_DEVICE ? project.PrincipalImageMobile : project.PrincipalImageDesktop} alt={project.Title} />
+         <img src={IS_MOBILE_DEVICE() ? project.PrincipalImageMobile : project.PrincipalImageDesktop} alt={project.Title} />
       </div>
    );
 }
@@ -53,7 +53,7 @@ function HeaderDesktop({ project }) {
 export function HeaderProjects({ project }) {
    return (
       <header className="project__header">
-         {IS_MOBILE_DEVICE ? (
+         {IS_MOBILE_DEVICE() ? (
             <HeaderMobile project={project} />
          ) : (
             <HeaderDesktop project={project} />
