@@ -6,30 +6,20 @@ export const NAVBAR_MOBILE_SIZE = 510;
 
 let IS_MOBILE__ = false;
 
-function handleIsMobile(param) {
-   param = window.innerWidth < MOBILE_DEVICE_SIZE;
-}
-
-window.addEventListener("resize", () => handleIsMobile(IS_MOBILE__));
+window.addEventListener("resize", () => IS_MOBILE());
 
 function IS_MOBILE() {
-   handleIsMobile(IS_MOBILE__);
+   IS_MOBILE__ = window.innerWidth < MOBILE_DEVICE_SIZE;
 
    return IS_MOBILE__;
 }
 
 let IS_MOBILE_DEVICE__ = false;
 
-function handleIsMobileDevice(param) {
-   param = window.innerWidth < MOBILE_DEVICE_SIZE;
-}
-
-window.addEventListener("resize", () =>
-   handleIsMobileDevice(IS_MOBILE_DEVICE__)
-);
+window.addEventListener("resize", () => IS_MOBILE_DEVICE(IS_MOBILE_DEVICE__));
 
 function IS_MOBILE_DEVICE() {
-   handleIsMobileDevice(IS_MOBILE_DEVICE__);
+   IS_MOBILE_DEVICE__ = window.innerWidth < MOBILE_SIZE;
 
    return IS_MOBILE_DEVICE__;
 }

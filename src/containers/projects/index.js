@@ -9,13 +9,6 @@ import { IS_MOBILE } from "../../contexts/constVarible";
 
 import "../../styles/Projects.css";
 
-function strucutureTitle({ letter, cssClass, ...props }) {
-   return (
-      <div className="project-words" {...props}>
-         <span> {letter} </span>
-      </div>
-   );
-}
 
 export function ProjectsContainer() {
    const ProjectsRef = useRef(null);
@@ -197,11 +190,9 @@ export function ProjectsContainer() {
                   word="I have worked in"
                   wordOptions={[
                      {
-                        ClassToAdd: "project-words",
                         PerWord: true,
                      },
                   ]}
-                  structure={strucutureTitle}
                />
             </div>
          </div>
