@@ -164,7 +164,7 @@
       text-align: center;
    }
 }
-@media (max-width: 410px) {
+@media (max-width: 415px) {
    .container.loader .loader--successText {
       font-size: 150px;
    }

@@ -229,7 +229,6 @@
    .container__projectsInfo--container__content
    .container__projectsInfo--container__content--text
    .container-title
-   .container-words
    span {
    color: #fff;
    text-transform: uppercase;
@@ -243,7 +242,6 @@
    .container__projectsInfo--container__content
    .container__projectsInfo--container__content--text
    .container-date
-   .container-words
    span {
    color: #fff;
    font-family: "Noto Sans Display", sans-serif;
@@ -319,7 +317,6 @@
       .container__projectsInfo--container__content
       .container__projectsInfo--container__content--text
       .container-title
-      .container-words
       span {
       font-size: 45px;
    }
@@ -329,7 +326,6 @@
       .container__projectsInfo--container__content
       .container__projectsInfo--container__content--text
       .container-date
-      .container-words
       span {
       font-size: 25px;
    }

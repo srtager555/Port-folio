@@ -80,3 +80,8 @@
         font-size: 26px;
      }
 }
+@media (max-width: 415px) {
+   .nav__container .nav__container--cta > a {
+      font-size: 25px;
+   }
+}

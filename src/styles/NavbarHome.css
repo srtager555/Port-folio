@@ -23,12 +23,28 @@
    align-items: center;
 }
 .nav__container .nav__links a {
+   position: relative;
    text-decoration: none;
    color: #fff;
    margin-left: 15px;
    text-transform: uppercase;
    font-family: "Noto Sans Display";
    font-weight: 200;
+}
+.nav__container .nav__links a::before {
+   content: "";
+   position: absolute;
+   bottom: -1%;
+   left: 50%;
+   transform: translateX(-50%);
+   display: block;
+   width: 0;
+   height: 2px;
+   background-color: #fff;
+   transition: 0.5s;
+}
+.nav__container .nav__links a:hover::before {
+   width: 100%;
 }
 .nav__container .nav__links a:first-child {
    margin-left: 0;

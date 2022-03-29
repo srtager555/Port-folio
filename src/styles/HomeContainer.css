@@ -226,4 +226,10 @@
    .container-home .container__title .container__title-hero .container__job {
       font-size: 25px;
    }
+   .container__description .container__text {
+      font-size: 15px;
+  }
+   .container__slider {
+      margin-top: 15px;
+  }
 }
