@@ -5,9 +5,10 @@ import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { ImageProcess } from "../../components/projectImage";
 import { NextPost } from "../../components/nextPost";
 import { HeaderProjects } from "../../components/headerProjects";
+import { HelmetComponent } from "../../components/Helmet";
+import { ScrollProgress } from "../../components/ScrollProgress";
 
 import "../../styles/ProjectPage.css";
-import { ScrollProgress } from "../../components/ScrollProgress";
 
 export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    const containerContentRef = useRef(null);
@@ -44,6 +45,7 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
 
    return (
       <>
+         <HelmetComponent title={project.Title}  description={project.Description} image={project.PrincipalImageDesktop} />
          <div className="container project">
             <ScrollProgress />
             <HeaderProjects project={project} />
