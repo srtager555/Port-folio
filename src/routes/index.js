@@ -3,20 +3,13 @@ import { Routes, Route } from "react-router-dom";
 
 import { HomePage } from "../pages/home";
 import { ProjectPage } from "../pages/projects";
+import { NotMatch } from "../pages/NotMatch";
 
 import { Navbar } from "../components/navbar";
 import { Background } from "../components/background";
 import { LoadScreen } from "../components/loadScreen";
 
 import "../styles/OpacityContainer.css"
-
-function NotMatch() {
-   return (
-      <div>
-         <h1>404</h1>
-      </div>
-   );
-}
 
 export function Router() {
    const [loader, setLoader] = useState(false);
@@ -55,7 +48,7 @@ export function Router() {
                         />
                      }
                   />
-                  <Route path="*" element={<NotMatch />} />
+                  <Route path="*" element={<NotMatch setInHome={setInHome} setLoader={setLoader} />} />
                </Routes>
             </div>
          </div>

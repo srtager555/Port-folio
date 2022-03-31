@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import { NotMatch } from "../NotMatch";
 import { ProjectsElementList } from "../../contexts/projectsContexts";
 import { ImageProcess } from "../../components/projectImage";
 import { NextPost } from "../../components/nextPost";
@@ -19,7 +20,7 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    const [containerContentSize, setContainerContetSize] = useState(0);
 
    if (!project) {
-      return <div>404</div>;
+      return <NotMatch />;
    }
 
    const nextPostIndex = ProjectsElementList.getNextProjectAvailableById(id);
