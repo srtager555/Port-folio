@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
 import "../../styles/HomeContainer.css";
 
 export function HomeContainer({ l }) {
    const [isMobile, setIsMobile] = useState(false);
+   const [isAppleDevice, setIsAppleDevice] = useState(false);
 
    const handleIsMobile = () => {
       if (window.innerWidth > 510) {
@@ -13,7 +14,16 @@ export function HomeContainer({ l }) {
          setIsMobile(true);
       }
    };
+
+   useLayoutEffect(() => {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/iPad|iPhone|iPod|Macintosh/.test(userAgent) && !window.MSStream) {
+         setIsAppleDevice(true);
+      }
+   }, []);
+
    useEffect(() => {
+      console.log(navigator.userAgent);
       handleIsMobile();
       window.addEventListener("resize", handleIsMobile);
       return () => {
@@ -24,7 +34,9 @@ export function HomeContainer({ l }) {
    return (
       <>
          <div ref={l} id="home" className="container container-home">
-            <div className="container__title">
+            <div
+               className={`container__title ${isAppleDevice ? "apple0_0" : ""}`}
+            >
                {isMobile ? (
                   <div className="container__title-image mobile">
                      <img
@@ -51,7 +63,11 @@ export function HomeContainer({ l }) {
             </div>
             <div className="container__description">
                <div className="container__text">
-               <span>Hello! I’m a young developer, my specialty is front-end development. I invite you to see my projects are simple, but interesting.</span>
+                  <span>
+                     Hello! I’m a young developer, my specialty is front-end
+                     development. I invite you to see my projects are simple,
+                     but interesting.
+                  </span>
                </div>
                <div className="container__slider">
                   <span className="container__slider-item">

@@ -40,6 +40,10 @@
    transition: 500ms 1s;
    z-index: 0;
 }
+.container-home .container__title.apple0_0 .container__title-hero {
+   mix-blend-mode: normal;
+   color: #000;
+}
 .container-home .container__title .container__title-hero .container__name {
    font-size: 90px;
    text-transform: uppercase;
@@ -47,6 +51,9 @@
 .container-home .container__title .container__title-hero .container__name span {
    display: inline-block;
    white-space: pre-wrap;
+}
+.container-home .container__title.apple0_0 .container__title-hero .container__name span {
+   text-shadow: 0px 20px 30px #fff8;
 }
 
 .container-home .container__title .container__title-hero .container__job {
