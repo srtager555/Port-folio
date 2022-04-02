@@ -20,7 +20,7 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    const [containerContentSize, setContainerContetSize] = useState(0);
 
    if (!project) {
-      return <NotMatch />;
+      return <NotMatch setInHome={setInHome} setLoader={setLoader} />;
    }
 
    const nextPostIndex = ProjectsElementList.getNextProjectAvailableById(id);
