@@ -9,6 +9,7 @@ export function PreviewProjectsInfo({
    selectedProjetc,
    setSelectedProject,
 }) {
+   React.useEffect(() => { console.log(infoToShow) }, [])
    return itsShowTime(selectedProjetc, setSelectedProject, infoToShow);
 }
 
@@ -25,8 +26,8 @@ function itsShowTime(selectedProjetc, setSelectedProject, infoToShow) {
                   onLoad={() => setSelectedProject(true)}
                   src={
                      IS_MOBILE_DEVICE()
-                        ? infoToShow.BackgroundImageMobile
-                        : infoToShow.BackgroundImageDesktop
+                        ? infoToShow.BackgroundImageMobile || ""
+                        : infoToShow.BackgroundImageDesktop || ""
                   }
                   alt={infoToShow.Title}
                />

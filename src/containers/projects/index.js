@@ -9,7 +9,6 @@ import { IS_MOBILE } from "../../contexts/constVarible";
 
 import "../../styles/Projects.css";
 
-
 export function ProjectsContainer() {
    const ProjectsRef = useRef(null);
    const ProjectObserverRef = useRef(null);
@@ -22,8 +21,8 @@ export function ProjectsContainer() {
    const heightMultiplier = 1.8;
    const recentProjectsLength =
       ProjectsElementList.getRecentProjectsAvailable().length;
-   const recentProjects = ProjectsElementList.getRecentProjects();
-   const defaultInfoProject = { Title: ".", Date: "." };
+   const recentProjects = ProjectsElementList.getRecentProjectsAvailable();
+   const defaultInfoProject = { Title: ".", Date: ".", };
 
    const [ViewProjectsScroll, setViewProjectsScroll] = useState({
       marginLeft: `${leftMargin}px`,
@@ -104,11 +103,15 @@ export function ProjectsContainer() {
    }
 
    function previewProjects(event, mouseOver) {
+      
+      console.log(showPreviewProject);
       setShowPreviewProject(
          recentProjects.find(
             (project) => project.Id === event.target.parentElement.id
          )
       );
+      console.log(showPreviewProject);
+      
       setIsVisible(false);
 
       function imageLoaded() {
@@ -118,7 +121,7 @@ export function ProjectsContainer() {
             setSelectedProject(true);
          }
       }
-      
+
       if (IS_MOBILE()) {
          imageLoaded();
 
@@ -160,6 +163,7 @@ export function ProjectsContainer() {
 
    useEffect(() => {
       // intilize the projects height and the projects margin
+      console.log(recentProjects)
       handleHeightProjectSection();
       handleScrollMoventToLeft();
 

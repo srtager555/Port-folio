@@ -47,31 +47,35 @@ export function ImageWithText({ Image = "", Title = "", Description = "" }) {
 
 function InstanceElementList(projects) {
    this.projects = projects || [];
-};
+}
 
 InstanceElementList.prototype.getProjects = function () {
-   return this.projects
+   return this.projects;
 };
 InstanceElementList.prototype.getAvailableProjects = function () {
    return this.getProjects().filter((projects) => projects.Available === true);
 };
 
 InstanceElementList.prototype.a = function () {
-   return () => console.log(this.projects, "a" )
+   return () => console.log(this.projects, "a");
 };
 
 InstanceElementList.prototype.getRecentProjects = function () {
-   return this.getProjects().slice(
-      this.getProjects().length - 4,
-      this.getProjects().length
-   );
+   return this.getProjects().length >= 5
+      ? this.getProjects().slice(
+           this.getProjects().length - 5,
+           this.getProjects().length
+        )
+      : this.getProjects();
 };
 
 InstanceElementList.prototype.getRecentProjectsAvailable = function () {
-   return this.getAvailableProjects().slice(
-      this.getAvailableProjects().length - 4,
-      this.getAvailableProjects().length
-   );
+   return this.getAvailableProjects().length >= 5
+      ? this.getAvailableProjects().slice(
+           this.getAvailableProjects().length - 5,
+           this.getAvailableProjects().length
+        )
+      : this.getAvailableProjects();
 };
 
 InstanceElementList.prototype.getProjectById = function (id) {
@@ -88,7 +92,8 @@ InstanceElementList.prototype.getProjectIndexAvailableById = function (id) {
 InstanceElementList.prototype.getNextProjectAvailableById = function (id) {
    let postIndex = this.getProjectIndexAvailableById(id);
 
-   return this.getAvailableProjects()[postIndex + 1] <= this.getAvailableProjects()
+   return this.getAvailableProjects()[postIndex + 1] <=
+      this.getAvailableProjects()
       ? this.getAvailableProjects()[postIndex + 1]
       : this.getAvailableProjects()[0];
 };
@@ -96,9 +101,7 @@ InstanceElementList.prototype.getNextProjectAvailableById = function (id) {
 InstanceElementList.prototype.getNextProjectById = function (id) {
    let postIndex = this.getProjectIndexById(id);
 
-   return this[postIndex + 1] <= this
-      ? this[postIndex + 1]
-      : this[0];
+   return this[postIndex + 1] <= this ? this[postIndex + 1] : this[0];
 };
 
 export const ProjectsElementList = new InstanceElementList(projectsList);

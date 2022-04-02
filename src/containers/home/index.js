@@ -23,7 +23,6 @@ export function HomeContainer({ l }) {
    }, []);
 
    useEffect(() => {
-      console.log(navigator.userAgent);
       handleIsMobile();
       window.addEventListener("resize", handleIsMobile);
       return () => {

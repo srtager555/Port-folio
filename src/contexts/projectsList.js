@@ -2,24 +2,6 @@ import { ProjectElement, ImageWithText } from "./projectsContexts";
 
 export const projectsList = [
    new ProjectElement({
-      Title: "Title",
-      Description: " Description",
-      Id: "title",
-      PrincipalImageDesktop: "",
-      PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-      BackgroundImageDesktop: "",
-      BackgroundImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-      GaleryImages: [
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      ],
-      Link: "https://www.google.com",
-      Date: "01 01 2020",
-      Available: false,
-   }),
-   new ProjectElement({
       Title: "Wrapping Letters",
       Description:
          "Hello! I’m a young developer, my specialty is front-end development. I invite you to see my projects are simple, but interesting.",
@@ -72,7 +54,7 @@ export const projectsList = [
       Date: "01 01 2020",
    }),
    new ProjectElement({
-      Title: "WL Website",
+      Title: "Port-folio",
       Description: "Wrapping letters is a good library, but any library need a good documentation. I design and develop the site of this library, Enjoy Xd.",
       Id: "wrapping-letters-homepage",
       Job: ["Front devepoler", "react"],
@@ -81,43 +63,6 @@ export const projectsList = [
       BackgroundImageDesktop:
          "https://i.ibb.co/0J2Ntfn/hu-Tao-background-desktop.jpg",
       BackgroundImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
-      GaleryImages: [
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      ],
-      Link: "https://www.google.com",
-      Date: "01 01 2020",
-   }),
-   new ProjectElement({
-      Title: "Rynyk",
-      Description: " Description",
-      Id: "rynyk",
-      Job: ["IA developer", "Python"],
-      PrincipalImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
-      PrincipalImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-      BackgroundImageDesktop: "https://ttager.netlify.app/img/oaAhri4.jpg",
-      BackgroundImageMobile: "https://i.ibb.co/X5Wg7S5/kda.jpg",
-      GaleryImages: [
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      ],
-      Link: "https://www.google.com",
-      Date: "01 01 2020",
-   }),
-   new ProjectElement({
-      Title: "Port-folio",
-      Description: " Description",
-      Id: "port-folio",
-      Job: ["Front-End devepoler", "react"],
-      PrincipalImageDesktop: "https://i.ibb.co/tCVxqdT/project-portfolio-next-Post.jpg",
-      PrincipalImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
-      BackgroundImageDesktop:
-         "https://i.ibb.co/tCVxqdT/project-portfolio-next-Post.jpg",
-      BackgroundImageMobile: "https://i.ibb.co/2Zcw0X4/flor.jpg",
       GaleryImages: [
          "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
          "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",

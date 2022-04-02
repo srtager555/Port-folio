@@ -15,6 +15,9 @@ export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, Project
 }
 
 function cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, callback) {
+
+    React.useEffect(() => {
+    }, []);
     return <div ref={SliderProjectsRef} style={ViewProjectsScroll} className="container__projects-scrollSlider-item">
         {
             ProjectsElementList.getRecentProjectsAvailable().map((element, index) => (
@@ -30,7 +33,7 @@ function desktopCardElement(ProjectsElementRef, element, index, callback) {
         to={`p/${element.Id}`} key={`project-${index}`}
         onMouseEnter={(event) => callback(event, true)}
         onMouseLeave={(event) => callback(event, false)}
-        ref={index === 1 ? ProjectsElementRef : null}
+        ref={(ProjectsElementList.getRecentProjectsAvailable().length < 2 || index === 1) ? ProjectsElementRef : null}
         className="container__image-projects__scrollSlider"
     >
         <img src={element.PrincipalImageMobile} alt="kda Ahri" />
@@ -42,7 +45,7 @@ function mobileCardElement(ProjectsElementRef, element, index, callback) {
         id={element.Id}
         onClick={callback}
         key={`project-${index}`}
-        ref={index === 1 ? ProjectsElementRef : null}
+        ref={(ProjectsElementList.getRecentProjectsAvailable().length < 2 || index === 1) ? ProjectsElementRef : null}
         className="container__image-projects__scrollSlider"
     >
         <img src={element.PrincipalImageMobile} alt="kda Ahri" />
