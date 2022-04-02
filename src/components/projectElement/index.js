@@ -16,8 +16,6 @@ export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, Project
 
 function cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, callback) {
 
-    React.useEffect(() => {
-    }, []);
     return <div ref={SliderProjectsRef} style={ViewProjectsScroll} className="container__projects-scrollSlider-item">
         {
             ProjectsElementList.getRecentProjectsAvailable().map((element, index) => (

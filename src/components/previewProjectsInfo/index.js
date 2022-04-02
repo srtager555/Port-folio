@@ -9,7 +9,6 @@ export function PreviewProjectsInfo({
    selectedProjetc,
    setSelectedProject,
 }) {
-   React.useEffect(() => { console.log(infoToShow) }, [])
    return itsShowTime(selectedProjetc, setSelectedProject, infoToShow);
 }
 

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import WrappingLetters from "wrapping-letters-react";
 import anime from "animejs";
 
@@ -11,7 +11,6 @@ export function LestTalkContainer() {
    const behanceRef = useRef(null);
 
    function moveUpLetterAnimation2(element) {
-      console.log(element);
       anime
          .timeline({
             targets: element.current.children[0].childNodes,

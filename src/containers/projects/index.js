@@ -103,14 +103,11 @@ export function ProjectsContainer() {
    }
 
    function previewProjects(event, mouseOver) {
-      
-      console.log(showPreviewProject);
       setShowPreviewProject(
          recentProjects.find(
             (project) => project.Id === event.target.parentElement.id
          )
       );
-      console.log(showPreviewProject);
       
       setIsVisible(false);
 
@@ -163,7 +160,6 @@ export function ProjectsContainer() {
 
    useEffect(() => {
       // intilize the projects height and the projects margin
-      console.log(recentProjects)
       handleHeightProjectSection();
       handleScrollMoventToLeft();
 
