@@ -14,6 +14,7 @@ export function ProjectsContainer() {
    const ProjectObserverRef = useRef(null);
    const ProjectsElementRef = useRef(null);
    const SliderProjectsRef = useRef(null);
+   const BgImageRef = useRef(null);
 
    const initialMarginLeft = window.innerWidth * 1.1;
    const windowHeight = window.innerHeight;
@@ -22,7 +23,7 @@ export function ProjectsContainer() {
    const recentProjectsLength =
       ProjectsElementList.getRecentProjectsAvailable().length;
    const recentProjects = ProjectsElementList.getRecentProjectsAvailable();
-   const defaultInfoProject = { Title: ".", Date: ".", };
+   const defaultInfoProject = { Title: ".", Date: "." };
 
    const [ViewProjectsScroll, setViewProjectsScroll] = useState({
       marginLeft: `${leftMargin}px`,
@@ -103,17 +104,22 @@ export function ProjectsContainer() {
    }
 
    function previewProjects(event, mouseOver) {
+      console.log(
+         event.target.parentElement.parentElement.parentElement.parentElement
+            .children[2].children.firstChildren
+      );
       setShowPreviewProject(
          recentProjects.find(
             (project) => project.Id === event.target.parentElement.id
          )
       );
-      
+
       setIsVisible(false);
 
       function imageLoaded() {
          if (
-            event.target.currentSrc === showPreviewProject.BackgroundImageMobile
+            event.target.currentSrc === showPreviewProject.BackgroundImageMobile ||
+            BgImageRef.current.currentSrc === showPreviewProject.BackgroundImageMobile
          ) {
             setSelectedProject(true);
          }
@@ -197,8 +203,9 @@ export function ProjectsContainer() {
             </div>
          </div>
          <PreviewProjectsInfo
+            BgImageRef={BgImageRef}
             infoToShow={showPreviewProject}
-            selectedProjetc={selectedProject}
+            selectedProject={selectedProject}
             setSelectedProject={setSelectedProject}
          />
          <div

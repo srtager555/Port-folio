@@ -6,22 +6,24 @@ import { Link } from "react-router-dom";
 
 export function PreviewProjectsInfo({
    infoToShow,
-   selectedProjetc,
+   selectedProject,
    setSelectedProject,
+   BgImageRef,
 }) {
-   return itsShowTime(selectedProjetc, setSelectedProject, infoToShow);
+   return itsShowTime(selectedProject, setSelectedProject, infoToShow, BgImageRef);
 }
 
-function itsShowTime(selectedProjetc, setSelectedProject, infoToShow) {
+function itsShowTime(selectedProject, setSelectedProject, infoToShow, BgImageRef) {
    return (
       <div className="container__projectsInfo">
          <div
             className={`container__projectsInfo--container__content ${
-               selectedProjetc ? "visible" : ""
+               selectedProject ? "visible" : ""
             }`}
          >
             <div className="container__projectsInfo--background__image">
                <img
+               ref={BgImageRef}
                   onLoad={() => setSelectedProject(true)}
                   src={
                      IS_MOBILE_DEVICE()
