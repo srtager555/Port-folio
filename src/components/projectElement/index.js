@@ -29,12 +29,12 @@ function desktopCardElement(ProjectsElementRef, element, index, callback) {
     return <Link
         id={element.Id}
         to={`p/${element.Id}`} key={`project-${index}`}
-        onMouseEnter={(event) => callback(event, true)}
+        onMouseOver={(event) => callback(event, true)}
         onMouseLeave={(event) => callback(event, false)}
         ref={(ProjectsElementList.getRecentProjectsAvailable().length < 2 || index === 1) ? ProjectsElementRef : null}
         className="container__image-projects__scrollSlider"
     >
-        <img src={element.PrincipalImageMobile} alt="kda Ahri" />
+        <img src={element.PrincipalImageDesktop} alt={element.Id} />
     </Link>
 }
 

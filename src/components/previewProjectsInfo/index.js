@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IS_MOBILE_DEVICE, IS_MOBILE } from "../../contexts/constVarible";
+import { IS_MOBILE } from "../../contexts/constVarible";
 
 import { Link } from "react-router-dom";
 
@@ -9,11 +9,27 @@ export function PreviewProjectsInfo({
    selectedProject,
    setSelectedProject,
    BgImageRef,
+   setCurrentInfo,
 }) {
-   return itsShowTime(selectedProject, setSelectedProject, infoToShow, BgImageRef);
+   return itsShowTime(
+      selectedProject,
+      setSelectedProject,
+      infoToShow,
+      BgImageRef,
+      setCurrentInfo
+   );
 }
 
-function itsShowTime(selectedProject, setSelectedProject, infoToShow, BgImageRef) {
+function itsShowTime(
+   selectedProject,
+   setSelectedProject,
+   infoToShow = {},
+   BgImageRef,
+   setCurrentInfo
+) {
+   let bgImage = infoToShow.BackgroundImageDesktop || "";
+   let bgImageMobile = infoToShow.BackgroundImageMobile || "";
+
    return (
       <div className="container__projectsInfo">
          <div
@@ -23,13 +39,12 @@ function itsShowTime(selectedProject, setSelectedProject, infoToShow, BgImageRef
          >
             <div className="container__projectsInfo--background__image">
                <img
-               ref={BgImageRef}
-                  onLoad={() => setSelectedProject(true)}
-                  src={
-                     IS_MOBILE_DEVICE()
-                        ? infoToShow.BackgroundImageMobile || ""
-                        : infoToShow.BackgroundImageDesktop || ""
-                  }
+                  ref={BgImageRef}
+                  onLoad={() => {
+                     setSelectedProject(true);
+                     setCurrentInfo(infoToShow)
+                  }}
+                  src={IS_MOBILE() ? bgImageMobile : bgImage}
                   alt={infoToShow.Title}
                />
             </div>

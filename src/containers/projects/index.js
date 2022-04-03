@@ -42,6 +42,8 @@ export function ProjectsContainer() {
    const [showPreviewProject, setShowPreviewProject] =
       useState(defaultInfoProject);
    const [selectedProject, setSelectedProject] = useState(false);
+   const [currentInfo, setCurrentInfo] = useState(undefined);
+   const [mouseOver, setMouseOver] = useState(false);
 
    // function about the scroll on projects
    function handleScrollMoventToLeft() {
@@ -103,30 +105,26 @@ export function ProjectsContainer() {
       }
    }
 
-   function previewProjects(event, mouseOver) {
-      console.log(
-         event.target.parentElement.parentElement.parentElement.parentElement
-            .children[2].children.firstChildren
-      );
+   function previewProjects(event, mouseOver = false) {
       setShowPreviewProject(
          recentProjects.find(
             (project) => project.Id === event.target.parentElement.id
          )
       );
+      setMouseOver(mouseOver);
+   }
+
+   useEffect(() => {
+      function imageLoaded() {
+         setSelectedProject(true);
+      }
+      console.log(showPreviewProject);
 
       setIsVisible(false);
 
-      function imageLoaded() {
-         if (
-            event.target.currentSrc === showPreviewProject.BackgroundImageMobile ||
-            BgImageRef.current.currentSrc === showPreviewProject.BackgroundImageMobile
-         ) {
-            setSelectedProject(true);
-         }
-      }
-
       if (IS_MOBILE()) {
-         imageLoaded();
+         if (currentInfo === showPreviewProject)
+            imageLoaded();
 
          function hiddenPreviewProject() {
             setSelectedProject(false);
@@ -137,14 +135,16 @@ export function ProjectsContainer() {
 
          window.addEventListener("scroll", hiddenPreviewProject);
       } else {
+         // if (isImageLoaded) {
          if (mouseOver) {
-            imageLoaded();
+            if (currentInfo === showPreviewProject) imageLoaded();
          } else {
             setSelectedProject(false);
             setIsVisible(true);
          }
+         // }
       }
-   }
+   }, [showPreviewProject, mouseOver]);
 
    useEffect(() => {
       const options = {
@@ -207,6 +207,7 @@ export function ProjectsContainer() {
             infoToShow={showPreviewProject}
             selectedProject={selectedProject}
             setSelectedProject={setSelectedProject}
+            setCurrentInfo={setCurrentInfo}
          />
          <div
             className={`container__projects-scrollSlider ${
