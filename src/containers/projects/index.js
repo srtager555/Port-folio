@@ -118,31 +118,27 @@ export function ProjectsContainer() {
       function imageLoaded() {
          setSelectedProject(true);
       }
-      console.log(showPreviewProject);
-
       setIsVisible(false);
 
       if (IS_MOBILE()) {
-         if (currentInfo === showPreviewProject)
-            imageLoaded();
+         if (currentInfo === showPreviewProject) imageLoaded();
 
          function hiddenPreviewProject() {
             setSelectedProject(false);
             setIsVisible(true);
+            setMouseOver(false);
 
             window.removeEventListener("scroll", hiddenPreviewProject);
          }
 
          window.addEventListener("scroll", hiddenPreviewProject);
       } else {
-         // if (isImageLoaded) {
          if (mouseOver) {
             if (currentInfo === showPreviewProject) imageLoaded();
          } else {
             setSelectedProject(false);
             setIsVisible(true);
          }
-         // }
       }
    }, [showPreviewProject, mouseOver]);
 

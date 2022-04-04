@@ -41,7 +41,7 @@ function desktopCardElement(ProjectsElementRef, element, index, callback) {
 function mobileCardElement(ProjectsElementRef, element, index, callback) {
     return <button
         id={element.Id}
-        onClick={callback}
+        onClick={(event) => callback(event, true)}
         key={`project-${index}`}
         ref={(ProjectsElementList.getRecentProjectsAvailable().length < 2 || index === 1) ? ProjectsElementRef : null}
         className="container__image-projects__scrollSlider"
