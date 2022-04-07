@@ -7,6 +7,7 @@ import { ImageProcess } from "../../components/projectImage";
 import { NextPost } from "../../components/nextPost";
 import { HeaderProjects } from "../../components/headerProjects";
 import { HelmetComponent } from "../../components/Helmet";
+import { Links } from "../../components/links";
 import { ScrollProgress } from "../../components/ScrollProgress";
 
 import "../../styles/ProjectPage.css";
@@ -56,6 +57,7 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
                   project={project}
                   setLoader={setLoader}
                />
+               <Links project={project} />
             </div>
             <NextPost data={nextPostIndex} setLoader={setLoader} />
          </div>

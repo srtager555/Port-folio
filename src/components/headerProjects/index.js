@@ -20,7 +20,14 @@ function HeaderDescription({ project }) {
 function HeaderImage({ project }) {
    return (
       <div className="project__background">
-         <img src={IS_MOBILE_DEVICE() ? project.PrincipalImageMobile : project.PrincipalImageDesktop} alt={project.Title} />
+         <img
+            src={
+               IS_MOBILE_DEVICE()
+                  ? project.BackgroundImageMobile
+                  : project.BackgroundImageDesktop
+            }
+            alt={project.Title}
+         />
       </div>
    );
 }

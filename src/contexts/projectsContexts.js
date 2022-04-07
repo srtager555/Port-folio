@@ -12,7 +12,7 @@ export function ProjectElement({
    BackgroundImageMobile = "",
    GaleryImages = [],
 
-   Link = "",
+   Links = [],
    Available = true,
    Date = "",
 }) {
@@ -27,7 +27,7 @@ export function ProjectElement({
    this.BackgroundImageMobile = BackgroundImageMobile;
    this.GaleryImages = GaleryImages;
 
-   this.Link = Link;
+   this.Links = Links;
    this.Date = Date;
    this.Available = Available;
 }

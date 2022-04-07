@@ -15,7 +15,7 @@
    align-items: center;
    flex-direction: column;
    color: #fff;
-   margin-bottom: 65px;
+   margin-bottom: 50px;
 }
 .project__header .project__container-info__header .project__title {
    font-size: 60px;
@@ -83,7 +83,7 @@
    );
 }
 .project__header .project__background img {
-   height: 100%;
+   width: 100%;
 }
 
 .project__content {
@@ -143,6 +143,7 @@
    font-weight: 200;
    font-family: "Noto sans display", sans-serif;
    padding-bottom: 14px;
+   white-space: pre-line;
 }
 
 @media (min-width: 560px) {
@@ -345,7 +346,7 @@
 @media (max-width: 415px) {
    .project__header .project__container-info__header .project__title {
       font-size: 45px;
-      margin-bottom: 35px;
+      margin-bottom: 10px;
    }
    .project__header .project__typeJob {
       font-size: 16px;
