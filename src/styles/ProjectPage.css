@@ -83,7 +83,7 @@
    );
 }
 .project__header .project__background img {
-   width: 100%;
+   height: 100%;
 }
 
 .project__content {
