@@ -204,6 +204,7 @@ export function ProjectsContainer() {
             selectedProject={selectedProject}
             setSelectedProject={setSelectedProject}
             setCurrentInfo={setCurrentInfo}
+            mouseOver={mouseOver}
          />
          <div
             className={`container__projects-scrollSlider ${

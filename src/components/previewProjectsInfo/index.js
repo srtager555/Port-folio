@@ -10,13 +10,15 @@ export function PreviewProjectsInfo({
    setSelectedProject,
    BgImageRef,
    setCurrentInfo,
+   mouseOver,
 }) {
    return itsShowTime(
       selectedProject,
       setSelectedProject,
       infoToShow,
       BgImageRef,
-      setCurrentInfo
+      setCurrentInfo,
+      mouseOver
    );
 }
 
@@ -25,7 +27,8 @@ function itsShowTime(
    setSelectedProject,
    infoToShow = {},
    BgImageRef,
-   setCurrentInfo
+   setCurrentInfo,
+   mouseOver
 ) {
    let bgImage = infoToShow.BackgroundImageDesktop || "";
    let bgImageMobile = infoToShow.BackgroundImageMobile || "";
@@ -41,8 +44,8 @@ function itsShowTime(
                <img
                   ref={BgImageRef}
                   onLoad={() => {
-                     setSelectedProject(true);
-                     setCurrentInfo(infoToShow)
+                     if (mouseOver) setSelectedProject(true);
+                     setCurrentInfo(infoToShow);
                   }}
                   src={IS_MOBILE() ? bgImageMobile : bgImage}
                   alt={infoToShow.Title}
