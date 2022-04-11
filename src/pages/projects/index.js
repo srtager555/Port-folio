@@ -41,6 +41,8 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    }, [id]);
 
    useEffect(() => {
+      console.log("ProjectPage", project);
+
       window.addEventListener("resize", handleContainerSize);
       return () => window.removeEventListener("resize", handleContainerSize);
    }, []);
@@ -57,7 +59,7 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
                   project={project}
                   setLoader={setLoader}
                />
-               <Links project={project} />
+               <Links project={project.Links} />
             </div>
             <NextPost data={nextPostIndex} setLoader={setLoader} />
          </div>

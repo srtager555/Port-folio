@@ -165,6 +165,57 @@
    }
 }
 
+/* Links */
+
+.project__links {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   max-width: 600px;
+   width: 95%;
+   margin: 0 auto;
+   margin-bottom: 200px;
+}
+
+.project__links--title {
+   margin-bottom: 13px;
+   opacity: 0;
+}
+.project__links--title span {
+   font-size: 18px;
+   font-weight: 200;
+   color: #fff;
+}
+.project__links--title.visible {
+   opacity: 1;
+}
+
+.project__links .project__links--content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 100%;
+   border-top: 1px solid #fff;
+   border-bottom: 1px solid #fff;
+}
+
+.project__links .project__links--content .project__links-content--item {
+   margin: 0 17px;
+   padding-bottom: 5px;
+}
+
+.project__links .project__links--content .project__links-content--item a{
+   padding: 15px 10px;
+   display: inline-block;
+   color: #fff;
+   font-size: 20px;
+   font-family: "Noto sans display", sans-serif;
+   font-weight: 200;
+   text-decoration: none;
+}
+
 /* next buttom */
 .container__nextPost--main {
    display: flex;
@@ -247,6 +298,7 @@
    :is(.nextPost__container--info__margin__bar, .nextPost__container--info__typeJob) {
    display: none;
 }
+
 
 /* next button endend */
 

@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-export function Links({ projects = {} }) {
-    const { Links = [] } = projects;
+export function Links({ project }) {
+   const [hover, setHover] = useState(false);
 
-   const a = (
+   return (
       <div className="project__links">
-         <div className="project__links-title">
-            <h2>Links</h2>
+         <div className={`project__links--title${hover ? " visible" : ""}`}>
+            <span>Idk what animation to put here Xd</span>
          </div>
-         <div className="project__links-content">
-            {Links.map((link) => (
-               <div className="project__links-content-item">
-                  <a href={link[1]} target="_blank" rel="noopener noreferrer">
+         <div className="project__links--content">
+            {project.map((link) => (
+               <div className="project__links-content--item">
+                  <a onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} href={link[1]} target="_blank" rel="noopener noreferrer">
                      {link[0]}
                   </a>
                </div>
@@ -19,7 +19,4 @@ export function Links({ projects = {} }) {
          </div>
       </div>
    );
-
-   const b = Links === [] || Links === undefined ? null : a;
-   return b;
 }

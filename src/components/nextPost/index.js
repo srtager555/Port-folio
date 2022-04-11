@@ -23,16 +23,38 @@ export function NextPost({ data, setLoader }) {
    }
 
    function handleMouseOver(event) {
+      let a = (((event.target.width / 2) - (event.screenX / 1.655)) * -1) / 5
+      let b = (((event.target.height / 2) - (event.screenY / 2.29)) * -1) / 5
+
+
       if (!IS_MOBILE()) {
-         setStylesIsHover({
-            ...stylesIsHover,
-            transform: `translate(${
-               ((event.target.width / 2 - event.screenX / 1.655) * -1) / 5
-            }px, ${
-               (((event.target.height / 2) - (event.screenY / 2.29)) * -1) / 5
-            }px) scale(1.1)`,
-            transition: "all 50ms ease-in-out",
-         });
+         if (a < -35) {
+            setStylesIsHover({
+               ...stylesIsHover,
+               transform: `translate(-35px, ${
+                  b
+               }px) scale(1.1)`,
+               transition: "all 50ms ease-in-out",
+            });
+         } else if (a > 35) {
+            setStylesIsHover({
+               ...stylesIsHover,
+               transform: `translate(35px, ${
+                  b
+               }px) scale(1.1)`,
+               transition: "all 50ms ease-in-out",
+            });
+         } else {
+            setStylesIsHover({
+               ...stylesIsHover,
+               transform: `translate(${
+                  a
+               }px, ${
+                  b
+               }px) scale(1.1)`,
+               transition: "all 50ms ease-in-out",
+            });
+         }
       }
    }
 
@@ -60,10 +82,7 @@ export function NextPost({ data, setLoader }) {
 
    return (
       <div className="container__nextPost--main">
-         <div
-            onClick={changeNextRoute}
-            className="nextPost__container"
-         >
+         <div onClick={changeNextRoute} className="nextPost__container">
             <div ref={a} className="nextPost__background">
                {ImageNextPost({ data, stylesIsHover })}
                <div className="nextPost__container--nextWord">

@@ -114,8 +114,8 @@ export const projectsList = [
             Image: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
          }),
       ],
-      Link: "https://www.google.com",
       Date: "04 03 2022",
+      Links: [],
    }),
    new ProjectElement({
       Title: "Carlos && Ponce",
@@ -135,5 +135,6 @@ export const projectsList = [
       ],
       Link: "https://www.google.com",
       Date: "01 01 2020",
+      Available: false,
    }),
 ];

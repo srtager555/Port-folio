@@ -27,7 +27,7 @@ export function ProjectElement({
    this.BackgroundImageMobile = BackgroundImageMobile;
    this.GaleryImages = GaleryImages;
 
-   this.Links = Links;
+   this.Links = [[["LinkedIn", "https://www.linkedin.com/in/srtager555/"], ["GitHub", "https://github.com/srtager555"]], Links].flat();
    this.Date = Date;
    this.Available = Available;
 }
