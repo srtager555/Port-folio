@@ -27,9 +27,9 @@ export function NextPost({ data, setLoader }) {
          setStylesIsHover({
             ...stylesIsHover,
             transform: `translate(${
-               ((event.target.width / 2 - event.screenX / 2) * -1) / 5
+               ((event.target.width / 2 - event.screenX / 1.655) * -1) / 5
             }px, ${
-               ((event.target.height / 2 - event.screenY / 2) * -1) / 5
+               (((event.target.height / 2) - (event.screenY / 2.29)) * -1) / 5
             }px) scale(1.1)`,
             transition: "all 50ms ease-in-out",
          });
