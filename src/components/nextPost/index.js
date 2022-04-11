@@ -58,16 +58,10 @@ export function NextPost({ data, setLoader }) {
       };
    }, []);
 
-   useEffect(() => {
-      console.log(stylesIsHover);
-   }, [stylesIsHover]);
-
    return (
       <div className="container__nextPost--main">
          <div
             onClick={changeNextRoute}
-            // onMouseMove={() => setIsHover(isHover + 1)}
-            // onMouseLeave={() => setIsHover(0)}
             className="nextPost__container"
          >
             <div ref={a} className="nextPost__background">
