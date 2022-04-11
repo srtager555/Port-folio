@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ProjectsElementList } from "../../contexts/projectsContexts";
-import { IS_MOBILE_DEVICE } from "../../contexts/constVarible";
+import { IS_MOBILE } from "../../contexts/constVarible";
+
+import { ImageNextPost } from "./Image/index";
 
 export function NextPost({ data, setLoader }) {
+   const a = useRef(null);
+
+   const [stylesIsHover, setStylesIsHover] = useState({});
+   const [isHover, setIsHover] = useState(0);
+
    let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
    const navigate = useNavigate();
 
@@ -15,17 +22,56 @@ export function NextPost({ data, setLoader }) {
       }, 1000);
    }
 
+   function handleMouseOver(event) {
+      if (!IS_MOBILE()) {
+         setStylesIsHover({
+            ...stylesIsHover,
+            transform: `translate(${
+               ((event.target.width / 2 - event.screenX / 2) * -1) / 5
+            }px, ${
+               ((event.target.height / 2 - event.screenY / 2) * -1) / 5
+            }px) scale(1.1)`,
+            transition: "all 50ms ease-in-out",
+         });
+      }
+   }
+
+   function handleMouseOut() {
+      if (!IS_MOBILE()) {
+         setStylesIsHover({
+            ...stylesIsHover,
+            transform: "translate(0%, 0%)",
+         });
+      }
+   }
+
+   useEffect(() => {
+      a.current.addEventListener("mousemove", (event) =>
+         handleMouseOver(event)
+      );
+      a.current.addEventListener("mouseout", () => handleMouseOut());
+      return () => {
+         a.current.removeEventListener("mousemove", (event) =>
+            handleMouseOver(event)
+         );
+         a.current.removeEventListener("mouseout", () => handleMouseOut());
+      };
+   }, []);
+
+   useEffect(() => {
+      console.log(stylesIsHover);
+   }, [stylesIsHover]);
+
    return (
       <div className="container__nextPost--main">
-         <div onClick={changeNextRoute} className="nextPost__container">
-            <div className="nextPost__background">
-               <img
-                  src={
-                     IS_MOBILE_DEVICE()
-                        ? data.BackgroundImageMobile
-                        : data.BackgroundImageDesktop
-                  }
-               />
+         <div
+            onClick={changeNextRoute}
+            // onMouseMove={() => setIsHover(isHover + 1)}
+            // onMouseLeave={() => setIsHover(0)}
+            className="nextPost__container"
+         >
+            <div ref={a} className="nextPost__background">
+               {ImageNextPost({ data, stylesIsHover })}
                <div className="nextPost__container--nextWord">
                   <span>NEXT</span>
                   <span>

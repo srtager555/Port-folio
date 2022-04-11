@@ -185,12 +185,24 @@
 .nextPost__container .nextPost__background {
    position: relative;
    width: 100%;
+   min-height: 450px;
    margin-bottom: 70px;
 }
 .nextPost__container .nextPost__background img {
+   display: inline-block;
    width: 100%;
+   transform: translate(0%, 0%);
+   transition: all 1s ease-in-out;
 }
 
+.nextPost__container
+   .nextPost__background
+   img:hover
+   ~ .nextPost__container--nextWord {
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.2s ease-in-out;
+}
 .nextPost__container .nextPost__background .nextPost__container--nextWord {
    position: absolute;
    bottom: -30%;
@@ -200,6 +212,7 @@
    align-items: center;
    flex-direction: column-reverse;
    mix-blend-mode: difference;
+   transition: 1s all ease-in-out;
 }
 .nextPost__container
    .nextPost__background
@@ -358,5 +371,5 @@
       position: relative;
       width: 100%;
       margin-bottom: 45px;
-  }
+   }
 }
