@@ -20,7 +20,7 @@ export function NavMain({ handleResetScroll }) {
 
             </div>
             <div className="nav__container--cta">
-               <a href="#home">let's talk!</a>
+               <a href="mailto:srtager555@gmail.com">let's talk!</a>
             </div>
          </nav>
       </>
