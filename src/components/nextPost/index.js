@@ -22,10 +22,9 @@ export function NextPost({ data, setLoader }) {
       }, 1000);
    }
 
-   function handleMouseOver(event) {
-      let a = (((event.target.width / 2) - (event.screenX / 1.655)) * -1) / 5
-      let b = (((event.target.height / 2) - (event.screenY / 2.29)) * -1) / 5
-
+   function handleMouseOver(event) { // 1.655, 2.29
+      let a = (((event.target.width / 2) - (event.screenX / 2)) * -1) / 5
+      let b = (((event.target.height / 2) - (event.screenY / 2)) * -1) / 5
 
       if (!IS_MOBILE()) {
          if (a < -35) {
