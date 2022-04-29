@@ -7,11 +7,11 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
    useEffect(() => {
       let arrayOfPromise = project.GaleryImages.map((image, index) => {
          let i = new Image();
-         i.src = typeof image === "string" ? image : image.Image;
+         i.src = typeof image === "string" ? image : image.Image || "https://i.ibb.co/YXFZxRL/default-image.png";
          return new Promise((resolve, reject) => {
             i.onload = () => {
                let width = i.naturalWidth;
-                  resolve([width, index]);
+               resolve([width, index]);
             };
          });
       });
@@ -20,7 +20,7 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
          .then((value) => {
             setImageWidth(value);
             setIsLoading(false);
-            setLoader(true)
+            setLoader(true);
          })
          .catch((err) => {
             console.log(err);
@@ -43,9 +43,10 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
                </div>
             );
          } else {
+            const { Image = "https://i.ibb.co/YXFZxRL/default-image.png", Title = "", Description = "" } = image;
 
             let imageW = imageWidth.find((a) => a[1] === index) || [800];
-            let imageSize = imageW[0]
+            let imageSize = imageW[0];
             let imageWrap = imageSize <= containerWitdh * 0.6 ? true : false;
 
             return (
@@ -56,18 +57,18 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
                   }`}
                >
                   <div className="project__image-container__text">
-                     <h3 className="project__image-container__text-title">
-                        {image.Title}
-                     </h3>
-                     <p className="project__image-container__text-description">
-                        {image.Description}
-                     </p>
+                     {Title != "" ? (
+                        <h3 className="project__image-container__text-title">
+                           {Title}
+                        </h3>
+                     ) : null}
+                     {Description != "" ? (
+                        <p className="project__image-container__text-description">
+                           {Description}
+                        </p>
+                     ) : null}
                   </div>
-                  <img
-                     className="project__image-img"
-                     src={image.Image}
-                     alt=""
-                  />
+                  <img className="project__image-img" src={Image} alt="" />
                </div>
             );
          }
