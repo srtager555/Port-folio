@@ -4,58 +4,47 @@ export const projectsList = [
    new ProjectElement({
       Title: "Wrapping Letters",
       Description:
-         "Hello! I’m a young developer, my specialty is front-end development. I invite you to see my projects are simple, but interesting.",
+         "Wrap any letter, word or phrase(or text), with package this job is so easy, only you need called the componet!",
       Id: "wrapping-letters",
       Job: ["code devepoler", "react"],
-      PrincipalImageDesktop:
-         "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
-      PrincipalImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
-      BackgroundImageDesktop:
-         "https://i.ibb.co/gj3rmJ4/70411649-C476-447-C-8834-8-A0-F0-F3-F6186.jpg",
-      BackgroundImageMobile: "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
+      PrincipalImageDesktop: "https://i.ibb.co/6Hj7FS3/WL-TD.png",
+      PrincipalImageMobile: "https://i.ibb.co/GvtMC7r/WL-TM.png",
+      BackgroundImageDesktop: "https://i.ibb.co/yqG0jMS/WL-BGD.png",
+      BackgroundImageMobile: "https://i.ibb.co/hMRHSQw/WL-BGM.png",
       GaleryImages: [
-         "https://i.ibb.co/GQsrPwx/imagen-22222.jpg",
          new ImageWithText({
-            Image: "https://i.ibb.co/NyHtQvP/1f27e04cf95f16d51ad26911036b848a95e939a7.jpg",
-            Title: "Simplify the code",
-            Description:
-               "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
-         }),
-         "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
-         new ImageWithText({
-            Image: "https://i.ibb.co/9nP0vGK/coven.jpg",
-            Title: "This is another test",
-            Description:
-               "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd",
+            Title: "Wrapping Letters",
+            Description: "Well, this project has a page but this is not the important thing here, the main content is the package that I made.",
+            Image: 
+            "https://i.ibb.co/YD0k8Qc/wl-1.png",
          }),
          new ImageWithText({
-            Image: "https://i.ibb.co/9nP0vGK/coven.jpg",
-            Title: "This is another test",
-            Description:
-               "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd",
+            // Title: "Wrapping Letters",
+            Description: "As you can imagine, the package is just code, if you are interested visit the github. I'll use examples of what you can do with the package :3",
+            // Image:
+            // "https://i.ibb.co/YD0k8Qc/wl-1.png",
          }),
          new ImageWithText({
-            Image: "https://i.ibb.co/xSQbqVd/hu-Tao-background-mobil.jpg",
-            Title: "This is another test",
-            Description:
-               "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd",
+            Title: "The objective of WL (Wrapping Letters)",
+            Description: "It's simple, simplify the code when you wrap the letters or words for an animation or anything else, to be evit this problem.",
+            Image: "https://i.ibb.co/p2mqgJ0/WL-2.png"
          }),
-         "https://i.ibb.co/348wz9h/jijija.png",
          new ImageWithText({
-            Image: "https://i.ibb.co/D7zxN2W/sample-0551ec7be9c60314a85918c1385b4172.jpg",
-            Title: "I want money",
-            Description: "I want money for my projects",
+            Title: "The package",
+            Description: "The sintaxis of the package is simple, just call the component and pass the text you want to wrap, and the package will do the rest. the package has more options, add a general or special class, strucutre of the wrapper, and more.",
+            Image: "https://i.ibb.co/CmcxfJ3/WL-3.png"
          }),
-         "https://i.ibb.co/Pz0fZY2/wenas.jpg",
          new ImageWithText({
-            Image: "https://i.ibb.co/HnqQk3C/Orbeeana-Face.jpg",
-            Title: "This is a test",
-            Description:
-               "Una vaca se valanceaba en la tela de una araña, y como miraba que la tela aguataba llamo a otra vaca y eran, dos vacas que se valanceaban en la tela de una araña y como miraban que aguantaban llamaron a otra vaca.",
+            Title: "Why use the package?",
+            Description: "As you can imagine, the use of the package is very interesting, you can use the package for animation, ... and more Xd here are a example.",
+            Image: "https://i.ibb.co/cXxk5T5/WL-4.gif"
+         }),
+         new ImageWithText({
+            Description: "This is my main personal project, I work on it every day, not always in the code, but every day I have ideas about it in my head.",
          }),
       ],
-      Links: [],
-      Date: "01 01 2020",
+      Links: [["NPM", "https://www.npmjs.com/package/wrapping-letters-react"], ["site", "https://wrapping-letters.netlify.app/"], ["WL Github", "https://github.com/srtager555/wrapping-letters"]],
+      Date: "10 12 2021",
    }),
    new ProjectElement({
       Title: "Port-folio",
@@ -128,10 +117,45 @@ export const projectsList = [
       BackgroundImageDesktop: "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
       BackgroundImageMobile: "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       GaleryImages: [
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+         "https://i.ibb.co/GQsrPwx/imagen-22222.jpg",
+         new ImageWithText({
+            Image: "https://i.ibb.co/NyHtQvP/1f27e04cf95f16d51ad26911036b848a95e939a7.jpg",
+            Title: "Simplify the code",
+            Description:
+               "With wrapping-letters is very easy to use and reduce the code considerably in 95%",
+         }),
+         "https://i.ibb.co/jg9tcpC/FLpwv-D7-Vg-AQxes7.jpg",
+         new ImageWithText({
+            Image: "https://i.ibb.co/9nP0vGK/coven.jpg",
+            Title: "This is another test",
+            Description:
+               "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd",
+         }),
+         new ImageWithText({
+            Image: "https://i.ibb.co/9nP0vGK/coven.jpg",
+            Title: "This is another test",
+            Description:
+               "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd",
+         }),
+         new ImageWithText({
+            Image: "https://i.ibb.co/xSQbqVd/hu-Tao-background-mobil.jpg",
+            Title: "This is another test",
+            Description:
+               "I love my job, is beautiful, but always I love more to Ahri, her is me reason to exits Xd",
+         }),
+         "https://i.ibb.co/348wz9h/jijija.png",
+         new ImageWithText({
+            Image: "https://i.ibb.co/D7zxN2W/sample-0551ec7be9c60314a85918c1385b4172.jpg",
+            Title: "I want money",
+            Description: "I want money for my projects",
+         }),
+         "https://i.ibb.co/Pz0fZY2/wenas.jpg",
+         new ImageWithText({
+            Image: "https://i.ibb.co/HnqQk3C/Orbeeana-Face.jpg",
+            Title: "This is a test",
+            Description:
+               "Una vaca se valanceaba en la tela de una araña, y como miraba que la tela aguataba llamo a otra vaca y eran, dos vacas que se valanceaban en la tela de una araña y como miraban que aguantaban llamaron a otra vaca.",
+         }),
       ],
       Link: "https://www.google.com",
       Date: "01 01 2020",
