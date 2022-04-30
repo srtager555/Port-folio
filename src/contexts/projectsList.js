@@ -61,7 +61,7 @@ export const projectsList = [
             Title: "How started this?",
             Description:
                "I started this project in 2020, but my little web design experience was not enough to carry out this project. This problem forced me to design by trial and error until I reached this result.",
-            Image: "https://i.ibb.co/KFz2NcK/Portfolio-image-1.jpg",
+            Image: "https://i.ibb.co/7bkT04d/Portfolio-image-1.jpg",
          }),
          new ImageWithText({
             Title: "Why this design?",
@@ -71,36 +71,36 @@ export const projectsList = [
          }),
          // "https://i.ibb.co/98WbcPM/why-This-Design-Gif2.gif",
          "https://i.ibb.co/pwxsjnM/whythis-Design-Gif2-plus.gif",
-         "https://i.ibb.co/KVqnj4D/why-This-Design3.png",
+         "https://i.ibb.co/vmSvzbc/why-This-Design3.jpg",
          new ImageWithText({
             Title: "Why this style?",
             Description: `To get to this design I had to make many sketches and get inspired by the designs of others, until I found a pair that made the difference between the others and I liked them a lot.\n\nI mean 2 portfolios, one personal and the other is from an agency, I took reference from them because I had what I needed, I just needed to apply my style.`,
-            Image: "https://i.ibb.co/2Zmkz3m/why-This-Style1.png",
+            Image: "https://i.ibb.co/9cfc5d4/why-This-Style1.jpg",
          }),
          new ImageWithText({
             Title: "reynato.tokyo",
             Description:
                "This is the principal concept of the project, clean and direct.",
-            Image: "https://i.ibb.co/yf6xj2j/why-This-Style6.png",
+            Image: "https://i.ibb.co/rp9zJhG/why-This-Style6.jpg",
          }),
          new ImageWithText({
             // Title: "Why this style?",
             Description:
                "I based the presentation of the projects and the contact section on the main example, the idea seemed very good to me.",
-            Image: "https://i.ibb.co/GF9jPqM/why-This-Style4.png",
+            Image: "https://i.ibb.co/DD1qpQ4/why-This-Style4.jpg",
          }),
-         "https://i.ibb.co/D582Mr3/why-This-Style5.png",
+         "https://i.ibb.co/qY0xcPM/why-This-Style5.jpg",
          new ImageWithText({
             Title: "henriheymans",
             Description:
                "I like the way the projects are presented, I based my projects design in that.",
-            Image: "https://i.ibb.co/vxxjFwh/why-This-Style8.png",
+            Image: "https://i.ibb.co/jZDbR1r/why-This-Style8.jpg",
          }),
-         "https://i.ibb.co/wB4zHXN/why-This-Style7.png",
+         "https://i.ibb.co/Z2KxD19/why-This-Style7.jpg",
          new ImageWithText({
             Title: "What is the future of my Port-folio?",
             Description: `This question is very personal, but the truth is that I am aiming for the stars because I hope by 2023 to be able to implement a beautiful design with 3D objects, this will be a great challenge for me, but with the results I have had, I know it will be a piece of cake.`,
-            Image: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
+            Image: "https://i.ibb.co/7bkT04d/Portfolio-image-1.jpg",
          }),
       ],
       Date: "04 03 2022",
