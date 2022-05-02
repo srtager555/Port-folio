@@ -100,7 +100,7 @@ export const projectsList = [
          new ImageWithText({
             Title: "What is the future of my Port-folio?",
             Description: `This question is very personal, but the truth is that I am aiming for the stars because I hope by 2023 to be able to implement a beautiful design with 3D objects, this will be a great challenge for me, but with the results I have had, I know it will be a piece of cake.`,
-            Image: "https://i.ibb.co/7bkT04d/Portfolio-image-1.jpg",
+            Image: "https://i.ibb.co/0GGc8fw/the-Future1.jpg",
          }),
       ],
       Date: "04 03 2022",
