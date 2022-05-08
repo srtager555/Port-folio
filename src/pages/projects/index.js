@@ -12,7 +12,9 @@ import { ScrollProgress } from "../../components/ScrollProgress";
 
 import "../../styles/ProjectPage.css";
 
-export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
+export function ProjectPage({ handleResetScroll, setLoader, chagePath }) {
+   chagePath();
+
    const containerContentRef = useRef(null);
 
    const { id } = useParams();
@@ -32,7 +34,6 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
 
    useLayoutEffect(() => {
       handleContainerSize();
-      setInHome(false);
    }, []);
 
    useLayoutEffect(() => {
@@ -41,8 +42,6 @@ export function ProjectPage({ handleResetScroll, setLoader, setInHome }) {
    }, [id]);
 
    useEffect(() => {
-      console.log("ProjectPage", project);
-
       window.addEventListener("resize", handleContainerSize);
       return () => window.removeEventListener("resize", handleContainerSize);
    }, []);

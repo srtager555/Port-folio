@@ -6,12 +6,13 @@ import { LestTalkContainer } from "../../containers/lestTalk";
 import { HelmetComponent } from "../../components/Helmet";
 // import { AboutMeContainer } from "../../containers/aboutMe";
 
-export function HomePage({ setInHome, setLoader }) {
+export function HomePage({ chagePath, setLoader }) {
    // A
+
+   chagePath();
 
    useLayoutEffect(() => {
       setLoader(false);
-      setInHome(true);
    }, []);
 
    useEffect(() => {

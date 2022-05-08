@@ -3,7 +3,7 @@ import { getRandomPhrase } from "../../contexts/randomPhrases";
 
 import "../../styles/LoadScreen.css";
 
-export function LoadScreen({ loaded, inHome }) {
+export function LoadScreen({ loaded, inPath }) {
    const [arrClassAnimeCont, setArrClassAnimeCont] = useState([]);
    const [arrClassRoutes, setArrClassRoutes] = useState([]);
    const [arrClassAnimExit, setArrClassAnimExit] = useState([]);
@@ -21,9 +21,9 @@ export function LoadScreen({ loaded, inHome }) {
    }
 
    useEffect(() => {
-      if (inHome) setArrClassRoutes(["home--style"]);
+      if (inPath === "/" || inPath === "") setArrClassRoutes(["home--style"]);
       else setArrClassRoutes([""]);
-   }, [inHome]);
+   }, [inPath]);
 
    useLayoutEffect(() => {
       setArrClassAnimeCont(["loading"]);

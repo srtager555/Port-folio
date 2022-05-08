@@ -6,7 +6,9 @@ import { HelmetComponent } from "../../components/Helmet";
 
 import "../../styles/NotMatch.css";
 
-export function NotMatch({ setInHome, setLoader }) {
+export function NotMatch({ chagePath, setLoader }) {
+   chagePath();
+
    const returnToHomeRef = useRef(null);
 
    function moveUpLetterAnimation(element) {

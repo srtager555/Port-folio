@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
 
-
 import { NavHome } from "./components/navHome";
 import { NavMain } from "./components/navMain";
 
+export function Navbar({ handleResetScroll, inPath }) {
+   const [navComponent, setNavComponent] = useState(null);
+   const props = { handleResetScroll };
 
-export function Navbar({ handleResetScroll, inHome }) {
-   return inHome ? (
-      <NavHome handleResetScroll={handleResetScroll}  />
-   ) : (
-      <NavMain handleResetScroll={handleResetScroll} />
-   );
+   useEffect(() => {
+      console.log(inPath);
+
+      if (inPath === "/cv") {
+         console.log("!");
+         setNavComponent(null);
+      } else {
+         console.log("?");
+         if (inPath === "" || inPath === "/")
+            setNavComponent(<NavHome {...props} />);
+         else setNavComponent(<NavMain {...props} />);
+      }
+   }, [inPath]);
+   return navComponent;
 }

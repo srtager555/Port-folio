@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Background.css";
 
-export function Background() {
+export function Background({ inPath }) {
    const [backgroundClass, setBackgroundClass] = useState("");
 
+   
    useEffect(() => {
-      // XDXDXDXD
-      setInterval(function() {
-         if (window.location.pathname === "/") {
-            setBackgroundClass("");
-         } else {
-            setBackgroundClass("background--project");
-         }
-      }, 1000)
-   });
+      let conditions = inPath === '/' || inPath === '/cv' || inPath === ''
+
+      if (conditions) {
+         setBackgroundClass("");
+      } else {
+         setBackgroundClass("background--project");
+      }
+   }, [inPath]);
 
    return (
       <div
