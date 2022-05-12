@@ -16,25 +16,41 @@ export function CV() {
             <span>Carlos Ponce</span>
          </div>
          <div
-            className={`${styles.container__content} ${styles['container--info']}`}
+            className={`${styles.container__content} ${styles["container--info"]}`}
          >
-            <h2>Profile</h2>
+            <h2 className={styles.title__content}>Profile</h2>
             <div
-               className={`${styles.container__content} ${styles['container--info__profile']}`}
+               className={`${styles.container__content} ${styles["container--info__profile"]}`}
             >
                <div className={styles["profile__content"]}>
                   <div className={styles["profile__Info"]}>
                      <div className={styles["profile__Info--imgBox"]}>
                         <img src={IMG__PROFILE} alt="Este soy yo" />
                      </div>
-                     <div className={styles["profile__Info--infoBox"]}>
-                        <span>Carlos Ponce</span>
-                        <a href="mailto:srtager555@gmail.com">
-                           srtager555@gmail.com
-                        </a>
-                     </div>
                   </div>
                   <div className={styles["profile__about"]}>
+                     <div className={styles["profile__Info--infoBox"]}>
+                        <div className={styles["profile__Info--infoBox__item"]}>
+                           <h2>Carlos Ponce</h2>
+                           <a href="mailto:srtager555@gmail.com">
+                              srtager555@gmail.com
+                           </a>
+                        </div>
+                        <div className={styles["profile__Info--infoBox__item"]}>
+                           <a
+                              href="https://www.linkedin.com/in/srtager555/"
+                              target="_blank"
+                           >
+                              LinkedIn
+                           </a>
+                           <a
+                              href="https://github.com/srtager555"
+                              target="_blank"
+                           >
+                              GitHub
+                           </a>
+                        </div>
+                     </div>
                      <p>
                         I am a Frontend developer with a background in
                         multimedia and web development. I have a strong passion
