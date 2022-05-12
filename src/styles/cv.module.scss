@@ -9,7 +9,7 @@
 .container--cv .container__content {
    position: relative;
    width: 100%;
-   margin-top: 90px;
+   margin-top: 60px;
 }
 .container--cv .container__content .title__content {
    position: relative;
@@ -67,6 +67,7 @@
 }
 
 .container--cv .container--info {
+   margin-top: 30px;
    padding: 0 50px;
 }
 
@@ -105,4 +106,63 @@
 .container--cv .container--info .profile__content .profile__about {
    grid-column: 2;
    grid-row: 1;
+}
+
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox {
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 20px;
+   margin-bottom: 50px;
+   border-bottom: #000 1px solid;
+}
+
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item:nth-child(2) {
+   align-items: flex-end;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item
+   h2 {
+   font-size: 37px;
+   font-weight: 400;
+   text-transform: uppercase;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item
+   a {
+   color: #000;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 22px;
+   font-family: "Noto Sans Display", sans-serif;
+}
+
+.container--cv .container--info .profile__content .profile__about p {
+   font-size: 22px;
 }

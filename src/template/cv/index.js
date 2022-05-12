@@ -18,7 +18,6 @@ export function CV() {
          <div
             className={`${styles.container__content} ${styles["container--info"]}`}
          >
-            <h2 className={styles.title__content}>Profile</h2>
             <div
                className={`${styles.container__content} ${styles["container--info__profile"]}`}
             >
@@ -31,7 +30,7 @@ export function CV() {
                   <div className={styles["profile__about"]}>
                      <div className={styles["profile__Info--infoBox"]}>
                         <div className={styles["profile__Info--infoBox__item"]}>
-                           <h2>Carlos Ponce</h2>
+                           <h2>Contact</h2>
                            <a href="mailto:srtager555@gmail.com">
                               srtager555@gmail.com
                            </a>
