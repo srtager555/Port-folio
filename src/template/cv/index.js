@@ -1,5 +1,7 @@
 import React from "react";
 
+import WrappingLetters from "wrapping-letters-react";
+
 import styles from "../../styles/cv.module.scss";
 
 export function CV() {
@@ -55,6 +57,30 @@ export function CV() {
                         multimedia and web development. I have a strong passion
                         for creating and developing web applications.
                      </p>
+                     <div className="container__slider">
+                  <span className="container__slider-item">
+                     <WrappingLetters
+                        word={`CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022`}
+                        wordOptions={[
+                           {
+                              ClassToAdd: "slider-words",
+                              PerWord: true,
+                           },
+                        ]}
+                     />
+                  </span>
+                  <span className="container__slider-item">
+                     <WrappingLetters
+                        word={`CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022`}
+                        wordOptions={[
+                           {
+                              ClassToAdd: "slider-words",
+                              PerWord: true,
+                           },
+                        ]}
+                     />
+                  </span>
+               </div>
                   </div>
                </div>
             </div>
