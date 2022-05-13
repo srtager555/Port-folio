@@ -55,8 +55,8 @@ export function CV() {
                      </div>
                      <p>
                         I am a Frontend developer with a background in
-                        multimedia and web development. I have a strong passion
-                        for creating and developing web applications.
+                        multimedia and web development. I have a b passion for
+                        creating and developing web applications.
                      </p>
                      <div className="container__slider cv">
                         <span className="container__slider-item">
@@ -90,8 +90,8 @@ export function CV() {
          <div
             className={`${styles.container__content} ${styles["container--skills&qualities"]}`}
          >
+            <h2 className={styles.title__content}>Skills & Qualities</h2>
             <div className={styles["skills__content"]}>
-               <h2>Skills</h2>
                <div className={styles["skills__content--item"]}>
                   {/* 
                      experienced - orange
@@ -100,26 +100,26 @@ export function CV() {
                      beginner - gray
                   */}
                   <h3>Vanilla</h3>
-                  <span>
-                     html - <span className="letter-red">experienced</span>
+                  <span className={styles.skills__item}>
+                     html - <b className="letter-red">experienced</b>
                   </span>
-                  <span>
-                     css - <span className="letter-red">experienced</span>
+                  <span className={styles.skills__item}>
+                     css - <b className="letter-red">experienced</b>
                   </span>
-                  <span>
-                     js - <span className="letter-orange">advanced</span>
+                  <span className={styles.skills__item}>
+                     js - <b className="letter-orange">advanced</b>
                   </span>
                </div>
                <div className={styles["skills__content--item"]}>
                   <h3>Mods</h3>
-                  <span>
-                     React - <span className="letter-orange">advanced</span>
+                  <span className={styles.skills__item}>
+                     React - <b className="letter-orange">advanced</b>
                   </span>
-                  <span>
-                     Next.JS - <span className="letter-green">advanced</span>
+                  <span className={styles.skills__item}>
+                     Next.JS - <b className="letter-green">advanced</b>
                   </span>
-                  <span>
-                     webpack - <span className="letter-orange">average</span>
+                  <span className={styles.skills__item}>
+                     webpack - <b className="letter-orange">average</b>
                   </span>
                </div>
                <a
@@ -131,28 +131,36 @@ export function CV() {
                </a>
             </div>
             <div className={styles["qualities_content"]}>
-               <h2>Qualities</h2>
                <div className={styles["qualities__content--item"]}>
                   <h3>Fast learner</h3>
-                  <span>
-                  I love learning new technologies, their development is very fast, but I learn easily.
-                  </span>
+                  <p>
+                     I love learning new technologies, their development is very
+                     fast, but I learn easily.
+                  </p>
                </div>
                <div className={styles["qualities__content--item"]}>
                   <h3>Creative and innovative</h3>
-                  <span>
-                     The most important thing is to be creative and innovative. 
-                     I love to create new things and I am always looking for new ways to improve my skills.
-                  </span>
+                  <p>
+                     The most important thing is to be creative and innovative.
+                     I love to create new things and I am always looking for new
+                     ways to improve my skills.
+                  </p>
                </div>
                <div className={styles["qualities__content--item"]}>
                   <h3>A great listener</h3>
-                  <span>
-                     I am a great listener and I always listen to what I'm learning, Open to new challenges and 
-                     always open to recive feedback and ideas.
-                  </span>
+                  <p>
+                     I am a great listener and I always listen to what I'm
+                     learning, Open to new challenges and always open to recive
+                     feedback and ideas.
+                  </p>
                </div>
             </div>
+         </div>
+
+         <div
+            className={`${styles.container__content} ${styles["container--experience"]}`}
+         >
+            <h2 className={styles.title__content}>Experience</h2>
          </div>
       </div>
    );
