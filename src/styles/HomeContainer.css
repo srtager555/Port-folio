@@ -121,6 +121,12 @@
    z-index: 1;
    animation: slide1 30s linear infinite;
 }
+.container__slider.cv .container__slider-item:nth-child(1) {
+   animation: slideCV1 30s linear infinite;
+}
+.container__slider.cv .container__slider-item:nth-child(2) {
+   animation: slideCV2 30s linear infinite;
+}
 .container__slider .container__slider-item:nth-child(2) {
    left: 100%;
    z-index: 1;
@@ -148,6 +154,22 @@
 @keyframes slide2 {
    0% {
       left: calc(1111.22px + 36px);
+   }
+   100% {
+      left: 0px;
+   }
+}
+@keyframes slideCV1 {
+   0% {
+      left: 0%;
+   }
+   100% {
+      left: calc(-1248.80px - 36px);
+   }
+}
+@keyframes slideCV2 {
+   0% {
+      left: calc(1248.80px + 36px);
    }
    100% {
       left: 0px;

@@ -17,6 +17,7 @@ export function CV() {
             <h1>Frontend developer</h1>
             <span>Carlos Ponce</span>
          </div>
+
          <div
             className={`${styles.container__content} ${styles["container--info"]}`}
          >
@@ -57,31 +58,99 @@ export function CV() {
                         multimedia and web development. I have a strong passion
                         for creating and developing web applications.
                      </p>
-                     <div className="container__slider">
-                  <span className="container__slider-item">
-                     <WrappingLetters
-                        word={`CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022`}
-                        wordOptions={[
-                           {
-                              ClassToAdd: "slider-words",
-                              PerWord: true,
-                           },
-                        ]}
-                     />
+                     <div className="container__slider cv">
+                        <span className="container__slider-item">
+                           <WrappingLetters
+                              word={`CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022`}
+                              wordOptions={[
+                                 {
+                                    ClassToAdd: "slider-words",
+                                    PerWord: true,
+                                 },
+                              ]}
+                           />
+                        </span>
+                        <span className="container__slider-item">
+                           <WrappingLetters
+                              word={`CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022`}
+                              wordOptions={[
+                                 {
+                                    ClassToAdd: "slider-words",
+                                    PerWord: true,
+                                 },
+                              ]}
+                           />
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div
+            className={`${styles.container__content} ${styles["container--skills&qualities"]}`}
+         >
+            <div className={styles["skills__content"]}>
+               <h2>Skills</h2>
+               <div className={styles["skills__content--item"]}>
+                  {/* 
+                     experienced - orange
+                     advanced - blue
+                     average - green
+                     beginner - gray
+                  */}
+                  <h3>Vanilla</h3>
+                  <span>
+                     html - <span className="letter-red">experienced</span>
                   </span>
-                  <span className="container__slider-item">
-                     <WrappingLetters
-                        word={`CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022 CURRICULUM 2022`}
-                        wordOptions={[
-                           {
-                              ClassToAdd: "slider-words",
-                              PerWord: true,
-                           },
-                        ]}
-                     />
+                  <span>
+                     css - <span className="letter-red">experienced</span>
+                  </span>
+                  <span>
+                     js - <span className="letter-orange">advanced</span>
                   </span>
                </div>
-                  </div>
+               <div className={styles["skills__content--item"]}>
+                  <h3>Mods</h3>
+                  <span>
+                     React - <span className="letter-orange">advanced</span>
+                  </span>
+                  <span>
+                     Next.JS - <span className="letter-green">advanced</span>
+                  </span>
+                  <span>
+                     webpack - <span className="letter-orange">average</span>
+                  </span>
+               </div>
+               <a
+                  className={styles.platzi_profile}
+                  href="https://platzi.com/p/SrTager555/"
+                  target="_blank"
+               >
+                  You can see each qualification in my profile on Platzi
+               </a>
+            </div>
+            <div className={styles["qualities_content"]}>
+               <h2>Qualities</h2>
+               <div className={styles["qualities__content--item"]}>
+                  <h3>Fast learner</h3>
+                  <span>
+                  I love learning new technologies, their development is very fast, but I learn easily.
+                  </span>
+               </div>
+               <div className={styles["qualities__content--item"]}>
+                  <h3>Creative and innovative</h3>
+                  <span>
+                     The most important thing is to be creative and innovative. 
+                     I love to create new things and I am always looking for new ways to improve my skills.
+                  </span>
+               </div>
+               <div className={styles["qualities__content--item"]}>
+                  <h3>A great listener</h3>
+                  <span>
+                     I am a great listener and I always listen to what I'm learning, Open to new challenges and 
+                     always open to recive feedback and ideas.
+                  </span>
                </div>
             </div>
          </div>
