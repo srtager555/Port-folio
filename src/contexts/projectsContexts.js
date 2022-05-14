@@ -69,10 +69,10 @@ InstanceElementList.prototype.getRecentProjects = function () {
       : this.getProjects();
 };
 
-InstanceElementList.prototype.getRecentProjectsAvailable = function () {
-   return this.getAvailableProjects().length >= 5
+InstanceElementList.prototype.getRecentProjectsAvailable = function (limit = 5) {
+   return this.getAvailableProjects().length >= limit
       ? this.getAvailableProjects().slice(
-           this.getAvailableProjects().length - 5,
+           this.getAvailableProjects().length - limit,
            this.getAvailableProjects().length
         )
       : this.getAvailableProjects();
