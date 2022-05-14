@@ -11,15 +11,15 @@ export function ContainerExperience() {
       >
          <h2 className={styles.title__content}>Experience</h2>
          <div className={styles.experience__container}>
-            {ProjectsElementList.getRecentProjectsAvailable().map((project) => (
-               <div className={styles.experience__item}>
+            {ProjectsElementList.getRecentProjectsAvailable().map((project, index) => (
+               <div className={styles.experience__item} key={`${project.Title} - ${index}`}>
                   <div className={styles["experience__item--title"]}>
                      <h3>{project.Title}</h3>
                      <p>{project.Description}</p>
                   </div>
                   <div className={styles["experience__item--links"]}>
-                     {project.Links.slice(2).map((link) => (
-                        <a href={link[1]} target="_blank">
+                     {project.Links.slice(2).map((link, index) => (
+                        <a href={link[1]} target="_blank" key={`${link[0]} - ${index}`}>
                            {link[0]}
                         </a>
                      ))}
