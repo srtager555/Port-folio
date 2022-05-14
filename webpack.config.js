@@ -29,7 +29,12 @@ module.exports = {
       port: 9000,
       historyApiFallback: true,
    },
-
+   resolve: {
+      alias: {
+         Src: path.resolve(__dirname, "src/"), 
+         Styles: path.resolve(__dirname, "src/styles/"),
+      }
+   },
    module: {
       rules: [
          {
