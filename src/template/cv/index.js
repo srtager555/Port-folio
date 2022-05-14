@@ -92,12 +92,6 @@ export function CV() {
          >
             <h2 className={styles.title__content}>Skills & Qualities</h2>
             <div className={styles["skills__content"]}>
-               {/* 
-                     experienced - orange
-                     advanced - blue
-                     average - green
-                     beginner - gray
-                  */}
                <h3>Vanilla</h3>
                <ul className={styles['skills__content--item']}>
                   <li className={styles.skills__item}>
