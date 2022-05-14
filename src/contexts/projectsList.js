@@ -43,7 +43,7 @@ export const projectsList = [
             Description: "This is my main personal project, I work on it every day, not always in the code, but every day I have ideas about it in my head.",
          }),
       ],
-      Links: [["NPM", "https://www.npmjs.com/package/wrapping-letters-react"], ["site", "https://wrapping-letters.netlify.app/"], ["WL Github", "https://github.com/srtager555/wrapping-letters"]],
+      Links: [["NPM", "https://www.npmjs.com/package/wrapping-letters-react"], ["site", "https://wrapping-letters.vercel.app/"], ["WL Github", "https://github.com/srtager555/wrapping-letters"]],
       Date: "10 12 2021",
    }),
    new ProjectElement({
@@ -104,7 +104,7 @@ export const projectsList = [
          }),
       ],
       Date: "04 03 2022",
-      Links: [],
+      Links: [['Portfolio', 'https://ttager.page/'], ['Port-folio\'s Github', 'https://github.com/srtager555/Port-folio']],
    }),
    new ProjectElement({
       Title: "Carlos && Ponce",
