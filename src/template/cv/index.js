@@ -1,6 +1,7 @@
 import React from "react";
-
 import WrappingLetters from "wrapping-letters-react";
+
+import { ContainerTitle } from "Src/components/cvComponents/containerTitle";
 
 import styles from "../../styles/cv.module.scss";
 
@@ -10,14 +11,7 @@ export function CV() {
 
    return (
       <div className={styles["container--cv"]}>
-         <div
-            className={`${styles.container__content}  ${styles["container--title"]}`}
-         >
-            <img src="https://i.ibb.co/f8RVct5/home-image.jpg" alt="Hu Tao" />
-            <h1>Frontend developer</h1>
-            <span>Carlos Ponce</span>
-         </div>
-
+         <ContainerTitle />
          <div
             className={`${styles.container__content} ${styles["container--info"]}`}
          >
