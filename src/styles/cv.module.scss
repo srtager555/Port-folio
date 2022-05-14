@@ -216,16 +216,46 @@
 }
 
 .skills__content h3 {
-   font-size: 30px;
+   font-size: 20px;
    font-weight: 400;
    text-transform: uppercase;
-   margin-bottom: 30px;
+   margin-bottom: 10px;
+}
+
+.skills__content a {
+   display: block;
+   width: 90%;
+   font-family: 'Noto Sans Display', sans-serif;
+   font-size: 25px;
+   color: #000;
 }
 
 .skills__content .skills__content--item {
    list-style: none;
-   margin-bottom: 30px;
+   margin-bottom: 40px;
 }
-.skills__content .skills__item {
+.skills__content .skills__content--item .skills__item {
+   font-size: 35px;
+   font-weight: 300;
+   text-transform: uppercase;
+   margin-bottom: 5px;
+   margin-left: 5px;
    font-family: "Noto Sans Display", sans-serif;
+}
+
+.skills__content .skills__item span[letter-grade="experienced"],
+.skills__content .skills__item span[letter-grade="advanced"],
+.skills__content .skills__item span[letter-grade="average"] {
+   color: #000;
+   font-weight: 500;
+   font-family: "Noto Sans Display", sans-serif;
+}
+.skills__content .skills__item span[letter-grade="experienced"] {
+   color: rgb(187, 72, 6);
+}
+.skills__content .skills__item span[letter-grade="advanced"] {
+   color: rgb(87, 87, 203);
+}
+.skills__content .skills__item span[letter-grade="average"] {
+   color: rgb(31, 129, 31);
 }

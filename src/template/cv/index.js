@@ -101,26 +101,26 @@ export function CV() {
                <h3>Vanilla</h3>
                <ul className={styles['skills__content--item']}>
                   <li className={styles.skills__item}>
-                     html - <b className="letter-red">experienced</b>
+                     html - <span letter-grade='experienced'>experienced</span>
                   </li>
                   <li className={styles.skills__item}>
-                     css - <b className="letter-red">experienced</b>
+                     css - <span letter-grade='experienced'>experienced</span>
                   </li>
                   <li className={styles.skills__item}>
-                     js - <b className="letter-orange">advanced</b>
+                     js - <span letter-grade='advanced'>advanced</span>
                   </li>
                </ul>
 
                <h3>Mods</h3>
                <ul className={styles['skills__content--item']}>
                   <li className={styles.skills__item}>
-                     React - <b className="letter-orange">advanced</b>
+                     React - <span letter-grade='advanced'>advanced</span>
                   </li>
                   <li className={styles.skills__item}>
-                     Next.JS - <b className="letter-green">advanced</b>
+                     Next.JS - <span letter-grade='advanced'>advanced</span>
                   </li>
                   <li className={styles.skills__item}>
-                     webpack - <b className="letter-orange">average</b>
+                     webpack - <span letter-grade='average'>average</span>
                   </li>
                </ul>
 
