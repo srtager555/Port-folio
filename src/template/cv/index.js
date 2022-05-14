@@ -88,40 +88,42 @@ export function CV() {
          </div>
 
          <div
-            className={`${styles.container__content} ${styles["container--skills&qualities"]}`}
+            className={`${styles.container__content} ${styles["container--skills__qualities"]}`}
          >
             <h2 className={styles.title__content}>Skills & Qualities</h2>
             <div className={styles["skills__content"]}>
-               <div className={styles["skills__content--item"]}>
-                  {/* 
+               {/* 
                      experienced - orange
                      advanced - blue
                      average - green
                      beginner - gray
                   */}
-                  <h3>Vanilla</h3>
-                  <span className={styles.skills__item}>
+               <h3>Vanilla</h3>
+               <ul className={styles['skills__content--item']}>
+                  <li className={styles.skills__item}>
                      html - <b className="letter-red">experienced</b>
-                  </span>
-                  <span className={styles.skills__item}>
+                  </li>
+                  <li className={styles.skills__item}>
                      css - <b className="letter-red">experienced</b>
-                  </span>
-                  <span className={styles.skills__item}>
+                  </li>
+                  <li className={styles.skills__item}>
                      js - <b className="letter-orange">advanced</b>
-                  </span>
-               </div>
-               <div className={styles["skills__content--item"]}>
-                  <h3>Mods</h3>
-                  <span className={styles.skills__item}>
+                  </li>
+               </ul>
+
+               <h3>Mods</h3>
+               <ul className={styles['skills__content--item']}>
+                  <li className={styles.skills__item}>
                      React - <b className="letter-orange">advanced</b>
-                  </span>
-                  <span className={styles.skills__item}>
+                  </li>
+                  <li className={styles.skills__item}>
                      Next.JS - <b className="letter-green">advanced</b>
-                  </span>
-                  <span className={styles.skills__item}>
+                  </li>
+                  <li className={styles.skills__item}>
                      webpack - <b className="letter-orange">average</b>
-                  </span>
-               </div>
+                  </li>
+               </ul>
+
                <a
                   className={styles.platzi_profile}
                   href="https://platzi.com/p/SrTager555/"

@@ -1,3 +1,7 @@
+:root {
+   --margin-gap__sq: 2.5%;
+}
+
 .container--cv {
    width: 1200px;
    color: #000;
@@ -17,17 +21,18 @@
    padding-bottom: 10px;
    font-size: 50px;
    text-transform: uppercase;
+   text-align: center;
 }
-.container--cv .container__content .title__content::before {
-   content: "";
-   position: absolute;
-   bottom: 0%;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 100%;
-   height: 1px;
-   background-color: #000;
-}
+// .container--cv .container__content .title__content::before {
+//    content: "";
+//    position: absolute;
+//    bottom: 0%;
+//    left: 50%;
+//    transform: translateX(-50%);
+//    width: 100%;
+//    height: 1px;
+//    background-color: #000;
+// }
 
 .container--cv .container__content::after {
    content: "";
@@ -171,4 +176,56 @@
    padding: 0 2.5%;
    font-family: "Noto Sans Display", sans-serif;
    font-weight: 400;
+}
+
+.container--skills__qualities {
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.container--skills__qualities .skills__content::before {
+   content: "";
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translateY(-50%);
+   width: 1px;
+   height: 100%;
+   background-color: #000;
+}
+.container--skills__qualities .title__content {
+   width: 100%;
+   margin-bottom: 40px;
+}
+.skills__content,
+.qualities_content {
+   position: relative;
+
+   // the  0.05 is the margin-gap__sq
+   width: calc(50% - (50% * 0.05));
+}
+
+.skills__content {
+   margin-right: var(--margin-gap__sq);
+}
+.qualities_content {
+   margin-left: var(--margin-gap__sq);
+}
+
+.skills__content h3 {
+   font-size: 30px;
+   font-weight: 400;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+}
+
+.skills__content .skills__content--item {
+   list-style: none;
+   margin-bottom: 30px;
+}
+.skills__content .skills__item {
+   font-family: "Noto Sans Display", sans-serif;
 }
