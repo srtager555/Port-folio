@@ -235,7 +235,7 @@
    margin-bottom: 40px;
 }
 .skills__content .skills__content--item .skills__item {
-   font-size: 35px;
+   font-size: 25px;
    font-weight: 300;
    text-transform: uppercase;
    margin-bottom: 5px;
@@ -259,3 +259,22 @@
 .skills__content .skills__item span[letter-grade="average"] {
    color: rgb(31, 129, 31);
 }
+
+.qualities_content .qualities__content--item {
+   padding-bottom: 15px;
+   margin-bottom: 30px;
+   border-bottom: 1px solid #000;
+}
+.qualities_content .qualities__content--item h3 {
+   font-size: 20px;
+   font-weight: 400;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+}
+.qualities_content .qualities__content--item p {
+   font-size: 22px;
+   font-family: "Noto Sans Display", sans-serif;
+   font-weight: 400;
+}
+
+
