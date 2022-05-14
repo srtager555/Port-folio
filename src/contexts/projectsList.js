@@ -43,7 +43,7 @@ export const projectsList = [
             Description: "This is my main personal project, I work on it every day, not always in the code, but every day I have ideas about it in my head.",
          }),
       ],
-      Links: [["NPM", "https://www.npmjs.com/package/wrapping-letters-react"], ["site", "https://wrapping-letters.vercel.app/"], ["WL Github", "https://github.com/srtager555/wrapping-letters"]],
+      Links: [["NPM", "https://www.npmjs.com/package/wrapping-letters-react"], ["WL", "https://wrapping-letters.vercel.app/"], ["WL\'s Github", "https://github.com/srtager555/wrapping-letters"]],
       Date: "10 12 2021",
    }),
    new ProjectElement({
