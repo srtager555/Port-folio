@@ -57,7 +57,7 @@ export function ContainerProfile() {
                   <p>
                      {/* Busco un puesto como enmaquetador del front-end en react
                      como un lider o comepañero de trabajo. */}
-                     I am looking for a position as a front-end packager at
+                     I am looking for a position as a front-end developer at
                      react as a lead or co-worker.
                   </p>
                   <br />
