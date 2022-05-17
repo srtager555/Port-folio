@@ -2,9 +2,10 @@
    --margin-gap__sq: 2.5%;
 }
 
-
 .container--cv {
-   width: 1200px;
+   width: 100%;
+   max-width: 1200px;
+   min-width: 320px;
    color: #000;
    margin: 0 auto;
    border-left: #000 1px solid;
@@ -109,6 +110,7 @@
 }
 
 .container--cv .container--info .profile__content .profile__Info {
+   position: relative;
    grid-column: 1;
    grid-row: 1;
 }
@@ -117,6 +119,9 @@
    .profile__content
    .profile__Info
    .profile__Info--imgBox {
+   position: sticky;
+   top: 0;
+   left: 0;
    margin: auto;
    width: 100%;
    height: 550px;
@@ -412,4 +417,95 @@
 .container--moreInfo .moreInfo__container .moreInfo__container--item p {
    font-family: "Noto Sans Display", sans-serif;
    font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+   .container--cv .container--title h1 {
+      font-size: 70px;
+   }
+   .container--cv .container--title span {
+      display: block;
+      font-size: 35px;
+      font-family: "Noto Sans Display", sans-serif;
+      font-weight: 300;
+      text-transform: uppercase;
+   }
+}
+@media (max-width: 1024px) {
+   .container--cv .container__content .title__content {
+      font-size: 40px;
+   }
+
+   .container--moreInfo .moreInfo__container .moreInfo__container--item {
+      width: calc(50% - (50% * 0.02));
+   }
+   .container--cv .container--info .profile__content {
+      grid-template-columns: 275px 1fr;
+   }
+}
+@media (max-width: 800px) {
+   .container--cv .container__content {
+      margin-bottom: 4%;
+   }
+   .container--cv .container__content::after {
+      width: 100%;
+      bottom: 0%;
+   }
+
+   .container--cv .container__content .title__content {
+      font-size: 40px;
+   }
+
+   .container--cv .container--info {
+      margin-top: 30px;
+      // padding: 0 50px;
+   }
+   .container--moreInfo .moreInfo__container .moreInfo__container--item {
+      width: calc(50% - (50% * 0.02));
+   }
+   .container--cv .container--info .profile__content {
+      grid-template-columns: 1fr;
+   }
+   .container--cv .container--info .profile__content .profile__Info {
+      display: none;
+   }
+   .container--cv .container--info .profile__content .profile__about {
+      grid-column: 1;
+   }
+
+   .container--experience .experience__container .experience__item {
+      margin-bottom: 50px;
+      width: 95%;
+   }
+
+   .skills__content,
+   .qualities_content {
+      position: relative;
+
+      // the  0.05 is the margin-gap__sq
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: 0px;
+   }
+   .container--skills__qualities .skills__content {
+      padding-bottom: 100px;
+      margin-bottom: 100px;
+   }
+   .container--skills__qualities .skills__content::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: -50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+   }
+   .qualities_content .qualities__content--item:last-child {
+      margin-bottom: 0px;
+   }
+
+   .container--moreInfo .moreInfo__container .moreInfo__container--item {
+      width: 95%;
+   }
 }
