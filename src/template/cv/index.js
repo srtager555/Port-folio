@@ -6,7 +6,7 @@ import { ContainerSQ } from "Src/components/cvComponents/containerSQ";
 import { ContainerExperience } from "Src/components/cvComponents/ContainerExperience";
 import { ContainerMoreInfo } from "Src/components/cvComponents/ContainerMoreInfo";
 
-import styles from "Styles/cv.module.scss";
+import styles from "Styles/cvStyles/cv.module.scss";
 
 export function CV() {
    return (

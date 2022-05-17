@@ -1,13 +1,14 @@
 import React from "react";
 
-import styles from "Styles/cv.module.scss";
+import stylesCV from "Styles/cvStyles/cv.module.scss";
+import styles from "Styles/cvStyles/moreInfo.module.scss";
 
 export function ContainerMoreInfo() {
    return (
       <div
-         className={`${styles.container__content} ${styles["container--moreInfo"]}`}
+         className={`${stylesCV.container__content} ${styles["container--moreInfo"]}`}
       >
-         <h2 className={styles.title__content}>More Info</h2>
+         <h2 className={stylesCV.title__content}>More Info</h2>
          <div className={styles["moreInfo__container"]}>
             <div className={styles["moreInfo__container--item"]}>
                <h4 className={styles.title__moreInfo}>English B1 for now.</h4>

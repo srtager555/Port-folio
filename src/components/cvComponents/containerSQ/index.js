@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-import styles from "Styles/cv.module.scss";
+import stylesCV from "Styles/cvStyles/cv.module.scss";
+import styles from "Styles/cvStyles/sq.module.scss";
 
 export function ContainerSQ() {
    return (
       <>
          <div
-            className={`${styles.container__content} ${styles["container--skills__qualities"]}`}
+            className={`${stylesCV.container__content} ${styles["container--skills__qualities"]}`}
          >
-            <h2 className={styles.title__content}>Skills & Qualities</h2>
+            <h2 className={stylesCV.title__content}>Skills & Qualities</h2>
             <div className={styles["skills__content"]}>
                <h3>Vanilla</h3>
                <ul className={styles["skills__content--item"]}>

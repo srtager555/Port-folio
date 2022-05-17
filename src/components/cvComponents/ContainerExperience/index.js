@@ -2,14 +2,15 @@ import React from "react";
 
 import { ProjectsElementList } from "Src/contexts/projectsContexts";
 
-import styles from "Styles/cv.module.scss";
+import stylesCV from "Styles/cvStyles/cv.module.scss";
+import styles from "Styles/cvStyles/experience.module.scss";
 
 export function ContainerExperience() {
    return (
       <div
-         className={`${styles.container__content} ${styles["container--experience"]}`}
+         className={`${stylesCV.container__content} ${styles["container--experience"]}`}
       >
-         <h2 className={styles.title__content}>Experience</h2>
+         <h2 className={stylesCV.title__content}>Experience</h2>
          <div className={styles.experience__container}>
             {ProjectsElementList.getRecentProjectsAvailable().map((project, index) => (
                <div className={styles.experience__item} key={`${project.Title} - ${index}`}>

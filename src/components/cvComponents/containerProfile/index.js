@@ -2,7 +2,8 @@ import React from "react";
 
 import WrappingLetters from "wrapping-letters-react";
 
-import styles from "Styles/cv.module.scss";
+import stylesCV from "Styles/cvStyles/cv.module.scss";
+import styles from "Styles/cvStyles/container--profile.module.scss";
 
 export function ContainerProfile() {
    const [year, setYear] = React.useState(new Date().getFullYear());
@@ -12,10 +13,10 @@ export function ContainerProfile() {
 
    return (
       <div
-         className={`${styles.container__content} ${styles["container--info"]}`}
+         className={`${stylesCV.container__content} ${styles["container--info"]}`}
       >
          <div
-            className={`${styles.container__content} ${styles["container--info__profile"]}`}
+            className={`${stylesCV.container__content} ${styles["container--info__profile"]}`}
          >
             <div className={styles["profile__content"]}>
                <div className={styles["profile__Info"]}>
@@ -66,7 +67,7 @@ export function ContainerProfile() {
                      Frontend, he vivido una gran cantidad de problemas que he
                      solucionado, ademas que recientemente he certificcado mis
                      concimientos ¿que seran unos cuantos problemas mas? */}
-                     I have a base of 3 years in Frontend development, I have
+                     I have a base of {`${year - 2019}`} years in Frontend development, I have
                      experienced a large number of problems that I have solved,
                      and I have recently certified my knowledge, what will be a
                      few more problems?

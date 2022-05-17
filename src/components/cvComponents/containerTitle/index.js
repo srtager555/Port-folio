@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import styles from "Styles/cv.module.scss";
+import stylesCV from "Styles/cvStyles/cv.module.scss";
+import styles from "Styles/cvStyles/cv.module.scss";
 
 export function ContainerTitle() {
    const [isMobile, setIsMobile] = useState(false);
@@ -21,7 +22,7 @@ export function ContainerTitle() {
    }, []);
    return (
       <div
-         className={`${styles.container__content}  ${styles["container--title"]}`}
+         className={`${stylesCV.container__content}  ${styles["container--title"]}`}
       >
          {isMobile ? (
             <img

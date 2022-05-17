@@ -1,0 +1,136 @@
+.container--cv .container--info {
+   margin-top: 30px;
+   padding: 0 50px;
+}
+
+.container--cv .container--info .profile__content {
+   display: grid;
+   grid-template-columns: 350px 1fr;
+   grid-gap: 30px;
+}
+
+.container--cv .container--info .profile__content .profile__Info {
+   position: relative;
+   grid-column: 1;
+   grid-row: 1;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__Info
+   .profile__Info--imgBox {
+   position: sticky;
+   top: 0;
+   left: 0;
+   margin: auto;
+   width: 100%;
+   height: 550px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__Info
+   .profile__Info--imgBox
+   img {
+   height: 100%;
+}
+
+.container--cv .container--info .profile__content .profile__about {
+   grid-column: 2;
+   grid-row: 1;
+}
+
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 2.5%;
+   padding-bottom: 20px;
+   margin-bottom: 50px;
+   border-bottom: #000 1px solid;
+}
+
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item:nth-child(2) {
+   align-items: flex-end;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item
+   h2 {
+   font-size: 37px;
+   font-weight: 400;
+   text-transform: uppercase;
+}
+.container--cv
+   .container--info
+   .profile__content
+   .profile__about
+   .profile__Info--infoBox
+   .profile__Info--infoBox__item
+   a {
+   color: #000;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 22px;
+   font-family: "Noto Sans Display", sans-serif;
+   font-weight: 500;
+}
+
+.container--cv .container--info .profile__content .profile__about p {
+   font-size: 22px;
+   padding: 0 2.5%;
+   font-family: "Noto Sans Display", sans-serif;
+   font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+   .container--cv .container--info .profile__content {
+      grid-template-columns: 275px 1fr;
+   }
+}
+
+@media (max-width: 550px) {
+   .container--cv
+      .container--info
+      .profile__content
+      .profile__about
+      .profile__Info--infoBox {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+   .container--cv
+      .container--info
+      .profile__content
+      .profile__about
+      .profile__Info--infoBox
+      .profile__Info--infoBox__item {
+      justify-content: flex-start;
+   }
+}
