@@ -52,7 +52,6 @@ export function NotMatch({ chagePath, setLoader }) {
 
    useLayoutEffect(() => {
       setLoader(false);
-      setInHome(false);
    }, []);
 
    useEffect(() => {
