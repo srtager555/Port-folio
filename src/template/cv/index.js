@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import { navbar as Navbar } from "./components/navbar";
 import { home } from "./pages/home";
 import { profile } from "./pages/profile";
 import { sq } from "./pages/sq";
@@ -17,10 +18,10 @@ export function cvtemplate() {
    });
 
    const navbarProps = {
-        pageName,
-        setPageName,
-        pagesName,
-   }
+      pageName,
+      setPageName,
+      pagesName,
+   };
 
    useEffect(() => {
       setPage(
@@ -30,5 +31,10 @@ export function cvtemplate() {
       );
    }, [pageName]);
 
-   return <>{page}</>;
+   return (
+      <>
+         <Navbar {...navbarProps} />
+         {page}
+      </>
+   );
 }
