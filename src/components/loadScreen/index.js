@@ -21,7 +21,9 @@ export function LoadScreen({ loaded, inPath }) {
    }
 
    useEffect(() => {
-      if (inPath === "/" || inPath === "") setArrClassRoutes(["home--style"]);
+      let conditions = inPath === '/' || inPath === '/cv' || inPath === '/cvpdf' || inPath === ''
+
+      if (conditions) setArrClassRoutes(["home--style"]);
       else setArrClassRoutes([""]);
    }, [inPath]);
 

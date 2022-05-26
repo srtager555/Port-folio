@@ -10,8 +10,7 @@ export function Navbar({ handleResetScroll, inPath }) {
    useEffect(() => {
       console.log(inPath);
 
-      if (inPath === "/cv") {
-         console.log("!");
+      if (inPath === "/cv" || inPath === "/cvpdf") {
          setNavComponent(null);
       } else {
          console.log("?");
