@@ -5,6 +5,7 @@ import { HomePage } from "../pages/home";
 import { ProjectPage } from "../pages/projects";
 import { NotMatch } from "../pages/NotMatch";
 import { CV } from "../pages/cv";
+import { cvpdf as Cvpdf } from "../pages/cvpdf";
 
 import { Navbar } from "../components/navbar";
 import { Background } from "../components/background";
@@ -58,6 +59,10 @@ export function Router() {
                   <Route
                      path="/cv"
                      element={<CV {...props} />}
+                  />
+                  <Route
+                     path="/cvpdf"
+                     element={<Cvpdf {...props} />}
                   />
                   <Route
                      path="/p/:id"
