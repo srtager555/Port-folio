@@ -4,8 +4,10 @@ export function navbar({ pageName, setPageName, pagesName }) {
    const [buttons, setButtons] = useState([]);
    const pageIndex = pagesName.indexOf(pageName);
 
+   const handleChangePage = (text) => setPageName(text);
+
    function buttonComponent(text) {
-      return <button>{text}</button>;
+      return <button onClick={() => handleChangePage(text)}>{text}</button>;
    }
 
    useEffect(() => {
