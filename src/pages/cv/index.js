@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { CV as CVPage } from '../../template/cv/';
+import { cvtemplate } from '../../template/cv/';
 
 export function CV({ setLoader, chagePath }) {
 
@@ -10,5 +10,5 @@ export function CV({ setLoader, chagePath }) {
         setLoader(true);
     }, []);
 
-    return <CVPage />;
+    return <>{cvtemplate()}</>;
 }
