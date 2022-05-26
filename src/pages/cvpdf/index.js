@@ -6,13 +6,8 @@ export function cvpdf({ chagePath, setLoader }) {
    chagePath();
 
    useEffect(() => {
-      setLoader(false);
+      setLoader(true);
    }, []);
-
-   useEffect(() => {
-      setTimeout(() => {
-         setLoader(true);
-      }, 1000);
-   }, []);
+   
    return <>{cvpdfTemplate()}</>;
 }
