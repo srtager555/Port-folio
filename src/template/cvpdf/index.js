@@ -14,15 +14,14 @@ export function cvpdfTemplate() {
          <div className={styles["links--container"]}>
             <Link to="/" className={styles.link}>
                <span>Port-folio</span>
-               <small>clink me</small>
+               <small>click me</small>
             </Link>
             <Link to="/" className={styles.link}>
                <span>Curriculum</span>
-               <small>clink me</small>
+               <small>click me</small>
             </Link>
          </div>
          <div className={styles.contact__links}>
-            <div className={styles["contact__links--container"]}>
                <a href="mailto:srtager555@gmail.com">Mail</a>
                <a href="https://www.linkedin.com/in/srtager555" target="_blank">
                   LinkedIn
@@ -30,7 +29,6 @@ export function cvpdfTemplate() {
                <a href="https://github.com/srtager555" target="_blank">
                   GitHub
                </a>
-            </div>
          </div>
       </div>
    );
