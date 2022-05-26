@@ -1,0 +1,33 @@
+.container
+    height: 100vh
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    flex-direction: column
+
+    & > div
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 95%
+        max-width: 760px
+        margin: 0 auto
+
+.container .headerName
+    font-size: 2.5rem
+    font-weight: bold
+    margin-bottom: 1rem
+    text-transform: uppercase
+
+    & span
+        font-family: 'Noto Sans Display', sans-serif
+
+        & h1
+            font-family: 'Noto Sans Display', sans-serif
+            display: inline-block
+            font-size: inherit
+
+.container .links--container 
+    flex-direction: column
+    align-items: flex-start
