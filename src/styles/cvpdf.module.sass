@@ -6,7 +6,7 @@
     align-items: flex-start
     flex-direction: column
 
-    & > div
+    > div
         display: flex
         justify-content: center
         align-items: center
@@ -20,14 +20,28 @@
     margin-bottom: 1rem
     text-transform: uppercase
 
-    & span
+    span
         font-family: 'Noto Sans Display', sans-serif
 
-        & h1
+        h1
             font-family: 'Noto Sans Display', sans-serif
             display: inline-block
             font-size: inherit
 
-.container .links--container 
+.container .links--container
     flex-direction: column
     align-items: flex-start
+
+    .link
+        display: block
+        color: #000
+        font-size: 7rem
+        text-decoration: none
+
+        span
+            text-transform: uppercase
+            display: inherit
+
+        small
+            text-transform: uppercase
+            font-size: 1.5rem
