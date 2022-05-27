@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { menuButton as MenuButton } from "./menuButton";
 
+import styles from "Src/styles/cvStyles/navbar.module.sass";
+
 export function navbar({ pageName, setPageName, pagesName }) {
    const [showButton, setShowButton] = useState(false);
    const [buttons, setButtons] = useState([]);
@@ -43,9 +45,12 @@ export function navbar({ pageName, setPageName, pagesName }) {
    return (
       <>
          <MenuButton {...meuButtonProps} />
-         {showButton && buttons.map((element, index) => (
-            <span key={`button-${index}`}>{element}</span>
-         ))}
+         <div className={styles.container}>
+            {showButton &&
+               buttons.map((element, index) => (
+                  <span key={`button-${index}`}>{element}</span>
+               ))}
+         </div>
       </>
    );
 }
