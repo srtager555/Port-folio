@@ -1,7 +1,9 @@
 import React from "react";
 
+// import styles from '../../../../styles/cvStyles/menuButton.module.sass';
+
 export function menuButton({ pageName, handleChangePage, pagesName }) {
-   let buttons = pagesName.map((element, index) => {
+    let buttons = pagesName.map((element, index) => {
       return (
          <button
             inpage={`${pageName === element}`}
@@ -15,9 +17,8 @@ export function menuButton({ pageName, handleChangePage, pagesName }) {
 
    return (
       <>
-         <div>
-             {buttons}
-         </div>
+         <div></div>
+         <div>{buttons}</div>
       </>
    );
 }
