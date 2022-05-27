@@ -1,6 +1,6 @@
 import React from "react";
 
-// import styles from '../../../../styles/cvStyles/menuButton.module.sass';
+import styles from "Src/styles/cvStyles/navbar.module.sass";
 
 export function menuButton({ pageName, handleChangePage, pagesName }) {
     let buttons = pagesName.map((element, index) => {
@@ -17,8 +17,8 @@ export function menuButton({ pageName, handleChangePage, pagesName }) {
 
    return (
       <>
-         <div></div>
-         <div>{buttons}</div>
+         <button className={styles.menuBtnContent}></button>
+         <div className={styles.menuContent}>{buttons}</div>
       </>
    );
 }
