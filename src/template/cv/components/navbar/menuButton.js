@@ -17,9 +17,10 @@ export function menuButton({ pageName, handleChangePage, pagesName }) {
 
    return (
       <>
-         <button className={styles.menuBtnContent}></button>
-         <div className={styles.menuContent}>
-            <div className={styles["container--hero"]}>{buttons}</div>
+         <button className={`${styles.menuBtnContent} ${styles.open}`}></button>
+         <div className={`${styles.menuContent} ${styles.open}`}>
+            <div className={styles["container--hero"]}>{buttons}
+            </div>
          </div>
       </>
    );
