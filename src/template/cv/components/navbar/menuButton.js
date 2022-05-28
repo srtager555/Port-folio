@@ -3,7 +3,7 @@ import React from "react";
 import styles from "Src/styles/cvStyles/navbar.module.sass";
 
 export function menuButton({ pageName, handleChangePage, pagesName }) {
-    let buttons = pagesName.map((element, index) => {
+   let buttons = pagesName.map((element, index) => {
       return (
          <button
             inpage={`${pageName === element}`}
@@ -18,7 +18,9 @@ export function menuButton({ pageName, handleChangePage, pagesName }) {
    return (
       <>
          <button className={styles.menuBtnContent}></button>
-         <div className={styles.menuContent}>{buttons}</div>
+         <div className={styles.menuContent}>
+            <div className={styles["container--hero"]}>{buttons}</div>
+         </div>
       </>
    );
 }
