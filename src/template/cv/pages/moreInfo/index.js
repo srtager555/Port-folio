@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function moreInfo() {
+export function more_info() {
   return (
     <div>moreInfo</div>
   )

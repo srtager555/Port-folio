@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { navbar as Navbar } from "./components/navbar";
 import { home } from "./pages/home";
 import { profile } from "./pages/profile";
-import { sq } from "./pages/sq";
+import { skills_and_qualities as sq } from "./pages/sq";
 import { experience } from "./pages/experience";
-import { moreInfo } from "./pages/moreInfo";
+import { more_info as moreInfo } from "./pages/moreInfo";
 
 export function cvtemplate() {
    const [page, setPage] = useState(null);
@@ -14,7 +14,7 @@ export function cvtemplate() {
    const pages = [home, profile, sq, experience, moreInfo];
 
    const pagesName = pages.map((element) => {
-      return element.name;
+      return element.name.replace(/_/g, " ");
    });
 
    const navbarProps = {
