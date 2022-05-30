@@ -160,7 +160,6 @@ button
                 .fullLetters
                     transform: translateY(0) rotateX(0)
 
-
             &[inpage = 'true']
                 .emptyLetters
                     transform: translateY(-55%) rotateX(90deg)
@@ -173,3 +172,16 @@ button
             //     color: #fff
             // &:active
             //     color: #fff
+
+@media screen and ( min-width: 1024px )
+
+    .menuContent
+        top: 0
+        left: -15%
+        width: 50%
+        height: 100vh
+
+        &.open
+            width: 60%
+            left: 0
+            opacity: 1
