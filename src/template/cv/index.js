@@ -24,11 +24,20 @@ export function cvtemplate() {
    };
 
    useEffect(() => {
-      setPage(
-         pages.find((element) => {
-            return element.name === pageName;
-         })
-      );
+      //A global variable only changes when the function,
+      //ends, The variable that is born in this scope can
+      //change immediately
+      let findpage = pages.find((element) => {
+         // navbar change namePage without '_' here is added
+         return element.name === pageName.replace(/\s/g, '_');
+      });
+      console.log(findpage)
+
+      if (findpage.name === "home") {
+         setPage(findpage(setPageName));
+      } else setPage(findpage);
+
+      return () => setPage(null);
    }, [pageName]);
 
    return (
