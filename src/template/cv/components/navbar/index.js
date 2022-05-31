@@ -24,6 +24,13 @@ export function navbar({ pageName, setPageName, pagesName }) {
    }
 
    useEffect(() => {
+      //here change the name of a string on the arr
+      let a = pagesName.find((e) => e === "skills and qualities");
+      let b = pagesName.indexOf(a);
+      pagesName.splice(b, 1, "s&q");
+   }, [pageName]);
+
+   useEffect(() => {
       //here change the sections to go, depending on the pageName
       let btn = (prop) => buttonComponent(pagesName[prop]);
       if (pageIndex === 0) {
@@ -46,6 +53,7 @@ export function navbar({ pageName, setPageName, pagesName }) {
       <>
          <MenuButton {...meuButtonProps} />
          <div className={styles.container}>
+            {/* here only print the arr of btns */}
             {showButton &&
                buttons.map((element, index) => (
                   <span key={`button-${index}`}>{element}</span>
