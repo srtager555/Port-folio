@@ -16,7 +16,7 @@ export function HomeContainer({ l }) {
    };
 
    useLayoutEffect(() => {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var userAgent = navigator.userAgentData || navigator.vendor || window.opera;
       if (/iPad|iPhone|iPod|Macintosh/.test(userAgent) && !window.MSStream) {
          setIsAppleDevice(true);
       }
