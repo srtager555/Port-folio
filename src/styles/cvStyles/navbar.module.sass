@@ -113,10 +113,12 @@ button
     height: 110vh
     background: #321e1e
     opacity: 0
+    visibility: hidden
     transition: 0.5s ease-in-out
     z-index: 98
     &.open
         opacity: 1
+        visibility: visible
         height: 100vh
         top: 0
 
@@ -165,13 +167,6 @@ button
                     transform: translateY(-55%) rotateX(90deg)
                 .fullLetters
                     transform: translateY(0) rotateX(0)
-
-            // &:hover
-            //     color: #fff
-            // &:focus
-            //     color: #fff
-            // &:active
-            //     color: #fff
 
 @media screen and ( min-width: 1024px )
 
