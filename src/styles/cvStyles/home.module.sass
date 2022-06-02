@@ -1,4 +1,6 @@
-$orbLargeDimensions: 70vh
+$orb--Large-Dimensions: 70vh
+$orb--medium-Dimensions: 40vh
+$orb--logo-Dimensions: 10vh
 
 =keyframes($name)
     @-webkit-keyframes #{$name}
@@ -9,6 +11,18 @@ $orbLargeDimensions: 70vh
         @content
     @keyframes #{$name}
         @content
+
++keyframes(orb)
+    0% 
+        transform: translate(-50%, -50%) rotate(0deg)
+    100%
+        transform: translate(-50%, -50%) rotate(360deg)
+
++keyframes(orb1)
+    0% 
+        transform: translate(-50%, -50%) rotate(0deg)
+    100%
+        transform: translate(-50%, -50%) rotate(-360deg)
 
 .orb
     position: absolute
@@ -37,23 +51,48 @@ $orbLargeDimensions: 70vh
     height: 100vh
     z-index: -1
 
-    .orbLager
+    .orbLager, .orbMedium, .orbLogo, .orbLogo .orbBg 
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        width: $orbLargeDimensions
-        height: $orbLargeDimensions
-        z-index: -1
         animation: orb 60s linear infinite
+
+    .orbLager
+        width: $orb--Large-Dimensions
+        height: $orb--Large-Dimensions
+        z-index: 1
 
         .orb
             background-color: #171616
 
+    .orbMedium
+        width: $orb--medium-Dimensions
+        height: $orb--medium-Dimensions
+        animation: orb1 60s linear infinite
+        z-index: 2
 
+        .orb
+            background-color: #121212
 
-+keyframes(orb)
-    0% 
-        transform: translate(-50%, -50%) rotate(0deg)
-    100%
-        transform: translate(-50%, -50%) rotate(360deg)
+    .orbLogo
+        display: flex
+        justify-content: center
+        align-items: center
+        width: $orb--logo-Dimensions
+        height: $orb--logo-Dimensions
+        animation: none
+        z-index: 3
+
+        .logo
+            font-size: 3rem
+            font-family: 'Poppins', sans-serif
+            color: #fff
+            z-index: 4
+
+        .orbBg
+            width: inherit
+            height: inherit
+
+            .orb
+                background-color: #0f0a0a
