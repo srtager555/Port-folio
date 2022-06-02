@@ -1,5 +1,5 @@
-$orb--Large-Dimensions: 70vh
-$orb--medium-Dimensions: 40vh
+$orb--Large-Dimensions: 80vh
+$orb--medium-Dimensions: 60vh
 $orb--logo-Dimensions: 15vh
 
 =keyframes($name)
@@ -61,9 +61,12 @@ $orb--logo-Dimensions: 15vh
     .orbLager
         width: $orb--Large-Dimensions
         height: $orb--Large-Dimensions
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))
         z-index: 1
 
+
         .orb
+            
             background-color: #171616
 
     .orbMedium
@@ -81,8 +84,12 @@ $orb--logo-Dimensions: 15vh
         align-items: center
         width: $orb--logo-Dimensions
         height: $orb--logo-Dimensions
+        transition: all 500ms ease-in-out
         animation: none
         z-index: 3
+
+        &:hover 
+            filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5))
 
         .logo
             font-size: 3rem
@@ -96,3 +103,53 @@ $orb--logo-Dimensions: 15vh
 
             .orb
                 background-color: #171616
+
+
+.nextPage
+    position: absolute
+    top: 65%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 5
+
+    span 
+        display: inline-block
+        color: transparent
+        font-size: 2.2rem
+        font-family: 'Noto sans Display', sans-serif
+        font-style: italic
+        text-transform: uppercase
+        white-space: pre-wrap
+        -webkit-text-stroke: 1px #fff
+        transform: translateY(0%) rotateX(0deg)
+        transition: all 200ms linear
+        
+        &.resume
+            transition-delay: 100ms
+            
+
+    .secundaryLetters
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+
+        span 
+            transform: translateY(-55%) rotateX(-90deg)
+            color: #fff
+        
+            // &:last-child
+            //     transition-delay: 100ms
+    
+    &:hover
+        span
+            transform: translateY(55%) rotateX(90deg)
+
+        .secundaryLetters
+            span
+                transform: translateY(0%) rotateX(0deg)
+
+            
+
+        
