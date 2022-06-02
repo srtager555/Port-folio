@@ -1,0 +1,59 @@
+$orbLargeDimensions: 70vh
+
+=keyframes($name)
+    @-webkit-keyframes #{$name}
+        @content
+    @-moz-keyframes #{$name}
+        @content
+    @-ms-keyframes #{$name}
+        @content
+    @keyframes #{$name}
+        @content
+
+.orb
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: inherit
+    height: inherit
+
+    &[angle='0']
+        transform: translate(-50%, -50%) rotate(0deg)
+    &[angle='15']
+        transform: translate(-50%, -50%) rotate(15deg)
+    &[angle='30']
+        transform: translate(-50%, -50%) rotate(30deg)
+    &[angle='45']
+        transform: translate(-50%, -50%) rotate(45deg)
+    &[angle='60']
+        transform: translate(-50%, -50%) rotate(60deg)
+    &[angle='75']
+        transform: translate(-50%, -50%) rotate(75deg)
+
+.home
+    position: fixed
+    width: 100%
+    height: 100vh
+    z-index: -1
+
+    .orbLager
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: $orbLargeDimensions
+        height: $orbLargeDimensions
+        z-index: -1
+        animation: orb 60s linear infinite
+
+        .orb
+            background-color: #171616
+
+
+
++keyframes(orb)
+    0% 
+        transform: translate(-50%, -50%) rotate(0deg)
+    100%
+        transform: translate(-50%, -50%) rotate(360deg)
