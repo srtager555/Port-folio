@@ -6,7 +6,7 @@ export function Background({ inPath }) {
 
    
    useEffect(() => {
-      let conditions = inPath === '/' || inPath === '/cv' || inPath === '/cvpdf' || inPath === ''
+      let conditions = inPath === '/' || inPath === ''
 
       if (conditions) {
          setBackgroundClass("");
