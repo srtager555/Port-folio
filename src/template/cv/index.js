@@ -11,44 +11,38 @@ import { more_info as moreInfo } from "./pages/moreInfo";
 export function cvtemplate() {
    // url values
    // home, profile, sq, experience, moreInfo
-   
-   const [page, setPage] = useState(null);
-   const [pageName, setPageName] = useState("home");
+   let { cvId } = useParams();
+   const PAGES = [home, profile, sq, experience, moreInfo];
+   let functionsName = {
+      [home.name]: home.name,
+      [profile.name]: profile.name,
+      [sq.name]: sq.name,
+      [experience.name]: experience.name,
+      [moreInfo.name]: moreInfo.name,
+   };
+   let fnNameKeys = Object.entries(functionsName);
 
-   const pages = [home, profile, sq, experience, moreInfo];
+   let pagesName = fnNameKeys.map((element) => {
+      if (element[1] === sq.name) element[1] = "sq";
+      if (element[1] === moreInfo.name) element[1] = "moreInfo";
 
-   const pagesName = pages.map((element) => {
-      return element.name.replace(/_/g, " ");
+      return element[1];
    });
 
-   const navbarProps = {
-      pageName,
-      setPageName,
-      pagesName,
-   };
-
-   useEffect(() => {
-      //A global variable only changes when the function,
-      //ends, The variable that is born in this scope can
-      //change immediately
-      let findpage = pages.find((element) => {
-         // navbar change namePage without '_' here is added
-         console.log(element)
-         return element.name === pageName.replace(/\s/g, '_');
-      });
-      console.log(findpage)
-
-      if (findpage.name === "home") {
-         setPage(findpage(setPageName));
-      } else setPage(findpage);
-
-      return () => setPage(null);
-   }, [pageName]);
+   // here, the code find the page with the useParams and the variables
+   // First find the name of the page
+   let currentPageName = pagesName.find((element) => element === cvId);
+   // Then find the name of the function
+   let currentPageFn = fnNameKeys.find(
+      (element) => element[1] === currentPageName
+   );
+   // and finally, the find the component
+   let currentPage = PAGES.find((element) => element.name === currentPageFn[0]);
 
    return (
       <>
-         <Navbar {...navbarProps} />
-         {page}
+         {/* <Navbar {...navbarProps} /> */}
+         {currentPage()}
       </>
    );
 }
