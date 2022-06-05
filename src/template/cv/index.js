@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import { navbar as Navbar } from "./components/navbar";
 import { home } from "./pages/home";
@@ -8,6 +9,9 @@ import { experience } from "./pages/experience";
 import { more_info as moreInfo } from "./pages/moreInfo";
 
 export function cvtemplate() {
+   // url values
+   // home, profile, sq, experience, moreInfo
+   
    const [page, setPage] = useState(null);
    const [pageName, setPageName] = useState("home");
 
