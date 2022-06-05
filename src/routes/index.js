@@ -60,7 +60,10 @@ export function Router() {
             <div className="container-content">
                <Routes>
                   <Route path="/" element={<HomePage {...props} />} />
-                  <Route path="/cv" element={<CV {...props} />} />
+                  <Route path="/cv/">
+                     <Route path="" element={<RedirectTo path="/cv/home" />} />
+                     <Route path=":cvId" element={<CV {...props} />} />
+                  </Route>
                   <Route path="/cvpdf" element={<Cvpdf {...props} />} />
                   <Route
                      path="/p/:id"
@@ -71,9 +74,6 @@ export function Router() {
                         />
                      }
                   />
-                  <Route path="/cv/" element={<RedirectTo path="/cv/home" />}>
-                     <Route path=":cvId" element={<CV {...props} />} />
-                  </Route>
                   <Route path="*" element={<NotMatch {...props} />} />
                </Routes>
             </div>
