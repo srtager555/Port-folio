@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { HomePage } from "../pages/home";
 import { ProjectPage } from "../pages/projects";
@@ -14,14 +14,23 @@ import { useInPath } from "../hooks/useInPath";
 
 import "../styles/OpacityContainer.css";
 
+function RedirectTo({ path }) {
+   let navigate = useNavigate();
+   useEffect(()=> {
+      navigate(path, { replace: true });
+   }, [])
+
+   return null;
+}
 export function Router() {
    const [loader, setLoader] = useState(false);
-   const [inPath, setInPath] = useState('');
-   
+   const [inPath, setInPath] = useState("");
+
    const props = {
       setLoader,
       chagePath: () => HandleChangePath(),
-   }
+   };
+
 
    function handleResetScroll() {
       window.scrollTo(0, 0);
@@ -29,7 +38,7 @@ export function Router() {
 
    function HandleChangePath() {
       useInPath(setInPath);
-    }
+   }
 
    // useEffect(() => {
    //    setLoader(true);
@@ -50,20 +59,9 @@ export function Router() {
             <Navbar inPath={inPath} handleResetScroll={handleResetScroll} />
             <div className="container-content">
                <Routes>
-                  <Route
-                     path="/"
-                     element={
-                        <HomePage {...props} />
-                     }
-                  />
-                  <Route
-                     path="/cv"
-                     element={<CV {...props} />}
-                  />
-                  <Route
-                     path="/cvpdf"
-                     element={<Cvpdf {...props} />}
-                  />
+                  <Route path="/" element={<HomePage {...props} />} />
+                  <Route path="/cv" element={<CV {...props} />} />
+                  <Route path="/cvpdf" element={<Cvpdf {...props} />} />
                   <Route
                      path="/p/:id"
                      element={
@@ -73,12 +71,10 @@ export function Router() {
                         />
                      }
                   />
-                  <Route
-                     path="*"
-                     element={
-                        <NotMatch {...props} />
-                     }
-                  />
+                  <Route path="/cv/" element={<RedirectTo path="/cv/home" />}>
+                     <Route path=":cvId" element={<CV {...props} />} />
+                  </Route>
+                  <Route path="*" element={<NotMatch {...props} />} />
                </Routes>
             </div>
          </div>

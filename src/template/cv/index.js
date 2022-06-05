@@ -29,6 +29,7 @@ export function cvtemplate() {
       //change immediately
       let findpage = pages.find((element) => {
          // navbar change namePage without '_' here is added
+         console.log(element)
          return element.name === pageName.replace(/\s/g, '_');
       });
       console.log(findpage)
