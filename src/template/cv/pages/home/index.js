@@ -3,10 +3,9 @@ import Wl from "wrapping-letters-react";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 
-export function home({ setPageName }) {
-
-  // the navbar style need a new styles
-  // and the button need a function to change the page
+export function home() {
+   // the navbar style need a new styles
+   // and the button need a function to change the page
    let wlprops = {
       SelectClass: {
          wordToSearch: "resume",
