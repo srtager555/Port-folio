@@ -29,6 +29,7 @@ export function cvtemplate() {
       return element[1];
    });
 
+   
    // here, the code find the page with the useParams and the variables
    // First find the name of the page
    let currentPageName = pagesName.find((element) => element === cvId);
@@ -39,9 +40,13 @@ export function cvtemplate() {
    // and finally, the find the component
    let currentPage = PAGES.find((element) => element.name === currentPageFn[0]);
 
+   let navbarProps = {
+      pageName: currentPageFn,
+      pagesName: fnNameKeys
+   }
    return (
       <>
-         {/* <Navbar {...navbarProps} /> */}
+         <Navbar {...navbarProps} />
          {currentPage()}
       </>
    );
