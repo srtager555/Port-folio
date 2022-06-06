@@ -1,59 +1,57 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 import { menuButton as MenuButton } from "./menuButton";
 
 import styles from "Src/styles/cvStyles/navbar.module.sass";
 
 export function navbar({ pageName, setPageName, pagesName }) {
-   const [showButton, setShowButton] = useState(false);
+   const [showButton, setShowButton] = useState(true);
    const [buttons, setButtons] = useState([]);
    const pageIndex = pagesName.indexOf(pageName);
 
-   const meuButtonProps = {
-      pageName,
-      handleChangePage,
-      pagesName,
-   };
+   // const meuButtonProps = {
+   //    pageName,
+   //    handleChangePage,
+   //    pagesName,
+   // };
 
-   function handleChangePage(text) {
-      setPageName(text);
+   function HandleRouteName(text) {
+      let path = text
+      if(text === 's&q') path = 'sq'
+
+      return path
    }
 
-   function buttonComponent(text) {
-      return <button onClick={() => handleChangePage(text)}>{text}</button>;
+   function linkComponent(text, index) {
+      return <Link to={`/cv/${HandleRouteName(text)}`}>{text}</Link>;
    }
 
    useEffect(() => {
       //here change the name of a string on the arr
-      let a = pagesName.find((e) => e === "skills and qualities");
-      let b = pagesName.indexOf(a);
-      pagesName.splice(b, 1, "s&q");
+      let a = pagesName.find(e => e[1] === "sq");
+      a[1] = 's&q'
+
    }, [pageName]);
 
    useEffect(() => {
       //here change the sections to go, depending on the pageName
-      let btn = (prop) => buttonComponent(pagesName[prop]);
+      let link = (prop) => linkComponent(pagesName[prop][1]);
+      
       if (pageIndex === 0) {
-         setButtons([btn(pagesName.length - 1), btn(pageIndex + 1)]);
+         setButtons([link(pagesName.length - 1), link(pageIndex + 1)]);
       } else if (pageIndex === pagesName.length - 1) {
-         setButtons([btn(pageIndex - 1), btn(0)]);
+         setButtons([link(pageIndex - 1), link(0)]);
       } else {
-         setButtons([btn(pageIndex - 1), btn(pageIndex + 1)]);
+         setButtons([link(pageIndex - 1), link(pageIndex + 1)]);
       }
    }, [pageIndex]);
 
-   useEffect(() => {
-      setTimeout(() => {
-         if (pageName === "home") setShowButton(false);
-         else setShowButton(true);
-      }, 1000);
-   }, [pageName]);
-
    return (
       <>
-         <MenuButton {...meuButtonProps} />
+         {/* <MenuButton {...meuButtonProps} /> */}
          <div className={styles.container}>
-            {/* here only print the arr of btns */}
+            {/* here only print the arr of links */}
             {showButton &&
                buttons.map((element, index) => (
                   <span key={`button-${index}`}>{element}</span>
