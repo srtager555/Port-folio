@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Wl from "wrapping-letters-react";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
@@ -16,14 +18,6 @@ export function home() {
 
    return (
       <div className={styles.home}>
-         <div className={styles.orbLager}>
-            <div angle="0" className={styles.orb}></div>
-            <div angle="15" className={styles.orb}></div>
-            <div angle="30" className={styles.orb}></div>
-            <div angle="45" className={styles.orb}></div>
-            <div angle="60" className={styles.orb}></div>
-            <div angle="75" className={styles.orb}></div>
-         </div>
          <div className={styles.orbMedium}>
             <div angle="0" className={styles.orb}></div>
             <div angle="15" className={styles.orb}></div>
@@ -43,12 +37,12 @@ export function home() {
                <div angle="75" className={styles.orb}></div>
             </div>
          </div>
-         <button className={styles.nextPage}>
+         <Link to='/cv/profile' className={styles.nextPage}>
             <Wl word="see resume" wordOptions={[wlprops]} />
             <div className={styles.secundaryLetters}>
                <Wl word="see resume" wordOptions={[wlprops]} />
             </div>
-         </button>
+         </Link>
       </div>
    );
 }
