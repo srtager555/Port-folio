@@ -46,7 +46,7 @@ export function cvtemplate() {
    }
    return (
       <>
-         <Navbar {...navbarProps} />
+         {/* <Navbar {...navbarProps} /> */}
          {currentPage()}
       </>
    );
