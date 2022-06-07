@@ -10,13 +10,21 @@
    justify-content: space-between;
    align-items: center;
    z-index: 10;
-   mix-blend-mode: exclusion;
 }
-.nav__background__container .nav__background--main {
-   height: 100%;
-   width: calc(45% - 1.1rem);
+/* .nav__background__container  */
+.nav__background--main {
+   position: fixed;
+   top: 0;
+   left: 22.5%;
+   transform: translateX(-50%);
+   height: 85px;
+   width: 45%;
    max-width: 215px;
    background-color: #fff;
+   mix-blend-mode: exclusion;
+}
+.nav__background--main.secondary {
+   left: 77.5%;
 }
 
 .nav__container {
@@ -47,6 +55,15 @@
    width: calc(40% - 1.1rem);
    max-width: calc(185px - 1.1rem);
 }
+
+.nav__container--main:first-child {
+   position: fixed;
+   top: 0;
+   left: 22.5%;
+   transform: translateX(-50%);
+
+}
+
 .nav__container :is(.nav__logo > a, .nav__container--main .nav__logo a) {
    font-family: "Poppins";
    font-size: 27px;
