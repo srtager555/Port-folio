@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Wl from "wrapping-letters-react";
@@ -18,26 +18,12 @@ export function home() {
 
    return (
       <div className={styles.home}>
-         <div className={styles.orbMedium}>
-            <div angle="0" className={styles.orb}></div>
-            <div angle="15" className={styles.orb}></div>
-            <div angle="30" className={styles.orb}></div>
-            <div angle="45" className={styles.orb}></div>
-            <div angle="60" className={styles.orb}></div>
-            <div angle="75" className={styles.orb}></div>
+         <div
+            className={`${styles.screenContent}`}
+         >
+            <div className={styles.bgImage}></div>
          </div>
-         <div className={styles.orbLogo}>
-            <span className={styles.logo}>&&</span>
-            <div className={styles.orbBg}>
-               <div angle="0" className={styles.orb}></div>
-               <div angle="15" className={styles.orb}></div>
-               <div angle="30" className={styles.orb}></div>
-               <div angle="45" className={styles.orb}></div>
-               <div angle="60" className={styles.orb}></div>
-               <div angle="75" className={styles.orb}></div>
-            </div>
-         </div>
-         <Link to='/cv/profile' className={styles.nextPage}>
+         <Link to="/cv/profile" className={styles.nextPage}>
             <Wl word="see resume" wordOptions={[wlprops]} />
             <div className={styles.secundaryLetters}>
                <Wl word="see resume" wordOptions={[wlprops]} />

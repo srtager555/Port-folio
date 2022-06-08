@@ -1,5 +1,3 @@
-$orb--Large-Dimensions: 80vh
-$orb--medium-Dimensions: 60vh
 $orb--logo-Dimensions: 20vh
 
 =keyframes($name)
@@ -17,12 +15,6 @@ $orb--logo-Dimensions: 20vh
         transform: translate(-50%, -50%) rotate(0deg)
     100%
         transform: translate(-50%, -50%) rotate(360deg)
-
-+keyframes(orb1)
-    0% 
-        transform: translate(-50%, -50%) rotate(0deg)
-    100%
-        transform: translate(-50%, -50%) rotate(-360deg)
 
 .orb
     position: absolute
@@ -51,65 +43,34 @@ $orb--logo-Dimensions: 20vh
     height: 100vh
     z-index: -1
 
-    .orbLager, .orbMedium, .orbLogo, .orbLogo .orbBg 
+    .screenContent 
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        animation: orb 60s linear infinite
-
-    .orbLager
-        width: $orb--Large-Dimensions
-        height: $orb--Large-Dimensions
-        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))
-        z-index: 1
-
-
-        .orb
-            
-            background-color: #171616
-
-    .orbMedium
-        width: $orb--medium-Dimensions
-        height: $orb--medium-Dimensions
-        animation: orb1 60s linear infinite
-        z-index: 2
-
-        .orb
-            background-color: #0a0a0a
-
-    .orbLogo
-        display: flex
-        justify-content: center
-        align-items: center
-        width: $orb--logo-Dimensions
-        height: $orb--logo-Dimensions
-        transition: all 500ms ease-in-out
-        animation: none
-        z-index: 3
-
-        .logo
-            font-size: 4rem
-            font-family: 'Poppins', sans-serif
-            color: #fff
-            z-index: 4
-
-        .orbBg
-            width: inherit
-            height: inherit
-
-            .orb
-                background-color: #171616
-
+        width: 70%
+        height: 50%
+        background-color: #000
+        overflow: hidden
+        
+        .bgImage
+            width: 100%
+            height: 100%
+            background-image: url(https://i.ibb.co/82X3sMv/oaAhri.jpg)
+            background-size: 300%
+            background-position-Y: 10%
+            background-position-X: 50%
+            transition: opacity 500ms ease-in-out
 
 .nextPage
     position: absolute
-    top: 65%
+    top: 75%
     left: 50%
     width: 100%
     max-width: 800px
     text-align: center
     transform: translate(-50%, -50%)
+    mix-blend-mode: difference
     z-index: 5
 
     span 
@@ -153,3 +114,16 @@ $orb--logo-Dimensions: 20vh
             
 
         
+@media (min-width: 400px) 
+    .nextPage span 
+        font-size: 4rem
+
+@media (min-width: 768px) 
+    .nextPage span 
+        font-size: 7rem
+
+@media (min-width: 1024px) 
+    .orbLogo
+        top: 45%
+    .nextPage span 
+        font-size: 9rem
