@@ -11,35 +11,37 @@ import { more_info as moreInfo } from "./pages/moreInfo";
 export function cvtemplate() {
    // url values
    // home, profile, sq, experience, moreInfo
-   const [currentPage, setCurrentPage] = useState(home);
    let { cvId } = useParams();
+   
+   const [currentPage, setCurrentPage] = useState(home);
    const PAGES = [home, profile, sq, experience, moreInfo];
-   let functionsName = {
-      [home.name]: home.name,
-      [profile.name]: profile.name,
-      [sq.name]: sq.name,
-      [experience.name]: experience.name,
-      [moreInfo.name]: moreInfo.name,
-   };
 
+   const FUNCTIONS_NAMES = {
+      [home.name]: "home",
+      [profile.name]: "profile",
+      [sq.name]: "sq",
+      [experience.name]: "experience",
+      [moreInfo.name]: "moreInfo",
+   };
+   
+   
    useEffect(() => {
-      let fnNameKeys = Object.entries(functionsName);
+      let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
    
       let pagesName = fnNameKeys.map((element) => {
-         if (element[1] === sq.name) element[1] = "sq";
-         if (element[1] === moreInfo.name) element[1] = "moreInfo";
-   
          return element[1];
       });
-      
+
       // here, the code find the page with the useParams and the variables
       // First find the name of the page
       let currentPageName = pagesName.find((element) => element === cvId);
+
       // Then find the name of the function
       let currentPageFn = fnNameKeys.find(
          (element) => element[1] === currentPageName
       );
       // and finally, the find the component
+
       setCurrentPage(PAGES.find((element) => element.name === currentPageFn[0]));
    
    }, [cvId]);
