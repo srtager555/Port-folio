@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { NavHome } from "./components/navHome";
 import { NavMain } from "./components/navMain";
+import { NavCV } from "./components/navCV";
 
 export function Navbar({ handleResetScroll, inPath }) {
    const [navComponent, setNavComponent] = useState(null);
@@ -14,7 +15,7 @@ export function Navbar({ handleResetScroll, inPath }) {
             break;
 
          case "cv":
-            setNavComponent(<NavMain {...props} />);
+            setNavComponent(<NavCV {...props} />);
             break;
 
          case "none":
