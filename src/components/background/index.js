@@ -6,9 +6,8 @@ export function Background({ inPath }) {
 
    
    useEffect(() => {
-      let conditions = inPath === '/' || inPath === ''
 
-      if (conditions) {
+      if (inPath === 'home') {
          setBackgroundClass("");
       } else {
          setBackgroundClass("background--project");
