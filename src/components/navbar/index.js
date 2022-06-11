@@ -8,15 +8,26 @@ export function Navbar({ handleResetScroll, inPath }) {
    const props = { handleResetScroll };
 
    useEffect(() => {
-      console.log(inPath);
-
-      if (inPath === "/cv" || inPath === "/cvpdf") {
-         setNavComponent(null);
-      } else {
-         console.log("?");
-         if (inPath === "" || inPath === "/")
+      switch (inPath) {
+         case "home":
             setNavComponent(<NavHome {...props} />);
-         else setNavComponent(<NavMain {...props} />);
+            break;
+
+         case "cv":
+            setNavComponent(<NavMain {...props} />);
+            break;
+
+         case "none":
+            setNavComponent(null);
+            break;
+
+         case "":
+            setNavComponent(<NavMain {...props} />);
+            break;
+
+         default:
+            setNavComponent(<NavMain {...props} />);
+            break;
       }
    }, [inPath]);
    return navComponent;

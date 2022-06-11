@@ -9,7 +9,7 @@ import { HelmetComponent } from "../../components/Helmet";
 export function HomePage({ chagePath, setLoader }) {
    // A
 
-   chagePath();
+   chagePath('home');
 
    useLayoutEffect(() => {
       setLoader(false);

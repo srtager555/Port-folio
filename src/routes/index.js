@@ -28,7 +28,7 @@ export function Router() {
 
    const props = {
       setLoader,
-      chagePath: () => HandleChangePath(),
+      chagePath: (place) => HandleChangePath(place),
    };
 
 
@@ -36,8 +36,8 @@ export function Router() {
       window.scrollTo(0, 0);
    }
 
-   function HandleChangePath() {
-      useInPath(setInPath);
+   function HandleChangePath(place) {
+      setInPath(place)
    }
 
    // useEffect(() => {

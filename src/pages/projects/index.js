@@ -13,7 +13,7 @@ import { ScrollProgress } from "../../components/ScrollProgress";
 import "../../styles/ProjectPage.css";
 
 export function ProjectPage({ handleResetScroll, setLoader, chagePath }) {
-   chagePath();
+   chagePath('');
 
    const containerContentRef = useRef(null);
 

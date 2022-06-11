@@ -7,7 +7,7 @@ import { HelmetComponent } from "../../components/Helmet";
 import "../../styles/NotMatch.css";
 
 export function NotMatch({ chagePath, setLoader }) {
-   chagePath();
+   chagePath('');
 
    const returnToHomeRef = useRef(null);
 
