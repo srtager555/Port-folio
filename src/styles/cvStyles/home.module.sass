@@ -1,129 +1,48 @@
-$orb--logo-Dimensions: 20vh
-
-=keyframes($name)
-    @-webkit-keyframes #{$name}
-        @content
-    @-moz-keyframes #{$name}
-        @content
-    @-ms-keyframes #{$name}
-        @content
-    @keyframes #{$name}
-        @content
-
-+keyframes(orb)
-    0% 
-        transform: translate(-50%, -50%) rotate(0deg)
-    100%
-        transform: translate(-50%, -50%) rotate(360deg)
-
-.orb
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    width: inherit
-    height: inherit
-
-    &[angle='0']
-        transform: translate(-50%, -50%) rotate(0deg)
-    &[angle='15']
-        transform: translate(-50%, -50%) rotate(15deg)
-    &[angle='30']
-        transform: translate(-50%, -50%) rotate(30deg)
-    &[angle='45']
-        transform: translate(-50%, -50%) rotate(45deg)
-    &[angle='60']
-        transform: translate(-50%, -50%) rotate(60deg)
-    &[angle='75']
-        transform: translate(-50%, -50%) rotate(75deg)
-
 .home
-    position: fixed
+    position: relative
     width: 100%
     height: 100vh
-    z-index: -1
+    overflow: hidden
 
-    .screenContent 
+    .bgLetters 
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+
+        .letter 
+            position: absolute
+            font-family: 'Poppins', sans-serif
+            font-size: 20rem
+            // font-weight: 400
+            color: #fff
+            opacity: .01
+
+            &:nth-child(1)
+                top: 0
+                left: 50%
+                transform: translate(-50%, -50%) rotate(0deg)
+            &:nth-child(2)
+                top: 50%
+                left: 60%
+                transform: translate(-50%, -50%) rotate(0deg)
+            &:nth-child(3)
+                top: 100%
+                left: 50%
+                transform: translate(-50%, -50%) rotate(0deg)
+
+    .seeResume
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        width: 70%
-        height: 50%
-        background-color: #000
-        overflow: hidden
-        
-        .bgImage
-            width: 100%
-            height: 100%
-            background-image: url(https://i.ibb.co/82X3sMv/oaAhri.jpg)
-            background-size: 300%
-            background-position-Y: 10%
-            background-position-X: 50%
-            transition: opacity 500ms ease-in-out
+        font-family: 'Noto Sans Display', sans-serif
 
-.nextPage
-    position: absolute
-    top: 75%
-    left: 50%
-    width: 100%
-    max-width: 800px
-    text-align: center
-    transform: translate(-50%, -50%)
-    mix-blend-mode: difference
-    z-index: 5
-
-    span 
-        display: inline-block
-        color: transparent
-        font-size: 3rem
-        font-family: 'Noto sans Display', sans-serif
-        font-style: italic
-        text-transform: uppercase
-        white-space: pre-wrap
-        -webkit-text-stroke: 1px #fff
-        transform: translateY(0%) rotateX(0deg)
-        transition: all 200ms linear
-        
-        &.resume
-            transition-delay: 100ms
-            
-
-    .secundaryLetters
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-
-        span 
-            transform: translateY(-55%) rotateX(-90deg)
-            color: #fff
-        
-            // &:last-child
-            //     transition-delay: 100ms
-    
-    &:hover
         span
-            transform: translateY(55%) rotateX(90deg)
-
-        .secundaryLetters
-            span
-                transform: translateY(0%) rotateX(0deg)
-
-            
-
-        
-@media (min-width: 400px) 
-    .nextPage span 
-        font-size: 4rem
-
-@media (min-width: 768px) 
-    .nextPage span 
-        font-size: 7rem
-
-@media (min-width: 1024px) 
-    .orbLogo
-        top: 45%
-    .nextPage span 
-        font-size: 9rem
+            font-family: 'Noto Sans Display', sans-serif
+            font-size: 10rem
+            font-weight: 600
+            color: transparent
+            -webkit-text-stroke: 1px #fff

@@ -22,7 +22,7 @@
       "react-helmet": "^6.1.0",
       "react-router-dom": "^6.2.1",
       "sass": "^1.51.0",
-      "wrapping-letters-react": "^1.4.5"
+      "wrapping-letters-react": "^2.0.0"
    },
    "devDependencies": {
       "@babel/core": "^7.16.10",

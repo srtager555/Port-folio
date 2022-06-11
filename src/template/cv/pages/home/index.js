@@ -18,16 +18,14 @@ export function home() {
 
    return (
       <div className={styles.home}>
-         <div
-            className={`${styles.screenContent}`}
-         >
-            <div className={styles.bgImage}></div>
+         <div className={styles.bgLetters}>
+            <span className={styles.letter}>&&&&&&&&&&</span>
+            <span className={styles.letter}>&&&&&&&&&&</span>
+            <span className={styles.letter}>&&&&&&&&&&</span>
          </div>
-         <Link to="/cv/profile" className={styles.nextPage}>
-            <Wl word="see resume" wordOptions={[wlprops]} />
-            <div className={styles.secundaryLetters}>
-               <Wl word="see resume" wordOptions={[wlprops]} />
-            </div>
+         <Link to="/cv/profile" className={styles.seeResume}>
+            <span><Wl text="see resime" textOptions={[{ PerWord: true }]} /></span>
+            <div className={styles.ahriuwu}></div>
          </Link>
       </div>
    );
