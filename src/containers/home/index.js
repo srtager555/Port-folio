@@ -71,8 +71,8 @@ export function HomeContainer({ l }) {
                <div className="container__slider">
                   <span className="container__slider-item">
                      <WrappingLetters
-                        word={`PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022`}
-                        wordOptions={[
+                        text={`PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022`}
+                        textOptions={[
                            {
                               ClassToAdd: "slider-words",
                               PerWord: true,
@@ -82,8 +82,8 @@ export function HomeContainer({ l }) {
                   </span>
                   <span className="container__slider-item">
                      <WrappingLetters
-                        word={`PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022`}
-                        wordOptions={[
+                        text={`PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022`}
+                        textOptions={[
                            {
                               ClassToAdd: "slider-words",
                               PerWord: true,
