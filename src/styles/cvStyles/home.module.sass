@@ -4,7 +4,7 @@
     height: 100vh
     overflow: hidden
 
-    .bgLetters 
+    .bgLetters
         width: 100%
         height: 100%
         position: absolute
@@ -12,7 +12,7 @@
         left: 0
         z-index: -1
 
-        .letter 
+        .letter
             position: absolute
             font-family: 'Poppins', sans-serif
             font-size: 20rem
@@ -33,16 +33,40 @@
                 left: 50%
                 transform: translate(-50%, -50%) rotate(0deg)
 
-    .seeResume
+    .nextPage
         position: absolute
-        top: 50%
+        top: 65%
         left: 50%
         transform: translate(-50%, -50%)
         font-family: 'Noto Sans Display', sans-serif
+        text-decoration: none
 
-        span
-            font-family: 'Noto Sans Display', sans-serif
+        .text
+            display: flex
             font-size: 10rem
-            font-weight: 600
             color: transparent
             -webkit-text-stroke: 1px #fff
+
+            span
+                font-family: 'Noto Sans Display', sans-serif
+                font-weight: 600
+                text-transform: uppercase
+                white-space: break-spaces
+                mix-blend-mode: difference
+
+        .ahriuwu
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            position: absolute
+            top: 40%
+            left: 50%
+            transform: translateX(-50%)
+            width: 440px
+            height: 220px
+            overflow: hidden
+            z-index: -1
+
+            img
+                width: 500%
+                margin-top: -14%
