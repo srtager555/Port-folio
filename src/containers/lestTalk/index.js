@@ -73,8 +73,8 @@ export function LestTalkContainer() {
             >
                <div className="container__text">
                   <WrappingLetters
-                     word="Let's Talk !!"
-                     wordOptions={[
+                     text="Let's Talk !!"
+                     textOptions={[
                         {
                            ClassToAdd: "button-mail-letter",
                            SelectClass: {
@@ -101,8 +101,8 @@ export function LestTalkContainer() {
                >
                   <div className="container__text">
                      <WrappingLetters
-                        word="LinkedIn"
-                        wordOptions={[
+                        text="LinkedIn"
+                        textOptions={[
                            {
                               ClassToAdd: "social-network-letter",
                            },
@@ -111,8 +111,8 @@ export function LestTalkContainer() {
                   </div>
                   <div className="container__text">
                      <WrappingLetters
-                        word="LinkedIn"
-                        wordOptions={[
+                        text="LinkedIn"
+                        textOptions={[
                            {
                               ClassToAdd: "social-network-letter",
                            },
@@ -130,8 +130,8 @@ export function LestTalkContainer() {
                >
                   <div className="container__text">
                      <WrappingLetters
-                        word="Github"
-                        wordOptions={[
+                        text="Github"
+                        textOptions={[
                            {
                               ClassToAdd: "social-network-letter",
                            },
@@ -140,8 +140,8 @@ export function LestTalkContainer() {
                   </div>
                   <div className="container__text">
                      <WrappingLetters
-                        word="Github"
-                        wordOptions={[
+                        text="Github"
+                        textOptions={[
                            {
                               ClassToAdd: "social-network-letter",
                            },
@@ -159,8 +159,8 @@ export function LestTalkContainer() {
                >
                   <div className="container__text">
                      <WrappingLetters
-                        word="Behance"
-                        wordOptions={[
+                        text="Behance"
+                        textOptions={[
                            {
                               ClassToAdd: "social-network-letter",
                            },
@@ -169,8 +169,8 @@ export function LestTalkContainer() {
                   </div>
                   <div className="container__text">
                      <WrappingLetters
-                        word="Behance"
-                        wordOptions={[
+                        text="Behance"
+                        textOptions={[
                            {
                               ClassToAdd: "social-network-letter",
                            },

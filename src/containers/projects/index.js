@@ -189,8 +189,8 @@ export function ProjectsContainer() {
          >
             <div ref={ProjectObserverRef} className="container__text">
                <WrappingLetters
-                  word="I have worked in"
-                  wordOptions={[
+                  text="I have worked in"
+                  textOptions={[
                      {
                         PerWord: true,
                      },
