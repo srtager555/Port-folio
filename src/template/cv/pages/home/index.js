@@ -23,6 +23,7 @@ export function home() {
             <span className={styles.letter}>&&&&&&&&&&</span>
             <span className={styles.letter}>&&&&&&&&&&</span>
          </div>
+         {/* This Link has to be a Button for eject the loading screen */}
          <Link to="/cv/profile" className={styles.nextPage}>
             <span className={styles.text}><Wl text="Go to Profile" textOptions={[{ PerWord: true }]} /></span>
             <div className={styles.ahriuwu}>
