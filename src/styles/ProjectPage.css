@@ -15,6 +15,7 @@
    align-items: center;
    flex-direction: column;
    color: #fff;
+   margin-top: 20px;
    margin-bottom: 50px;
 }
 .project__header .project__container-info__header .project__title {
