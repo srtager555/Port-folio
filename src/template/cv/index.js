@@ -12,9 +12,19 @@ export function cvtemplate() {
    // url values
    // home, profile, sq, experience, moreInfo
    let { cvId } = useParams();
-   
-   const [currentPage, setCurrentPage] = useState(home);
+
+   const [currentPage, setCurrentPage] = useState(() => 'XD');
    const PAGES = [home, profile, sq, experience, moreInfo];
+
+   // here been declared the function because in the
+   // component it's not possible to us e the useNavigate,
+   // throwed a warning when's declared
+
+   function handleClickChangePage(path) {
+      setTimeOut(() => {
+         navigate(`cv/${path}`);
+      }, 1000);
+   }
 
    const FUNCTIONS_NAMES = {
       [home.name]: "home",
@@ -23,11 +33,10 @@ export function cvtemplate() {
       [experience.name]: "experience",
       [moreInfo.name]: "moreInfo",
    };
-   
-   
+
    useEffect(() => {
       let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
-   
+
       let pagesName = fnNameKeys.map((element) => {
          return element[1];
       });
@@ -42,8 +51,11 @@ export function cvtemplate() {
       );
       // and finally, the find the component
 
-      setCurrentPage(PAGES.find((element) => element.name === currentPageFn[0]));
-   
+      setCurrentPage(
+         // here, the code find the page with the useParams and the variables
+         // And the props need to be passed to the component
+         PAGES.find((element) => element.name === currentPageFn[0])({ handleClickChangePage })
+      );
    }, [cvId]);
 
    // let navbarProps = {
