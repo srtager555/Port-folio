@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Wl from "wrapping-letters-react";
 
@@ -24,12 +24,29 @@ export function home() {
             <span className={styles.letter}>&&&&&&&&&&</span>
          </div>
          {/* This Link has to be a Button for eject the loading screen */}
-         <Link to="/cv/profile" className={styles.nextPage}>
-            <span className={styles.text}><Wl text="Go to Profile" textOptions={[{ PerWord: true }]} /></span>
-            <div className={styles.ahriuwu}>
-               <img src="https://ttager.netlify.app/img/oaAhri4.jpg" alt="" />
+         <main className={styles[`main--container`]}>
+            <div className={styles[`introduction--container`]}>
+               <div className={styles[`introduction--text`]}>
+                  <p>
+                     Lorem Ipsum is simply dummy text of the printing and
+                     typesetting industry. Lorem Ipsum has been the industry's
+                     standard dummy text ever since the 1500s
+                  </p>
+                  <img src="https://ttager.netlify.app/img/oaAhri04.jpg" alt="" />
+               </div>
             </div>
-         </Link>
+            <div classnName={styles["links--container"]}>
+               <div className={styles["links--container__links"]}>
+                  <button className={styles["links--link"]}>Profile</button>
+                  <button className={styles["links--link"]}>Experience</button>
+                  <button className={styles["links--link"]}>S&Q</button>
+                  <button className={styles["links--link"]}>More Info</button>
+               </div>
+               <div className={styles["links--container__pointer"]}>
+                  <span>Go To</span>
+               </div>
+            </div>
+         </main>
       </div>
    );
 }
