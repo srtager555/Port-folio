@@ -11,21 +11,11 @@ import { more_info as moreInfo } from "./pages/moreInfo";
 export function cvtemplate({ setLoader }) {
    // url values
    // home, profile, sq, experience, moreInfo
-   let { cvId } = useParams();
+   let { id } = useParams();
    let navigate = useNavigate();
 
    const PAGES = [home, profile, sq, experience, moreInfo];
    let currentPage = PAGES[0];
-
-   // here been declared the function because in the
-   // component it's not possible to us e the useNavigate,
-   // throwed a warning when's declared
-   function handleClickChangePage(path) {
-      setLoader(false);
-      setTimeout(() => {
-         navigate(`/cv/${path}`);
-      }, 1000);
-   }
 
    const FUNCTIONS_NAMES = {
       [home.name]: "home",
@@ -43,24 +33,29 @@ export function cvtemplate({ setLoader }) {
 
    // here, the code find the page with the useParams and the variables
    // First find the name of the page
-   let currentPageName = pagesName.find((element) => element === cvId);
+   let currentPageName = pagesName.find((element) => element === id);
 
    // Then find the name of the function
    let currentPageFn = fnNameKeys.find(
       (element) => element[1] === currentPageName
    );
    // and finally, the find the component
-   currentPage = PAGES.find((element) => element.name === currentPageFn[0])(
-      { handleClickChangePage, setLoader }
-   );
+   currentPage = PAGES.find((element) => element.name === currentPageFn[0])({
+      handleClickChangePage,
+      setLoader
+   });
+
+   function handleClickChangePage(path) {
+      setLoader(false);
+      setTimeout(() => {
+         navigate(`/cv/${path}`);
+      }, 1000);
+   }
 
    useEffect(() => {
-      setLoader(true);
-   }, [cvId]);
+      setLoader(false);
+      console.log(id)
+   }, [id]);
 
-   return (
-      <>
-         {currentPage}
-      </>
-   );
+   return <>{currentPage}</>;
 }
