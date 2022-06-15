@@ -62,7 +62,7 @@ export function Router() {
                   <Route path="/" element={<HomePage {...props} />} />
                   <Route path="/cv/">
                      <Route path="" element={<RedirectTo path="/cv/home" />} />
-                     <Route path=":cvId" element={<CV {...props} />} />
+                     <Route path=":id" element={<CV {...props} />} />
                   </Route>
                   <Route path="/cvpdf" element={<Cvpdf {...props} />} />
                   <Route

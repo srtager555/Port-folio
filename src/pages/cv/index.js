@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import { cvtemplate } from '../../template/cv/';
+import { cvtemplate } from "../../template/cv/";
 
 export function CV({ setLoader, chagePath }) {
-    useEffect(() => {
-        chagePath('cv');
-    }, []);
+   useEffect(() => {
+      chagePath("cv");
+   }, []);
 
-    return <>{cvtemplate({setLoader})}</>;
+   return <>{cvtemplate({ setLoader })}</>;
 }
