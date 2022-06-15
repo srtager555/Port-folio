@@ -5,8 +5,7 @@ import { cvtemplate } from '../../template/cv/';
 export function CV({ setLoader, chagePath }) {
     useEffect(() => {
         chagePath('cv');
-        setLoader(true);
     }, []);
 
-    return <>{cvtemplate()}</>;
+    return <>{cvtemplate({setLoader})}</>;
 }
