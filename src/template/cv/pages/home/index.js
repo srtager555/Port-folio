@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 // import Wl from "wrapping-letters-react";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 
 export function home({ handleClickChangePage, setLoader }) {
-   // the navbar style need a new styles
-   // and the button need a function to change the page
-   // let wlprops = {
-   //    SelectClass: {
-   //       wordToSearch: "resume",
-   //       classToAdd: styles.resume,
-   //    },
-   //    PerWord: true,
-   // };
+   // const cursorEffect = useRef(null);
+
+   const pageNames = [ "profile", "sq", "experience", "more Info"];
+   const btnProps = {
+      className: styles["links--link"],
+      onClick: () => handleClickChangePage("profile"),
+   };
+   
 
    return (
       <div className={styles.home}>
@@ -31,6 +30,8 @@ export function home({ handleClickChangePage, setLoader }) {
                      standard dummy text ever since the 1500s
                   </p>
                   <img
+                     // here turn off the load screen.
+                     onLoad={() => setLoader(true)}
                      width="300"
                      src="https://ttager.netlify.app/img/oaAhri4.jpg"
                      alt=""
@@ -39,30 +40,13 @@ export function home({ handleClickChangePage, setLoader }) {
             </div>
             <div className={styles["links--container"]}>
                <div className={styles["links--container__links"]}>
-                  <button
-                     onClick={() => handleClickChangePage("profile")}
-                     className={styles["links--link"]}
-                  >
-                     Profile
-                  </button>
-                  <button
-                     onClick={() => handleClickChangePage("experience")}
-                     className={styles["links--link"]}
-                  >
-                     Experience
-                  </button>
-                  <button
-                     onClick={() => handleClickChangePage("sq")}
-                     className={styles["links--link"]}
-                  >
-                     S&Q
-                  </button>
-                  <button
-                     onClick={() => handleClickChangePage("moreinfo")}
-                     className={styles["links--link"]}
-                  >
-                     More Info
-                  </button>
+                  {pageNames.map((pageName, index) => {
+                     return (
+                        <button key={index} {...btnProps}>
+                           {pageName}
+                        </button>
+                     );
+                  })}
                </div>
                <div className={styles["links--container__pointer"]}>
                   <span>Go To</span>
