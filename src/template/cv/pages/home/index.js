@@ -30,15 +30,39 @@ export function home({ handleClickChangePage, setLoader }) {
                      typesetting industry. Lorem Ipsum has been the industry's
                      standard dummy text ever since the 1500s
                   </p>
-                  <img width="300" src="https://ttager.netlify.app/img/oaAhri4.jpg" alt="" />
+                  <img
+                     width="300"
+                     src="https://ttager.netlify.app/img/oaAhri4.jpg"
+                     alt=""
+                  />
                </div>
             </div>
             <div className={styles["links--container"]}>
                <div className={styles["links--container__links"]}>
-                  <button onClick={() => handleClickChangePage('profile')} className={styles["links--link"]}>Profile</button>
-                  <button onClick={() => handleClickChangePage('experience')} className={styles["links--link"]}>Experience</button>
-                  <button onClick={() => handleClickChangePage('sq')} className={styles["links--link"]}>S&Q</button>
-                  <button onClick={() => handleClickChangePage('moreinfo')} className={styles["links--link"]}>More Info</button>
+                  <button
+                     onClick={() => handleClickChangePage("profile")}
+                     className={styles["links--link"]}
+                  >
+                     Profile
+                  </button>
+                  <button
+                     onClick={() => handleClickChangePage("experience")}
+                     className={styles["links--link"]}
+                  >
+                     Experience
+                  </button>
+                  <button
+                     onClick={() => handleClickChangePage("sq")}
+                     className={styles["links--link"]}
+                  >
+                     S&Q
+                  </button>
+                  <button
+                     onClick={() => handleClickChangePage("moreinfo")}
+                     className={styles["links--link"]}
+                  >
+                     More Info
+                  </button>
                </div>
                <div className={styles["links--container__pointer"]}>
                   <span>Go To</span>

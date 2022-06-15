@@ -33,40 +33,68 @@
                 left: 50%
                 transform: translate(-50%, -50%) rotate(0deg)
 
-    .nextPage
-        position: absolute
-        top: 65%
-        left: 50%
-        transform: translate(-50%, -50%)
-        font-family: 'Noto Sans Display', sans-serif
-        text-decoration: none
+.main--container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    width: 100%
+    height: 100%
+    background-color: #fff1
 
-        .text
+    .links--container, .introduction--container
+        width: 50%
+        height: 100%
+        background-color: #fff1
+
+    .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+        border: none
+        background-color: transparent
+        color: transparent
+        text-transform: uppercase
+        -webkit-text-stroke: 1px #fff
+        letter-spacing: .3rem
+        word-wrap: no-wrap 
+        font-family: 'Poppins', sans-serif
+        font-size: 6.5rem
+        font-weight: 700
+
+    .links--container
+        position: relative
+
+        .links--container__links
             display: flex
-            font-size: 10rem
-            color: transparent
-            -webkit-text-stroke: 1px #fff
+            justify-content: space-around
+            align-items: flex-start
+            flex-direction: column
+            height: 100%
+
+            .links--link
+                border: none
+                background-color: transparent
+                color: transparent
+                text-transform: uppercase
+                -webkit-text-stroke: 1px #fff
+                letter-spacing: .3rem
+                font-family: 'Poppins', sans-serif
+                font-size: 6.5rem
+                font-weight: 700
+
+        .links--container__pointer
+            position: absolute
+            top: 0
+            left: 0% 
+            width: 100%
+            height: 100%
+            opacity: 0
+            visibility: hidden
+            transition: opacity .5s ease-in-out
+
+            &.active
+                opacity: 1
+                visibility: visible
 
             span
-                font-family: 'Noto Sans Display', sans-serif
-                font-weight: 600
-                text-transform: uppercase
-                white-space: break-spaces
-                mix-blend-mode: difference
-
-        .ahriuwu
-            display: flex
-            justify-content: center
-            align-items: flex-start
-            position: absolute
-            top: 40%
-            left: 50%
-            transform: translateX(-50%)
-            width: 440px
-            height: 220px
-            overflow: hidden
-            z-index: -1
-
-            img
-                width: 500%
-                margin-top: -14%
+                position: absolute
+                transform: translateX(calc(-100% - 2rem))
+                // min-width: 100%
