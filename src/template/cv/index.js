@@ -2,27 +2,45 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 // import { navbar as Navbar } from "./components/navbar";
-import { home } from "./pages/home";
-import { profile } from "./pages/profile";
-import { skills_and_qualities as sq } from "./pages/sq";
-import { experience } from "./pages/experience";
-import { more_info as moreInfo } from "./pages/moreInfo";
+import { home as Home } from "./pages/home";
+import { profile as Profile } from "./pages/profile";
+import { skills_and_qualities as Sq } from "./pages/sq";
+import { experience as Experience } from "./pages/experience";
+import { more_info as MoreInfo } from "./pages/moreInfo";
 
 export function cvtemplate({ setLoader }) {
+   let currentPage = <Home {...pageProps} />;
    // url values
    // home, profile, sq, experience, moreInfo
    let { id } = useParams();
    let navigate = useNavigate();
 
-   const PAGES = [home, profile, sq, experience, moreInfo];
-   let currentPage = PAGES[0];
+   const pageProps = {
+      handleClickChangePage,
+      setLoader,
+   };
+
+   function handleClickChangePage(path) {
+      setLoader(false);
+      setTimeout(() => {
+         navigate(`/cv/${path}`);
+      }, 1000);
+   }
+
+   const PAGES = [
+      <Home {...pageProps} />,
+      <Profile {...pageProps} />,
+      <Sq {...pageProps} />,
+      <Experience {...pageProps} />,
+      <MoreInfo {...pageProps} />,
+   ];
 
    const FUNCTIONS_NAMES = {
-      [home.name]: "home",
-      [profile.name]: "profile",
-      [sq.name]: "sq",
-      [experience.name]: "experience",
-      [moreInfo.name]: "moreInfo",
+      [Home.name]: "home",
+      [Profile.name]: "profile",
+      [Sq.name]: "sq",
+      [Experience.name]: "experience",
+      [MoreInfo.name]: "moreInfo",
    };
 
    let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
@@ -39,18 +57,13 @@ export function cvtemplate({ setLoader }) {
    let currentPageFn = fnNameKeys.find(
       (element) => element[1] === currentPageName
    );
+   console.log(currentPageFn);
    // and finally, the find the component
-   currentPage = PAGES.find((element) => element.name === currentPageFn[0])({
-      handleClickChangePage,
-      setLoader
+   currentPage = PAGES.find((element) => {
+      return element.type.name === currentPageFn[0];
    });
 
-   function handleClickChangePage(path) {
-      setLoader(false);
-      setTimeout(() => {
-         navigate(`/cv/${path}`);
-      }, 1000);
-   }
+   console.log(currentPage);
 
    useEffect(() => {
       setLoader(false);
