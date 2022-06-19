@@ -40,12 +40,10 @@
     position: relative
     width: 100%
     height: 100%
-    background-color: #fff1
 
     .links--container, .introduction--container
-        width: 50%
+        width: 42%
         height: 100%
-        background-color: #fff1
 
     .links--container :is(.links--container__links .links--link, .links--container__pointer span)
         border: none
@@ -61,6 +59,8 @@
 
     .links--container
         position: relative
+        width: 58%
+        
 
         .links--container__links
             display: flex
@@ -70,16 +70,31 @@
             height: 100%
 
             .links--link
-                border: none
-                background-color: transparent
-                color: transparent
-                text-transform: uppercase
-                -webkit-text-stroke: 1px #fff
-                letter-spacing: .3rem
-                font-family: 'Poppins', sans-serif
-                font-size: 6.5rem
-                font-weight: 700
+                position: relative
+                height: 175px
+                font-size: 7.5rem
+                transition: all .3s ease-in-out
                 cursor: pointer
+            
+                .links--link__letter
+                    display: inline-block
+                    overflow: hidden
+
+                    &:last-child
+                        position: absolute
+                        top: 0%
+                        left: 0%
+
+                        .link--letter
+                            color: #fff
+                            display: inline-block
+                            transform: translateY(-100%) rotate(-15deg)
+
+                    .link--letter
+                        display: inline-block
+                        transform: translateY(0)
+                        font-family: 'Poppins', sans-serif
+
 
         .links--container__pointer
             position: absolute

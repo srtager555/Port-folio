@@ -54,7 +54,6 @@ export function cvtemplate({ setLoader }) {
 
    useEffect(() => {
       setLoader(false);
-      console.log(id)
    }, [id]);
 
    return <>{currentPage}</>;

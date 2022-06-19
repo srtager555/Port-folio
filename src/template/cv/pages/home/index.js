@@ -1,18 +1,37 @@
 import React, { useRef, useEffect } from "react";
 
-// import Wl from "wrapping-letters-react";
+import Wl from "wrapping-letters-react";
+
+import upLetter from "../../../../animations/defaultAnimation/upLetter";
+import downLetter from "../../../../animations/defaultAnimation/downLetter";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 
 export function home({ handleClickChangePage, setLoader }) {
-   // const cursorEffect = useRef(null);
+   const cursorEffect = useRef(null);
 
-   const pageNames = [ "profile", "sq", "experience", "more Info"];
+   const profileRef = useRef(null);
+   const skillsRef = useRef(null);
+   const experienceRef = useRef(null);
+   const moreInfoRef = useRef(null);
+
+   let refArray = [profileRef, skillsRef, experienceRef, moreInfoRef];
+
+   const pageNames = ["profile", "sq", "experience", "more Info"];
    const btnProps = {
       className: styles["links--link"],
       onClick: () => handleClickChangePage("profile"),
    };
-   
+   const WlComponent = (pageName) => (
+      <Wl
+         text={pageName.pageName}
+         textOptions={[
+            {
+               ClassToAdd: styles["link--letter"],
+            },
+         ]}
+      />
+   );
 
    return (
       <div className={styles.home}>
@@ -42,14 +61,25 @@ export function home({ handleClickChangePage, setLoader }) {
                <div className={styles["links--container__links"]}>
                   {pageNames.map((pageName, index) => {
                      return (
-                        <button key={index} {...btnProps}>
-                           {pageName}
+                        <button
+                           onMouseEnter={() => upLetter(refArray[index])}
+                           onMouseLeave={() => downLetter(refArray[index])}
+                           ref={refArray[index]}
+                           key={index}
+                           {...btnProps}
+                        >
+                           <span className={styles["links--link__letter"]}>
+                              <WlComponent pageName={pageName} />
+                           </span>
+                           <span className={styles["links--link__letter"]}>
+                              <WlComponent pageName={pageName} />
+                           </span>
                         </button>
                      );
                   })}
                </div>
                <div className={styles["links--container__pointer"]}>
-                  <span>Go To</span>
+                  <span ref={cursorEffect}>Go To</span>
                </div>
             </div>
          </main>
