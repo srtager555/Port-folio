@@ -54,10 +54,16 @@ export function home({ handleClickChangePage, setLoader }) {
       downLetter(element);
    }
 
+   // ISSUE
+   // when the handleLinkHover function is called,
+   // everything is fine, but when the cursor leaves the element,
+   // the animation is canceled by starting the 
+   // animation of the next element.
+
    useEffect(() => {
       refArray.forEach((element, index) => {
          element.current.addEventListener("mouseenter", (e) => {
-            handleLinkHover(e);
+            // handleLinkHover(e);
             handleMouseEnter(index)
          });
          element.current.addEventListener("mouseleave", () => handleMouseLeave(index));
@@ -66,7 +72,7 @@ export function home({ handleClickChangePage, setLoader }) {
       return () => {
          refArray.forEach(element => {
             element.current.addEventListener("mouseenter", (e) => {
-               handleLinkHover(e);
+               // handleLinkHover(e);
                handleMouseEnter(index)
             });
             element.current.removeEventListener("mouseleave", () => handleMouseLeave(index));
