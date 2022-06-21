@@ -57,13 +57,10 @@ export function cvtemplate({ setLoader }) {
    let currentPageFn = fnNameKeys.find(
       (element) => element[1] === currentPageName
    );
-   console.log(currentPageFn);
    // and finally, the find the component
    currentPage = PAGES.find((element) => {
       return element.type.name === currentPageFn[0];
    });
-
-   console.log(currentPage);
 
    useEffect(() => {
       setLoader(false);

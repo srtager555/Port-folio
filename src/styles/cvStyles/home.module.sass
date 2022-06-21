@@ -54,7 +54,7 @@
         letter-spacing: .3rem
         word-wrap: no-wrap 
         font-family: 'Poppins', sans-serif
-        font-size: 6.5rem
+        font-size: 7.5rem
         font-weight: 700
 
     .links--container
@@ -72,45 +72,53 @@
             .links--link
                 position: relative
                 height: 175px
-                font-size: 7.5rem
                 transition: all .3s ease-in-out
                 cursor: pointer
-            
-                .links--link__letter
-                    display: inline-block
-                    overflow: hidden
+                z-index: 1
 
-                    &:last-child
-                        position: absolute
-                        top: 0%
-                        left: 0%
+                .links--container__text
+                    position: relative
+                    widows: 100%
+                    overflow: hidden
+            
+                    .links--link__letter
+                        display: inline-block
+
+                        &:last-child
+                            position: absolute
+                            top: 0%
+                            left: 0%
+
+                            .link--letter
+                                color: #fff
+                                display: inline-block
+                                transform: translateY(-100%) rotate(-15deg)
 
                         .link--letter
-                            color: #fff
                             display: inline-block
-                            transform: translateY(-100%) rotate(-15deg)
-
-                    .link--letter
-                        display: inline-block
-                        transform: translateY(0)
-                        font-family: 'Poppins', sans-serif
+                            transform: translateY(0)
+                            font-family: 'Poppins', sans-serif
 
 
         .links--container__pointer
             position: absolute
-            top: 0
-            left: 0% 
+            top: 0%
+            left: 0%
             width: 100%
             height: 100%
             opacity: 0
             visibility: hidden
             transition: opacity .5s ease-in-out
+            z-index: -1
 
-            &.active
+            &.links--container__pointer--hover
                 opacity: 1
                 visibility: visible
 
-            span
+            .links--word__pointer
+                display: inline-block
                 position: absolute
-                transform: translateX(calc(-100% - 2rem))
-                // min-width: 100%
+                top: 50%
+                transform: translate(calc(-100% - 2rem), -50%)
+                transition: all .3s ease-in-out
+                color: #fff 
