@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 import Wl from "wrapping-letters-react";
 
@@ -8,25 +8,23 @@ import downLetter from "../../../../animations/defaultAnimation/downLetter";
 import styles from "Src/styles/cvStyles/home.module.sass";
 
 export function home({ handleClickChangePage, setLoader }) {
-   const [hoverLink, setHoverLink] = useState(false);
-   const [cursorPosition, setCursorPosition] = useState({
-      top: 0,
-   });
+   // here declare the REF of the elements
 
-   const a = useRef(null);
+   const goToRef = useRef(null);
+   const goToContainerRef = useRef(null);
    const profileRef = useRef(null);
    const skillsRef = useRef(null);
    const experienceRef = useRef(null);
    const moreInfoRef = useRef(null);
 
+   // this array is for adding events for each element
    let refArray = [profileRef, skillsRef, experienceRef, moreInfoRef];
 
+   // Information for the routing
    const pageNames = ["profile", "sq", "experience", "more Info"];
-   const btnProps = {
-      className: styles["links--link"],
-      onClick: () => handleClickChangePage("profile"),
-   };
+   const pageLinks = ["profile", "sq", "experience", "moreinfo"];
 
+   // Wrapping letter component for wrapp each letter in a <span />
    const WlComponent = (pageName) => (
       <Wl
          text={pageName.pageName}
@@ -38,47 +36,70 @@ export function home({ handleClickChangePage, setLoader }) {
       />
    );
 
+
+   // handleEnvets
+
+   // when the mouse is over of a link
+   // the effect of the cursor will change position
+   // and its opacity becomes to 1
    function handleLinkHover(e) {
-      setCursorPosition({
-         top: e.target.getBoundingClientRect().top + e.target.offsetHeight / 2
-      });
-      setHoverLink(true);
+      goToRef.current.style.top = `${
+         e.target.getBoundingClientRect().top + e.target.offsetHeight / 2
+      }px`;
+
+      goToContainerRef.current.className += ` ${styles["links--container__pointer--hover"]}`;
    }
-   function handleMouseEnter(index) {
+
+
+   // When the mouse enters the target, 
+   // it will pick up each target child and
+   // send it to an animation function.
+   function handleMouseEnter(e, index) {
       const element = refArray[index].current.children[0].children;
-      upLetter(element);
+      upLetter(element, () => handleLinkHover(e));
    }
+
+
+   // here return the opacity of the cursor effect to 0
+   // and run the leave animation funtion
    function handleMouseLeave(index) {
       const element = refArray[index].current.children[0].children;
-      setHoverLink(false);
-      downLetter(element);
+
+      downLetter(element, () => {
+         const a = goToContainerRef.current.className.replace(
+            ` ${styles["links--container__pointer--hover"]}`,
+            ""
+         );
+         goToContainerRef.current.className = a;
+      });
    }
 
-   // ISSUE
-   // when the handleLinkHover function is called,
-   // everything is fine, but when the cursor leaves the element,
-   // the animation is canceled by starting the 
-   // animation of the next element.
 
+   // here add listeners for the handle events
    useEffect(() => {
+      // here it'll add to each element 2 listeners
       refArray.forEach((element, index) => {
-         element.current.addEventListener("mouseenter", (e) => {
-            // handleLinkHover(e);
-            handleMouseEnter(index)
-         });
-         element.current.addEventListener("mouseleave", () => handleMouseLeave(index));
+         element.current.addEventListener("mouseenter", (e) =>
+            handleMouseEnter(e, index)
+         );
+         element.current.addEventListener("mouseleave", () =>
+            handleMouseLeave(index)
+         );
       });
-      
+
+      // clean up uwu
       return () => {
-         refArray.forEach(element => {
-            element.current.addEventListener("mouseenter", (e) => {
-               // handleLinkHover(e);
+         // here remove each listener
+         refArray.forEach((element) => {
+            element.current.addEventListener("mouseenter", (e) =>
                handleMouseEnter(index)
-            });
-            element.current.removeEventListener("mouseleave", () => handleMouseLeave(index));
+            );
+            element.current.removeEventListener("mouseleave", () =>
+               handleMouseLeave(index)
+            );
          });
-      }
-   }, [])
+      };
+   }, []);
 
    return (
       <div className={styles.home}>
@@ -111,11 +132,12 @@ export function home({ handleClickChangePage, setLoader }) {
                         <button
                            ref={refArray[index]}
                            key={index}
-                           {...btnProps}
+                           className={styles["links--link"]}
+                           onClick={() =>
+                              handleClickChangePage(pageLinks[index])
+                           }
                         >
-                           <div
-                              className={styles["links--container__text"]}
-                           >
+                           <div className={styles["links--container__text"]}>
                               <span className={styles["links--link__letter"]}>
                                  <WlComponent pageName={pageName} />
                               </span>
@@ -128,15 +150,13 @@ export function home({ handleClickChangePage, setLoader }) {
                   })}
                </div>
                <div
-                  className={`${styles["links--container__pointer"]}${
-                     hoverLink
-                        ? " " + styles["links--container__pointer--hover"]
-                        : ""
-                  }`}
+                  ref={goToContainerRef}
+                  className={`${styles["links--container__pointer"]}`}
                >
                   <span
+                     ref={goToRef}
                      className={styles["links--word__pointer"]}
-                     style={cursorPosition}
+                     // style={cursorPosition}
                   >
                      Go To
                   </span>
