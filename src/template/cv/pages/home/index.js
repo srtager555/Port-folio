@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
-import Wl from "wrapping-letters-react";
-
+import { ButtonsMap } from "./components/ButtonsMap";
+import { Background } from "./components/Background";
 import upLetter from "../../../../animations/defaultAnimation/upLetter";
 import downLetter from "../../../../animations/defaultAnimation/downLetter";
 
@@ -23,18 +23,6 @@ export function home({ handleClickChangePage, setLoader }) {
    // Information for the routing
    const pageNames = ["profile", "sq", "experience", "more Info"];
    const pageLinks = ["profile", "sq", "experience", "moreinfo"];
-
-   // Wrapping letter component for wrapp each letter in a <span />
-   const WlComponent = (pageName) => (
-      <Wl
-         text={pageName.pageName}
-         textOptions={[
-            {
-               ClassToAdd: styles["link--letter"],
-            },
-         ]}
-      />
-   );
 
 
    // handleEnvets
@@ -103,11 +91,7 @@ export function home({ handleClickChangePage, setLoader }) {
 
    return (
       <div className={styles.home}>
-         <div className={styles.bgLetters}>
-            <span className={styles.letter}>&&&&&&&&&&</span>
-            <span className={styles.letter}>&&&&&&&&&&</span>
-            <span className={styles.letter}>&&&&&&&&&&</span>
-         </div>
+         <Background />
          <main className={styles[`main--container`]}>
             <div className={styles[`introduction--container`]}>
                <div className={styles[`introduction--text`]}>
@@ -127,27 +111,7 @@ export function home({ handleClickChangePage, setLoader }) {
             </div>
             <div className={styles["links--container"]}>
                <div className={styles["links--container__links"]}>
-                  {pageNames.map((pageName, index) => {
-                     return (
-                        <button
-                           ref={refArray[index]}
-                           key={index}
-                           className={styles["links--link"]}
-                           onClick={() =>
-                              handleClickChangePage(pageLinks[index])
-                           }
-                        >
-                           <div className={styles["links--container__text"]}>
-                              <span className={styles["links--link__letter"]}>
-                                 <WlComponent pageName={pageName} />
-                              </span>
-                              <span className={styles["links--link__letter"]}>
-                                 <WlComponent pageName={pageName} />
-                              </span>
-                           </div>
-                        </button>
-                     );
-                  })}
+                  <ButtonsMap refArray={refArray} pageNames={pageNames} pageLinks={pageLinks} />
                </div>
                <div
                   ref={goToContainerRef}
@@ -156,7 +120,6 @@ export function home({ handleClickChangePage, setLoader }) {
                   <span
                      ref={goToRef}
                      className={styles["links--word__pointer"]}
-                     // style={cursorPosition}
                   >
                      Go To
                   </span>
