@@ -4,7 +4,7 @@ import Wl from "wrapping-letters-react";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 
-export function ButtonsMap({ refArray, pageNames, pageLinks }) {
+export function ButtonsMap({ handleClickChangePage, refArray, pageNames, pageLinks }) {
    // Wrapping letter component for wrapp each letter in a <span />
    const WlComponent = (pageName) => (
       <Wl

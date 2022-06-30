@@ -22,7 +22,7 @@ export function home({ handleClickChangePage, setLoader }) {
 
    // Information for the routing
    const pageNames = ["profile", "sq", "experience", "more Info"];
-   const pageLinks = ["profile", "sq", "experience", "moreinfo"];
+   const pageLinks = ["profile", "sq", "experience", "moreInfo"];
 
 
    // handleEnvets
@@ -111,7 +111,7 @@ export function home({ handleClickChangePage, setLoader }) {
             </div>
             <div className={styles["links--container"]}>
                <div className={styles["links--container__links"]}>
-                  <ButtonsMap refArray={refArray} pageNames={pageNames} pageLinks={pageLinks} />
+                  <ButtonsMap handleClickChangePage={handleClickChangePage} refArray={refArray} pageNames={pageNames} pageLinks={pageLinks} />
                </div>
                <div
                   ref={goToContainerRef}
