@@ -45,6 +45,35 @@
         width: 42%
         height: 100%
 
+    .introduction--container
+        position: relative
+        z-index: 1
+
+        p
+            position: absolute
+            top: 25%
+            left: 50%
+            transform: translateX(-50%)
+            color: #fff
+            font-size: 1.2rem
+            font-family: 'Noto Sans Display'
+        
+        .introduction--container__image
+            position: absolute
+            top: 35%
+            left: 50%
+            transform: translate(-50%)
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            overflow: hidden
+            width: 400px
+            height: 200px
+
+            img
+                margin-top: -70px
+                width: 500%
+
     .links--container :is(.links--container__links .links--link, .links--container__pointer span)
         border: none
         background-color: transparent
@@ -60,6 +89,7 @@
     .links--container
         position: relative
         width: 58%
+        z-index: 2
         
 
         .links--container__links

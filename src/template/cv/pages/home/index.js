@@ -1,13 +1,16 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
+import { InteractiveContent } from "./components/InteractiveContent";
 import upLetter from "../../../../animations/defaultAnimation/upLetter";
 import downLetter from "../../../../animations/defaultAnimation/downLetter";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 
 export function home({ handleClickChangePage, setLoader }) {
+   const [whatButton, setWhatButton] = useState('')
+
    // here declare the REF of the elements
 
    const goToRef = useRef(null);
@@ -24,7 +27,6 @@ export function home({ handleClickChangePage, setLoader }) {
    const pageNames = ["profile", "sq", "experience", "more Info"];
    const pageLinks = ["profile", "sq", "experience", "moreInfo"];
 
-
    // handleEnvets
 
    // when the mouse is over of a link
@@ -38,15 +40,13 @@ export function home({ handleClickChangePage, setLoader }) {
       goToContainerRef.current.className += ` ${styles["links--container__pointer--hover"]}`;
    }
 
-
-   // When the mouse enters the target, 
+   // When the mouse enters the target,
    // it will pick up each target child and
    // send it to an animation function.
    function handleMouseEnter(e, index) {
       const element = refArray[index].current.children[0].children;
       upLetter(element, () => handleLinkHover(e));
    }
-
 
    // here return the opacity of the cursor effect to 0
    // and run the leave animation funtion
@@ -61,7 +61,6 @@ export function home({ handleClickChangePage, setLoader }) {
          goToContainerRef.current.className = a;
       });
    }
-
 
    // here add listeners for the handle events
    useEffect(() => {
@@ -93,25 +92,15 @@ export function home({ handleClickChangePage, setLoader }) {
       <div className={styles.home}>
          <Background />
          <main className={styles[`main--container`]}>
-            <div className={styles[`introduction--container`]}>
-               <div className={styles[`introduction--text`]}>
-                  <p>
-                     Lorem Ipsum is simply dummy text of the printing and
-                     typesetting industry. Lorem Ipsum has been the industry's
-                     standard dummy text ever since the 1500s
-                  </p>
-                  <img
-                     // here turn off the load screen.
-                     onLoad={() => setLoader(true)}
-                     width="300"
-                     src="https://ttager.netlify.app/img/oaAhri4.jpg"
-                     alt=""
-                  />
-               </div>
-            </div>
+            <InteractiveContent setLoader={setLoader} />
             <div className={styles["links--container"]}>
                <div className={styles["links--container__links"]}>
-                  <ButtonsMap handleClickChangePage={handleClickChangePage} refArray={refArray} pageNames={pageNames} pageLinks={pageLinks} />
+                  <ButtonsMap
+                     handleClickChangePage={handleClickChangePage}
+                     refArray={refArray}
+                     pageNames={pageNames}
+                     pageLinks={pageLinks}
+                  />
                </div>
                <div
                   ref={goToContainerRef}
