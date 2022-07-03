@@ -49,18 +49,51 @@
         position: relative
         z-index: 1
 
-        p
+        .introduction--container__text, .introduction--container__description
             position: absolute
             top: 25%
-            left: 50%
-            transform: translateX(-50%)
-            color: #fff
-            font-size: 1.2rem
-            font-family: 'Noto Sans Display'
-        
+            right: 2rem
+            // transform: translateX(-50%)
+            width: 400px
+            transition: 500ms ease
+
+            p
+                text-align: end
+                color: #fff
+                font-size: 1.6rem
+                font-family: 'Noto Sans Display'
+
+        &.profile
+            .introduction--container__text
+                top: 25%
+
+            .introduction--container__description
+                top: 40%
+
+        &.sq
+            .introduction--container__text
+                top: 5%
+
+            .introduction--container__description
+                top: 65%
+
+        &.experience
+            .introduction--container__text
+                top: 85%
+
+            .introduction--container__description
+                top: 5%
+
+        &.moreInfo
+            .introduction--container__text
+                top: 5%
+
+            .introduction--container__description
+                top: 25%    
+
         .introduction--container__image
             position: absolute
-            top: 35%
+            top: 55%
             left: 50%
             transform: translate(-50%)
             display: flex
@@ -81,7 +114,7 @@
         text-transform: uppercase
         -webkit-text-stroke: 1px #fff
         letter-spacing: .3rem
-        word-wrap: no-wrap 
+        word-wrap: no-wrap
         font-family: 'Poppins', sans-serif
         font-size: 7.5rem
         font-weight: 700
@@ -90,7 +123,6 @@
         position: relative
         width: 58%
         z-index: 2
-        
 
         .links--container__links
             display: flex
@@ -110,7 +142,7 @@
                     position: relative
                     widows: 100%
                     overflow: hidden
-            
+
                     .links--link__letter
                         display: inline-block
 
@@ -128,7 +160,6 @@
                             display: inline-block
                             transform: translateY(0)
                             font-family: 'Poppins', sans-serif
-
 
         .links--container__pointer
             position: absolute

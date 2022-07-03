@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
@@ -9,10 +9,9 @@ import downLetter from "../../../../animations/defaultAnimation/downLetter";
 import styles from "Src/styles/cvStyles/home.module.sass";
 
 export function home({ handleClickChangePage, setLoader }) {
-   const [whatButton, setWhatButton] = useState('')
-
    // here declare the REF of the elements
 
+   const classChanger = useRef(null)
    const goToRef = useRef(null);
    const goToContainerRef = useRef(null);
    const profileRef = useRef(null);
@@ -33,6 +32,20 @@ export function home({ handleClickChangePage, setLoader }) {
    // the effect of the cursor will change position
    // and its opacity becomes to 1
    function handleLinkHover(e) {
+      const arr = [styles.profile, styles.sq, styles.experience, styles.moreInfo]
+      
+      const classesContainer = classChanger.current.className.split(" ")
+      
+      let a = classesContainer.map(element => {
+         if(arr.indexOf(element) != -1) return ""
+         else return element
+      })
+      a.pop()
+
+      a.push(arr[Object.values(e.target.parentElement.childNodes).indexOf(e.target)])
+
+      classChanger.current.className = a.join(" ")
+
       goToRef.current.style.top = `${
          e.target.getBoundingClientRect().top + e.target.offsetHeight / 2
       }px`;
@@ -92,7 +105,7 @@ export function home({ handleClickChangePage, setLoader }) {
       <div className={styles.home}>
          <Background />
          <main className={styles[`main--container`]}>
-            <InteractiveContent setLoader={setLoader} />
+            <InteractiveContent setLoader={setLoader} classChanger={classChanger} />
             <div className={styles["links--container"]}>
                <div className={styles["links--container__links"]}>
                   <ButtonsMap
