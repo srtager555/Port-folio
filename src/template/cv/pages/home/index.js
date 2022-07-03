@@ -59,14 +59,17 @@ export function home({ handleClickChangePage, setLoader }) {
    // it will pick up each target child and
    // send it to an animation function.
    function handleMouseEnter(e, index) {
-      const element = refArray[index].current.children[0].children;
+      const element = refArray[index].current.children[1].children;
+
+      console.log(element)
+
       upLetter(element, () => handleLinkHover(e));
    }
 
    // here return the opacity of the cursor effect to 0
    // and run the leave animation funtion
    function handleMouseLeave(index) {
-      const element = refArray[index].current.children[0].children;
+      const element = refArray[index].current.children[1].children;
 
       downLetter(element, () => {
          const a = goToContainerRef.current.className.replace(
