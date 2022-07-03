@@ -32,20 +32,22 @@ export function home({ handleClickChangePage, setLoader }) {
    // the effect of the cursor will change position
    // and its opacity becomes to 1
    function handleLinkHover(e) {
+      // the code'll start with the letters animation
       const arr = [styles.profile, styles.sq, styles.experience, styles.moreInfo]
-      
       const classesContainer = classChanger.current.className.split(" ")
       
+      // Is easy, the code only need change the css classes
       let a = classesContainer.map(element => {
          if(arr.indexOf(element) != -1) return ""
          else return element
       })
       a.pop()
-
       a.push(arr[Object.values(e.target.parentElement.childNodes).indexOf(e.target)])
 
       classChanger.current.className = a.join(" ")
 
+
+      // here the code add the new position for the cursor effect
       goToRef.current.style.top = `${
          e.target.getBoundingClientRect().top + e.target.offsetHeight / 2
       }px`;
