@@ -61,8 +61,6 @@ export function home({ handleClickChangePage, setLoader }) {
    function handleMouseEnter(e, index) {
       const element = refArray[index].current.children[1].children;
 
-      console.log(element)
-
       upLetter(element, () => handleLinkHover(e));
    }
 

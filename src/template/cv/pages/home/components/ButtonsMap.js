@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import Wl from "wrapping-letters-react";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 
-export function ButtonsMap({ handleClickChangePage, refArray, pageNames, pageLinks }) {
+export function ButtonsMap({
+   handleClickChangePage,
+   refArray,
+   pageNames,
+   pageLinks,
+}) {
    const arrImg = [
-      'https://i.ibb.co/b56T388/Orianna-full-body.jpg',
-      'https://i.ibb.co/2Zcw0X4/flor.jpg',
-      'https://i.ibb.co/X5Wg7S5/kda.jpg',
-      'https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg'
-   ]
+      "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
+      "https://i.ibb.co/2Zcw0X4/flor.jpg",
+      "https://i.ibb.co/X5Wg7S5/kda.jpg",
+      "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
+   ];
+
+
 
    // Wrapping letter component for wrapp each letter in a <span />
    const WlComponent = (pageName) => (
@@ -24,9 +31,51 @@ export function ButtonsMap({ handleClickChangePage, refArray, pageNames, pageLin
       />
    );
 
-   const handleMouseMove = (e) => {
-      console.log('X', e.movementX, 'Y', e.movementY)
-   } 
+   const handleMouseMove = (e, index) => {
+      const target = refArray[index].current.children[0]
+      
+      target.style.top = `${e.clientY}px`
+      target.style.left = `${e.clientX}px`
+   };
+   
+   const handleMouseEnter = (index) => {
+      const target = refArray[index].current.children[0]
+      target.className += ` ${styles["show--image"]}`
+      // console.log(target.className)
+   };
+   
+   const handleMouseLeave = (index) => {
+      const target = refArray[index].current.children[0]
+      const a = target.className.replace(styles["show--image"], "")
+      
+      target.className = a
+   };
+
+   useEffect(() => {
+      refArray.forEach((element, index) => {
+         element.current.addEventListener("mousemove", (e) =>
+            handleMouseMove(e, index)
+         );
+         element.current.addEventListener("mouseenter", () =>
+            handleMouseEnter(index)
+         );
+         element.current.addEventListener("mouseleave", () =>
+            handleMouseLeave(index)
+         );
+      });
+
+      return () => refArray.forEach((element, index) => {
+         element.current.removeEventListener("mousemove", (e) =>
+            handleMouseMove(e, index)
+         );
+         element.current.removeEventListener("mouseenter", () =>
+            handleMouseEnter(index)
+         );
+         element.current.removeEventListener("mouseleave", () =>
+            handleMouseLeave(index)
+         );
+      });
+   }, [])
 
    return pageNames.map((pageName, index) => {
       return (
@@ -35,9 +84,8 @@ export function ButtonsMap({ handleClickChangePage, refArray, pageNames, pageLin
             key={index}
             className={styles["links--link"]}
             onClick={() => handleClickChangePage(pageLinks[index])}
-            onMouseMove={(e) => handleMouseMove(e)}
          >
-            <div className={styles['links--container__image']}>
+            <div className={styles["links--container__image"]}>
                <img src={arrImg[index]} alt="" />
             </div>
             <div className={styles["links--container__text"]}>

@@ -162,14 +162,25 @@
                             font-family: 'Poppins', sans-serif
 
                 .links--container__image 
-                    position: absolute
+                    position: fixed
                     top: 50%
                     left: 50%
+                    transform: translate(-50%, -50%)
                     width: 150px
+                    opacity: 0
+                    visibility: hidden
                     overflow: hidden
+                    transition: opacity 200ms ease  
+                    // z-index: 1
+
+                    &.show--image
+                        opacity: 1
+                        visibility: visible
 
                     img 
                         width: 100%
+                        // transform: translate(-50%, -50%)
+                        transition: 2s ease
 
         .links--container__pointer
             position: absolute
