@@ -17,8 +17,6 @@ export function ButtonsMap({
       "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
    ];
 
-
-
    // Wrapping letter component for wrapp each letter in a <span />
    const WlComponent = (pageName) => (
       <Wl
@@ -32,23 +30,29 @@ export function ButtonsMap({
    );
 
    const handleMouseMove = (e, index) => {
-      const target = refArray[index].current.children[0]
-      
-      target.style.top = `${e.clientY}px`
-      target.style.left = `${e.clientX}px`
+      const targetParent = refArray[index].current;
+      const target = refArray[index].current.children[0];
+
+      let positionY = e.clientY - targetParent.getBoundingClientRect().y;
+      let positionX = e.clientX - targetParent.getBoundingClientRect().x;
+
+      if (positionY > -1 && positionX > -1) {
+         target.style.top = `${positionY}px`;
+         target.style.left = `${positionX}px`;
+      } else handleMouseLeave(index);
    };
-   
+
    const handleMouseEnter = (index) => {
-      const target = refArray[index].current.children[0]
-      target.className += ` ${styles["show--image"]}`
+      const target = refArray[index].current.children[0];
+      target.className += ` ${styles["show--image"]}`;
       // console.log(target.className)
    };
-   
+
    const handleMouseLeave = (index) => {
-      const target = refArray[index].current.children[0]
-      const a = target.className.replace(styles["show--image"], "")
-      
-      target.className = a
+      const target = refArray[index].current.children[0];
+      const a = target.className.replace(` ${styles["show--image"]}`, "");
+
+      target.className = a;
    };
 
    useEffect(() => {
@@ -64,18 +68,19 @@ export function ButtonsMap({
          );
       });
 
-      return () => refArray.forEach((element, index) => {
-         element.current.removeEventListener("mousemove", (e) =>
-            handleMouseMove(e, index)
-         );
-         element.current.removeEventListener("mouseenter", () =>
-            handleMouseEnter(index)
-         );
-         element.current.removeEventListener("mouseleave", () =>
-            handleMouseLeave(index)
-         );
-      });
-   }, [])
+      return () =>
+         refArray.forEach((element, index) => {
+            element.current.removeEventListener("mousemove", (e) =>
+               handleMouseMove(e, index)
+            );
+            element.current.removeEventListener("mouseenter", () =>
+               handleMouseEnter(index)
+            );
+            element.current.removeEventListener("mouseleave", () =>
+               handleMouseLeave(index)
+            );
+         });
+   }, []);
 
    return pageNames.map((pageName, index) => {
       return (
