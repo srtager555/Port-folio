@@ -65,26 +65,26 @@ export function ButtonsMap({
 
    useEffect(() => {
       refArray.forEach((element, index) => {
-         element.current.addEventListener("mousemove", (e) =>
+         element.current.children[1].addEventListener("mousemove", (e) =>
             handleMouseMove(e, index)
          );
-         element.current.addEventListener("mouseenter", (e) =>
+         element.current.children[1].addEventListener("mouseenter", (e) =>
             handleMouseEnter(e, index)
          );
-         element.current.addEventListener("mouseleave", () =>
+         element.current.children[1].addEventListener("mouseleave", () =>
             handleMouseLeave(index)
          );
       });
 
       return () =>
          refArray.forEach((element, index) => {
-            element.current.removeEventListener("mousemove", (e) =>
+            element.current.children[1].removeEventListener("mousemove", (e) =>
                handleMouseMove(e, index)
             );
-            element.current.removeEventListener("mouseenter", (e) =>
+            element.current.children[1].removeEventListener("mouseenter", (e) =>
                handleMouseEnter(e, index)
             );
-            element.current.removeEventListener("mouseleave", () =>
+            element.current.children[1].removeEventListener("mouseleave", () =>
                handleMouseLeave(index)
             );
          });
