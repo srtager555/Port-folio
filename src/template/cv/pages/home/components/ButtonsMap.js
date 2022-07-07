@@ -10,6 +10,7 @@ export function ButtonsMap({
    pageNames,
    pageLinks,
 }) {
+   // This array has the images url
    const arrImg = [
       "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
       "https://i.ibb.co/2Zcw0X4/flor.jpg",
@@ -29,33 +30,42 @@ export function ButtonsMap({
       />
    );
 
+   // handle events
+   
+   // When this function run, the image will follow the cursor 
    const handleMouseMove = (e, index) => {
+      // first declare the targets
       const targetParent = refArray[index].current;
       const target = refArray[index].current.children[0];
 
       let positionY = e.clientY - targetParent.getBoundingClientRect().y;
       let positionX = e.clientX - targetParent.getBoundingClientRect().x;
 
+      // If the image container not having the class, here will add
       if (!target.className.includes(` ${styles["show--image"]}`))
-         target.className += ` ${styles["show--image"]}`;
-
-      if (positionY > -1 && positionX > -1) {
-         target.style.top = `${positionY}px`;
-         target.style.left = `${positionX}px`;
-      } else handleMouseLeave(index);
+      target.className += ` ${styles["show--image"]}`;
+      
+      // and here the code will add the new position of the image
+      target.style.top = `${positionY}px`;
+      target.style.left = `${positionX}px`;
    };
-
+   
+   // when this function run will add the oppacity class
    const handleMouseEnter = (e, index) => {
+      // It is important to run this function, because sometimes the image 
+      // appears in its last position, when the function is executed before 
+      // adding the opacity class, it will update the position.
       handleMouseMove(e, index);
-
+      
       const target = refArray[index].current.children[0];
-
+      
+      // If the image container not having the class, here will add
       if (!target.className.includes(` ${styles["show--image"]}`))
          target.className += ` ${styles["show--image"]}`;
-      // target.className += ` ${styles["show--image"]}`;
-      // console.log(target.className)
    };
 
+   // Is simple, when the cursor leave the element, this function
+   // remove the opacity class
    const handleMouseLeave = (index) => {
       const target = refArray[index].current.children[0];
       const a = target.className.replace(` ${styles["show--image"]}`, "");
@@ -64,6 +74,7 @@ export function ButtonsMap({
    };
 
    useEffect(() => {
+      // here add each eventListener
       refArray.forEach((element, index) => {
          element.current.children[1].addEventListener("mousemove", (e) =>
             handleMouseMove(e, index)
@@ -76,6 +87,7 @@ export function ButtonsMap({
          );
       });
 
+      // With its clean up
       return () =>
          refArray.forEach((element, index) => {
             element.current.children[1].removeEventListener("mousemove", (e) =>
