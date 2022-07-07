@@ -1,4 +1,6 @@
 .home
+    display: flex
+    align-items: center
     position: relative
     width: 100%
     height: 100vh
@@ -40,6 +42,7 @@
     position: relative
     width: 100%
     height: 100%
+    // max-height: 607.5px
 
     .links--container, .introduction--container
         width: 42%
@@ -89,7 +92,7 @@
                 top: 5%
 
             .introduction--container__description
-                top: 25%    
+                top: 25%
 
         .introduction--container__image
             position: absolute
@@ -140,7 +143,7 @@
 
                 .links--container__text
                     position: relative
-                    widows: 100%
+                    width: 100%
                     overflow: hidden
 
                     .links--link__letter
@@ -161,7 +164,7 @@
                             transform: translateY(0)
                             font-family: 'Poppins', sans-serif
 
-                .links--container__image 
+                .links--container__image
                     position: absolute
                     top: 50%
                     left: 50%
@@ -170,15 +173,16 @@
                     opacity: 0.1
                     visibility: hidden
                     overflow: hidden
-                    transition: opacity 200ms ease 
+                    transition: opacity 100ms ease, width 0s 100ms
                     // z-index: 1
 
                     &.show--image
                         width: 150px
                         opacity: 1
                         visibility: visible
+                        transition: opacity 200ms ease
 
-                    img 
+                    img
                         width: 100%
                         // transform: translate(-50%, -50%)
                         transition: 2s ease
@@ -209,3 +213,23 @@
                 -webkit-text-stroke: 1px #fff
                 transition: all .3s ease-in-out
                 color: #fff0
+
+@media (min-width: 1600px)
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 9rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 215px
+
+@media (min-width: 1750px)
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 10rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 240px
