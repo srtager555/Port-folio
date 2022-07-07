@@ -36,15 +36,23 @@ export function ButtonsMap({
       let positionY = e.clientY - targetParent.getBoundingClientRect().y;
       let positionX = e.clientX - targetParent.getBoundingClientRect().x;
 
+      if (!target.className.includes(` ${styles["show--image"]}`))
+         target.className += ` ${styles["show--image"]}`;
+
       if (positionY > -1 && positionX > -1) {
          target.style.top = `${positionY}px`;
          target.style.left = `${positionX}px`;
       } else handleMouseLeave(index);
    };
 
-   const handleMouseEnter = (index) => {
+   const handleMouseEnter = (e, index) => {
+      handleMouseMove(e, index);
+
       const target = refArray[index].current.children[0];
-      target.className += ` ${styles["show--image"]}`;
+
+      if (!target.className.includes(` ${styles["show--image"]}`))
+         target.className += ` ${styles["show--image"]}`;
+      // target.className += ` ${styles["show--image"]}`;
       // console.log(target.className)
    };
 
@@ -60,8 +68,8 @@ export function ButtonsMap({
          element.current.addEventListener("mousemove", (e) =>
             handleMouseMove(e, index)
          );
-         element.current.addEventListener("mouseenter", () =>
-            handleMouseEnter(index)
+         element.current.addEventListener("mouseenter", (e) =>
+            handleMouseEnter(e, index)
          );
          element.current.addEventListener("mouseleave", () =>
             handleMouseLeave(index)
@@ -73,8 +81,8 @@ export function ButtonsMap({
             element.current.removeEventListener("mousemove", (e) =>
                handleMouseMove(e, index)
             );
-            element.current.removeEventListener("mouseenter", () =>
-               handleMouseEnter(index)
+            element.current.removeEventListener("mouseenter", (e) =>
+               handleMouseEnter(e, index)
             );
             element.current.removeEventListener("mouseleave", () =>
                handleMouseLeave(index)
