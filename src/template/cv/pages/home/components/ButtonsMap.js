@@ -41,6 +41,8 @@ export function ButtonsMap({
       let positionY = e.clientY - targetParent.getBoundingClientRect().y;
       let positionX = e.clientX - targetParent.getBoundingClientRect().x;
 
+      handleIsImageMove(e.movementX, e.movementY)
+
       // If the image container not having the class, here will add
       if (!target.className.includes(` ${styles["show--image"]}`))
       target.className += ` ${styles["show--image"]}`;
@@ -50,6 +52,24 @@ export function ButtonsMap({
       target.style.left = `${positionX}px`;
    };
    
+   function handleIsImageMove(movementX, movementY) {
+      if (movementX >= 1) {
+         console.log('right', movementX)
+      } else if (movementX <= -1) {
+         console.log('left', movementX)
+      } else {
+         console.log('I didn\'t move X', movementX) 
+      }
+
+      if (movementY >= 1) {
+         console.log('down', movementY)
+      } else if (movementY <= -1) {
+         console.log('top', movementY)
+      } else {
+         console.log('I didn\'t move Y', movementY) 
+      }
+   }
+
    // when this function run will add the oppacity class
    const handleMouseEnter = (e, index) => {
       // It is important to run this function, because sometimes the image 
@@ -74,29 +94,34 @@ export function ButtonsMap({
    };
 
    useEffect(() => {
+      
       // here add each eventListener
       refArray.forEach((element, index) => {
-         element.current.children[1].addEventListener("mousemove", (e) =>
-            handleMouseMove(e, index)
+         const child = element.current.children[1]
+         
+         child.addEventListener("mousemove", (e) =>
+         handleMouseMove(e, index)
          );
-         element.current.children[1].addEventListener("mouseenter", (e) =>
-            handleMouseEnter(e, index)
+         child.addEventListener("mouseenter", (e) =>
+         handleMouseEnter(e, index)
          );
-         element.current.children[1].addEventListener("mouseleave", () =>
-            handleMouseLeave(index)
+         child.addEventListener("mouseleave", () =>
+         handleMouseLeave(index)
          );
       });
-
+      
       // With its clean up
       return () =>
-         refArray.forEach((element, index) => {
-            element.current.children[1].removeEventListener("mousemove", (e) =>
+      refArray.forEach((element, index) => {
+            const child = element.current.children[1]
+
+            child.removeEventListener("mousemove", (e) =>
                handleMouseMove(e, index)
             );
-            element.current.children[1].removeEventListener("mouseenter", (e) =>
+            child.removeEventListener("mouseenter", (e) =>
                handleMouseEnter(e, index)
             );
-            element.current.children[1].removeEventListener("mouseleave", () =>
+            child.removeEventListener("mouseleave", () =>
                handleMouseLeave(index)
             );
          });
