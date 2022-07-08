@@ -41,7 +41,7 @@ export function ButtonsMap({
       let positionY = e.clientY - targetParent.getBoundingClientRect().y;
       let positionX = e.clientX - targetParent.getBoundingClientRect().x;
 
-      handleIsImageMove(e.movementX, e.movementY)
+      handleIsImageMove(target, e.movementX, e.movementY)
 
       // If the image container not having the class, here will add
       if (!target.className.includes(` ${styles["show--image"]}`))
@@ -52,22 +52,35 @@ export function ButtonsMap({
       target.style.left = `${positionX}px`;
    };
    
-   function handleIsImageMove(movementX, movementY) {
-      if (movementX >= 1) {
-         console.log('right', movementX)
-      } else if (movementX <= -1) {
-         console.log('left', movementX)
-      } else {
-         console.log('I didn\'t move X', movementX) 
-      }
+   function handleIsImageMove(target, movementX, movementY) {
+      // const IMAGE_STYLE = target.children.style.transform
+      // console.log(target.children[0].style)
 
-      if (movementY >= 1) {
-         console.log('down', movementY)
-      } else if (movementY <= -1) {
-         console.log('top', movementY)
-      } else {
-         console.log('I didn\'t move Y', movementY) 
-      }
+      let positionTo0 = setTimeout(() => {
+         target.children[0].style.transform = `translate(${movementX * 0}px, ${movementY * 0}px)`
+      }, 200)
+
+      target.children[0].style.transform = `translate(${movementX * 10}px, ${movementY * 10}px)`
+
+      clearTimeout(positionTo0)
+
+      // if (movementX >= 1) {
+      //    console.log('right', movementX)
+      // } else if (movementX <= -1) {
+      //    console.log('left', movementX)
+      // } 
+      // else {
+      //    console.log('I didn\'t move X', movementX) 
+      // }
+
+      // if (movementY >= 1) {
+      //    console.log('down', movementY)
+      // } else if (movementY <= -1) {
+      //    console.log('top', movementY)
+      // }
+      // else {
+      //    console.log('I didn\'t move Y', movementY) 
+      // }
    }
 
    // when this function run will add the oppacity class
