@@ -41,7 +41,7 @@ export function ButtonsMap({
       let positionY = e.clientY - targetParent.getBoundingClientRect().y;
       let positionX = e.clientX - targetParent.getBoundingClientRect().x;
 
-      handleIsImageMove(target, e.movementX, e.movementY)
+      handleIsImageMove(target, positionX, positionY)
 
       // If the image container not having the class, here will add
       if (!target.className.includes(` ${styles["show--image"]}`))
@@ -52,22 +52,14 @@ export function ButtonsMap({
       target.style.left = `${positionX}px`;
    };
    
-   function handleIsImageMove(target, movementX, movementY) {
+   function handleIsImageMove(target, positionX, positionY) {
       let imgHeight = window.getComputedStyle(target.children[0]).height
       const container = target.offsetParent.children[0]
       let containerHeight = window.getComputedStyle(container).height;
 
-      if(imgHeight != containerHeight) {
+      if (imgHeight != containerHeight) {
          container.style.height = imgHeight
       }
-
-      clearTimeout(positionTo0)
-      
-      target.children[0].style.transform = `translate(${movementX * 2}px, ${movementY * 4}px)`
-      
-      let positionTo0 = setTimeout(() => {
-         target.children[0].style.transform = `translate(${movementX * 0}px, ${movementY * 0}px)`
-      }, 200)
    }
 
    // when this function run will add the oppacity class
