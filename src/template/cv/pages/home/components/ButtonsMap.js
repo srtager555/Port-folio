@@ -53,8 +53,13 @@ export function ButtonsMap({
    };
    
    function handleIsImageMove(target, movementX, movementY) {
-      // const IMAGE_STYLE = target.children.style.transform
-      // console.log(target.children[0].style)
+      let imgHeight = window.getComputedStyle(target.children[0]).height
+      const container = target.offsetParent.children[0]
+      let containerHeight = window.getComputedStyle(container).height;
+
+      if(imgHeight != containerHeight) {
+         container.style.height = imgHeight
+      }
 
       clearTimeout(positionTo0)
       
@@ -63,24 +68,6 @@ export function ButtonsMap({
       let positionTo0 = setTimeout(() => {
          target.children[0].style.transform = `translate(${movementX * 0}px, ${movementY * 0}px)`
       }, 200)
-
-      // if (movementX >= 1) {
-      //    console.log('right', movementX)
-      // } else if (movementX <= -1) {
-      //    console.log('left', movementX)
-      // } 
-      // else {
-      //    console.log('I didn\'t move X', movementX) 
-      // }
-
-      // if (movementY >= 1) {
-      //    console.log('down', movementY)
-      // } else if (movementY <= -1) {
-      //    console.log('top', movementY)
-      // }
-      // else {
-      //    console.log('I didn\'t move Y', movementY) 
-      // }
    }
 
    // when this function run will add the oppacity class
