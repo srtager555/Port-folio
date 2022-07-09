@@ -56,13 +56,13 @@ export function ButtonsMap({
       // const IMAGE_STYLE = target.children.style.transform
       // console.log(target.children[0].style)
 
+      clearTimeout(positionTo0)
+      
+      target.children[0].style.transform = `translate(${movementX * 10}px, ${movementY * 20}px)`
+      
       let positionTo0 = setTimeout(() => {
          target.children[0].style.transform = `translate(${movementX * 0}px, ${movementY * 0}px)`
       }, 200)
-
-      target.children[0].style.transform = `translate(${movementX * 10}px, ${movementY * 10}px)`
-
-      clearTimeout(positionTo0)
 
       // if (movementX >= 1) {
       //    console.log('right', movementX)
