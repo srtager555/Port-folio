@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 import Wl from "wrapping-letters-react";
 
@@ -41,7 +41,7 @@ export function ButtonsMap({
       let positionY = e.clientY - targetParent.getBoundingClientRect().y;
       let positionX = e.clientX - targetParent.getBoundingClientRect().x;
 
-      handleIsImageMove(target, positionX, positionY)
+      containerHeight(target)
 
       // If the image container not having the class, here will add
       if (!target.className.includes(` ${styles["show--image"]}`))
@@ -52,7 +52,8 @@ export function ButtonsMap({
       target.style.left = `${positionX}px`;
    };
    
-   function handleIsImageMove(target, positionX, positionY) {
+   function containerHeight(target) {
+      // this function is for declare the correct container's height 
       let imgHeight = window.getComputedStyle(target.children[0]).height
       const container = target.offsetParent.children[0]
       let containerHeight = window.getComputedStyle(container).height;
