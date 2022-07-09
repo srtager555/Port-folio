@@ -80,6 +80,11 @@ export function home({ handleClickChangePage, setLoader }) {
 
    // here add listeners for the handle events
    useEffect(() => {
+      // here add the first position for the cursor follower
+      goToRef.current.style.top = `${
+         refArray[0].current.getBoundingClientRect().top + refArray[0].current.offsetHeight / 2
+      }px`;
+
       // here it'll add to each element 2 listeners
       refArray.forEach((element, index) => {
          element.current.addEventListener("mouseenter", (e) =>
