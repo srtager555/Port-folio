@@ -63,7 +63,7 @@ export function ButtonsMap({
 
       clearTimeout(positionTo0)
       
-      target.children[0].style.transform = `translate(${movementX}px, ${movementY}px)`
+      target.children[0].style.transform = `translate(${movementX * 2}px, ${movementY * 4}px)`
       
       let positionTo0 = setTimeout(() => {
          target.children[0].style.transform = `translate(${movementX * 0}px, ${movementY * 0}px)`
