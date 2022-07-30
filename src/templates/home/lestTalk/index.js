@@ -2,7 +2,7 @@ import { useRef } from "react";
 import WrappingLetters from "wrapping-letters-react";
 import anime from "animejs";
 
-import "../../styles/LestTalk.css";
+import styles from "@sass/LestTalk.module.sass";
 
 export function LestTalkContainer() {
   const lestTalkRef = useRef(null);
@@ -64,31 +64,31 @@ export function LestTalkContainer() {
   }
 
   return (
-    <div id="lest-talk" className="container container_lestTalk">
-      <div className="button-mail">
+    <div id="lest-talk" className={`container ${styles["container_lestTalk"]}`}>
+      <div className={styles["button-mail"]}>
         <a
           ref={lestTalkRef}
           onMouseEnter={() => moveUpLetterAnimation2(lestTalkRef)}
           href="mailto:srtager555@gmail.com"
         >
-          <div className="container__text">
+          <div className={styles.container__text}>
             <WrappingLetters
               text="Let's Talk !!"
               textOptions={{
-                ClassToAdd: "button-mail-letter",
+                ClassToAdd: styles["button-mail-letter"],
                 SelectClass: {
                   wordToSearch: "!!",
-                  classToAdd: "button-mail-letter_exclamation",
+                  classToAdd: styles["button-mail-letter_exclamation"],
                 },
               }}
             />
           </div>
         </a>
-        <div className="border-letstalk"></div>
+        <div className={styles["border-letstalk"]}></div>
       </div>
-      <div className="container__social_networks">
+      <div className={styles["container__social_networks"]}>
         <h2>About me</h2>
-        <div className="container_networks">
+        <div className={styles["container_networks"]}>
           <a
             ref={linkedinRef}
             onMouseEnter={() => moveUpLetterAnimation(linkedinRef)}
@@ -97,19 +97,19 @@ export function LestTalkContainer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="container__text">
+            <div className={styles.container__text}>
               <WrappingLetters
                 text="LinkedIn"
                 textOptions={{
-                  ClassToAdd: "social-network-letter",
+                  ClassToAdd: styles["social-network-letter"],
                 }}
               />
             </div>
-            <div className="container__text">
+            <div className={styles.container__text}>
               <WrappingLetters
                 text="LinkedIn"
                 textOptions={{
-                  ClassToAdd: "social-network-letter",
+                  ClassToAdd: styles["social-network-letter"],
                 }}
               />
             </div>
@@ -122,19 +122,19 @@ export function LestTalkContainer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="container__text">
+            <div className={styles["container__text"]}>
               <WrappingLetters
                 text="Github"
                 textOptions={{
-                  ClassToAdd: "social-network-letter",
+                  ClassToAdd: styles["social-network-letter"],
                 }}
               />
             </div>
-            <div className="container__text">
+            <div className={styles.container__text}>
               <WrappingLetters
                 text="Github"
                 textOptions={{
-                  ClassToAdd: "social-network-letter",
+                  ClassToAdd: styles["social-network-letter"],
                 }}
               />
             </div>
@@ -147,19 +147,19 @@ export function LestTalkContainer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="container__text">
+            <div className={styles.container__text}>
               <WrappingLetters
                 text="Behance"
                 textOptions={{
-                  ClassToAdd: "social-network-letter",
+                  ClassToAdd: styles["social-network-letter"],
                 }}
               />
             </div>
-            <div className="container__text">
+            <div className={styles.container__text}>
               <WrappingLetters
                 text="Behance"
                 textOptions={{
-                  ClassToAdd: "social-network-letter",
+                  ClassToAdd: styles["social-network-letter"],
                 }}
               />
             </div>
