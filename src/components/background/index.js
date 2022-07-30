@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "../../styles/Background.css";
+import { useEffect, useState } from "react";
+import style from "@sass/Background.module.sass";
 
 export function Background({ inPath }) {
   const [backgroundClass, setBackgroundClass] = useState("");
@@ -8,11 +8,13 @@ export function Background({ inPath }) {
     if (inPath === "home") {
       setBackgroundClass("");
     } else {
-      setBackgroundClass("background--project");
+      setBackgroundClass(style["background--project"]);
     }
   }, [inPath]);
 
   return (
-    <div className={`container container-background ${backgroundClass}`}></div>
+    <div
+      className={`container ${style["container-background"]} ${backgroundClass}`}
+    ></div>
   );
 }
