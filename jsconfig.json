@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "Src/*": ["./src/*"],
-      "Sass/*": ["./src/sass/*"],
-      "Templates/*": ["./src/templates*"]
+      "@src/*": ["./src/*"],
+      "@sass/*": ["./src/sass/*"],
+      "@templates/*": ["./src/templates*"]
     }
   }
 }
