@@ -2,7 +2,7 @@ import { useLayoutEffect, useEffect, useRef } from "react";
 import Link from "next/link";
 import WrappingLetter from "wrapping-letters-react";
 import anime from "animejs";
-import { HelmetComponent } from "@components/Helmet";
+import { HeadComponent } from "@components/Head.next";
 
 import "../../styles/NotMatch.css";
 
@@ -64,7 +64,7 @@ export function NotMatch({ chagePath, setLoader }) {
 
   return (
     <>
-      <HelmetComponent
+      <HeadComponent
         title="404 Page not found"
         description="404, There is nothing here :("
       />
