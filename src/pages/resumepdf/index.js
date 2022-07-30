@@ -22,10 +22,10 @@ export function cvpdfTemplate() {
          </div>
          <div className={styles.contact__links}>
             <a href="mailto:srtager555@gmail.com">Mail</a>
-            <a href="https://www.linkedin.com/in/srtager555" target="_blank">
+            <a href="https://www.linkedin.com/in/srtager555" target="_blank" rel="noreferrer">
                LinkedIn
             </a>
-            <a href="https://github.com/srtager555" target="_blank">
+            <a href="https://github.com/srtager555" target="_blank" rel="noreferrer">
                GitHub
             </a>
          </div>
