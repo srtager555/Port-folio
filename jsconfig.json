@@ -4,7 +4,8 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@sass/*": ["./src/sass/*"],
-      "@templates/*": ["./src/templates*"]
+      "@templates/*": ["./src/templates*"],
+      "@components/*": ["./src/components*"]
     }
   }
 }
