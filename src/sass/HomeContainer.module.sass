@@ -7,7 +7,6 @@
   height: 100vh
   padding: 20% 0
 
-/* .container__title  */
   .container__title-image
     position: absolute
     top: -40px
@@ -24,119 +23,115 @@
     align-items: center
     flex-direction: column
 
-  .container__title-hero
-    display: inherit
-    justify-content: inherit
-    align-items: inherit
-    flex-direction: inherit
-    mix-blend-mode: exclusion
-    color: #fff
-    transition: 500ms 1s
-    z-index: 0
-
-  &.apple0_0
     .container__title-hero
-      mix-blend-mode: normal
-      color: #000
+      display: inherit
+      justify-content: inherit
+      align-items: inherit
+      flex-direction: inherit
+      mix-blend-mode: exclusion
+      color: #fff
+      transition: 500ms 1s
+      z-index: 0
 
-  .container__name
-    font-size: 90px
-    text-transform: uppercase
+    &.apple0_0
+      .container__title-hero
+        mix-blend-mode: normal
+        color: #000
 
-    span
-      display: inline-block
-      white-space: pre-wrap
+      .container__name span
+        text-shadow: 0px 20px 30px #fff8
 
-.container-home
-  .container__title.apple0_0
-  .container__title-hero
-  .container__name
-  span
-    text-shadow: 0px 20px 30px #fff8
+    .container__name
+      font-size: 90px
+      text-transform: uppercase
 
-.container-home .container__title .container__title-hero .container__job
-  font-size: 30px
-  font-weight: 300
-  text-transform: uppercase
-  font-family: "Noto Sans Display", sans-serif
+      span
+        display: inline-block
+        white-space: pre-wrap
 
-.container__description
-  font-size: 16px
-  font-weight: 300
-  text-align: center
-  width: 100%
+    .container__job
+      font-size: 30px
+      font-weight: 300
+      text-transform: uppercase
+      font-family: "Noto Sans Display", sans-serif
 
-  & .container__text
-    max-width: 455px
-    margin: 0 auto
-    width: 79%
+  .container__description
+    font-size: 16px
+    font-weight: 300
+    text-align: center
+    width: 100%
 
-  & .container__text span
-    font-family: "Noto Sans Display", sans-serif
-    word-spacing: 1.5px
+    .container__text
+      max-width: 455px
+      margin: 0 auto
+      width: 79%
 
-.container__slider
-  position: relative
-  width: 95%
-  max-width: 864px
-  margin: 0 auto
-  margin-top: 35px
-  padding: 25px 0
-  overflow-x: hidden
+      span
+        font-family: "Noto Sans Display", sans-serif
+        word-spacing: 1.5px
 
-.container__slider::after,
-.container__slider::before
-  content: ""
-  position: absolute
-  height: 1px
-  transform: translateX(-50%)
-  background: #000
+    .container__slider
+      position: relative
+      width: 95%
+      max-width: 864px
+      margin: 0 auto
+      margin-top: 35px
+      padding: 25px 0
+      overflow-x: hidden
 
-.container__slider::after
-  top: 0
-  left: 50%
-  width: 97%
-  max-width: 691px
+      &::after, &::before
+        content: ""
+        position: absolute
+        height: 1px
+        transform: translateX(-50%)
+        background: #000
 
-.container__slider::before
-  bottom: 0
-  left: 50%
-  width: 97%
-  max-width: 691px
+      &::after
+        top: 0
+        left: 50%
+        width: 97%
+        max-width: 691px
 
-.container__slider .container__slider-item
-  display: inline-block
-  position: absolute
-  top: 50%
-  transform: translateY(-50%)
-  font-size: 22px
-  margin-left: 36px
+      &::before
+        bottom: 0
+        left: 50%
+        width: 97%
+        max-width: 691px
 
-  &:nth-child(1)
-    left: 0%
-    z-index: 1
-    animation: slide1 30s linear infinite
+      .container__slider-item
+        display: inline-block
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        font-size: 22px
+        margin-left: 36px
 
-.container__slider.cv .container__slider-item:nth-child(1)
-  animation: slideCV1 30s linear infinite
+        &:nth-child(1)
+          left: 0%
+          z-index: 1
+          animation: slide1 30s linear infinite
 
-.container__slider.cv .container__slider-item:nth-child(2)
-  animation: slideCV2 30s linear infinite
+        &:nth-child(2)
+          left: 100%
+          z-index: 1
+          animation: slide2 30s linear infinite
 
-  &:nth-child(2)
-    left: 100%
-    z-index: 1
-    animation: slide2 30s linear infinite
+        &.cv
+          .container__slider-item:nth-child(1)
+            animation: slideCV1 30s linear infinite
 
-  & .slider-words
-    font-family: "Shippori Mincho"
-    white-space: nowrap
+          .container__slider-item:nth-child(2)
+            animation: slideCV2 30s linear infinite
 
-  & .slider-words:nth-child(odd)
-    margin-left: 36px
+        .slider-words
+          font-family: "Shippori Mincho"
+          white-space: nowrap
 
-  & .slider-words:first-child
-    margin-left: 0
+          &:nth-child(odd)
+            margin-left: 36px
+
+          &:first-child
+            margin-left: 0
 
 @keyframes slide1
   0%
@@ -210,15 +205,15 @@
     align-items: flex-start
     padding-left: 21px
 
-  & .container__title-hero .container__name
-    font-size: 85px
-    width: 320px
-    margin-bottom: 220px
+    .container__title-hero .container__name
+      font-size: 85px
+      width: 320px
+      margin-bottom: 220px
 
-  & .container__title-hero .container__job
-    font-size: 35px
+    .container__title-hero .container__job
+      font-size: 35px
 
-  .container__slider
+  .container__description .container__slider
     margin-top: 45px
 
 @media (max-width: 420px)
@@ -227,20 +222,23 @@
     left: 32%
     width: 259px
 
-  .container-home .container__title
-    margin-top: 0
-    padding-left: 21px
+  .container-home
+    .container__title
+      margin-top: 0
+      padding-left: 21px
 
-  & .container__title-hero .container__name
-    font-size: 70px
-    width: 258px
-    margin-bottom: 175px
+      .container__title-hero
+        .container__name
+          font-size: 70px
+          width: 258px
+          margin-bottom: 175px
 
-  & .container__title-hero .container__job
-    font-size: 25px
+        .container__job
+          font-size: 25px
 
-  .container__description .container__text
-    font-size: 15px
+  .container__description
+    .container__text
+      font-size: 15px
 
-  .container__slider
-    margin-top: 15px
+    .container__slider
+      margin-top: 15px
