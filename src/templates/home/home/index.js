@@ -1,7 +1,7 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
-import "../../styles/HomeContainer.css";
+import styles from "@sass/HomeContainer.module.sass";
 
 export function HomeContainer({ l }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,10 +32,16 @@ export function HomeContainer({ l }) {
 
   return (
     <>
-      <div ref={l} id="home" className="container container-home">
-        <div className={`container__title ${isAppleDevice ? "apple0_0" : ""}`}>
+      <div ref={l} className={`container ${styles["container-home"]}`}>
+        <div
+          className={`${styles["container__title"]} ${
+            isAppleDevice ? styles.apple0_0 : ""
+          }`}
+        >
           {isMobile ? (
-            <div className="container__title-image mobile">
+            <div
+              className={`${styles["container__title-image"]} ${styles.mobile}`}
+            >
               <img
                 src="https://i.ibb.co/YDnX5r8/mobile-home-image.jpg"
                 alt="kda Ahri"
@@ -49,38 +55,38 @@ export function HomeContainer({ l }) {
               />
             </div>
           )}
-          <div className="container__title-hero">
-            <div className="container__name">
+          <div className={styles["container__title-hero"]}>
+            <div className={styles.container__name}>
               <span>Carlos Ponce</span>
             </div>
-            <div className="container__job">
+            <div className={styles.container__job}>
               <span>Front-end Developer</span>
             </div>
           </div>
         </div>
-        <div className="container__description">
-          <div className="container__text">
+        <div className={styles.container__description}>
+          <div className={styles.container__text}>
             <span>
               Hello! I’m a young developer, my specialty is front-end
               development. I invite you to see my projects are simple, but
               interesting.
             </span>
           </div>
-          <div className="container__slider">
-            <span className="container__slider-item">
+          <div className={styles.container__slider}>
+            <span className={styles["container__slider-item"]}>
               <WrappingLetters
                 text={`PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022`}
                 textOptions={{
-                  ClassToAdd: "slider-words",
+                  ClassToAdd: styles["slider-words"],
                   PerWord: true,
                 }}
               />
             </span>
-            <span className="container__slider-item">
+            <span className={styles["container__slider-item"]}>
               <WrappingLetters
                 text={`PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022 PORTFOLIO 2022`}
                 textOptions={{
-                  ClassToAdd: "slider-words",
+                  ClassToAdd: styles["slider-words"],
                   PerWord: true,
                 }}
               />
