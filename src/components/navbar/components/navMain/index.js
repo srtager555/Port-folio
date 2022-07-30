@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import "../../../../styles/Navbar.css";
+import "@sass/Navbar.module.sass";
 
 export function NavMain({ handleResetScroll }) {
   const [isActived, setIsActived] = useState(false);
