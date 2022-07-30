@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-import { NAVBAR_MOBILE_SIZE } from "../../../../contexts/constVarible";
+import { NAVBAR_MOBILE_SIZE } from "@contexts/constVarible";
 
 import Link from "next/link";
 
-import "../../../../styles/NavbarHome.css";
+import "@sass/NavbarHome.module.sass";
 
 export function NavHome({ handleResetScroll }) {
   const [isOpen, setIsOpen] = useState(false);
