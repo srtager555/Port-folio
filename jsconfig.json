@@ -4,6 +4,7 @@
     "paths": {
       "Src/*": ["./src/*"],
       "Styles/*": ["./src/styles/*"],
+      "Templates/*": ["./src/templates*"]
     }
   }
 }
