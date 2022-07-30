@@ -4,7 +4,7 @@ import WrappingLetter from "wrapping-letters-react";
 import anime from "animejs";
 import { HeadComponent } from "@components/Head.next";
 
-import "../../styles/NotMatch.css";
+import styles from "@sass/NotMatch.module.sass";
 
 export function NotMatch({ chagePath, setLoader }) {
   chagePath("");
@@ -68,35 +68,43 @@ export function NotMatch({ chagePath, setLoader }) {
         title="404 Page not found"
         description="404, There is nothing here :("
       />
-      <div className="container container__NotMatch">
-        <div className="container__NotMatch--404">
+      <div className={`container ${styles.container__NotMatch}`}>
+        <div className={styles["container__NotMatch--404"]}>
           <span>404</span>
           <img src="https://i.ibb.co/7QZ2QT6/IMG-9088.jpg" alt="404" />
         </div>
         <div className=""></div>
-        <div className="container__NotMatch--redirects">
+        <div className={styles["container__NotMatch--redirects"]}>
           <Link
             href="/"
             onMouseEnter={() => moveUpLetterAnimation(returnToHomeRef)}
             onMouseLeave={() => moveDownLetterAnimation(returnToHomeRef)}
           >
             <a ref={returnToHomeRef}>
-              <div className="container__NotMatch--redirects-container__letters">
+              <div
+                className={
+                  styles["container__NotMatch--redirects-container__letters"]
+                }
+              >
                 <WrappingLetter
                   text="return to Home"
-                  textOptions={[{ PerWord: true }]}
+                  textOptions={{ PerWord: true }}
                 />
               </div>
-              <div className="container__NotMatch--redirects-container__letters">
+              <div
+                className={
+                  styles["container__NotMatch--redirects-container__letters"]
+                }
+              >
                 <WrappingLetter
                   text="return to Home"
-                  textOptions={[{ PerWord: true }]}
+                  textOptions={{ PerWord: true }}
                 />
               </div>
             </a>
           </Link>
         </div>
-        <div className="container__NotMatch--freeStyleXD">
+        <div className={styles["container__NotMatch--freeStyleXD"]}>
           <span>Overflow of freeStyle</span>
         </div>
       </div>
