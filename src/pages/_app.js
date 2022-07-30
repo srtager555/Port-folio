@@ -7,7 +7,7 @@ import { LoadScreen } from "../components/loadScreen";
 // import { useInPath } from "../hooks/useInPath";
 
 import "@sass/global.css";
-import "../styles/OpacityContainer.css";
+import "@sass/OpacityContainer.module.sass";
 
 function MyApp({ Component, pageProps }) {
   const [loader, setLoader] = useState(false);
