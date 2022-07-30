@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
 import { NotMatch } from "../NotMatch";
@@ -19,11 +19,11 @@ export function ProjectPage({ handleResetScroll, setLoader, chagePath }) {
     setContainerContetSize(containerContentRef.current.offsetWidth);
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleContainerSize();
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setLoader(false);
     handleResetScroll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
