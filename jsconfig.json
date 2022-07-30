@@ -5,7 +5,8 @@
       "@src/*": ["./src/*"],
       "@sass/*": ["./src/sass/*"],
       "@templates/*": ["./src/templates*"],
-      "@components/*": ["./src/components*"]
+      "@components/*": ["./src/components*"],
+      "@animations/*": ["./src/animations*"]
     }
   }
 }
