@@ -3,8 +3,8 @@ import React, { useRef, useEffect } from "react";
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
 import { InteractiveContent } from "./components/InteractiveContent";
-import upLetter from "../../../../animations/defaultAnimation/upLetter";
-import downLetter from "../../../../animations/defaultAnimation/downLetter";
+import upLetter from "@animations/defaultAnimation/upLetter";
+import downLetter from "@animations/defaultAnimation/downLetter";
 
 import styles from "Src/styles/cvStyles/home.module.sass";
 

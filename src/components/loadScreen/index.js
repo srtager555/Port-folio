@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
-import { getRandomPhrase } from "../../contexts/randomPhrases";
+import { useState, useEffect, useLayoutEffect } from "react";
+import { getRandomPhrase } from "@contexts/randomPhrases";
 
 import "../../styles/LoadScreen.css";
 

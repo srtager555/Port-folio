@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ProjectsElementList } from "../../contexts/projectsContexts";
-import { IS_MOBILE } from "../../contexts/constVarible";
+import { ProjectsElementList } from "@contexts/projectsContexts";
+import { IS_MOBILE } from "@contexts/constVarible";
 
 import { ImageNextPost } from "./Image/index";
 

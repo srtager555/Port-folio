@@ -2,7 +2,7 @@ import { useLayoutEffect, useEffect, useRef } from "react";
 import Link from "next/link";
 import WrappingLetter from "wrapping-letters-react";
 import anime from "animejs";
-import { HelmetComponent } from "../../components/Helmet";
+import { HelmetComponent } from "@components/Helmet";
 
 import "../../styles/NotMatch.css";
 

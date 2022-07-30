@@ -1,14 +1,14 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
-import { NotMatch } from "../NotMatch";
+import { NotMatch } from "../404";
 import { ProjectsElementList } from "../../contexts/projectsContexts";
-import { ImageProcess } from "../../components/projectImage";
-import { NextPost } from "../../components/nextPost";
-import { HeaderProjects } from "../../components/headerProjects";
-import { HeadComponent } from "../../components/Head.next";
-import { Links } from "../../components/links";
-import { ScrollProgress } from "../../components/ScrollProgress";
+import { ImageProcess } from "@components/projectImage";
+import { NextPost } from "@components/nextPost";
+import { HeaderProjects } from "@components/headerProjects";
+import { HeadComponent } from "@components/Head.next";
+import { Links } from "@components/links";
+import { ScrollProgress } from "@components/ScrollProgress";
 
 import "../../styles/ProjectPage.css";
 

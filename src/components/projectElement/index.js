@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-import { ProjectsElementList } from "../../contexts/projectsContexts";
-import { IS_MOBILE } from "../../contexts/constVarible";
+import { ProjectsElementList } from "@contexts/projectsContexts";
+import { IS_MOBILE } from "@contexts/constVarible";
 
 export function ProjectsElement({
   SliderProjectsRef,

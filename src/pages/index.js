@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect } from "react";
 
-import { HomeTemplate } from "Src/templates/home";
-import { HeadComponent } from "Src/components/Head.next";
+import { HomeTemplate } from "@src/templates/home";
+import { HeadComponent } from "@src/components/Head.next";
 // import { AboutMeContainer } from "../../containers/aboutMe";
 
 export function HomePage({ chagePath, setLoader }) {

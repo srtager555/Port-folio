@@ -1,6 +1,4 @@
-import React from "react";
-
-import { IS_MOBILE_DEVICE } from "../../contexts/constVarible";
+import { IS_MOBILE_DEVICE } from "@contexts/constVarible";
 
 function JobBar({ project }) {
   return (

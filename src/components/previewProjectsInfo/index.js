@@ -1,6 +1,4 @@
-import React from "react";
-
-import { IS_MOBILE } from "../../contexts/constVarible";
+import { IS_MOBILE } from "@contexts/constVarible";
 
 import { Link } from "react-router-dom";
 

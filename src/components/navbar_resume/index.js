@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { MenuButton } from "./menuButton";
+// import { MenuButton } from "./menuButton";
 
 import styles from "Src/styles/cvStyles/navbar.module.sass";
 
@@ -23,7 +23,7 @@ export function Navbar({ pageName, setPageName, pagesName }) {
     return path;
   }
 
-  function linkComponent(text, index) {
+  function linkComponent(text) {
     return <Link to={`/cv/${HandleRouteName(text)}`}>{text}</Link>;
   }
 
@@ -31,6 +31,7 @@ export function Navbar({ pageName, setPageName, pagesName }) {
     //here change the name of a string on the arr
     let a = pagesName.find((e) => e[1] === "sq");
     a[1] = "s&q";
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageName]);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export function Navbar({ pageName, setPageName, pagesName }) {
     } else {
       setButtons([link(pageIndex - 1), link(pageIndex + 1)]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageIndex]);
 
   return (

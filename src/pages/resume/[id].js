@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 // import { navbar as Navbar } from "./components/navbar";
-import { home as Home } from "./pages/home";
-import { profile as Profile } from "./pages/profile";
-import { skills_and_qualities as Sq } from "./pages/sq";
-import { experience as Experience } from "./pages/experience";
-import { more_info as MoreInfo } from "./pages/moreInfo";
+import { home as Home } from "./_home";
+import { profile as Profile } from "./_profile";
+import { skills_and_qualities as Sq } from "./_sq";
+import { experience as Experience } from "./_experience";
+import { more_info as MoreInfo } from "./_moreInfo";
 
 export function CV({ setLoader, chagePath }) {
   let currentPage = <Home {...pageProps} />;

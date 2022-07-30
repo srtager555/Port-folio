@@ -1,5 +1,4 @@
-import React from "react";
-import { IS_MOBILE_DEVICE } from "../../../contexts/constVarible";
+import { IS_MOBILE_DEVICE } from "@contexts/constVarible";
 
 export function ImageNextPost({ data, stylesIsHover }) {
   return imageFunction(stylesIsHover, data);
