@@ -1,120 +1,123 @@
 :root {
-   --navbar-size: 45%;
-   --navbar-size__pixel: 215px;
-   --navbar-height: 85px;
+  --navbar-size: 45%;
+  --navbar-size__pixel: 215px;
+  --navbar-height: 85px;
 }
 
 .nav__background__container {
-   position: fixed;
-   top: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 100%;
-   max-width: 1280px;
-   height: 85px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1280px;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
 }
 /* .nav__background__container  */
 .nav__background--main {
-   position: fixed;
-   top: 0;
-   left: 22.5%;
-   transform: translateX(-50%);
-   height: var(--navbar-height);
-   width: var(--navbar-size);
-   max-width: var(--navbar-size__pixel);
-   background-color: #fff;
-   mix-blend-mode: exclusion;
-   opacity: 0;
-   visibility: hidden;
-   transition: all 0.5s ease-in-out;
-   z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 22.5%;
+  transform: translateX(-50%);
+  height: var(--navbar-height);
+  width: var(--navbar-size);
+  max-width: var(--navbar-size__pixel);
+  background-color: #fff;
+  mix-blend-mode: exclusion;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
 }
 .nav__background--main.show {
-   visibility: visible;
-   opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 .nav__background--main.secondary {
-   left: 77.5%;
+  left: 77.5%;
 }
 
 .nav__container {
-   position: fixed;
-   top: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 100%;
-   height: 85px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0.5rem 1.1rem;
-   z-index: 10;
-   max-width: 1280px;
-   mix-blend-mode: exclusion;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  z-index: 10;
+  max-width: 1280px;
+  mix-blend-mode: exclusion;
 }
 .nav__container.home {
-   height: 52px;
-   padding: 0.5rem 1rem;
-   max-width: 1024px;
+  height: 52px;
+  padding: 0.5rem 1rem;
+  max-width: 1024px;
 }
 
-.nav__container--main, .nav__container--cta {
-   position: fixed;
-   top: 0;
-   left: 22.5%;
-   transform: translateX(-50%);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: var(--navbar-height);
-   width: var(--navbar-size);
-   max-width: var(--navbar-size__pixel);
-   mix-blend-mode: difference;
-   opacity: 0;
-   visibility: hidden;
-   transition: all 0.5s ease-in-out;
-   z-index: 10;
+.nav__container--main,
+.nav__container--cta {
+  position: fixed;
+  top: 0;
+  left: 22.5%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--navbar-height);
+  width: var(--navbar-size);
+  max-width: var(--navbar-size__pixel);
+  mix-blend-mode: difference;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
 }
-.nav__container--main.show, .nav__container--cta.show {
-   visibility: visible;
-   opacity: 1;
+.nav__container--main.show,
+.nav__container--cta.show {
+  visibility: visible;
+  opacity: 1;
 }
 .nav__container--cta {
-   left: 77.5%;
+  left: 77.5%;
 }
 
-.nav__container .nav__logo > a, .nav__container--main .nav__logo a {
-   font-family: "Poppins";
-   font-size: 27px;
-   font-weight: 300;
-   color: #fff;
-   text-decoration: none;
+.nav__container .nav__logo > a,
+.nav__container--main .nav__logo a {
+  font-family: "Poppins";
+  font-size: 27px;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
 }
 
 .nav__container--main .nav__logo > a {
-   font-size: 35px;
+  font-size: 35px;
 }
 
 .nav__container--cta > a {
-   font-family: "Yaldevi", sans-serif;
-   font-size: 31px;
-   font-weight: 100;
-   color: #fff;
-   text-decoration: none;
-   text-transform: uppercase;
+  font-family: "Yaldevi", sans-serif;
+  font-size: 31px;
+  font-weight: 100;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 @media (max-width: 540px) {
-    .nav__container--cta > a {
-        font-size: 26px;
-     }
+  .nav__container--cta > a {
+    font-size: 26px;
+  }
 }
 @media (max-width: 415px) {
-   .nav__container--cta > a {
-      font-size: 25px;
-   }
+  .nav__container--cta > a {
+    font-size: 25px;
+  }
 }
