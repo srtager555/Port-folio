@@ -1,10 +1,8 @@
-import React, { useEffect } from "react"
-import { useInPath } from "Src/hooks/useInPath"
+import React, { useEffect } from "react";
+// import { useInPath } from "Src/hooks/useInPath";
 
-export function NavCV({  }) {
-    useEffect(() => {
+export function NavCV() {
+  useEffect(() => {}, []);
 
-    }, [])
-
-    return <></>
+  return <></>;
 }
