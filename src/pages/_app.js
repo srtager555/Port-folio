@@ -1,17 +1,12 @@
 // import App from 'next/app'
 import { useEffect, useState } from "react";
 
-// import { HomePage } from "../pages/home";
-// import { ProjectPage } from "../pages/projects";
-// import { NotMatch } from "../pages/NotMatch";
-// import { CV } from "../pages/cv";
-// import { cvpdf as Cvpdf } from "../pages/cvpdf";
-
 import { Navbar } from "../components/navbar";
 import { Background } from "../components/background";
 import { LoadScreen } from "../components/loadScreen";
 // import { useInPath } from "../hooks/useInPath";
 
+import "@sass/global.css";
 import "../styles/OpacityContainer.css";
 
 function MyApp({ Component, pageProps }) {
