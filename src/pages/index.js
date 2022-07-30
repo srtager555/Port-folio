@@ -1,8 +1,6 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
-import { HomeContainer } from "../../containers/home";
-import { ProjectsContainer } from "../../containers/projects";
-import { LestTalkContainer } from "../../containers/lestTalk";
+import { HomeTemplate } from "Src/templates/home";
 import { HeadComponent } from "Src/components/Head.next";
 // import { AboutMeContainer } from "../../containers/aboutMe";
 
@@ -29,9 +27,7 @@ export function HomePage({ chagePath, setLoader }) {
         title="Carlos && Ponce"
         description="Hello!, This is my portfolio of the year 2022"
       />
-      <HomeContainer />
-      <ProjectsContainer />
-      <LestTalkContainer />
+      <HomeTemplate />
     </>
   );
 }
