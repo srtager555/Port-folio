@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import WrappingLetters from "wrapping-letters-react";
 import anime from "animejs";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import WrapppingLetters from "wrapping-letters-react";
 
 export function AboutMeContainer({ l }) {
