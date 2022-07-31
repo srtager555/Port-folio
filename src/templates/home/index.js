@@ -6,7 +6,7 @@ export function HomeTemplate() {
   return (
     <>
       <HomeContainer />
-      <ProjectsContainer />
+      {typeof window !== "undefined" ? <ProjectsContainer /> : <></>}
       <LestTalkContainer />
     </>
   );

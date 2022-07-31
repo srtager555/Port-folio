@@ -7,7 +7,7 @@ import { LoadScreen } from "../components/loadScreen";
 // import { useInPath } from "../hooks/useInPath";
 
 import "@sass/global.css";
-import "@sass/OpacityContainer.module.sass";
+import styles from "@sass/OpacityContainer.module.sass";
 
 function MyApp({ Component, pageProps }) {
   const [loader, setLoader] = useState(false);
@@ -41,7 +41,11 @@ function MyApp({ Component, pageProps }) {
     <>
       <LoadScreen loaded={loader} inPath={inPath} />
       <Background inPath={inPath} />
-      <div className={`opacity-container ${loader ? "active" : ""}`}>
+      <div
+        className={`${styles["opacity-container"]} ${
+          loader ? styles.active : ""
+        }`}
+      >
         <Navbar inPath={inPath} handleResetScroll={handleResetScroll} />
         <div className="container-content">
           <Component {...pageProps} />

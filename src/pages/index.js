@@ -4,7 +4,7 @@ import { HomeTemplate } from "@src/templates/home";
 import { HeadComponent } from "@src/components/Head.next";
 // import { AboutMeContainer } from "../../containers/aboutMe";
 
-export function HomePage({ chagePath, setLoader }) {
+export default function HomePage({ chagePath, setLoader }) {
   // A
 
   chagePath("home");
