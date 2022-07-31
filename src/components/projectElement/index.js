@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
 import { IS_MOBILE } from "@contexts/constVarible";
@@ -52,8 +52,7 @@ function cardElement(
 function desktopCardElement(ProjectsElementRef, element, index, callback) {
   return (
     <Link
-      id={element.Id}
-      to={`p/${element.Id}`}
+      href={`p/${element.Id}`}
       key={`project-${index}`}
       onMouseOver={(event) => callback(event, true)}
       onMouseLeave={(event) => callback(event, false)}
@@ -63,9 +62,10 @@ function desktopCardElement(ProjectsElementRef, element, index, callback) {
           ? ProjectsElementRef
           : null
       }
-      className="container__image-projects__scrollSlider"
     >
-      <img src={element.PrincipalImageDesktop} alt={element.Id} />
+      <a id={element.Id} className="container__image-projects__scrollSlider">
+        <img src={element.PrincipalImageDesktop} alt={element.Id} />
+      </a>
     </Link>
   );
 }

@@ -1,6 +1,6 @@
 import { IS_MOBILE } from "@contexts/constVarible";
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function PreviewProjectsInfo({
   infoToShow,
@@ -66,8 +66,10 @@ function itsShowTime(
 function anchorMobile(infoToShow) {
   return (
     <div className="container__actionButton">
-      <Link to={`p/${infoToShow.Id || "/"}`} className="container-anchor">
-        <span>go to see </span>
+      <Link href={`p/${infoToShow.Id || "/"}`} className="container-anchor">
+        <a>
+          <span>go to see </span>
+        </a>
       </Link>
       <span className="span-notificationXd">scroll to leave</span>
     </div>

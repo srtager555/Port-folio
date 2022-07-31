@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
-import { PreviewProjectsInfo } from "../../components/previewProjectsInfo";
-import { ProjectsElement } from "../../components/projectElement/";
+import { PreviewProjectsInfo } from "@components/previewProjectsInfo";
+import { ProjectsElement } from "@components/projectElement/";
 
-import { ProjectsElementList } from "../../contexts/projectsContexts";
-import { IS_MOBILE } from "../../contexts/constVarible";
+import { ProjectsElementList } from "@contexts/projectsContexts";
+import { IS_MOBILE } from "@contexts/constVarible";
 
-import "../../styles/Projects.css";
+import styles from "@sass/Projects.module.sass";
 
 export function ProjectsContainer() {
   const ProjectsRef = useRef(null);
@@ -180,16 +180,18 @@ export function ProjectsContainer() {
     <div
       ref={ProjectsRef}
       style={ProjectsHeight}
-      className="container container-projects"
+      className={`container ${styles["container-projects"]}`}
     >
-      <div className="container container__background-projects"></div>
+      <div
+        className={`container ${styles["container__background-projects"]}`}
+      ></div>
       <div
         id="projects"
-        className={`container__text--heightPositionControl ${
+        className={`${styles["container__text--heightPositionControl"]} ${
           selectedProject ? "invisible" : ""
         }`}
       >
-        <div ref={ProjectObserverRef} className="container__text">
+        <div ref={ProjectObserverRef} className={styles.container__text}>
           <WrappingLetters
             text="I have worked in"
             textOptions={[
@@ -209,7 +211,7 @@ export function ProjectsContainer() {
         mouseOver={mouseOver}
       />
       <div
-        className={`container__projects-scrollSlider ${
+        className={`${styles["container__projects-scrollSlider"]} ${
           isVisible ? "visible" : ""
         }`}
       >
