@@ -4,7 +4,7 @@ import { NAVBAR_MOBILE_SIZE } from "@contexts/constVarible";
 
 import Link from "next/link";
 
-import "@sass/NavbarHome.module.sass";
+import styles from "@sass/NavbarHome.module.sass";
 
 export function NavHome({ handleResetScroll }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,16 +31,18 @@ export function NavHome({ handleResetScroll }) {
 
   return (
     <>
-      <div className={`nav__background ${isOpen ? "open" : ""}`}></div>
-      <nav className="nav__container home">
-        <div className="nav__logo">
+      <div
+        className={`${styles.nav__background} ${isOpen ? "open" : ""}`}
+      ></div>
+      <nav className={`${styles.nav__container} ${styles.home}`}>
+        <div className={styles.nav__logo}>
           <Link onClick={handleResetScroll} href="/">
             <a>&&</a>
           </Link>
         </div>
         {!isMobile ? (
           <>
-            <div className="nav__links">
+            <div className={styles.nav__links}>
               <a href="#home">Home</a>
               <a href="#projects">Projects</a>
               <a href="#lest-talk">Lest Talk!</a>
@@ -50,14 +52,16 @@ export function NavHome({ handleResetScroll }) {
           <>
             <div
               onClick={handleOpenMenu}
-              className={`nav__button--open__menu ${isOpen ? "open" : ""}`}
+              className={`${styles["nav__button--open__menu"]} ${
+                isOpen ? "open" : ""
+              }`}
             >
-              <span className="nav__button--open__menu-word">
+              <span className={styles["nav__button--open__menu-word"]}>
                 {!isOpen ? "Menu" : "Close"}
               </span>
             </div>
-            <div className={`nav__content ${isOpen ? "open" : ""}`}>
-              <div className="nav__links">
+            <div className={`${styles.nav__content} ${isOpen ? "open" : ""}`}>
+              <div className={styles.nav__links}>
                 <a href="#home">Home</a>
                 <a href="#projects">Projects</a>
                 <a href="#lest-talk">Lest Talk!</a>
