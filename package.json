@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.51.0",
-    "wrapping-letters-react": "^2.2.0"
+    "wrapping-letters-react": "^2.2.1"
   },
   "devDependencies": {
     "eslint": "^8.20.0",
