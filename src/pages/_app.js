@@ -8,15 +8,12 @@ import { LoadScreen } from "../components/loadScreen";
 
 import "@sass/global.css";
 import styles from "@sass/OpacityContainer.module.sass";
+import { set } from "animejs";
 
 function MyApp({ Component, pageProps }) {
+  const [showChild, setShowChild] = useState(false);
   const [loader, setLoader] = useState(false);
   const [inPath, setInPath] = useState("");
-
-  pageProps = {
-    setLoader,
-    chagePath: (place) => HandleChangePath(place),
-  };
 
   function handleResetScroll() {
     window.scrollTo(0, 0);
@@ -26,6 +23,10 @@ function MyApp({ Component, pageProps }) {
     setInPath(place);
   }
 
+  pageProps = {
+    setLoader,
+    chagePath: (place) => HandleChangePath(place),
+  };
   // useEffect(() => {
   //    setLoader(true);
   // }, []);
@@ -36,6 +37,14 @@ function MyApp({ Component, pageProps }) {
     handleResetScroll();
     // setinCV(false);
   });
+
+  useEffect(() => {
+    setShowChild(true);
+  }, []);
+
+  if (!showChild) {
+    return null;
+  }
 
   return (
     <>

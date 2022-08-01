@@ -24,7 +24,7 @@ export function ProjectsElement({
     desktopCardElement
   );
 
-  const projectCard = IS_MOBILE() ? mobileCard : desktopCard;
+  const projectCard = IS_MOBILE ? mobileCard : desktopCard;
 
   return projectCard;
 }

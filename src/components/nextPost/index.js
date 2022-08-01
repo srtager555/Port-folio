@@ -6,6 +6,8 @@ import { IS_MOBILE } from "@contexts/constVarible";
 
 import { ImageNextPost } from "./Image/index";
 
+import styles from "@sass/projects/nextPost.module.sass";
+
 export function NextPost({ data, setLoader }) {
   const a = useRef(null);
 
@@ -73,19 +75,19 @@ export function NextPost({ data, setLoader }) {
   }, []);
 
   return (
-    <div className="container__nextPost--main">
-      <div onClick={changeNextRoute} className="nextPost__container">
-        <div ref={a} className="nextPost__background">
+    <div className={styles["container__nextPost--main"]}>
+      <div onClick={changeNextRoute} className={styles.container}>
+        <div ref={a} className={styles.background}>
           {ImageNextPost({ data, stylesIsHover })}
-          <div className="nextPost__container--nextWord">
+          <div className={styles["container--nextWord"]}>
             <span>NEXT</span>
             <span>{dataIndex < 10 ? `0${dataIndex + 1}` : dataIndex + 1}</span>
           </div>
         </div>
-        <div className="nextPost__container--info">
-          <h1 className="nextPost__container--info__title">{data.Title}</h1>
-          <div className="nextPost__container--info__margin__bar"></div>
-          <span className="nextPost__container--info__typeJob">
+        <div className={styles["container--info"]}>
+          <h1 className={styles["container--info__title"]}>{data.Title}</h1>
+          <div className={styles["container--info__margin__bar"]}></div>
+          <span className={styles["container--info__typeJob"]}>
             {data.Job[0]}
           </span>
         </div>

@@ -1,0 +1,215 @@
+.header
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  flex-direction: column
+  position: relative
+  width: 100%
+  height: 100vh
+  margin-bottom: 200px
+  overflow: hidden
+
+  .container-info__header
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    flex-direction: column
+    color: #fff
+    margin-top: 20px
+    margin-bottom: 50px
+
+    .title
+      font-size: 60px
+      font-weight: 300
+      text-transform: uppercase
+      width: 70%
+      text-align: center
+      margin-bottom: 81px
+      z-index: 1
+
+  .typeJob
+    display: flex
+    justify-content: space-between
+    align-items: center
+    max-width: 95%
+    margin: 0 auto
+    text-transform: uppercase
+    font-size: 20px
+    margin-bottom: 25px
+    color: #fff
+    z-index: 1
+
+  .typeJob
+    .typeJob-word
+      font-family: "Noto sans display", sans-serif
+      font-weight: 200
+
+    .typeJob-margin__bar
+      width: 144px
+      height: 1px
+      background-color: #fff
+      margin: 0 11.5px
+
+  .container-info__header .description
+    font-family: "Noto sans display", sans-serif
+    font-weight: 200
+    width: 52%
+    line-height: 25px
+    z-index: 1
+
+  .background
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    height: 100%
+    width: 100%
+    overflow: hidden
+    z-index: 0
+
+    &::before
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 50%
+      background: rgb(3, 3, 3)
+      background: linear-gradient(0deg, rgba(3, 3, 3, 1) 0%, rgba(3, 3, 3, 0) 100%)
+
+    img
+      height: 100%
+
+.content
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  max-width: 805px
+  margin: 0 auto
+  width: 100%
+
+.image
+  width: 100%
+  margin-bottom: 225px
+
+  img
+    max-width: 100%
+
+    &&-container
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      flex-wrap: wrap
+
+    &-container__text
+      position: relative
+      width: 95%
+      margin: 0 auto
+      color: #fff
+      margin-bottom: 21px
+
+    &::before
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 60%
+      height: 1px
+      background: #fff
+
+    &:nth-child(even)::before
+      left: 40%
+
+      &-container__text-title
+        font-size: 18px
+        font-weight: 200
+        margin-bottom: 13px
+
+      &-container__text-description
+        font-size: 13px
+        font-weight: 200
+        font-family: "Noto sans display", sans-serif
+        padding-bottom: 14px
+        white-space: pre-line
+
+@media (min-width: 560px)
+  .image
+    &.image-container.image-container--not_wrapp
+      flex-wrap: nowrap
+      width: 100%
+
+    &.image-container
+      width: auto
+
+    .image-container__text
+      max-width: 60%
+      width: auto
+      margin: 0 26px
+      margin-bottom: 26px
+
+    .image:nth-child(even)
+      flex-direction: row-reverse
+
+@media (min-width: 610px)
+  .project__header
+    justify-content: center
+    max-width: 810px
+    margin: 0 auto
+
+    .project__container-info__header
+      position: relative
+      justify-content: space-between
+      align-items: flex-start
+      flex-direction: row
+      margin-bottom: 30px
+      width: 90%
+
+      &::before
+        content: ""
+        position: absolute
+        bottom: -15px
+        left: 50%
+        transform: translateX(-50%)
+        height: 1px
+        width: 105%
+        background-color: #fff
+
+      .project__title
+        font-size: 39px
+        font-weight: 300
+        width: 35%
+        text-align: left
+        margin-bottom: 0px
+
+      .project__description
+        font-family: "Noto sans display", sans-serif
+        width: 35%
+        line-height: 22px
+        font-size: 14px
+        text-align: end
+
+  .project__background
+    position: relative
+    height: auto
+    width: 100%
+    margin-bottom: 10px
+
+    &::before
+      content: none
+
+    img
+      height: auto
+      width: 100%
+
+@media (max-width: 415px)
+  .project__header
+    .project__container-info__header .project__title
+      font-size: 45px
+      margin-bottom: 10px
+
+    .project__typeJob
+      font-size: 16px

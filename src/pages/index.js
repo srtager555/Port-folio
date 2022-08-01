@@ -7,9 +7,8 @@ import { HeadComponent } from "@src/components/Head.next";
 export default function HomePage({ chagePath, setLoader }) {
   // A
 
-  chagePath("home");
-
   useLayoutEffect(() => {
+    chagePath("home");
     setLoader(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

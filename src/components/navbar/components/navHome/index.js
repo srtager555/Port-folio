@@ -36,8 +36,8 @@ export function NavHome({ handleResetScroll }) {
       ></div>
       <nav className={`${styles.nav__container} ${styles.home}`}>
         <div className={styles.nav__logo}>
-          <Link onClick={handleResetScroll} href="/">
-            <a>&&</a>
+          <Link href="/">
+            <a onClick={handleResetScroll}>&&</a>
           </Link>
         </div>
         {!isMobile ? (

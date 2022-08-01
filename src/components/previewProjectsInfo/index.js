@@ -1,6 +1,7 @@
 import { IS_MOBILE } from "@contexts/constVarible";
 
 import Link from "next/link";
+import { useEffect } from "react";
 
 export function PreviewProjectsInfo({
   infoToShow,
@@ -45,7 +46,7 @@ function itsShowTime(
               if (mouseOver) setSelectedProject(true);
               setCurrentInfo(infoToShow);
             }}
-            src={IS_MOBILE() ? bgImageMobile : bgImage}
+            src={IS_MOBILE ? bgImageMobile : bgImage}
             alt={infoToShow.Title}
           />
         </div>
@@ -57,7 +58,7 @@ function itsShowTime(
           <div className="container-date">
             <span>{infoToShow.Date}</span>
           </div>
-          {IS_MOBILE() ? anchorMobile(infoToShow) : null}
+          {IS_MOBILE ? anchorMobile(infoToShow) : null}
         </div>
       </div>
     </div>

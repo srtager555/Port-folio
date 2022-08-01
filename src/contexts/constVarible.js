@@ -1,29 +1,48 @@
+import { useState, useEffect } from "react";
+
 // const TABLET_SIZE = 1024;
-const MOBILE_SIZE = 610;
 export const NAVBAR_MOBILE_SIZE = 510;
-const MOBILE_DEVICE_SIZE = 1024;
+const MOBILE_SIZE = 610;
 
-let IS_MOBILE__ = false;
-let IS_MOBILE_DEVICE__ = false;
-function useConstSizes() {
-  window.addEventListener("resize", () => IS_MOBILE());
+export function useConstVariable() {
+  const [IS_MOBILE, SET_IS_MOBILE] = useState(false);
+  const [IS_MOBILE_DEVICE, SET_IS_MOBILE_DEVICE] = useState(false);
+  const MOBILE_DEVICE_SIZE = 1024;
 
-  window.addEventListener("resize", () => IS_MOBILE_DEVICE(IS_MOBILE_DEVICE__));
+  let IS_MOBILE__ = false;
+  let IS_MOBILE_DEVICE__ = false;
+
+  function IS_MOBILE_DEVICE_fn() {
+    IS_MOBILE_DEVICE__ = window.innerWidth < MOBILE_SIZE;
+
+    return IS_MOBILE_DEVICE__;
+  }
+
+  function IS_MOBILE_fn() {
+    IS_MOBILE__ = window.innerWidth < MOBILE_DEVICE_SIZE;
+
+    return IS_MOBILE__;
+  }
+
+  useEffect(() => {
+    SET_IS_MOBILE(IS_MOBILE_fn());
+    SET_IS_MOBILE_DEVICE(IS_MOBILE_DEVICE_fn());
+
+    window.addEventListener("resize", () => SET_IS_MOBILE(IS_MOBILE_fn()));
+    window.addEventListener("resize", () =>
+      SET_IS_MOBILE_DEVICE(IS_MOBILE_DEVICE_fn())
+    );
+    return () => {
+      window.removeEventListener("resize", () => SET_IS_MOBILE(IS_MOBILE_fn()));
+      window.removeEventListener("resize", () =>
+        SET_IS_MOBILE_DEVICE(IS_MOBILE_DEVICE_fn())
+      );
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return {
+    IS_MOBILE,
+    IS_MOBILE_DEVICE,
+  };
 }
-
-useConstSizes.prototype.IS_MOBILE_DEVICE = function () {
-  IS_MOBILE_DEVICE__ = window.innerWidth < MOBILE_SIZE;
-
-  return IS_MOBILE_DEVICE__;
-};
-
-useConstSizes.prototype.IS_MOBILE = function () {
-  IS_MOBILE__ = window.innerWidth < MOBILE_DEVICE_SIZE;
-
-  return IS_MOBILE__;
-};
-
-const IS_MOBILE = useConstSizes.IS_MOBILE;
-const IS_MOBILE_DEVICE = useConstSizes.IS_MOBILE_DEVICE;
-
-export { IS_MOBILE, IS_MOBILE_DEVICE };

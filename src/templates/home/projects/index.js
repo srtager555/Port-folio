@@ -127,7 +127,7 @@ export function ProjectsContainer() {
 
     setIsVisible(false);
 
-    if (IS_MOBILE()) {
+    if (IS_MOBILE) {
       if (currentInfo === showPreviewProject) imageLoaded();
 
       window.addEventListener("scroll", hiddenPreviewProject);
@@ -163,11 +163,13 @@ export function ProjectsContainer() {
 
   useEffect(() => {
     // intilize the projects height and the projects margin
-    handleHeightProjectSection();
-    handleScrollMoventToLeft();
+    document.addEventListener("DOMContentLoaded", () => {
+      handleHeightProjectSection();
+      handleScrollMoventToLeft();
 
-    window.addEventListener("scroll", handleHeightProjectSection);
-    window.addEventListener("scroll", handleScrollMoventToLeft);
+      window.addEventListener("scroll", handleHeightProjectSection);
+      window.addEventListener("scroll", handleScrollMoventToLeft);
+    });
 
     return () => {
       window.removeEventListener("scroll", handleHeightProjectSection);

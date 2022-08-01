@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "@sass/projects/home.module.sass";
 
 export function ImageProcess({ project, containerWitdh, setLoader }) {
   const [imageWidth, setImageWidth] = useState([]);
@@ -38,10 +39,10 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
     project.GaleryImages.map((image, index) => {
       if (typeof image === "string") {
         return (
-          <div className="project__image">
+          <div className={styles.image}>
             <img
               key={`image ${index}`}
-              className="project__image-img"
+              className={styles["image-img"]}
               src={image}
               alt=""
             />
@@ -61,23 +62,23 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
         return (
           <div
             key={`image ${index}`}
-            className={`project__image project__image-container ${
-              imageWrap ? "project__image-container--not_wrapp" : ""
+            className={`${styles.image} ${styles["image-container"]} ${
+              imageWrap ? styles["image-container--not_wrapp"] : ""
             }`}
           >
-            <div className="project__image-container__text">
+            <div className={styles["image-container__text"]}>
               {Title != "" ? (
-                <h3 className="project__image-container__text-title">
+                <h3 className={styles["image-container__text-title"]}>
                   {Title}
                 </h3>
               ) : null}
               {Description != "" ? (
-                <p className="project__image-container__text-description">
+                <p className={styles["image-container__text-description"]}>
                   {Description}
                 </p>
               ) : null}
             </div>
-            <img className="project__image-img" src={Image} alt="" />
+            <img className={styles["image-img"]} src={Image} alt="" />
           </div>
         );
       }

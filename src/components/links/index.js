@@ -1,18 +1,24 @@
 import { useState } from "react";
 
+import styles from "@sass/projects/links.module.sass";
+
 export function Links({ project }) {
   const [hover, setHover] = useState(false);
 
   return (
-    <div className="project__links">
-      <div className={`project__links--title${hover ? " visible" : ""}`}>
+    <div className={styles.links}>
+      <div
+        className={`${styles["links--title"]}${
+          hover ? ` ${styles.visible}` : ""
+        }`}
+      >
         <span>Idk what animation to put here Xd</span>
       </div>
-      <div className="project__links--content">
+      <div className={styles["links--content"]}>
         {project.map((link, index) => (
           <div
             key={`${link} - ${index}`}
-            className="project__links-content--item"
+            className={styles["links-content--item"]}
           >
             <a
               onMouseEnter={() => setHover(true)}
