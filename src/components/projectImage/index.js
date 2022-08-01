@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "@sass/projects/home.module.sass";
+import styles from "@sass/projects/header.module.sass";
 
 export function ImageProcess({ project, containerWitdh, setLoader }) {
   const [imageWidth, setImageWidth] = useState([]);

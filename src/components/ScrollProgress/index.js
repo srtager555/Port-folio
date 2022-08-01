@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../styles/ScrollProgress.css";
+import styles from "@sass/ScrollProgress.module.sass";
 
 export function ScrollProgress() {
   const [barWidth, setBarWidth] = useState({ width: 0 });
@@ -16,9 +16,12 @@ export function ScrollProgress() {
   }, []);
 
   return (
-    <div className="container__scrollProgress">
-      <div style={barWidth} className="container__scrollProgress__bar"></div>
-      <div className="container__scrollProgress__smallBar"></div>
+    <div className={styles.container__scrollProgress}>
+      <div
+        style={barWidth}
+        className={styles.container__scrollProgress__bar}
+      ></div>
+      <div className={styles.container__scrollProgress__smallBar}></div>
     </div>
   );
 }

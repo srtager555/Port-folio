@@ -1,6 +1,6 @@
 import { IS_MOBILE_DEVICE } from "@contexts/constVarible";
 
-import styles from "@sass/projects/home.module.sass";
+import styles from "@sass/projects/header.module.sass";
 
 function JobBar({ project }) {
   return (

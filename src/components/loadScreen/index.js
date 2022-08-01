@@ -10,23 +10,23 @@ export function LoadScreen({ loaded, inPath }) {
   const [randomPhrase, setRandomPhrase] = useState("");
 
   function handleLoadEnd() {
-    setArrClassAnimExit(["loader--placeholder--loaderEnded"]);
+    setArrClassAnimExit(styles["loader--placeholder--loaderEnded"]);
     setTimeout(() => {
-      setArrClassAnimeCont(["loader--exit"]); // loader--exit
+      setArrClassAnimeCont(styles["loader--exit"]); // loader--exit
       setTimeout(() => {
-        setArrClassAnimeCont([""]); // ""
-        setArrClassAnimExit([""]); // ""
+        setArrClassAnimeCont(""); // ""
+        setArrClassAnimExit(""); // ""
       }, 2100);
     }, 1000);
   }
 
   useEffect(() => {
-    if (inPath === "home") setArrClassRoutes(["home--style"]);
-    else setArrClassRoutes([""]);
+    if (inPath === "home") setArrClassRoutes(styles["home--style"]);
+    else setArrClassRoutes("");
   }, [inPath]);
 
   useLayoutEffect(() => {
-    setArrClassAnimeCont(["loading"]);
+    setArrClassAnimeCont(styles["loading"]);
   }, [loaded]);
 
   useEffect(() => {

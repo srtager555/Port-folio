@@ -48,7 +48,7 @@ export function HomeContainer({ l }) {
               />
             </div>
           ) : (
-            <div className="container__title-image">
+            <div className={styles["container__title-image"]}>
               <img
                 src="https://i.ibb.co/f8RVct5/home-image.jpg"
                 alt="kda Ahri"

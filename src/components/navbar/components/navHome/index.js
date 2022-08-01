@@ -32,7 +32,7 @@ export function NavHome({ handleResetScroll }) {
   return (
     <>
       <div
-        className={`${styles.nav__background} ${isOpen ? "open" : ""}`}
+        className={`${styles.nav__background} ${isOpen ? styles.open : ""}`}
       ></div>
       <nav className={`${styles.nav__container} ${styles.home}`}>
         <div className={styles.nav__logo}>

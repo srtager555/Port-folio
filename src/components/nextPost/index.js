@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
 import { IS_MOBILE } from "@contexts/constVarible";
@@ -14,12 +14,12 @@ export function NextPost({ data, setLoader }) {
   const [stylesIsHover, setStylesIsHover] = useState({});
 
   let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   function changeNextRoute() {
     setLoader(false);
     setTimeout(() => {
-      navigate(`/p/${data.Id}`);
+      router.push(`/p/${data.Id}`);
     }, 1000);
   }
 

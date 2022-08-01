@@ -10,9 +10,13 @@ import { HeadComponent } from "@components/Head.next";
 import { Links } from "@components/links";
 import { ScrollProgress } from "@components/ScrollProgress";
 
-import styles from "@sass/projects/ProjectPage.module.sass";
+import styles from "@sass/projects/header.module.sass";
 
-export function ProjectPage({ handleResetScroll, setLoader, chagePath }) {
+export default function ProjectPage({
+  handleResetScroll,
+  setLoader,
+  chagePath,
+}) {
   chagePath("");
 
   function handleContainerSize() {
@@ -57,7 +61,7 @@ export function ProjectPage({ handleResetScroll, setLoader, chagePath }) {
       <div className={`container ${styles.project}`}>
         <ScrollProgress />
         <HeaderProjects project={project} />
-        <div ref={containerContentRef} className={styles.project__content}>
+        <div ref={containerContentRef} className={styles.content}>
           <ImageProcess
             containerWitdh={containerContentSize}
             project={project}

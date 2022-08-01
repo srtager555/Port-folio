@@ -15,8 +15,8 @@ $list2: $color3 0%, $color4 100%
   background: -o-linear-gradient($direction, $list)
   background: linear-gradient($direction, $list)
 
-.container.container-background
-  position: fixed
+.container-background
+  position: fixed !important
   top: 0
   left: 0
   z-index: -1
@@ -24,6 +24,6 @@ $list2: $color3 0%, $color4 100%
   @include gradient(145deg, $list)
   transition: all 0.5s
 
-.container.container-background.background--project
+.container-background.background--project
   background: rgb(3, 3, 3)
   @include gradient(145deg, $list2)
