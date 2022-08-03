@@ -3,6 +3,8 @@ import { IS_MOBILE } from "@contexts/constVarible";
 import Link from "next/link";
 import { useEffect } from "react";
 
+import styles from "@sass/Projects.module.sass";
+
 export function PreviewProjectsInfo({
   infoToShow,
   selectedProject,
@@ -33,13 +35,13 @@ function itsShowTime(
   let bgImageMobile = infoToShow.BackgroundImageMobile || "";
 
   return (
-    <div className="container__projectsInfo">
+    <div className={styles.container__projectsInfo}>
       <div
-        className={`container__projectsInfo--container__content ${
-          selectedProject ? "visible" : ""
+        className={`${styles["container__projectsInfo--container__content"]} ${
+          selectedProject ? styles.visible : ""
         }`}
       >
-        <div className="container__projectsInfo--background__image">
+        <div className={styles["container__projectsInfo--background__image"]}>
           <img
             ref={BgImageRef}
             onLoad={() => {
@@ -50,12 +52,18 @@ function itsShowTime(
             alt={infoToShow.Title}
           />
         </div>
-        <div className="container__projectsInfo--continer__gradientBG"></div>
-        <div className="container__projectsInfo--container__content--text">
-          <div className="container-title">
+        <div
+          className={styles["container__projectsInfo--container__gradientBG"]}
+        ></div>
+        <div
+          className={
+            styles["container__projectsInfo--container__content--text"]
+          }
+        >
+          <div className={styles["container-title"]}>
             <span>{infoToShow.Title}</span>
           </div>
-          <div className="container-date">
+          <div className={styles["container-date"]}>
             <span>{infoToShow.Date}</span>
           </div>
           {IS_MOBILE ? anchorMobile(infoToShow) : null}
@@ -66,13 +74,16 @@ function itsShowTime(
 }
 function anchorMobile(infoToShow) {
   return (
-    <div className="container__actionButton">
-      <Link href={`p/${infoToShow.Id || "/"}`} className="container-anchor">
+    <div className={styles["container__actionButton"]}>
+      <Link
+        href={`p/${infoToShow.Id || "/"}`}
+        className={styles["container-anchor"]}
+      >
         <a>
           <span>go to see </span>
         </a>
       </Link>
-      <span className="span-notificationXd">scroll to leave</span>
+      <span className={styles["span-notificationXd"]}>scroll to leave</span>
     </div>
   );
 }
