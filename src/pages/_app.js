@@ -8,7 +8,8 @@ import { LoadScreen } from "../components/loadScreen";
 
 import "@sass/global.css";
 import styles from "@sass/OpacityContainer.module.sass";
-import { set } from "animejs";
+import styles2 from "@sass/NavbarHome.module.sass";
+// import { set } from "animejs";
 
 function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
@@ -56,7 +57,7 @@ function MyApp({ Component, pageProps }) {
         }`}
       >
         <Navbar inPath={inPath} handleResetScroll={handleResetScroll} />
-        <div className="container-content">
+        <div className={styles2["container-content"]}>
           <Component {...pageProps} />
         </div>
       </div>
