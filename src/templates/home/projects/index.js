@@ -163,13 +163,11 @@ export function ProjectsContainer() {
 
   useEffect(() => {
     // intilize the projects height and the projects margin
-    document.addEventListener("DOMContentLoaded", () => {
-      handleHeightProjectSection();
-      handleScrollMoventToLeft();
+    handleHeightProjectSection();
+    handleScrollMoventToLeft();
 
-      window.addEventListener("scroll", handleHeightProjectSection);
-      window.addEventListener("scroll", handleScrollMoventToLeft);
-    });
+    window.addEventListener("scroll", handleHeightProjectSection);
+    window.addEventListener("scroll", handleScrollMoventToLeft);
 
     return () => {
       window.removeEventListener("scroll", handleHeightProjectSection);
@@ -189,8 +187,8 @@ export function ProjectsContainer() {
       ></div>
       <div
         id="projects"
-        className={`${styles["container__text--heightPositionControl"]} ${
-          selectedProject ? "invisible" : ""
+        className={`${styles["container__text--heightPositionControl"]}${
+          selectedProject ? ` ${styles.invisible}` : ""
         }`}
       >
         <div ref={ProjectObserverRef} className={styles.container__text}>
@@ -212,7 +210,7 @@ export function ProjectsContainer() {
       />
       <div
         className={`${styles["container__projects-scrollSlider"]} ${
-          isVisible ? "visible" : ""
+          isVisible ? styles.visible : ""
         }`}
       >
         <ProjectsElement

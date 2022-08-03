@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
@@ -11,49 +12,58 @@ export function ProjectsElement({
   ProjectsElementRef,
   PreviewProjects,
 }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  const MobileAnchor = ({ forwardRef, element }) => (
+    <button
+      id={element.Id}
+      onClick={(event) => PreviewProjects(event, true)}
+      key={`project-${element.Id}`}
+      ref={forwardRef}
+      className={styles["container__image-projects__scrollSlider"]}
+    >
+      <img src={element.PrincipalImageMobile} alt={element.Id} />
+    </button>
+  );
+
+  const DesktopButton = ({ forwardRef, element }) => (
+    <Link href={`p/${element.Id}`}>
+      <a
+        id={element.Id}
+        key={`project-${element.Id}`}
+        ref={forwardRef}
+        onMouseOver={(event) => PreviewProjects(event, true)}
+        onMouseLeave={(event) => PreviewProjects(event, false)}
+        className={styles["container__image-projects__scrollSlider"]}
+      >
+        <img src={element.PrincipalImageDesktop} alt={element.Id} />
+      </a>
+    </Link>
+  );
+
+  useEffect(() => {
+    setIsMobile(IS_MOBILE);
+  }, []);
+
   return (
     <div
       ref={SliderProjectsRef}
       style={ViewProjectsScroll}
       className={styles["container__projects-scrollSlider-item"]}
     >
-      {ProjectsElementList.getRecentProjectsAvailable().map((element, index) =>
-        IS_MOBILE ? (
-          <button
-            id={element.Id}
-            onClick={(event) => PreviewProjects(event, true)}
-            key={`project-${index}`}
-            ref={
-              ProjectsElementList.getRecentProjectsAvailable().length < 2 ||
-              index === 1
-                ? ProjectsElementRef
-                : null
-            }
-            className={styles["container__image-projects__scrollSlider"]}
-          >
-            <img src={element.PrincipalImageMobile} alt={element.Id} />
-          </button>
-        ) : (
-          <Link
-            href={`p/${element.Id}`}
-            key={`project-${index}`}
-            onMouseOver={(event) => PreviewProjects(event, true)}
-            onMouseLeave={(event) => PreviewProjects(event, false)}
-            ref={
-              ProjectsElementList.getRecentProjectsAvailable().length < 2 ||
-              index === 1
-                ? ProjectsElementRef
-                : null
-            }
-          >
-            <a
-              id={element.Id}
-              className={styles["container__image-projects__scrollSlider"]}
-            >
-              <img src={element.PrincipalImageDesktop} alt={element.Id} />
-            </a>
-          </Link>
-        )
+      {ProjectsElementList.getRecentProjectsAvailable().map(
+        (element, index) => {
+          let forwardRef;
+
+          if (index === 1) forwardRef = ProjectsElementRef;
+          else forwardRef = null;
+
+          return isMobile ? (
+            <MobileAnchor forwardRef={forwardRef} element={element} />
+          ) : (
+            <DesktopButton forwardRef={forwardRef} element={element} />
+          );
+        }
       )}
     </div>
   );
