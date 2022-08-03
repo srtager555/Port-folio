@@ -28,6 +28,8 @@ $list2: $color3 0%, $color4 50%, $color5 100%
   filter: invert(1)
   z-index: -1
 
+// .container-projects .container__text--heightPositionControl .container__text { display: inline-block;} 
+
 .container-projects
   .container__text--heightPositionControl
     height: 100vh
@@ -52,8 +54,6 @@ $list2: $color3 0%, $color4 50%, $color5 100%
       justify-content: center
       flex-wrap: wrap
 
-// .container-projects .container__text--heightPositionControl .container__text { display: inline-block;} 
-
       span
         color: #fff
         text-transform: uppercase
@@ -77,7 +77,6 @@ $list2: $color3 0%, $color4 50%, $color5 100%
       visibility: hidden
       opacity: 0
       transition: opacity 200ms
-      /* padding-left: 110%; */
 
     &.visible
       .container__projects-scrollSlider-item
@@ -112,7 +111,6 @@ $list2: $color3 0%, $color4 50%, $color5 100%
     top: 0%
     width: 100%
     height: 100%
-    /* background-color: #fff2; */
 
     .container__projectsInfo--container__content
       height: 100vh
@@ -147,14 +145,14 @@ $list2: $color3 0%, $color4 50%, $color5 100%
         img
           height: 105%
 
-      .container__projectsInfo--continer__gradientBG
+      .container__projectsInfo--container__gradientBG
         position: absolute
         top: 50%
         left: 0
         width: 100%
         height: 50%
         background: rgb(0, 0, 0)
-        @include $grandient(0deg, $list2)
+        @include gradient(0deg, $list2)
         z-index: -1
 
       .container__projectsInfo--container__content--text
