@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   async redirects() {
     return [
       {
@@ -7,5 +7,8 @@ module.export = {
         permanent: true,
       },
     ];
+  },
+  images: {
+    domains: ["i.ibb.co"],
   },
 };
