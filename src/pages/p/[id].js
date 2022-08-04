@@ -1,8 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import { ProjectsElementList } from "@contexts/projectsContexts";
 
 import { NotMatch } from "../404";
-import { ProjectsElementList } from "../../contexts/projectsContexts";
+
 import { ImageProcess } from "@components/projectImage";
 import { NextPost } from "@components/nextPost";
 import { HeaderProjects } from "@components/headerProjects";
@@ -17,19 +18,24 @@ export default function ProjectPage({
   setLoader,
   chagePath,
 }) {
-  chagePath("");
+  const router = useRouter();
+  const containerContentRef = useRef(null);
+  const [containerContentSize, setContainerContetSize] = useState(0);
+  const { id } = router.query;
+  const project = ProjectsElementList.getProjectById(id || "wrapping-letters");
 
   function handleContainerSize() {
     setContainerContetSize(containerContentRef.current.offsetWidth);
   }
 
   useLayoutEffect(() => {
+    chagePath("");
     handleContainerSize();
   }, []);
 
   useLayoutEffect(() => {
     setLoader(false);
-    handleResetScroll();
+    // handleResetScroll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
@@ -38,16 +44,14 @@ export default function ProjectPage({
     return () => window.removeEventListener("resize", handleContainerSize);
   }, []);
 
-  const containerContentRef = useRef(null);
+  console.log(id, "id");
 
-  const { id } = useRouter().query;
-  const project = ProjectsElementList.getProjectById(id);
-
-  const [containerContentSize, setContainerContetSize] = useState(0);
-
+  console.log("a");
+  console.log(project);
   if (!project) {
     return <NotMatch chagePath={chagePath} setLoader={setLoader} />;
   }
+  console.log("b");
 
   const nextPostIndex = ProjectsElementList.getNextProjectAvailableById(id);
 
