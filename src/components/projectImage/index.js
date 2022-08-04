@@ -33,7 +33,7 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project]);
 
-  const a = isLoading ? (
+  return isLoading ? (
     <span>Xd</span>
   ) : (
     project.GaleryImages.map((image, index) => {
@@ -84,5 +84,4 @@ export function ImageProcess({ project, containerWitdh, setLoader }) {
       }
     })
   );
-  return a;
 }

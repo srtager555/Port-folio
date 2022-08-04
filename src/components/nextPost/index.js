@@ -2,13 +2,14 @@ import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
-import { IS_MOBILE } from "@contexts/constVarible";
+import { useConstVariable } from "@contexts/constVarible";
 
 import { ImageNextPost } from "./Image/index";
 
 import styles from "@sass/projects/nextPost.module.sass";
 
 export function NextPost({ data, setLoader }) {
+  let { IS_MOBILE } = useConstVariable();
   const a = useRef(null);
 
   const [stylesIsHover, setStylesIsHover] = useState({});
@@ -28,7 +29,7 @@ export function NextPost({ data, setLoader }) {
     let a = ((event.target.width / 2 - event.screenX / 2) * -1) / 5;
     let b = ((event.target.height / 2 - event.screenY / 2) * -1) / 5;
 
-    if (!IS_MOBILE()) {
+    if (!IS_MOBILE) {
       if (a < -35) {
         setStylesIsHover({
           ...stylesIsHover,
@@ -52,7 +53,7 @@ export function NextPost({ data, setLoader }) {
   }
 
   function handleMouseOut() {
-    if (!IS_MOBILE()) {
+    if (!IS_MOBILE) {
       setStylesIsHover({
         ...stylesIsHover,
         transform: "translate(0%, 0%)",
