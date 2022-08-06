@@ -12,6 +12,7 @@ import { Links } from "@components/links";
 import { ScrollProgress } from "@components/ScrollProgress";
 
 import styles from "@sass/projects/header.module.sass";
+import contentStyles from "@sass/projects/content.module.sass";
 
 export default function ProjectPage({
   // handleResetScroll,
@@ -61,7 +62,7 @@ export default function ProjectPage({
       <div className={`container ${styles.project}`}>
         <ScrollProgress />
         <HeaderProjects project={project} />
-        <div ref={containerContentRef} className={styles.content}>
+        <div ref={containerContentRef} className={contentStyles.content}>
           <ImageProcess
             containerWitdh={containerContentSize}
             project={project}
