@@ -155,12 +155,12 @@
       flex-direction: row-reverse
 
 @media (min-width: 610px)
-  .project__header
+  .header
     justify-content: center
     max-width: 810px
     margin: 0 auto
 
-    .project__container-info__header
+    .container-info__header
       position: relative
       justify-content: space-between
       align-items: flex-start
@@ -178,38 +178,38 @@
         width: 105%
         background-color: #fff
 
-      .project__title
+      .title
         font-size: 39px
         font-weight: 300
         width: 35%
         text-align: left
         margin-bottom: 0px
 
-      .project__description
+      .description
         font-family: "Noto sans display", sans-serif
         width: 35%
         line-height: 22px
         font-size: 14px
         text-align: end
 
-  .project__background
-    position: relative
-    height: auto
-    width: 100%
-    margin-bottom: 10px
-
-    &::before
-      content: none
-
-    img
+    .background
+      position: relative
       height: auto
       width: 100%
+      margin-bottom: 10px
+
+      &::before
+        content: none
+
+      img
+        height: auto
+        width: 100%
 
 @media (max-width: 415px)
-  .project__header
-    .project__container-info__header .project__title
+  .header
+    .container-info__header .title
       font-size: 45px
       margin-bottom: 10px
 
-    .project__typeJob
+    .typeJob
       font-size: 16px
