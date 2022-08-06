@@ -1,4 +1,4 @@
-.nav__background__container
+.background__container
   position: fixed
   top: 0
   left: 50%
@@ -11,8 +11,8 @@
   align-items: center
   z-index: 10
 
-/* .nav__background__container  */
-.nav__background--main
+/* .background__container  */
+.background--main
   position: fixed
   top: 0
   left: 22.5%
@@ -34,7 +34,7 @@
   &.secondary
     left: 77.5%
 
-.nav__container
+.container
   position: fixed
   top: 0
   left: 50%
@@ -54,8 +54,8 @@
     padding: 0.5rem 1rem
     max-width: 1024px
 
-.nav__container--main,
-.nav__container--cta
+.container--main,
+.container--cta
   position: fixed
   top: 0
   left: 22.5%
@@ -72,26 +72,26 @@
   transition: all 0.5s ease-in-out
   z-index: 10
 
-.nav__container--main.show,
-.nav__container--cta.show
+.container--main.show,
+.container--cta.show
   visibility: visible
   opacity: 1
 
-.nav__container--cta
+.container--cta
   left: 77.5%
 
-.nav__container .nav__logo > a,
-.nav__container--main .nav__logo a
+.container .logo > a,
+.container--main .logo a
   font-family: "Poppins"
   font-size: 27px
   font-weight: 300
   color: #fff
   text-decoration: none
 
-.nav__container--main .nav__logo > a
+.container--main .logo > a
   font-size: 35px
 
-.nav__container--cta > a
+.container--cta > a
   font-family: "Yaldevi", sans-serif
   font-size: 31px
   font-weight: 100
@@ -100,9 +100,9 @@
   text-transform: uppercase
 
 @media (max-width: 540px)
-  .nav__container--cta > a
+  .container--cta > a
     font-size: 26px
 
 @media (max-width: 415px)
-  .nav__container--cta > a
+  .container--cta > a
     font-size: 25px

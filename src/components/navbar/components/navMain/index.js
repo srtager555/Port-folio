@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import "@sass/Navbar.module.sass";
+import styles from "@sass/Navbar.module.sass";
 
 export function NavMain({ handleResetScroll }) {
   const [isActived, setIsActived] = useState(false);
@@ -25,18 +25,32 @@ export function NavMain({ handleResetScroll }) {
 
   return (
     <>
-      <div className={`nav__background--main${isActived ? " show" : ""}`}></div>
       <div
-        className={`nav__background--main secondary${isActived ? " show" : ""}`}
+        className={`${styles["background--main"]}${
+          isActived ? ` ${styles.show}` : ""
+        }`}
       ></div>
-      <nav className={`nav__container--main${isActived ? " show" : ""}`}>
-        <div className="nav__logo">
+      <div
+        className={`${styles["background--main"]} ${styles.secondary}${
+          isActived ? ` ${styles.show}` : ""
+        }`}
+      ></div>
+      <nav
+        className={`${styles["container--main"]}${
+          isActived ? ` ${styles.show}` : ""
+        }`}
+      >
+        <div className={styles.logo}>
           <Link onClick={handleResetScroll} href="/">
             <a>&&</a>
           </Link>
         </div>
       </nav>
-      <nav className={`nav__container--cta${isActived ? " show" : ""}`}>
+      <nav
+        className={`${styles["container--cta"]}${
+          isActived ? ` ${styles.show}` : ""
+        }`}
+      >
         <a href="mailto:srtager555@gmail.com">{`let's talk!`}</a>
       </nav>
     </>
