@@ -14,7 +14,7 @@ import { ScrollProgress } from "@components/ScrollProgress";
 import styles from "@sass/projects/header.module.sass";
 
 export default function ProjectPage({
-  handleResetScroll,
+  // handleResetScroll,
   setLoader,
   chagePath,
 }) {
@@ -31,6 +31,7 @@ export default function ProjectPage({
   useLayoutEffect(() => {
     chagePath("");
     handleContainerSize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useLayoutEffect(() => {
@@ -44,14 +45,9 @@ export default function ProjectPage({
     return () => window.removeEventListener("resize", handleContainerSize);
   }, []);
 
-  console.log(id, "id");
-
-  console.log("a");
-  console.log(project);
   if (!project) {
     return <NotMatch chagePath={chagePath} setLoader={setLoader} />;
   }
-  console.log("b");
 
   const nextPostIndex = ProjectsElementList.getNextProjectAvailableById(id);
 
