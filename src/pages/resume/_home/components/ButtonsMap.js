@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import Wl from "wrapping-letters-react";
 
-import styles from "@sass/cvStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home.module.sass";
 
 export function ButtonsMap({
   handleClickChangePage,

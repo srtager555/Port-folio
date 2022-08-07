@@ -1,4 +1,4 @@
-import styles from "@sass/cvStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home.module.sass";
 
 export function Background() {
   return (

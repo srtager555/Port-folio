@@ -6,7 +6,7 @@ import { InteractiveContent } from "./components/InteractiveContent";
 import upLetter from "@animations/defaultAnimation/upLetter";
 import downLetter from "@animations/defaultAnimation/downLetter";
 
-import styles from "Src/styles/cvStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home.module.sass";
 
 export function Home({ handleClickChangePage, setLoader }) {
   // here declare the REF of the elements
