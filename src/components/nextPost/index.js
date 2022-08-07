@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
-import { useConstVariable } from "@contexts/constVarible";
+// import { useConstVariable } from "@contexts/constVarible";
 
 import { ImageNextPost } from "./Image/index";
 
@@ -12,7 +12,7 @@ export function NextPost({ data, setLoader }) {
   const [stylesIsHover, setStylesIsHover] = useState({});
   const a = useRef(null);
 
-  let { IS_MOBILE } = useConstVariable();
+  let IS_MOBILE = window.innerWidth < 1024;
 
   let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
   const router = useRouter();
