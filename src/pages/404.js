@@ -75,12 +75,12 @@ export default function NotMatch({ chagePath, setLoader }) {
         </div>
         <div className=""></div>
         <div className={styles["container__NotMatch--redirects"]}>
-          <Link
-            href="/"
-            onMouseEnter={() => moveUpLetterAnimation(returnToHomeRef)}
-            onMouseLeave={() => moveDownLetterAnimation(returnToHomeRef)}
-          >
-            <a ref={returnToHomeRef}>
+          <Link href="/">
+            <a
+              onMouseEnter={() => moveUpLetterAnimation(returnToHomeRef)}
+              onMouseLeave={() => moveDownLetterAnimation(returnToHomeRef)}
+              ref={returnToHomeRef}
+            >
               <div
                 className={
                   styles["container__NotMatch--redirects-container__letters"]
