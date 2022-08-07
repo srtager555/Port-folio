@@ -22,11 +22,9 @@ export function ButtonsMap({
   const WlComponent = (pageName) => (
     <Wl
       text={pageName.pageName}
-      textOptions={[
-        {
-          ClassToAdd: styles["link--letter"],
-        },
-      ]}
+      textOptions={{
+        ClassToAdd: styles["link--letter"],
+      }}
     />
   );
 
