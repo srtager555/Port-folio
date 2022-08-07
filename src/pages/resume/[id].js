@@ -7,7 +7,7 @@ import { profile as Profile } from "./_profile";
 import { skills_and_qualities as Sq } from "./_sq";
 import { experience as Experience } from "./_experience";
 import { more_info as MoreInfo } from "./_moreInfo";
-import { NotMatch } from "../404";
+import NotMatch from "../404";
 
 export default function Resume({ setLoader, chagePath }) {
   let currentPage = <Home {...pageProps} />;
@@ -54,27 +54,28 @@ export default function Resume({ setLoader, chagePath }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
-
-  let pagesName = fnNameKeys.map((element) => {
-    return element[1];
-  });
-
   // here, the code find the page with the useParams and the variables
   // First find the name of the page
-  let currentPageName = pagesName.find((element) => element === id);
+  try {
+    let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
 
-  if (!currentPageName)
+    let pagesName = fnNameKeys.map((element) => {
+      return element[1];
+    });
+
+    let currentPageName = pagesName.find((element) => element === id);
+
+    // Then find the name of the function
+    let currentPageFn = fnNameKeys.find(
+      (element) => element[1] === currentPageName
+    );
+    // and finally, the find the component
+    currentPage = PAGES.find((element) => {
+      return element.type.name === currentPageFn[0];
+    });
+  } catch (error) {
     return <NotMatch chagePath={chagePath} setLoader={setLoader} />;
-
-  // Then find the name of the function
-  let currentPageFn = fnNameKeys.find(
-    (element) => element[1] === currentPageName
-  );
-  // and finally, the find the component
-  currentPage = PAGES.find((element) => {
-    return element.type.name === currentPageFn[0];
-  });
+  }
 
   return <>{currentPage}</>;
 }

@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { ProjectsElementList } from "@contexts/projectsContexts";
 
-import { NotMatch } from "../404";
+import NotMatch from "../404";
 
 import { ImageProcess } from "@components/projectImage";
 import { NextPost } from "@components/nextPost";
