@@ -7,6 +7,7 @@ import { profile as Profile } from "./_profile";
 import { skills_and_qualities as Sq } from "./_sq";
 import { experience as Experience } from "./_experience";
 import { more_info as MoreInfo } from "./_moreInfo";
+import { NotMatch } from "../404";
 
 export default function Resume({ setLoader, chagePath }) {
   let currentPage = <Home {...pageProps} />;
@@ -23,7 +24,7 @@ export default function Resume({ setLoader, chagePath }) {
   function handleClickChangePage(path) {
     setLoader(false);
     setTimeout(() => {
-      router.push(`/cv/${path}`);
+      router.push(`/resume/${path}`);
     }, 1000);
   }
 
@@ -43,6 +44,16 @@ export default function Resume({ setLoader, chagePath }) {
     [MoreInfo.name]: "moreInfo",
   };
 
+  useEffect(() => {
+    setLoader(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+
+  useEffect(() => {
+    chagePath("cv");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
 
   let pagesName = fnNameKeys.map((element) => {
@@ -53,6 +64,9 @@ export default function Resume({ setLoader, chagePath }) {
   // First find the name of the page
   let currentPageName = pagesName.find((element) => element === id);
 
+  if (!currentPageName)
+    return <NotMatch chagePath={chagePath} setLoader={setLoader} />;
+
   // Then find the name of the function
   let currentPageFn = fnNameKeys.find(
     (element) => element[1] === currentPageName
@@ -61,16 +75,6 @@ export default function Resume({ setLoader, chagePath }) {
   currentPage = PAGES.find((element) => {
     return element.type.name === currentPageFn[0];
   });
-
-  useEffect(() => {
-    setLoader(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
-
-  useEffect(() => {
-    chagePath("cv");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return <>{currentPage}</>;
 }
