@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 // import { navbar as Navbar } from "./components/navbar";
-import { home as Home } from "./_home";
+import { Home } from "./_home";
 import { profile as Profile } from "./_profile";
 import { skills_and_qualities as Sq } from "./_sq";
 import { experience as Experience } from "./_experience";
 import { more_info as MoreInfo } from "./_moreInfo";
 
-export function CV({ setLoader, chagePath }) {
+export default function Resume({ setLoader, chagePath }) {
   let currentPage = <Home {...pageProps} />;
   // url values
   // home, profile, sq, experience, moreInfo
