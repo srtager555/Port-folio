@@ -9,10 +9,10 @@ import { ImageNextPost } from "./Image/index";
 import styles from "@sass/projects/nextPost.module.sass";
 
 export function NextPost({ data, setLoader }) {
-  let { IS_MOBILE } = useConstVariable();
+  const [stylesIsHover, setStylesIsHover] = useState({});
   const a = useRef(null);
 
-  const [stylesIsHover, setStylesIsHover] = useState({});
+  let { IS_MOBILE } = useConstVariable();
 
   let dataIndex = ProjectsElementList.getProjectIndexAvailableById(data.Id);
   const router = useRouter();
