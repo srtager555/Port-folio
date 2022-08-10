@@ -41,8 +41,8 @@ export function NavMain({ handleResetScroll }) {
         }`}
       >
         <div className={styles.logo}>
-          <Link onClick={handleResetScroll} href="/">
-            <a>&&</a>
+          <Link href="/">
+            <a onClick={handleResetScroll}>&&</a>
           </Link>
         </div>
       </nav>

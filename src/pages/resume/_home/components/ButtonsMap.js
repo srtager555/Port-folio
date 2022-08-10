@@ -85,27 +85,41 @@ export function ButtonsMap({
   };
 
   useEffect(() => {
+    const ua = navigator.userAgent;
+
+    const device = {
+      iPad: /iPad/.test(ua),
+      iPhone: /iPhone/.test(ua),
+      Android4: /Android 4/.test(ua),
+    };
+
     // here add each eventListener
     refArray.forEach((element, index) => {
-      const child = element.current.children[1];
+      if (Object.values(device).some((e) => e != true)) {
+        const child = element.current.children[1];
 
-      child.addEventListener("mousemove", (e) => handleMouseMove(e, index));
-      child.addEventListener("mouseenter", (e) => handleMouseEnter(e, index));
-      child.addEventListener("mouseleave", () => handleMouseLeave(index));
+        child.addEventListener("mousemove", (e) => handleMouseMove(e, index));
+        child.addEventListener("mouseenter", (e) => handleMouseEnter(e, index));
+        child.addEventListener("mouseleave", () => handleMouseLeave(index));
+      }
     });
 
     // With its clean up
     return () =>
       refArray.forEach((element, index) => {
-        const child = element.current.children[1];
+        if (Object.values(device).some((e) => e != true)) {
+          const child = element.current.children[1];
 
-        child.removeEventListener("mousemove", (e) =>
-          handleMouseMove(e, index)
-        );
-        child.removeEventListener("mouseenter", (e) =>
-          handleMouseEnter(e, index)
-        );
-        child.removeEventListener("mouseleave", () => handleMouseLeave(index));
+          child.removeEventListener("mousemove", (e) =>
+            handleMouseMove(e, index)
+          );
+          child.removeEventListener("mouseenter", (e) =>
+            handleMouseEnter(e, index)
+          );
+          child.removeEventListener("mouseleave", () =>
+            handleMouseLeave(index)
+          );
+        }
       });
   }, []);
 

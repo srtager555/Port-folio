@@ -101,7 +101,7 @@
         text-transform: uppercase
         -webkit-text-stroke: 1px #fff
         letter-spacing: .3rem
-        word-wrap: no-wrap
+        white-space: no-wrap
         font-family: 'Poppins', sans-serif
         font-size: 7.5rem
         font-weight: 700
@@ -155,7 +155,7 @@
                     transform: translate(-50%, -50%)
                     width: 0px
                     height: auto
-                    background-color: #fff1 
+                    background-color: #fff1
                     opacity: 0.1
                     visibility: hidden
                     overflow: hidden
@@ -201,6 +201,82 @@
                 -webkit-text-stroke: 1px #fff
                 transition: all .3s ease-in-out
                 color: #fff0
+
+@media (max-width: 1350px)
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 7rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 168px
+
+        .introduction--container
+            .introduction--container__text, .introduction--container__description
+                p
+                    font-size: 1.4rem
+
+@media (max-width: 1250px)
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 5rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 168px
+
+                    .links--container__image
+                        &.show--image
+                            width: 100px
+
+        .introduction--container
+            .introduction--container__text, .introduction--container__description
+                width: 300px
+                p
+                    font-size: 1rem
+
+@media (max-width: 910px)
+    .main--container
+        .links--container
+            width: 100%
+            max-width: 530px
+            margin: 0 auto
+
+            .links--container__pointer
+                display: none
+
+        .introduction--container
+            display: none
+
+@media (max-width: 530px)
+    .main--container
+        .links--container
+            display: flex
+            justify-content: center
+            align-items: center
+            :is(.links--container__links .links--link, .links--container__pointer span)
+                font-size: 4rem
+
+            .links--container__links
+                height: 70%
+                align-items: center
+
+@media (max-width: 450px)
+    .main--container
+        .links--container
+            :is(.links--container__links .links--link, .links--container__pointer span)
+                font-size: 3rem
+
+            .links--container__links
+                align-items: center
+
+@media (max-width: 530px)
+    .main--container
+        .links--container
+            .links--container__links
+                height: 50%
 
 @media (min-width: 1600px)
     .home
