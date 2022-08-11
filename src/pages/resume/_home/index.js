@@ -3,6 +3,8 @@ import React, { useRef, useEffect } from "react";
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
 import { InteractiveContent } from "./components/InteractiveContent";
+import { HeadComponent } from "@components/Head.next";
+
 import upLetter from "@animations/defaultAnimation/upLetter";
 import downLetter from "@animations/defaultAnimation/downLetter";
 
@@ -116,29 +118,35 @@ export function Home({ handleClickChangePage, setLoader }) {
   }, []);
 
   return (
-    <div className={styles.home}>
-      <Background />
-      <main ref={mainRef} className={styles[`main--container`]}>
-        <InteractiveContent setLoader={setLoader} classChanger={classChanger} />
-        <div className={styles["links--container"]}>
-          <div className={styles["links--container__links"]}>
-            <ButtonsMap
-              handleClickChangePage={handleClickChangePage}
-              refArray={refArray}
-              pageNames={pageNames}
-              pageLinks={pageLinks}
-            />
+    <>
+      <HeadComponent title="The && Resume" />
+      <div className={styles.home}>
+        <Background />
+        <main ref={mainRef} className={styles[`main--container`]}>
+          <InteractiveContent
+            setLoader={setLoader}
+            classChanger={classChanger}
+          />
+          <div className={styles["links--container"]}>
+            <div className={styles["links--container__links"]}>
+              <ButtonsMap
+                handleClickChangePage={handleClickChangePage}
+                refArray={refArray}
+                pageNames={pageNames}
+                pageLinks={pageLinks}
+              />
+            </div>
+            <div
+              ref={goToContainerRef}
+              className={`${styles["links--container__pointer"]}`}
+            >
+              <span ref={goToRef} className={styles["links--word__pointer"]}>
+                Go To
+              </span>
+            </div>
           </div>
-          <div
-            ref={goToContainerRef}
-            className={`${styles["links--container__pointer"]}`}
-          >
-            <span ref={goToRef} className={styles["links--word__pointer"]}>
-              Go To
-            </span>
-          </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 }
