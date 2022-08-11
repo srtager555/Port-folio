@@ -106,7 +106,7 @@ export function Home({ handleClickChangePage, setLoader }) {
     return () => {
       // here remove each listener
       refArray.forEach((element, index) => {
-        element.current.addEventListener("mouseenter", (e) =>
+        element.current.removeEventListener("mouseenter", (e) =>
           handleMouseEnter(e, index)
         );
         element.current.removeEventListener("mouseleave", () =>
