@@ -219,6 +219,11 @@
 
 @media (max-width: 1250px)
     .main--container
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 70%
+
         .links--container :is(.links--container__links .links--link, .links--container__pointer span)
             font-size: 5rem
 
@@ -253,14 +258,10 @@
 @media (max-width: 530px)
     .main--container
         .links--container
-            display: flex
-            justify-content: center
-            align-items: center
             :is(.links--container__links .links--link, .links--container__pointer span)
                 font-size: 4rem
 
             .links--container__links
-                height: 70%
                 align-items: center
 
 @media (max-width: 450px)
@@ -271,12 +272,6 @@
 
             .links--container__links
                 align-items: center
-
-@media (max-width: 530px)
-    .main--container
-        .links--container
-            .links--container__links
-                height: 50%
 
 @media (min-width: 1600px)
     .home

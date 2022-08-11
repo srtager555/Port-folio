@@ -11,6 +11,7 @@ import styles from "@sass/resumeStyles/home.module.sass";
 export function Home({ handleClickChangePage, setLoader }) {
   // here declare the REF of the elements
 
+  const mainRef = useRef(null);
   const classChanger = useRef(null);
   const goToRef = useRef(null);
   const goToContainerRef = useRef(null);
@@ -50,7 +51,9 @@ export function Home({ handleClickChangePage, setLoader }) {
 
     // here the code add the new position for the cursor effect
     goToRef.current.style.top = `${
-      e.target.getBoundingClientRect().top + e.target.offsetHeight / 2
+      e.target.getBoundingClientRect().top -
+      mainRef.current.getBoundingClientRect().top +
+      e.target.offsetHeight / 2
     }px`;
 
     goToContainerRef.current.className += ` ${styles["links--container__pointer--hover"]}`;
@@ -115,7 +118,7 @@ export function Home({ handleClickChangePage, setLoader }) {
   return (
     <div className={styles.home}>
       <Background />
-      <main className={styles[`main--container`]}>
+      <main ref={mainRef} className={styles[`main--container`]}>
         <InteractiveContent setLoader={setLoader} classChanger={classChanger} />
         <div className={styles["links--container"]}>
           <div className={styles["links--container__links"]}>
