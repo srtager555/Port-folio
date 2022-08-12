@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "next/link";
 
 // import { MenuButton } from "./menuButton";
 
-import styles from "Src/styles/cvStyles/navbar.module.sass";
+import styles from "@sass/resumeStyles/navbar.module.sass";
 
 export function Navbar({ pageName, setPageName, pagesName }) {
   const [showButton, setShowButton] = useState(true);
@@ -24,7 +24,11 @@ export function Navbar({ pageName, setPageName, pagesName }) {
   }
 
   function linkComponent(text) {
-    return <Link to={`/cv/${HandleRouteName(text)}`}>{text}</Link>;
+    return (
+      <Link href={`/resume/${HandleRouteName(text)}`}>
+        <a>{text}</a>
+      </Link>
+    );
   }
 
   useEffect(() => {

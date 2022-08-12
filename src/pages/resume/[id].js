@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-// import { navbar as Navbar } from "./components/navbar";
+import { Navbar } from "@components/navbar_resume";
 import { Home } from "./_home";
 import { profile as Profile } from "./_profile";
 import { skills_and_qualities as Sq } from "./_sq";
@@ -77,5 +77,10 @@ export default function Resume({ setLoader, chagePath }) {
     return <NotMatch chagePath={chagePath} setLoader={setLoader} />;
   }
 
-  return <>{currentPage}</>;
+  return (
+    <>
+      <Navbar />
+      {currentPage}
+    </>
+  );
 }
