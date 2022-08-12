@@ -105,22 +105,22 @@ export function ButtonsMap({
     });
 
     // With its clean up
-    return () =>
-      refArray.forEach((element, index) => {
-        if (Object.values(device).some((e) => e != true)) {
-          const child = element.current.children[1];
+    // return () =>
+    //   refArray.forEach((element, index) => {
+    //     if (Object.values(device).some((e) => e != true)) {
+    //       const child = element.current.children[1];
 
-          child.removeEventListener("mousemove", (e) =>
-            handleMouseMove(e, index)
-          );
-          child.removeEventListener("mouseenter", (e) =>
-            handleMouseEnter(e, index)
-          );
-          child.removeEventListener("mouseleave", () =>
-            handleMouseLeave(index)
-          );
-        }
-      });
+    //       child.removeEventListener("mousemove", (e) =>
+    //         handleMouseMove(e, index)
+    //       );
+    //       child.removeEventListener("mouseenter", (e) =>
+    //         handleMouseEnter(e, index)
+    //       );
+    //       child.removeEventListener("mouseleave", () =>
+    //         handleMouseLeave(index)
+    //       );
+    //     }
+    //   });
   }, []);
 
   return pageNames.map((pageName, index) => {

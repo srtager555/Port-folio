@@ -103,17 +103,18 @@ export function Home({ handleClickChangePage, setLoader }) {
     });
 
     // clean up uwu
-    return () => {
-      // here remove each listener
-      refArray.forEach((element, index) => {
-        element.current.removeEventListener("mouseenter", (e) =>
-          handleMouseEnter(e, index)
-        );
-        element.current.removeEventListener("mouseleave", () =>
-          handleMouseLeave(index)
-        );
-      });
-    };
+    // return () => {
+    //   // here remove each listener
+    //   refArray.forEach((element, index) => {
+    //     console.log(element);
+    //     element.current.removeEventListener("mouseenter", (e) =>
+    //       handleMouseEnter(e, index)
+    //     );
+    //     element.current.removeEventListener("mouseleave", () =>
+    //       handleMouseLeave(index)
+    //     );
+    //   });
+    // };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
