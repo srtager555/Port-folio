@@ -44,6 +44,13 @@ export default function Resume({ setLoader, chagePath }) {
     [MoreInfo.name]: "moreInfo",
   };
 
+  // list with names of the pages
+  const pagesNameList = Object.values(FUNCTIONS_NAMES).map(
+    (element) => element
+  );
+
+  // With that when the page changes with the browser buttons
+  // the page loader is turn on
   useEffect(() => {
     setLoader(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -56,6 +63,7 @@ export default function Resume({ setLoader, chagePath }) {
 
   // here, the code find the page with the useParams and the variables
   // First find the name of the page
+
   try {
     let fnNameKeys = Object.entries(FUNCTIONS_NAMES);
 
@@ -79,7 +87,7 @@ export default function Resume({ setLoader, chagePath }) {
 
   return (
     <>
-      <Navbar />
+      <Navbar currentPage={id} pagesNameList={pagesNameList} />
       {currentPage}
     </>
   );
