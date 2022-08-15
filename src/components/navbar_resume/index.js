@@ -5,14 +5,23 @@ import Link from "next/link";
 
 import styles from "@sass/resumeStyles/navbar.module.sass";
 
-export function Navbar({ currentPage, pagesNameList }) {
-  const [pageIndex, setPageIndex] = useState(
-    pagesNameList.indexOf(currentPage)
-  );
-  const [previusPage, setPreviusPage] = useState(
-    pagesNameList[pageIndex - 1] || pagesNameList[pagesNameList.length - 1]
-  );
-  const [nextPage, setNextPage] = useState(pagesNameList[pageIndex + 1]);
+export function Navbar({ currentPage, pagesNameList, handleClickChangePage }) {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [pageIndex, setPageIndex] = useState(undefined);
+  const [previusPage, setPreviusPage] = useState(0);
+  const [nextPage, setNextPage] = useState(1);
+
+  function NavButton({ path, children }) {
+    return (
+      <button onClick={() => handleClickChangePage(`/${path}`)}>
+        {children}
+      </button>
+    );
+  }
+
+  function openMenu() {
+    setIsOpenMenu(!isOpenMenu);
+  }
 
   useEffect(() => {
     setPageIndex(pagesNameList.indexOf(currentPage));
@@ -21,18 +30,20 @@ export function Navbar({ currentPage, pagesNameList }) {
       pagesNameList[pageIndex - 1] || pagesNameList[pagesNameList.length - 1]
     );
     setNextPage(pagesNameList[pageIndex + 1]);
-  }, [currentPage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, pageIndex]);
+
+  if (currentPage === "home") return null;
 
   return (
     <>
       <nav className={styles.container}>
-        <div className={styles.menu}>{}</div>
-        <Link href={`/resume/${previusPage}`}>
-          <a>{previusPage}</a>
-        </Link>
-        <Link href={`/resume/${nextPage}`}>
-          <a>{nextPage}</a>
-        </Link>
+        <NavButton path={previusPage}>{previusPage}</NavButton>
+        <button
+          onClick={openMenu}
+          className={`${styles.menuBtnContent}${isOpenMenu ? " open" : ""}`}
+        ></button>
+        <NavButton path={nextPage}>{nextPage}</NavButton>
       </nav>
     </>
   );
