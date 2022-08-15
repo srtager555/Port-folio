@@ -87,7 +87,11 @@ export default function Resume({ setLoader, chagePath }) {
 
   return (
     <>
-      <Navbar currentPage={id} pagesNameList={pagesNameList} />
+      <Navbar
+        currentPage={id}
+        pagesNameList={pagesNameList}
+        handleClickChangePage={handleClickChangePage}
+      />
       {currentPage}
     </>
   );
