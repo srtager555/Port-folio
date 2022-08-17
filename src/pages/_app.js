@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
   const [loader, setLoader] = useState(false);
   const [inPath, setInPath] = useState("");
+  const [navbarProps, setNavbarProps] = useState({});
 
   function handleResetScroll() {
     window.scrollTo(0, 0);
@@ -27,7 +28,10 @@ function MyApp({ Component, pageProps }) {
   pageProps = {
     setLoader,
     chagePath: (place) => HandleChangePath(place),
+    setNavbarProps,
   };
+
+  // I don't remember why I commented that.
   // useEffect(() => {
   //    setLoader(true);
   // }, []);
@@ -56,7 +60,11 @@ function MyApp({ Component, pageProps }) {
           loader ? styles.active : ""
         }`}
       >
-        <Navbar inPath={inPath} handleResetScroll={handleResetScroll} />
+        <Navbar
+          inPath={inPath}
+          handleResetScroll={handleResetScroll}
+          {...navbarProps}
+        />
         <div className={styles2["container-content"]}>
           <Component {...pageProps} />
         </div>
