@@ -32,6 +32,9 @@ export default function ProjectPage({
   useLayoutEffect(() => {
     chagePath("");
     handleContainerSize();
+
+    return () => chagePath(null);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

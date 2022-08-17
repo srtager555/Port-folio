@@ -10,6 +10,8 @@ export default function HomePage({ chagePath, setLoader }) {
   useLayoutEffect(() => {
     chagePath("home");
     setLoader(false);
+
+    return () => chagePath(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
