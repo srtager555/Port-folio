@@ -10,6 +10,7 @@ import { more_info as MoreInfo } from "./_moreInfo";
 import NotMatch from "../404";
 
 export default function Resume({ setLoader, chagePath }) {
+  chagePath("resume");
   let currentPage = <Home {...pageProps} />;
   // url values
   // home, profile, sq, experience, moreInfo
@@ -45,9 +46,7 @@ export default function Resume({ setLoader, chagePath }) {
   };
 
   // list with names of the pages
-  const pagesNameList = Object.values(FUNCTIONS_NAMES).map(
-    (element) => element
-  );
+  const pagesNameList = Object.values(FUNCTIONS_NAMES);
 
   // With that when the page changes with the browser buttons
   // the page loader is turn on
@@ -55,11 +54,6 @@ export default function Resume({ setLoader, chagePath }) {
     setLoader(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-
-  useEffect(() => {
-    chagePath("cv");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // here, the code find the page with the useParams and the variables
   // First find the name of the page
