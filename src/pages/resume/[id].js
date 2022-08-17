@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { Navbar } from "@components/navbar_resume";
 import { Home } from "./_home";
 import { profile as Profile } from "./_profile";
 import { skills_and_qualities as Sq } from "./_sq";
@@ -9,7 +8,7 @@ import { experience as Experience } from "./_experience";
 import { more_info as MoreInfo } from "./_moreInfo";
 import NotMatch from "../404";
 
-export default function Resume({ setLoader, chagePath }) {
+export default function Resume({ setLoader, chagePath, setNavbarProps }) {
   chagePath("resume");
   let currentPage = <Home {...pageProps} />;
   // url values
@@ -55,6 +54,15 @@ export default function Resume({ setLoader, chagePath }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
+  useEffect(() => {
+    setNavbarProps({
+      currentPage: id,
+      pagesNameList: pagesNameList,
+      handleClickChangePage: handleClickChangePage,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // here, the code find the page with the useParams and the variables
   // First find the name of the page
 
@@ -79,14 +87,5 @@ export default function Resume({ setLoader, chagePath }) {
     return <NotMatch chagePath={chagePath} setLoader={setLoader} />;
   }
 
-  return (
-    <>
-      <Navbar
-        currentPage={id}
-        pagesNameList={pagesNameList}
-        handleClickChangePage={handleClickChangePage}
-      />
-      {currentPage}
-    </>
-  );
+  return <>{currentPage}</>;
 }
