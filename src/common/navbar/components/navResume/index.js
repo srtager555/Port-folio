@@ -5,11 +5,9 @@ import Link from "next/link";
 
 import styles from "@sass/resumeStyles/navbar.module.sass";
 
-export function NavResume({
-  currentPage,
-  pagesNameList,
-  handleClickChangePage,
-}) {
+export function NavResume({ navbarProps }) {
+  const { currentPage, pagesNameList, handleClickChangePage } = navbarProps;
+
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [pageIndex, setPageIndex] = useState(undefined);
   const [previusPage, setPreviusPage] = useState(0);
