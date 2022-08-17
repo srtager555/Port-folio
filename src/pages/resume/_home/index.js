@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
@@ -10,7 +10,7 @@ import downLetter from "@animations/defaultAnimation/downLetter";
 
 import styles from "@sass/resumeStyles/home.module.sass";
 
-export function Home({ handleClickChangePage, setLoader }) {
+export function Home({ handleClickChangePage, setLoader, chagePath }) {
   // here declare the REF of the elements
 
   const mainRef = useRef(null);
@@ -83,6 +83,12 @@ export function Home({ handleClickChangePage, setLoader }) {
       goToContainerRef.current.className = a;
     });
   }
+
+  useLayoutEffect(() => {
+    chagePath(null);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // here add listeners for the handle events
   useEffect(() => {

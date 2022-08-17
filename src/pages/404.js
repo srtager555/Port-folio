@@ -7,7 +7,7 @@ import { HeadComponent } from "@components/Head.next";
 import styles from "@sass/NotMatch.module.sass";
 
 export default function NotMatch({ chagePath, setLoader }) {
-  chagePath("");
+  chagePath(null);
 
   const returnToHomeRef = useRef(null);
 

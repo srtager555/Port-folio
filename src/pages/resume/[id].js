@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
 
 import { Home } from "./_home";
@@ -9,7 +9,6 @@ import { more_info as MoreInfo } from "./_moreInfo";
 import NotMatch from "../404";
 
 export default function Resume({ setLoader, chagePath, setNavbarProps }) {
-  chagePath("resume");
   let currentPage = <Home {...pageProps} />;
   // url values
   // home, profile, sq, experience, moreInfo
@@ -19,6 +18,7 @@ export default function Resume({ setLoader, chagePath, setNavbarProps }) {
   const pageProps = {
     handleClickChangePage,
     setLoader,
+    chagePath,
   };
 
   function handleClickChangePage(path) {
@@ -54,12 +54,19 @@ export default function Resume({ setLoader, chagePath, setNavbarProps }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setNavbarProps({
       currentPage: id,
       pagesNameList: pagesNameList,
       handleClickChangePage: handleClickChangePage,
     });
+
+    return () => {
+      setNavbarProps({});
+
+      chagePath(null);
+    };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
