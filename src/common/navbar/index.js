@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 import { NavHome } from "./components/navHome";
 import { NavMain } from "./components/navMain";
-import { NavCV } from "./components/navCV";
+import { NavResume } from "./components/navResume";
 
-export function Navbar({ handleResetScroll, inPath }) {
+export function Navbar({ handleResetScroll, inPath, ...navbarProps }) {
   const [navComponent, setNavComponent] = useState(null);
-  const props = { handleResetScroll };
+  const props = { handleResetScroll, navbarProps };
 
   useEffect(() => {
     switch (inPath) {
@@ -14,8 +14,8 @@ export function Navbar({ handleResetScroll, inPath }) {
         setNavComponent(<NavHome {...props} />);
         break;
 
-      case "cv":
-        setNavComponent(<NavCV {...props} />);
+      case "resume":
+        setNavComponent(<NavResume {...props} />);
         break;
 
       case "none":
@@ -27,7 +27,7 @@ export function Navbar({ handleResetScroll, inPath }) {
         break;
 
       default:
-        setNavComponent(<NavMain {...props} />);
+        setNavComponent(null);
         break;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
