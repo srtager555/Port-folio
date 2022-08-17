@@ -1,9 +1,9 @@
 // import App from 'next/app'
 import { useEffect, useState } from "react";
 
-import { Navbar } from "../components/navbar";
-import { Background } from "../components/background";
-import { LoadScreen } from "../components/loadScreen";
+import { Navbar } from "@common/navbar";
+import { Background } from "@components/background";
+import { LoadScreen } from "@components/loadScreen";
 // import { useInPath } from "../hooks/useInPath";
 
 import "@sass/global.css";
