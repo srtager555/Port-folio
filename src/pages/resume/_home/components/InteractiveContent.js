@@ -1,10 +1,16 @@
-import React from "react";
+import { useEffect } from "react";
 
 import styles from "@sass/resumeStyles/home.module.sass";
 
-export function InteractiveContent({ setLoader, classChanger }) {
-  React.useEffect(() => {
+export function InteractiveContent({
+  setLoader,
+  interactiveContentRef,
+  classChanger,
+}) {
+  useEffect(() => {
     setTimeout(() => setLoader(true), 1000);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -15,7 +21,11 @@ export function InteractiveContent({ setLoader, classChanger }) {
       <div className={styles["introduction--container__text"]}>
         <p>Hello there 👋!. This is my 2022 resume, I hope you like it</p>
       </div>
-      <div className={styles["introduction--container__description"]}>
+      <div
+        ref={interactiveContentRef}
+        className={styles["introduction--container__description"]}
+      >
+        <div className={styles.loaderHolder}></div>
         <p>Aqui se resumira que es cada section uwuw</p>
       </div>
 

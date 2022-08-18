@@ -6,16 +6,24 @@ import styles from "@sass/resumeStyles/home.module.sass";
 
 export function ButtonsMap({
   handleClickChangePage,
+  changeInteractiveContent,
   refArray,
   pageNames,
   pageLinks,
 }) {
   // This array has the images url
   const arrImg = [
-    "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
     "https://i.ibb.co/2Zcw0X4/flor.jpg",
+    "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
     "https://i.ibb.co/X5Wg7S5/kda.jpg",
     "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
+  ];
+
+  const stylesArr = [
+    styles.profile,
+    styles.sq,
+    styles.experience,
+    styles.moreInfo,
   ];
 
   // Wrapping letter component for wrapp each letter in a <span />
@@ -68,6 +76,8 @@ export function ButtonsMap({
     // adding the opacity class, it will update the position.
     handleMouseMove(e, index);
 
+    changeInteractiveContent(stylesArr[index]);
+
     const target = refArray[index].current.children[0];
 
     // If the image container not having the class, here will add
@@ -104,23 +114,7 @@ export function ButtonsMap({
       }
     });
 
-    // With its clean up
-    // return () =>
-    //   refArray.forEach((element, index) => {
-    //     if (Object.values(device).some((e) => e != true)) {
-    //       const child = element.current.children[1];
-
-    //       child.removeEventListener("mousemove", (e) =>
-    //         handleMouseMove(e, index)
-    //       );
-    //       child.removeEventListener("mouseenter", (e) =>
-    //         handleMouseEnter(e, index)
-    //       );
-    //       child.removeEventListener("mouseleave", () =>
-    //         handleMouseLeave(index)
-    //       );
-    //     }
-    //   });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return pageNames.map((pageName, index) => {

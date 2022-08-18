@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import { useRef, useEffect, useLayoutEffect } from "react";
 
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
@@ -14,6 +14,7 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
   // here declare the REF of the elements
 
   const mainRef = useRef(null);
+  const interactiveContentRef = useRef(null);
   const classChanger = useRef(null);
   const goToRef = useRef(null);
   const goToContainerRef = useRef(null);
@@ -30,6 +31,18 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
   const pageLinks = ["profile", "sq", "experience", "moreInfo"];
 
   // handleEnvets
+
+  function changeInteractiveContent(contentToShow) {
+    let element = interactiveContentRef.current;
+
+    const classListArray = element.className.split(" ");
+
+    if (classListArray.length != 1) classListArray.pop();
+
+    classListArray.push(contentToShow);
+
+    element.className = classListArray.join(" ");
+  }
 
   // when the mouse is over of a link
   // the effect of the cursor will change position
@@ -108,19 +121,6 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
       );
     });
 
-    // clean up uwu
-    // return () => {
-    //   // here remove each listener
-    //   refArray.forEach((element, index) => {
-    //     console.log(element);
-    //     element.current.removeEventListener("mouseenter", (e) =>
-    //       handleMouseEnter(e, index)
-    //     );
-    //     element.current.removeEventListener("mouseleave", () =>
-    //       handleMouseLeave(index)
-    //     );
-    //   });
-    // };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -132,12 +132,15 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
         <main ref={mainRef} className={styles[`main--container`]}>
           <InteractiveContent
             setLoader={setLoader}
+            interactiveContentRef={interactiveContentRef}
             classChanger={classChanger}
+            refArray={refArray}
           />
           <div className={styles["links--container"]}>
             <div className={styles["links--container__links"]}>
               <ButtonsMap
                 handleClickChangePage={handleClickChangePage}
+                changeInteractiveContent={changeInteractiveContent}
                 refArray={refArray}
                 pageNames={pageNames}
                 pageLinks={pageLinks}
