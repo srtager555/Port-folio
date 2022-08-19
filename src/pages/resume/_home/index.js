@@ -84,7 +84,12 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
       e.target.offsetHeight / 2
     }px`;
 
-    goToContainerRef.current.className += ` ${styles["links--container__pointer--hover"]}`;
+    if (
+      !goToContainerRef.current.className.includes(
+        ` ${styles["links--container__pointer--hover"]}`
+      )
+    )
+      goToContainerRef.current.className += ` ${styles["links--container__pointer--hover"]}`;
   }
 
   // When the mouse enters the target,
@@ -94,7 +99,7 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
     const element = refArray[index].current.children[1].children;
     changeInteractiveContent(stylesArr[index]);
 
-    setTimeout(() => upLetter(element, () => handleLinkHover(e)), 10);
+    setTimeout(() => upLetter(element, () => handleLinkHover(e)), 0);
   }
 
   // here return the opacity of the cursor effect to 0
