@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Wl from "wrapping-letters-react";
 
@@ -17,13 +17,6 @@ export function ButtonsMap({
     "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
     "https://i.ibb.co/X5Wg7S5/kda.jpg",
     "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
-  ];
-
-  const stylesArr = [
-    styles.profile,
-    styles.sq,
-    styles.experience,
-    styles.moreInfo,
   ];
 
   // Wrapping letter component for wrapp each letter in a <span />
@@ -75,8 +68,6 @@ export function ButtonsMap({
     // appears in its last position, when the function is executed before
     // adding the opacity class, it will update the position.
     handleMouseMove(e, index);
-
-    changeInteractiveContent(stylesArr[index]);
 
     const target = refArray[index].current.children[0];
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useLayoutEffect } from "react";
+import { useRef, useEffect, useLayoutEffect, useState } from "react";
 
 import { ButtonsMap } from "./components/ButtonsMap";
 import { Background } from "./components/Background";
@@ -11,6 +11,7 @@ import downLetter from "@animations/defaultAnimation/downLetter";
 import styles from "@sass/resumeStyles/home.module.sass";
 
 export function Home({ handleClickChangePage, setLoader, chagePath }) {
+  const [ICClasses, setICClasses] = useState("");
   // here declare the REF of the elements
 
   const mainRef = useRef(null);
@@ -25,6 +26,12 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
 
   // this array is for adding events for each element
   let refArray = [profileRef, skillsRef, experienceRef, moreInfoRef];
+  let stylesArr = [
+    styles.profile,
+    styles.sq,
+    styles.experience,
+    styles.moreInfo,
+  ];
 
   // Information for the routing
   const pageNames = ["profile", "sq", "experience", "more Info"];
@@ -42,7 +49,13 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
     classListArray.push(contentToShow);
 
     element.className = classListArray.join(" ");
+
+    setICClasses(classListArray.join(" "));
   }
+
+  useEffect(() => {
+    console.log(ICClasses);
+  }, [ICClasses]);
 
   // when the mouse is over of a link
   // the effect of the cursor will change position
@@ -79,8 +92,9 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
   // send it to an animation function.
   function handleMouseEnter(e, index) {
     const element = refArray[index].current.children[1].children;
+    changeInteractiveContent(stylesArr[index]);
 
-    upLetter(element, () => handleLinkHover(e));
+    setTimeout(() => upLetter(element, () => handleLinkHover(e)), 10);
   }
 
   // here return the opacity of the cursor effect to 0
