@@ -1,11 +1,11 @@
 import { useEffect, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
 
-import { Home } from "./_home";
-import { profile as Profile } from "./_profile";
-import { skills_and_qualities as Sq } from "./_sq";
-import { experience as Experience } from "./_experience";
-import { more_info as MoreInfo } from "./_moreInfo";
+import { Home } from "@templates/resume/_home";
+import { profile as Profile } from "@templates/resume/_profile";
+import { skills_and_qualities as Sq } from "@templates/resume/_sq";
+import { experience as Experience } from "@templates/resume/_experience";
+import { more_info as MoreInfo } from "@templates/resume/_moreInfo";
 import NotMatch from "../404";
 
 export default function Resume({ setLoader, chagePath, setNavbarProps }) {

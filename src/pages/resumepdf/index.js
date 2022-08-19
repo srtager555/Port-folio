@@ -1,6 +1,6 @@
 import styles from "@sass/cvpdf.module.sass";
 
-export function cvpdfTemplate() {
+export default function cvpdfTemplate() {
   return (
     <div className={styles.container}>
       <div className={styles.headerName}>
