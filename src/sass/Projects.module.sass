@@ -1,0 +1,275 @@
+/* COLOR VARIABLES
+$color1: rgba(255, 255, 255, 1)
+$color2: rgba(153, 226, 201, 1)
+
+$color3: rgba(0, 0, 0, 1)
+$color4: rgba(0, 0, 0, 0.5)
+$color5: rgba(0, 0, 0, 0)
+
+/* GRADIENT LISTS
+
+$list: $color1 0%, $color2 100%
+$list2: $color3 0%, $color4 50%, $color5 100%
+
+@mixin gradient($direction, $list)
+  background: -webkit-linear-gradient($direction, $list)
+  background: -moz-linear-gradient($direction, $list)
+  background: -o-linear-gradient($direction, $list)
+  background: linear-gradient($direction, $list)
+
+.container__background-projects
+  position: -webkit-sticky
+  position: sticky
+  top: 0
+  height: 100vh
+  width: 100%
+  background: rgb(255, 255, 255)
+  @include gradient(145deg, $list)
+  filter: invert(1)
+  z-index: -1
+
+// .container-projects .container__text--heightPositionControl .container__text { display: inline-block;} 
+
+.container-projects
+  .container__text--heightPositionControl
+    height: 100vh
+    width: 100%
+    position: -webkit-sticky
+    position: sticky
+    top: 50%
+    transform: translateY(-50%)
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: all 1.5s ease-in-out
+
+    &.invisible
+      opacity: 0
+      visibility: hidden
+      transition: all 200ms ease-in-out
+
+    .container__text
+      width: 100%
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+
+      span
+        color: #fff
+        text-transform: uppercase
+        font-size: 85px
+        margin-left: 20px
+
+    &:nth-child(1)
+      margin-left: 0
+
+  .container__projects-scrollSlider
+    position: fixed
+    top: 50%
+    transform: translateY(-50%)
+    width: 100%
+    overflow: hidden
+
+    .container__projects-scrollSlider-item
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      visibility: hidden
+      opacity: 0
+      transition: opacity 200ms
+
+    &.visible
+      .container__projects-scrollSlider-item
+        visibility: visible
+        opacity: 1
+
+    .container__image-projects__scrollSlider
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-left: 150px
+      min-width: 250px
+      width: 250px
+      height: 444.44px
+      border: none
+      cursor: pointer
+      overflow: hidden
+
+      img
+        height: 101%
+        transition: all 200ms ease-in-out
+
+      &:hover
+        img
+          transform: scale(1.1)
+
+      &:nth-child(1)
+        margin-left: 0
+
+  .container__projectsInfo
+    position: absolute
+    top: 0%
+    width: 100%
+    height: 100%
+
+    .container__projectsInfo--container__content
+      height: 100vh
+      width: 100%
+      position: -webkit-sticky
+      position: sticky
+      top: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      opacity: 0
+      visibility: hidden
+      transition: 1500ms
+
+      &.visible
+        transition: 1s
+        opacity: 1
+        visibility: visible
+
+      .container__projectsInfo--background__image
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        overflow: hidden
+        z-index: -1
+
+        img
+          height: 105%
+
+      .container__projectsInfo--container__gradientBG
+        position: absolute
+        top: 50%
+        left: 0
+        width: 100%
+        height: 50%
+        background: rgb(0, 0, 0)
+        @include gradient(0deg, $list2)
+        z-index: -1
+
+      .container__projectsInfo--container__content--text
+        display: flex
+        justify-content: flex-end
+        align-items: flex-start
+        flex-direction: column
+        width: 95%
+        min-height: 100%
+        margin: 0 auto
+
+        &:is(.container-title, .container-date)
+          display: flex
+          justify-content: flex-start
+          align-items: center
+          flex-wrap: wrap
+
+        .container-title
+          span
+            color: #fff
+            text-transform: uppercase
+            font-size: 38px
+            font-weight: 300
+            white-space: pre-wrap
+
+        .container-date
+          span
+            color: #fff
+            font-family: "Noto Sans Display", sans-serif
+            font-size: 20px
+            margin-left: 5px
+            white-space: pre-wrap
+
+        .container__actionButton
+          width: 100%
+          display: flex
+          justify-content: space-between
+          align-items: flex-end
+          text-transform: uppercase
+          margin-top: 30px
+          margin-bottom: 30px
+
+          .container-anchor
+            display: flex
+            justify-content: space-around
+            align-items: center
+            width: 150px
+            height: 55px
+            border: 3px solid #fff
+            padding: 11px 16px
+            text-decoration: none
+            color: #fff
+
+            span
+              font-family: "Noto Sans Display", sans-serif
+              font-size: 18px
+
+            &:hover
+              background-color: #fff
+              color: #000
+
+  .span-notificationXd
+    font-size: 11px
+    color: #fff
+
+@media (min-width: 760px)
+  .container-projects
+    .container__projects-scrollSlider
+      .container__projects-scrollSlider-item
+        transition: opacity 200ms
+
+  .container-projects
+    .container__projectsInfo
+      .container__projectsInfo--container__content
+        .container__projectsInfo--container__content--text
+          .container-title
+            span
+              font-size: 45px
+
+  .container-projects
+    .container__projectsInfo
+      .container__projectsInfo--container__content
+        .container__projectsInfo--container__content--text
+          .container-date
+            span
+              font-size: 25px
+
+@media (min-width: 1024px)
+  .container-projects
+    .container__projects-scrollSlider
+      .container__projects-scrollSlider-item
+        .container__image-projects__scrollSlider
+          height: 250px
+          width: 444px
+          min-width: 444px
+          margin-left: 200px
+
+  .container-projects
+    .container__projects-scrollSlider
+      .container__projects-scrollSlider-item
+        .container__image-projects__scrollSlider
+          img
+            width: 100%
+            height: auto
+
+  .container-projects
+    .container__projects-scrollSlider
+      .container__projects-scrollSlider-item
+        visibility: visible
+
+  .container-projects
+    .container__projectsInfo
+      .container__projectsInfo--container__content
+        .container__projectsInfo--container__content--text
+          align-items: center
+          justify-content: flex-start
+          flex-direction: column-reverse
+          width: 70%
+          height: 100%
+          margin-bottom: 30px

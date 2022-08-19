@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
-import "../../styles/ScrollProgress.css"
+import { useEffect, useState } from "react";
+import styles from "@sass/ScrollProgress.module.sass";
 
 export function ScrollProgress() {
-    const [barWidth, setBarWidth] = useState({width: 0})
+  const [barWidth, setBarWidth] = useState({ width: 0 });
 
-    function handleScrollPercent() {
-        let windowScroll = window.scrollY
-        let windowTotalScroll = document.body.scrollHeight - window.innerHeight
-        let scrollPercent = (windowScroll / windowTotalScroll) * 100
-        setBarWidth({width: `${scrollPercent}%`})
-    }
+  function handleScrollPercent() {
+    let windowScroll = window.scrollY;
+    let windowTotalScroll = document.body.scrollHeight - window.innerHeight;
+    let scrollPercent = (windowScroll / windowTotalScroll) * 100;
+    setBarWidth({ width: `${scrollPercent}%` });
+  }
 
-    useEffect(()=>{
-        window.addEventListener("scroll", handleScrollPercent)
-    }, [])
+  useEffect(() => {
+    window.addEventListener("scroll", handleScrollPercent);
+  }, []);
 
-   return (
-      <div className="container__scrollProgress">
-         <div style={barWidth} className="container__scrollProgress__bar"></div>
-         <div className="container__scrollProgress__smallBar"></div>
-      </div>
-   );
+  return (
+    <div className={styles.container__scrollProgress}>
+      <div
+        style={barWidth}
+        className={styles.container__scrollProgress__bar}
+      ></div>
+      <div className={styles.container__scrollProgress__smallBar}></div>
+    </div>
+  );
 }

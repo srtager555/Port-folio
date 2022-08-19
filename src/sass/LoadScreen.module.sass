@@ -1,0 +1,170 @@
+/* COLOR VARIABLES
+$color1: rgba(255, 255, 255, 1)
+$color2: rgba(153, 226, 201, 1)
+$color3: rgba(23, 23, 23, 1)
+$color4: rgba(3, 3, 3, 1)
+
+/* GRADIENT LISTS
+
+$list: $color1 0%, $color2 100%
+$list2: $color3 0%, $color4 100%
+
+@mixin gradient($direction, $list)
+  background: -webkit-linear-gradient($direction, $list)
+  background: -moz-linear-gradient($direction, $list)
+  background: -o-linear-gradient($direction, $list)
+  background: linear-gradient($direction, $list)
+
+.loader
+  position: fixed !important
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 100
+  background: #fff
+  display: flex
+  justify-content: center
+  align-items: center
+  opacity: 0
+  visibility: hidden
+  transition: all 0.5s ease-in-out
+
+  &.loading
+    opacity: 1
+    visibility: visible
+    transition: all 0.2s ease-in-out
+
+  &.loader--exit
+    opacity: 1
+    top: 100%
+    transition: all 1250ms cubic-bezier(0.44, 0.43, 0.53, 0.97)
+
+  .loader--background
+    position: absolute
+    top: 0
+    left: 0
+    background: rgb(3, 3, 3)
+    @include gradient(145deg, $list2)
+    transition: all 0.5s
+    z-index: -1
+
+  .loader--successText
+    position: absolute
+    top: 3%
+    left: 50%
+    transform: translateX(-50%)
+    font-size: 200px
+    text-transform: uppercase
+    overflow: hidden
+    color: #fff
+
+    span
+      display: inline-block
+      transform: translateY(100%)
+      transition: all 0.5s
+
+    &.loader--placeholder--loaderEnded
+      span
+        transform: translateY(0)
+
+      .loader--placeholder--innerLetter
+        span
+          transform: translateY(-100%)
+
+  .loader--placeholder
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    font-size: 350px
+    color: #fff
+    transition: opacity 200ms ease-in-out
+    z-index: 1
+
+    .loader--placeholder--innerLetter
+      display: flex
+      align-items: center
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 264px
+      overflow: hidden
+
+      &:nth-child(1)
+        left: 0
+        animation: loaderSlide1 20s linear infinite
+
+      &:nth-child(2)
+        left: -2588.5px
+        animation: loaderSlide2 20s linear infinite
+
+      span
+        display: inline-block
+        font-family: "Poppins", sans-serif
+        transition: 500ms ease
+
+    &.loader--placeholder--loaderEnded
+      .loader--placeholder--innerLetter
+        span
+          transform: translateY(-100%)
+
+  .loader--randomPhrase
+    position: absolute
+    left: 5%
+    bottom: 13%
+    font-size: 16px
+    max-width: 350px
+    width: 90%
+    color: #fff
+
+    span
+      font-family: "Noto Sans Display", sans-serif
+      display: block
+      width: 100%
+
+  &.home--style
+    .loader--background
+      background: rgb(255, 255, 255)
+      @include gradient(145deg, $list)
+
+    .loader--successText
+      color: inherit
+
+    .loader--placeholder
+      color: inherit
+
+    .loader--randomPhrase
+      color: inherit
+
+@keyframes loaderSlide1
+  0%
+    left: 0
+
+  100%
+    left: 2588.5px
+
+@keyframes loaderSlide2
+  0%
+    left: -2588.5px
+
+  100%
+    left: 0
+
+@media (max-width: 768px)
+  .loader
+    .loader--successText
+      top: 40%
+      transform: translate(-50%, -50%) rotate(90deg)
+
+    .loader--randomPhrase
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+
+      span
+        text-align: center
+
+@media (max-width: 415px)
+  .loader .loader--successText
+    font-size: 150px

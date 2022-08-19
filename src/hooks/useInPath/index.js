@@ -1,7 +1,8 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 export function useInPath(state) {
-    useEffect(() => {
-        state(window.location.pathname)
-    }, [])
+  useEffect(() => {
+    state(window.location.pathname);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 }

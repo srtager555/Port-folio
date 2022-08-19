@@ -1,51 +1,70 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-import { ProjectsElementList } from "../../contexts/projectsContexts";
-import { IS_MOBILE } from "../../contexts/constVarible";
+import { ProjectsElementList } from "@contexts/projectsContexts";
+import { IS_MOBILE } from "@contexts/constVarible";
 
-export function ProjectsElement({ SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects }) {
+import styles from "@sass/Projects.module.sass";
 
-    const mobileCard = cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, mobileCardElement);
-    const desktopCard = cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, desktopCardElement);
+export function ProjectsElement({
+  SliderProjectsRef,
+  ViewProjectsScroll,
+  ProjectsElementRef,
+  PreviewProjects,
+}) {
+  const [isMobile, setIsMobile] = useState(false);
 
-    const projectCard = IS_MOBILE() ? mobileCard : desktopCard;
-
-    return projectCard;
-}
-
-function cardElement(SliderProjectsRef, ViewProjectsScroll, ProjectsElementRef, PreviewProjects, callback) {
-
-    return <div ref={SliderProjectsRef} style={ViewProjectsScroll} className="container__projects-scrollSlider-item">
-        {
-            ProjectsElementList.getRecentProjectsAvailable().map((element, index) => (
-                callback(ProjectsElementRef, element, index, PreviewProjects)
-            ))
-        }
-    </div>
-}
-
-function desktopCardElement(ProjectsElementRef, element, index, callback) {
-    return <Link
-        id={element.Id}
-        to={`p/${element.Id}`} key={`project-${index}`}
-        onMouseOver={(event) => callback(event, true)}
-        onMouseLeave={(event) => callback(event, false)}
-        ref={(ProjectsElementList.getRecentProjectsAvailable().length < 2 || index === 1) ? ProjectsElementRef : null}
-        className="container__image-projects__scrollSlider"
+  const MobileAnchor = ({ forwardRef, element }) => (
+    <button
+      id={element.Id}
+      onClick={(event) => PreviewProjects(event, true)}
+      key={`project-${element.Id}`}
+      ref={forwardRef}
+      className={styles["container__image-projects__scrollSlider"]}
     >
-        <img src={element.PrincipalImageDesktop} alt={element.Id} />
-    </Link>
-}
-
-function mobileCardElement(ProjectsElementRef, element, index, callback) {
-    return <button
-        id={element.Id}
-        onClick={(event) => callback(event, true)}
-        key={`project-${index}`}
-        ref={(ProjectsElementList.getRecentProjectsAvailable().length < 2 || index === 1) ? ProjectsElementRef : null}
-        className="container__image-projects__scrollSlider"
-    >
-        <img src={element.PrincipalImageMobile} alt="kda Ahri" />
+      <img src={element.PrincipalImageMobile} alt={element.Id} />
     </button>
+  );
+
+  const DesktopButton = ({ forwardRef, element }) => (
+    <Link href={`p/${element.Id}`}>
+      <a
+        id={element.Id}
+        key={`project-${element.Id}`}
+        ref={forwardRef}
+        onMouseOver={(event) => PreviewProjects(event, true)}
+        onMouseLeave={(event) => PreviewProjects(event, false)}
+        className={styles["container__image-projects__scrollSlider"]}
+      >
+        <img src={element.PrincipalImageDesktop} alt={element.Id} />
+      </a>
+    </Link>
+  );
+
+  useEffect(() => {
+    setIsMobile(IS_MOBILE);
+  }, []);
+
+  return (
+    <div
+      ref={SliderProjectsRef}
+      style={ViewProjectsScroll}
+      className={styles["container__projects-scrollSlider-item"]}
+    >
+      {ProjectsElementList.getRecentProjectsAvailable().map(
+        (element, index) => {
+          let forwardRef;
+
+          if (index === 1) forwardRef = ProjectsElementRef;
+          else forwardRef = null;
+
+          return isMobile ? (
+            <MobileAnchor forwardRef={forwardRef} element={element} />
+          ) : (
+            <DesktopButton forwardRef={forwardRef} element={element} />
+          );
+        }
+      )}
+    </div>
+  );
 }

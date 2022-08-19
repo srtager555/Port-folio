@@ -2,8 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "Src/*": ["./src/*"],
-      "Styles/*": ["./src/styles/*"],
+      "@src/*": ["./src/*"],
+      "@sass/*": ["./src/sass/*"],
+      "@templates/*": ["./src/templates/*"],
+      "@components/*": ["./src/components/*"],
+      "@common/*": ["./src/common/*"],
+      "@animations/*": ["./src/animations/*"],
+      "@contexts/*": ["./src/contexts/*"]
     }
   }
 }

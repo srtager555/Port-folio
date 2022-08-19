@@ -1,0 +1,29 @@
+/* COLOR VARIABLES
+$color1: rgba(255, 255, 255, 1)
+$color2: rgba(153, 226, 201, 1)
+$color3: rgba(23, 23, 23, 1)
+$color4: rgba(3, 3, 3, 1)
+
+/* GRADIENT LISTS
+
+$list: $color1 0%, $color2 100%
+$list2: $color3 0%, $color4 100%
+
+@mixin gradient($direction, $list)
+  background: -webkit-linear-gradient($direction, $list)
+  background: -moz-linear-gradient($direction, $list)
+  background: -o-linear-gradient($direction, $list)
+  background: linear-gradient($direction, $list)
+
+.container-background
+  position: fixed !important
+  top: 0
+  left: 0
+  z-index: -1
+  background: rgb(255, 255, 255)
+  @include gradient(145deg, $list)
+  transition: all 0.5s
+
+.container-background.background--project
+  background: rgb(3, 3, 3)
+  @include gradient(145deg, $list2)

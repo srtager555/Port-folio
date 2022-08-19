@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export function AnimeBG() {
-  return (
-    <div>AnimeBG</div>
-  )
+  return <div>AnimeBG</div>;
 }

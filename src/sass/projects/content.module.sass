@@ -1,0 +1,72 @@
+
+.content
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  max-width: 805px
+  margin: 0 auto
+  width: 100%
+
+  .image
+    width: 100%
+    margin-bottom: 225px
+
+    img
+      max-width: 100%
+
+    &.image-container
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      flex-wrap: wrap
+
+    .image-container__text
+      position: relative
+      width: 95%
+      margin: 0 auto
+      color: #fff
+      margin-bottom: 21px
+
+      .image-container__text-title
+        font-size: 18px
+        font-weight: 200
+        margin-bottom: 13px
+
+      .image-container__text-description
+        font-size: 13px
+        font-weight: 200
+        font-family: "Noto sans display", sans-serif
+        padding-bottom: 14px
+        white-space: pre-line
+
+      &::before
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 60%
+        height: 1px
+        background: #fff
+
+      &:nth-child(even)::before
+        left: 40%
+
+@media (min-width: 560px)
+  .content
+    .image
+      &.image-container.image-container--not_wrapp
+        flex-wrap: nowrap
+        width: 100%
+
+      &.image-container
+        width: auto
+
+      .image-container__text
+        max-width: 60%
+        width: auto
+        margin: 0 26px
+        margin-bottom: 26px
+
+      .image:nth-child(even)
+        flex-direction: row-reverse

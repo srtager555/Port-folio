@@ -1,14 +1,18 @@
-import React from "react";
-import { IS_MOBILE_DEVICE } from "../../../contexts/constVarible";
+/* eslint-disable @next/next/no-img-element */
+import { useConstVariable } from "@contexts/constVarible";
 
 export function ImageNextPost({ data, stylesIsHover }) {
-   return imageFunction(stylesIsHover, data);
-}
-function imageFunction(stylesIsHover, data) {
-    return <img
-        style={stylesIsHover}
-        src={IS_MOBILE_DEVICE()
-            ? data.BackgroundImageMobile
-            : data.BackgroundImageDesktop} />;
-}
+  let { IS_MOBILE_DEVICE } = useConstVariable();
 
+  return (
+    <img
+      style={stylesIsHover}
+      src={
+        IS_MOBILE_DEVICE
+          ? data.BackgroundImageMobile
+          : data.BackgroundImageDesktop
+      }
+      alt=""
+    />
+  );
+}

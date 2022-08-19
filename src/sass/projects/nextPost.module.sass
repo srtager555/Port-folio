@@ -1,0 +1,109 @@
+.container__nextPost--main
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100vh
+
+  .container
+    display: block
+    max-width: 300px
+    width: 100%
+    margin: 0 auto
+    color: #fff
+    text-decoration: none
+    cursor: pointer
+
+    .background
+      position: relative
+      width: 100%
+      min-height: 450px
+      margin-bottom: 70px
+
+      img
+        display: inline-block
+        width: 100%
+        transform: translate(0%, 0%)
+        transition: all 1s ease-in-out
+
+        &:hover ~ .container--nextWord
+          opacity: 0
+          visibility: hidden
+          transition: all 0.2s ease-in-out
+
+      .container--nextWord
+        position: absolute
+        bottom: -30%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: flex
+        align-items: center
+        flex-direction: column-reverse
+        mix-blend-mode: difference
+        transition: 1s all ease-in-out
+
+        span
+          &:nth-child(1)
+            font-size: 120px
+            font-weight: 200
+
+          &:nth-child(2)
+            font-size: 30px
+            font-family: "Shippori Mincho", serif
+            margin-bottom: -15px
+
+    .container--info
+      display: flex
+      justify-content: center
+      align-items: center
+
+      :is(.container--info__title, .container--info__typeJob)
+        font-size: 16px
+        text-transform: uppercase
+        font-family: "Noto sans display", sans-serif
+        font-weight: 200
+
+      :is(.container--info__margin__bar, .container--info__typeJob)
+        display: none
+
+@media (min-width: 610px)
+  .container__nextPost--main
+    .container
+      max-width: 815px
+      width: 100%
+
+      .background
+        position: relative
+        width: 100%
+        margin-bottom: 20px
+
+        .container--nextWord
+          top: 0%
+          bottom: auto
+          left: 3%
+          transform: translateY(-50%)
+          align-items: flex-start
+          flex-direction: row
+
+          span
+            &:nth-child(1)
+              font-size: 146px
+              font-weight: 200
+
+            &:nth-child(2)
+              font-size: 30px
+              font-family: "Shippori Mincho", serif
+              margin-top: 8%
+              margin-left: 5%
+
+      .container--info
+        :is(.container--info__title, .container--info__typeJob)
+          font-size: 19px
+          display: block
+
+        .container--info__margin__bar
+          display: inline-block
+          width: 27%
+          height: 1px
+          background-color: #fff
+          margin: 0 15px
