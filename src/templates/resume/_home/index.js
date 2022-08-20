@@ -50,7 +50,7 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
 
     element.className = classListArray.join(" ");
 
-    setICClasses(classListArray.join(" "));
+    setICClasses(classListArray);
   }
 
   // when the mouse is over of a link
@@ -149,7 +149,7 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
             setLoader={setLoader}
             interactiveContentRef={interactiveContentRef}
             classChanger={classChanger}
-            refArray={refArray}
+            ICClasses={ICClasses}
           />
           <div className={styles["links--container"]}>
             <div className={styles["links--container__links"]}>

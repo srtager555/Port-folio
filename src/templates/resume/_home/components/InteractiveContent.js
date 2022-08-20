@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "@sass/resumeStyles/home.module.sass";
 
@@ -6,7 +6,36 @@ export function InteractiveContent({
   setLoader,
   interactiveContentRef,
   classChanger,
+  ICClasses,
 }) {
+  const [descriptionToShow, setDescriptionToShow] = useState(<Component1 />);
+
+  function Component1() {
+    return <p>This is the component number one</p>;
+  }
+  function Component2() {
+    return <p>This is the component number two</p>;
+  }
+  function Component3() {
+    return <p>This is the component number three</p>;
+  }
+  function Component4() {
+    return <p>This is the component number four</p>;
+  }
+
+  useEffect(() => {
+    if (ICClasses[1] === styles.profile) {
+      setDescriptionToShow(<Component1 />);
+    } else if (ICClasses[1] === styles.sq) {
+      setDescriptionToShow(<Component2 />);
+    } else if (ICClasses[1] === styles.experience) {
+      setDescriptionToShow(<Component3 />);
+    } else if (ICClasses[1] === styles.moreInfo) {
+      setDescriptionToShow(<Component4 />);
+    }
+    console.log(ICClasses);
+  }, [ICClasses]);
+
   useEffect(() => {
     setTimeout(() => setLoader(true), 1000);
 
@@ -26,7 +55,7 @@ export function InteractiveContent({
         className={styles["introduction--container__description"]}
       >
         <div className={styles.loaderHolder}></div>
-        <p>Aqui se resumira que es cada section uwuw</p>
+        {descriptionToShow}
       </div>
 
       <div className={styles["introduction--container__aboutMe"]}></div>
