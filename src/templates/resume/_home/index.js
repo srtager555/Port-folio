@@ -122,7 +122,8 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
   useEffect(() => {
     // here add the first position for the cursor follower
     goToRef.current.style.top = `${
-      refArray[0].current.getBoundingClientRect().top +
+      refArray[0].current.getBoundingClientRect().top -
+      mainRef.current.getBoundingClientRect().top +
       refArray[0].current.offsetHeight / 2
     }px`;
 
