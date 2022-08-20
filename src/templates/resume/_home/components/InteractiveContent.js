@@ -33,7 +33,6 @@ export function InteractiveContent({
     } else if (ICClasses[1] === styles.moreInfo) {
       setDescriptionToShow(<Component4 />);
     }
-    console.log(ICClasses);
   }, [ICClasses]);
 
   useEffect(() => {
