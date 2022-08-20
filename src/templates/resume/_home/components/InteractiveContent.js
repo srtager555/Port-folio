@@ -9,29 +9,59 @@ export function InteractiveContent({
   ICClasses,
 }) {
   const [descriptionToShow, setDescriptionToShow] = useState(<Component1 />);
+  const [showDescription, setShowDescription] = useState(true);
 
   function Component1() {
-    return <p>This is the component number one</p>;
+    return (
+      <p>
+        This is the component number one, Lorem Ipsum is simply dummy text of
+        the printing and typesetting industry. Lorem Ipsum has been the
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
+        industry's standard dummy text ever since the 1500s,{" "}
+      </p>
+    );
   }
   function Component2() {
-    return <p>This is the component number two</p>;
+    return (
+      <p>
+        This is the component number two, Lorem Ipsum is simply dummy text of
+        the printing and typesetting industry.{" "}
+      </p>
+    );
   }
   function Component3() {
-    return <p>This is the component number three</p>;
+    return (
+      <p>
+        This is the component number three, Lorem Ipsum is simply dummy text of
+        the printing and typesetting industry. Lorem Ipsum has been the standard
+        dummy text ever since the 1500s,{" "}
+      </p>
+    );
   }
   function Component4() {
-    return <p>This is the component number four</p>;
+    return (
+      <p>
+        This is the component number four, Lorem Ipsum is simply dummy text of
+      </p>
+    );
+  }
+
+  function handleAnimationToChangeDescription(component) {
+    setShowDescription(false);
+
+    setTimeout(() => setDescriptionToShow(component), 250);
+    setTimeout(() => setShowDescription(true), 300);
   }
 
   useEffect(() => {
     if (ICClasses[1] === styles.profile) {
-      setDescriptionToShow(<Component1 />);
+      handleAnimationToChangeDescription(<Component1 />);
     } else if (ICClasses[1] === styles.sq) {
-      setDescriptionToShow(<Component2 />);
+      handleAnimationToChangeDescription(<Component2 />);
     } else if (ICClasses[1] === styles.experience) {
-      setDescriptionToShow(<Component3 />);
+      handleAnimationToChangeDescription(<Component3 />);
     } else if (ICClasses[1] === styles.moreInfo) {
-      setDescriptionToShow(<Component4 />);
+      handleAnimationToChangeDescription(<Component4 />);
     }
   }, [ICClasses]);
 
@@ -51,13 +81,14 @@ export function InteractiveContent({
       </div>
       <div
         ref={interactiveContentRef}
-        className={styles["introduction--container__description"]}
+        className={`${styles["introduction--container__description"]} ${
+          !showDescription ? styles["hidden"] : ""
+        }`}
       >
-        <div className={styles.loaderHolder}></div>
         {descriptionToShow}
       </div>
 
-      <div className={styles["introduction--container__aboutMe"]}></div>
+      {/* <div className={styles["introduction--container__aboutMe"]}></div> */}
       {/* <div className={styles["introduction--container__image"]}>
             <img
                // here turn off the load screen.
