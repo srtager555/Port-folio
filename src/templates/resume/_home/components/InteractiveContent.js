@@ -10,6 +10,7 @@ export function InteractiveContent({
 }) {
   const [descriptionToShow, setDescriptionToShow] = useState(<Component1 />);
   const [showDescription, setShowDescription] = useState(true);
+  const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
 
   function Component1() {
     return (
@@ -47,10 +48,12 @@ export function InteractiveContent({
   }
 
   function handleAnimationToChangeDescription(component) {
+    // I need fix this.
+    clearTimeout(setTimeOutAnimtion);
     setShowDescription(false);
 
     setTimeout(() => setDescriptionToShow(component), 250);
-    setTimeout(() => setShowDescription(true), 300);
+    setTimeOutAnimtion(setTimeout(() => setShowDescription(true), 300));
   }
 
   useEffect(() => {
