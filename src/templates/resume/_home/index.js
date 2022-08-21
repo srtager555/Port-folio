@@ -44,13 +44,17 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
 
     const classListArray = element.className.split(" ");
 
-    if (classListArray.length != 1) classListArray.pop();
+    classListArray.forEach((el, index) => {
+      if (stylesArr.some((e) => el === e)) {
+        classListArray.splice(index, index + 1);
+      }
+    });
 
     classListArray.push(contentToShow);
 
-    element.className = classListArray.join(" ");
-
     setICClasses(classListArray);
+
+    element.className = classListArray.join(" ");
   }
 
   // when the mouse is over of a link

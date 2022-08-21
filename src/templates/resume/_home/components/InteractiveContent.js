@@ -9,7 +9,7 @@ export function InteractiveContent({
   ICClasses,
 }) {
   const [descriptionToShow, setDescriptionToShow] = useState(<Component1 />);
-  const [showDescription, setShowDescription] = useState(true);
+  // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
 
   function Component1() {
@@ -48,15 +48,29 @@ export function InteractiveContent({
   }
 
   function handleAnimationToChangeDescription(component) {
-    // I need fix this.
-    clearTimeout(setTimeOutAnimtion);
-    setShowDescription(false);
+    let element = interactiveContentRef.current;
 
-    setTimeout(() => setDescriptionToShow(component), 250);
-    setTimeOutAnimtion(setTimeout(() => setShowDescription(true), 300));
+    let classListArray = element.className.split(" ");
+
+    if (!classListArray.includes(styles.hidden))
+      element.className += ` ${styles.hidden}`;
+
+    setTimeout(() => setDescriptionToShow(component), 200);
+    setTimeOutAnimtion(
+      setTimeout(() => {
+        const indexClass = classListArray.indexOf(styles.hidden);
+
+        if (indexClass != -1) {
+          classListArray.splice(indexClass, indexClass + 1);
+        }
+        element.className = classListArray.join(" ");
+      }, 300)
+    );
   }
 
   useEffect(() => {
+    if (timeOutAnimtion) clearTimeout(timeOutAnimtion);
+
     if (ICClasses[1] === styles.profile) {
       handleAnimationToChangeDescription(<Component1 />);
     } else if (ICClasses[1] === styles.sq) {
@@ -84,9 +98,7 @@ export function InteractiveContent({
       </div>
       <div
         ref={interactiveContentRef}
-        className={`${styles["introduction--container__description"]} ${
-          !showDescription ? styles["hidden"] : ""
-        }`}
+        className={styles["introduction--container__description"]}
       >
         {descriptionToShow}
       </div>
