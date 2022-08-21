@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { ProfileDescription } from "./Descriptions/profile";
+
 import styles from "@sass/resumeStyles/home.module.sass";
 
 export function InteractiveContent({
@@ -72,7 +74,7 @@ export function InteractiveContent({
     if (timeOutAnimtion) clearTimeout(timeOutAnimtion);
 
     if (ICClasses[1] === styles.profile) {
-      handleAnimationToChangeDescription(<Component1 />);
+      handleAnimationToChangeDescription(<ProfileDescription />);
     } else if (ICClasses[1] === styles.sq) {
       handleAnimationToChangeDescription(<Component2 />);
     } else if (ICClasses[1] === styles.experience) {
@@ -80,6 +82,7 @@ export function InteractiveContent({
     } else if (ICClasses[1] === styles.moreInfo) {
       handleAnimationToChangeDescription(<Component4 />);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ICClasses]);
 
   useEffect(() => {
