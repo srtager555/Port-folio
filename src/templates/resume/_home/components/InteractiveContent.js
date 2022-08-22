@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { ProfileDescription } from "./Descriptions/profile";
+import { SQDescription } from "./Descriptions/sq";
+import { ExperienceDescription } from "./Descriptions/experience";
 
 import styles from "@sass/resumeStyles/home.module.sass";
 
@@ -10,37 +12,12 @@ export function InteractiveContent({
   classChanger,
   ICClasses,
 }) {
-  const [descriptionToShow, setDescriptionToShow] = useState(<Component1 />);
+  const [descriptionToShow, setDescriptionToShow] = useState(
+    <ProfileDescription />
+  );
   // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
 
-  function Component1() {
-    return (
-      <p>
-        This is the component number one, Lorem Ipsum is simply dummy text of
-        the printing and typesetting industry. Lorem Ipsum has been the
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        industry's standard dummy text ever since the 1500s,{" "}
-      </p>
-    );
-  }
-  function Component2() {
-    return (
-      <p>
-        This is the component number two, Lorem Ipsum is simply dummy text of
-        the printing and typesetting industry.{" "}
-      </p>
-    );
-  }
-  function Component3() {
-    return (
-      <p>
-        This is the component number three, Lorem Ipsum is simply dummy text of
-        the printing and typesetting industry. Lorem Ipsum has been the standard
-        dummy text ever since the 1500s,{" "}
-      </p>
-    );
-  }
   function Component4() {
     return (
       <p>
@@ -76,9 +53,9 @@ export function InteractiveContent({
     if (ICClasses[1] === styles.profile) {
       handleAnimationToChangeDescription(<ProfileDescription />);
     } else if (ICClasses[1] === styles.sq) {
-      handleAnimationToChangeDescription(<Component2 />);
+      handleAnimationToChangeDescription(<SQDescription />);
     } else if (ICClasses[1] === styles.experience) {
-      handleAnimationToChangeDescription(<Component3 />);
+      handleAnimationToChangeDescription(<ExperienceDescription />);
     } else if (ICClasses[1] === styles.moreInfo) {
       handleAnimationToChangeDescription(<Component4 />);
     }
