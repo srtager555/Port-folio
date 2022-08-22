@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ProfileDescription } from "./Descriptions/profile";
 import { SQDescription } from "./Descriptions/sq";
 import { ExperienceDescription } from "./Descriptions/experience";
+import { MoreInfoDescription } from "./Descriptions/moreInfo";
 
 import styles from "@sass/resumeStyles/home.module.sass";
 
@@ -17,14 +18,6 @@ export function InteractiveContent({
   );
   // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
-
-  function Component4() {
-    return (
-      <p>
-        This is the component number four, Lorem Ipsum is simply dummy text of
-      </p>
-    );
-  }
 
   function handleAnimationToChangeDescription(component) {
     let element = interactiveContentRef.current;
@@ -57,7 +50,7 @@ export function InteractiveContent({
     } else if (ICClasses[1] === styles.experience) {
       handleAnimationToChangeDescription(<ExperienceDescription />);
     } else if (ICClasses[1] === styles.moreInfo) {
-      handleAnimationToChangeDescription(<Component4 />);
+      handleAnimationToChangeDescription(<MoreInfoDescription />);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ICClasses]);
