@@ -1,4 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import { ProfileDescription } from "./Descriptions/profile";
+import { SQDescription } from "./Descriptions/sq";
+import { ExperienceDescription } from "./Descriptions/experience";
+import { MoreInfoDescription } from "./Descriptions/moreInfo";
 
 import styles from "@sass/resumeStyles/home.module.sass";
 
@@ -6,7 +11,50 @@ export function InteractiveContent({
   setLoader,
   interactiveContentRef,
   classChanger,
+  ICClasses,
 }) {
+  const [descriptionToShow, setDescriptionToShow] = useState(
+    <ProfileDescription />
+  );
+  // const [showDescription, setShowDescription] = useState(true);
+  const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
+
+  function handleAnimationToChangeDescription(component) {
+    let element = interactiveContentRef.current;
+
+    let classListArray = element.className.split(" ");
+
+    if (!classListArray.includes(styles.hidden))
+      element.className += ` ${styles.hidden}`;
+
+    setTimeout(() => setDescriptionToShow(component), 200);
+    setTimeOutAnimtion(
+      setTimeout(() => {
+        const indexClass = classListArray.indexOf(styles.hidden);
+
+        if (indexClass != -1) {
+          classListArray.splice(indexClass, indexClass + 1);
+        }
+        element.className = classListArray.join(" ");
+      }, 300)
+    );
+  }
+
+  useEffect(() => {
+    if (timeOutAnimtion) clearTimeout(timeOutAnimtion);
+
+    if (ICClasses[1] === styles.profile) {
+      handleAnimationToChangeDescription(<ProfileDescription />);
+    } else if (ICClasses[1] === styles.sq) {
+      handleAnimationToChangeDescription(<SQDescription />);
+    } else if (ICClasses[1] === styles.experience) {
+      handleAnimationToChangeDescription(<ExperienceDescription />);
+    } else if (ICClasses[1] === styles.moreInfo) {
+      handleAnimationToChangeDescription(<MoreInfoDescription />);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ICClasses]);
+
   useEffect(() => {
     setTimeout(() => setLoader(true), 1000);
 
@@ -25,11 +73,10 @@ export function InteractiveContent({
         ref={interactiveContentRef}
         className={styles["introduction--container__description"]}
       >
-        <div className={styles.loaderHolder}></div>
-        <p>Aqui se resumira que es cada section uwuw</p>
+        {descriptionToShow}
       </div>
 
-      <div className={styles["introduction--container__aboutMe"]}></div>
+      {/* <div className={styles["introduction--container__aboutMe"]}></div> */}
       {/* <div className={styles["introduction--container__image"]}>
             <img
                // here turn off the load screen.

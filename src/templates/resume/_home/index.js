@@ -44,13 +44,17 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
 
     const classListArray = element.className.split(" ");
 
-    if (classListArray.length != 1) classListArray.pop();
+    classListArray.forEach((el, index) => {
+      if (stylesArr.some((e) => el === e)) {
+        classListArray.splice(index, index + 1);
+      }
+    });
 
     classListArray.push(contentToShow);
 
-    element.className = classListArray.join(" ");
+    setICClasses(classListArray);
 
-    setICClasses(classListArray.join(" "));
+    element.className = classListArray.join(" ");
   }
 
   // when the mouse is over of a link
@@ -122,7 +126,8 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
   useEffect(() => {
     // here add the first position for the cursor follower
     goToRef.current.style.top = `${
-      refArray[0].current.getBoundingClientRect().top +
+      refArray[0].current.getBoundingClientRect().top -
+      mainRef.current.getBoundingClientRect().top +
       refArray[0].current.offsetHeight / 2
     }px`;
 
@@ -149,7 +154,7 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
             setLoader={setLoader}
             interactiveContentRef={interactiveContentRef}
             classChanger={classChanger}
-            refArray={refArray}
+            ICClasses={ICClasses}
           />
           <div className={styles["links--container"]}>
             <div className={styles["links--container__links"]}>

@@ -58,13 +58,17 @@
             right: 2rem
             // transform: translateX(-50%)
             width: 400px
-            transition: 500ms ease
+            transition: all 500ms ease, opacity 200ms ease
 
             p
                 text-align: end
                 color: #fff
                 font-size: 1.6rem
                 font-family: 'Yaldevi'
+
+        .introduction--container__description
+            &.hidden
+                opacity: 0
 
         &.profile
             .introduction--container__text
