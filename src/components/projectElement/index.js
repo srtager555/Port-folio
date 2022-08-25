@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
-import { IS_MOBILE } from "@contexts/constVarible";
+import { useConstVariable } from "@contexts/constVarible";
 
 import styles from "@sass/Projects.module.sass";
 
@@ -12,7 +11,7 @@ export function ProjectsElement({
   ProjectsElementRef,
   PreviewProjects,
 }) {
-  const [isMobile, setIsMobile] = useState(false);
+  let { IS_MOBILE } = useConstVariable();
 
   const MobileAnchor = ({ forwardRef, element }) => (
     <button
@@ -41,10 +40,6 @@ export function ProjectsElement({
     </Link>
   );
 
-  useEffect(() => {
-    setIsMobile(IS_MOBILE);
-  }, []);
-
   return (
     <div
       ref={SliderProjectsRef}
@@ -58,7 +53,7 @@ export function ProjectsElement({
           if (index === 1) forwardRef = ProjectsElementRef;
           else forwardRef = null;
 
-          return isMobile ? (
+          return IS_MOBILE ? (
             <MobileAnchor forwardRef={forwardRef} element={element} />
           ) : (
             <DesktopButton forwardRef={forwardRef} element={element} />

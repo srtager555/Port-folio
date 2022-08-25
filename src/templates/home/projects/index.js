@@ -5,7 +5,7 @@ import { PreviewProjectsInfo } from "@components/previewProjectsInfo";
 import { ProjectsElement } from "@components/projectElement/";
 
 import { ProjectsElementList } from "@contexts/projectsContexts";
-import { IS_MOBILE } from "@contexts/constVarible";
+import { useConstVariable } from "@contexts/constVarible";
 
 import styles from "@sass/Projects.module.sass";
 
@@ -16,6 +16,7 @@ export function ProjectsContainer() {
   const SliderProjectsRef = useRef(null);
   const BgImageRef = useRef(null);
 
+  let { IS_MOBILE } = useConstVariable();
   const initialMarginLeft = window.innerWidth * 1.1;
   const windowHeight = window.innerHeight;
   const leftMargin = initialMarginLeft + windowHeight;
