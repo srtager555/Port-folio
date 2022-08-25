@@ -60,11 +60,8 @@ export function PreviewProjectsInfo({
 function anchorMobile(infoToShow) {
   return (
     <div className={styles["container__actionButton"]}>
-      <Link
-        href={`p/${infoToShow.Id || "/"}`}
-        className={styles["container-anchor"]}
-      >
-        <a>
+      <Link href={`p/${infoToShow.Id || "/"}`}>
+        <a className={styles["container-anchor"]}>
           <span>go to see</span>
         </a>
       </Link>
