@@ -8,7 +8,7 @@ import { HeadComponent } from "@components/Head.next";
 import upLetter from "@animations/defaultAnimation/upLetter";
 import downLetter from "@animations/defaultAnimation/downLetter";
 
-import styles from "@sass/resumeStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home/home.module.sass";
 
 export function Home({ handleClickChangePage, setLoader, chagePath }) {
   const [ICClasses, setICClasses] = useState("");

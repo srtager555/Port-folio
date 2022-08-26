@@ -5,7 +5,7 @@ import { SQDescription } from "./Descriptions/sq";
 import { ExperienceDescription } from "./Descriptions/experience";
 import { MoreInfoDescription } from "./Descriptions/moreInfo";
 
-import styles from "@sass/resumeStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home/home.module.sass";
 
 export function InteractiveContent({
   setLoader,
