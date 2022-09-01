@@ -15,7 +15,6 @@ function SpecialTag({ letter }) {
       className={`${styles["inline-container"]} ${styles["down-animation"]}${
         animation ? ` ${styles["normal-position"]}` : ""
       }`}
-      style={{ "--i": 1 }}
     >
       <span className={styles["italic-letters"]}>{letter}</span>
     </div>
