@@ -4,11 +4,13 @@ import Wl from "wrapping-letters-react";
 
 import styles from "@sass/resumeStyles/home/descriptionStyles.module.sass";
 
-function SpecialTag({ letter }) {
+function SpecialTag({ letter, index }) {
   const [animation, setAnimation] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setAnimation(true), 100);
+    setTimeout(() => setAnimation(true), 50);
+
+    return () => setAnimation(false);
   }, []);
   return (
     <div
@@ -16,8 +18,25 @@ function SpecialTag({ letter }) {
         animation ? ` ${styles["normal-position"]}` : ""
       }`}
     >
-      <span className={styles["italic-letters"]}>{letter}</span>
+      <span
+        style={{ transitionDelay: `${index * 25}ms` }}
+        className={styles["italic-letters"]}
+      >
+        {letter}
+      </span>
     </div>
+  );
+}
+
+function template({ letter, specialWrapp, index }) {
+  const { hasCustomWrapp, NewWrappStructure } = specialWrapp;
+
+  const Default = ({ letter }) => <span>{letter}</span>;
+
+  return hasCustomWrapp ? (
+    <NewWrappStructure letter={letter} index={index} />
+  ) : (
+    <Default letter={letter} />
   );
 }
 
@@ -35,6 +54,7 @@ export function ProfileDescription() {
           },
           PerWord: true,
         }}
+        structure={template}
       />
     </p>
   );
