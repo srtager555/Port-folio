@@ -12,12 +12,13 @@ export function InteractiveContent({
   interactiveContentRef,
   classChanger,
   ICClasses,
+  showMeme,
+  setShowMeme,
 }) {
   const [descriptionToShow, setDescriptionToShow] = useState(
     <ProfileDescription />
   );
   const [lastClass, setLastClass] = useState("");
-  const [showMeme, setShowMeme] = useState(true);
 
   // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
