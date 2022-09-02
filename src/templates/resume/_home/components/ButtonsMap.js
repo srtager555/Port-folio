@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Wl from "wrapping-letters-react";
 
@@ -10,11 +10,15 @@ export function ButtonsMap({
   refArray,
   pageNames,
   pageLinks,
+  showMeme,
 }) {
   // This array has the images url
   const arrImg = [
     "https://i.ibb.co/2Zcw0X4/flor.jpg",
-    "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
+    [
+      "/descriptionImage/normal_face_anime_girl.jpg",
+      "/descriptionImage/happy_face_anime_girl.jpg",
+    ],
     "https://i.ibb.co/X5Wg7S5/kda.jpg",
     "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
   ];
@@ -117,7 +121,17 @@ export function ButtonsMap({
         onClick={() => handleClickChangePage(pageLinks[index])}
       >
         <div className={styles["links--container__image"]}>
-          <img src={arrImg[index]} alt="" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={
+              Array.isArray(arrImg[index])
+                ? showMeme
+                  ? arrImg[index][0]
+                  : arrImg[index][1]
+                : arrImg[index]
+            }
+            alt=""
+          />
         </div>
         <div className={styles["links--container__text"]}>
           <span className={styles["links--link__letter"]}>
