@@ -13,7 +13,7 @@ function SpecialTag({ letter, index }) {
     return () => setAnimation(false);
   }, []);
   return (
-    <div
+    <span
       className={`${styles["inline-container"]} ${styles["down-animation"]}${
         animation ? ` ${styles["normal-position"]}` : ""
       }`}
@@ -24,7 +24,7 @@ function SpecialTag({ letter, index }) {
       >
         {letter}
       </span>
-    </div>
+    </span>
   );
 }
 
