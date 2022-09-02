@@ -17,6 +17,7 @@ export function InteractiveContent({
     <ProfileDescription />
   );
   const [lastClass, setLastClass] = useState("");
+  const [showMeme, setShowMeme] = useState(true);
 
   // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
@@ -49,7 +50,9 @@ export function InteractiveContent({
       if (ICClasses[1] === styles.profile) {
         handleAnimationToChangeDescription(<ProfileDescription />);
       } else if (ICClasses[1] === styles.sq) {
-        handleAnimationToChangeDescription(<SQDescription />);
+        handleAnimationToChangeDescription(
+          <SQDescription showMeme={showMeme} setShowMeme={setShowMeme} />
+        );
       } else if (ICClasses[1] === styles.experience) {
         handleAnimationToChangeDescription(<ExperienceDescription />);
       } else if (ICClasses[1] === styles.moreInfo) {
