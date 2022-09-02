@@ -22,14 +22,16 @@ export function SQDescription({ showMeme, setShowMeme }) {
     <>
       {showMeme ? (
         <div
-          onMouseOver={HandleMouseOver}
           className={`${styles["container-special__image"]}${
             mouseOver ? ` ${styles["mouse-hover"]}` : ""
           }${
             mouseEndingAnimation ? ` ${styles["mouse-ending_animation"]}` : ""
           }${mouseWidthOutHeight ? ` ${styles["mouse-widthOut-height"]}` : ""}`}
         >
-          <div className={styles["container--image"]}>
+          <div
+            onMouseOver={HandleMouseOver}
+            className={styles["container--image"]}
+          >
             <div className={styles["image-placeholder"]}>
               <span>put your mouse here</span>
             </div>
