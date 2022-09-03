@@ -21,7 +21,7 @@ export function InteractiveContent({
   const [lastClass, setLastClass] = useState("");
 
   // const [showDescription, setShowDescription] = useState(true);
-  const [timeOutAnimtion, setTimeOutAnimtion] = useState(undefined);
+  const [timeOutAnimation, setTimeOutAnimation] = useState(undefined);
 
   function handleAnimationToChangeDescription(component) {
     let element = interactiveContentRef.current;
@@ -32,10 +32,10 @@ export function InteractiveContent({
       element.className += ` ${styles.hidden}`;
 
     setTimeout(() => setDescriptionToShow(component), 200);
-    setTimeOutAnimtion(
+
+    setTimeOutAnimation(
       setTimeout(() => {
         const indexClass = classListArray.indexOf(styles.hidden);
-
         if (indexClass != -1) {
           classListArray.splice(indexClass, indexClass + 1);
         }
@@ -45,7 +45,7 @@ export function InteractiveContent({
   }
 
   useEffect(() => {
-    if (timeOutAnimtion) clearTimeout(timeOutAnimtion);
+    clearTimeout(timeOutAnimation);
 
     if (lastClass != ICClasses[1]) {
       if (ICClasses[1] === styles.profile) {
