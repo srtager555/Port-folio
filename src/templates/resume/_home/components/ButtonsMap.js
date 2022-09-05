@@ -131,7 +131,7 @@ export function ButtonsMap({
           className={`${styles["links--container__image"]} ${arrStyles[index]}`}
         >
           {index === 2 ? (
-            <video src={arrImg[index]} loop="true" autoPlay="true" muted>
+            <video src={arrImg[index]} loop={true} autoPlay={true} muted>
               <p>your navegator not support video</p>
             </video>
           ) : (
