@@ -19,8 +19,15 @@ export function ButtonsMap({
       "/descriptionImage/normal_face_anime_girl.jpg",
       "/descriptionImage/happy_face_anime_girl.jpg",
     ],
-    "https://i.ibb.co/X5Wg7S5/kda.jpg",
+    "/descriptionImage/levelUp.mp4",
     "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
+  ];
+
+  const arrStyles = [
+    styles.profile,
+    styles.sq,
+    styles.experience,
+    styles.moreInfo,
   ];
 
   // Wrapping letter component for wrapp each letter in a <span />
@@ -120,18 +127,28 @@ export function ButtonsMap({
         className={styles["links--link"]}
         onClick={() => handleClickChangePage(pageLinks[index])}
       >
-        <div className={styles["links--container__image"]}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={
-              Array.isArray(arrImg[index])
-                ? showMeme
-                  ? arrImg[index][0]
-                  : arrImg[index][1]
-                : arrImg[index]
-            }
-            alt=""
-          />
+        <div
+          className={`${styles["links--container__image"]} ${arrStyles[index]}`}
+        >
+          {index === 2 ? (
+            <video src={arrImg[index]} loop="true" autoPlay="true" muted>
+              <p>your navegator not support video</p>
+            </video>
+          ) : (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={
+                  Array.isArray(arrImg[index])
+                    ? showMeme
+                      ? arrImg[index][0]
+                      : arrImg[index][1]
+                    : arrImg[index]
+                }
+                alt=""
+              />
+            </>
+          )}
         </div>
         <div className={styles["links--container__text"]}>
           <span className={styles["links--link__letter"]}>
