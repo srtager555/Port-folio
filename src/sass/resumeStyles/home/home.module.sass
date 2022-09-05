@@ -179,12 +179,23 @@
                     // z-index: 1
 
                     &.show--image
-                        width: 150px
                         opacity: 1
                         visibility: visible
                         transition: opacity 200ms ease
 
-                    img
+                    &.show--image.profile
+                        width: 175px
+
+                    &.show--image.sq
+                        width: 250px
+
+                    &.show--image.experience
+                        width: 400px
+
+                    &.show--image.moreInfo
+                        width: 150px
+
+                    img, video
                         position: absolute
                         top: 0%
                         left: 0%
