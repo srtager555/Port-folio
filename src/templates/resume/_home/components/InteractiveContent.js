@@ -18,7 +18,7 @@ export function InteractiveContent({
   const [descriptionToShow, setDescriptionToShow] = useState(
     <ProfileDescription />
   );
-  const [lastClass, setLastClass] = useState("");
+  // const [lastClass, setLastClass] = useState(styles.profile);
 
   // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimation, setTimeOutAnimation] = useState(undefined);
@@ -47,21 +47,19 @@ export function InteractiveContent({
   useEffect(() => {
     clearTimeout(timeOutAnimation);
 
-    if (lastClass != ICClasses[1]) {
-      if (ICClasses[1] === styles.profile) {
-        handleAnimationToChangeDescription(<ProfileDescription />);
-      } else if (ICClasses[1] === styles.sq) {
-        handleAnimationToChangeDescription(
-          <SQDescription showMeme={showMeme} setShowMeme={setShowMeme} />
-        );
-      } else if (ICClasses[1] === styles.experience) {
-        handleAnimationToChangeDescription(<ExperienceDescription />);
-      } else if (ICClasses[1] === styles.moreInfo) {
-        handleAnimationToChangeDescription(<MoreInfoDescription />);
-      }
-
-      setLastClass(ICClasses[1]);
+    if (ICClasses[1] === styles.profile) {
+      handleAnimationToChangeDescription(<ProfileDescription />);
+    } else if (ICClasses[1] === styles.sq) {
+      handleAnimationToChangeDescription(
+        <SQDescription showMeme={showMeme} setShowMeme={setShowMeme} />
+      );
+    } else if (ICClasses[1] === styles.experience) {
+      handleAnimationToChangeDescription(<ExperienceDescription />);
+    } else if (ICClasses[1] === styles.moreInfo) {
+      handleAnimationToChangeDescription(<MoreInfoDescription />);
     }
+
+    // setLastClass(ICClasses[1]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ICClasses]);
 
