@@ -67,7 +67,6 @@
             position: absolute
             top: 25%
             right: 2rem
-            // transform: translateX(-50%)
             width: 400px
             transition: all 500ms ease, opacity 200ms ease
 
@@ -76,6 +75,14 @@
                 color: #fff
                 font-size: 1.6rem
                 font-family: 'Yaldevi'
+
+        .introduction--container__text
+            .hand-move-animation
+                display: inline-block
+                font-size: 30px
+
+                transform: rotate(0deg)
+                animation: handMove 3s ease-in-out infinite
 
         .introduction--container__description
             &.hidden
@@ -228,6 +235,12 @@
                 -webkit-text-stroke: 1px #fff
                 transition: all .3s ease-in-out
                 color: #fff0
+
+@keyframes handMove
+    0%, 100%
+        transform: rotate(-15deg)
+    50%
+        transform: rotate(30deg)
 
 @media (max-width: 1350px)
     .main--container
