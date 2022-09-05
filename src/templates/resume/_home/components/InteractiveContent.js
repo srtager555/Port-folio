@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Wl from "wrapping-letters-react";
+
 import { ProfileDescription } from "./Descriptions/profile";
 import { SQDescription } from "./Descriptions/sq";
 import { ExperienceDescription } from "./Descriptions/experience";
@@ -75,7 +77,19 @@ export function InteractiveContent({
       className={`${styles["introduction--container"]} ${styles["profile"]}`}
     >
       <div className={styles["introduction--container__text"]}>
-        <p>Hello there 👋!. This is my 2022 resume, I hope you like it</p>
+        <p>
+          Hello there <span className={styles["hand-move-animation"]}>👋🏻!</span>
+          .{" "}
+          <Wl
+            text="This is my 2022 resume, I hope you like it!!!"
+            textOptions={{
+              SelectClass: {
+                wordToSearch: ["2022 resume", "I hope you like it!!!"],
+                classToAdd: [styles["resume-date"], styles["text-farwell"]],
+              },
+            }}
+          />
+        </p>
       </div>
       <div
         ref={interactiveContentRef}
