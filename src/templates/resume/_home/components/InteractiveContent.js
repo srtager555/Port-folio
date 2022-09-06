@@ -20,9 +20,6 @@ export function InteractiveContent({
   const [descriptionToShow, setDescriptionToShow] = useState(
     <ProfileDescription />
   );
-  // const [lastClass, setLastClass] = useState(styles.profile);
-
-  // const [showDescription, setShowDescription] = useState(true);
   const [timeOutAnimation, setTimeOutAnimation] = useState(undefined);
 
   function handleAnimationToChangeDescription(component) {
@@ -43,6 +40,27 @@ export function InteractiveContent({
         }
         element.className = classListArray.join(" ");
       }, 300)
+    );
+  }
+
+  function customStructure({ letter, cssClass, index, specialWrapp }) {
+    const { hasCustomWrapp, NewWrappStructure } = specialWrapp;
+
+    return hasCustomWrapp ? (
+      <NewWrappStructure letter={letter} cssClass={cssClass} index={index} />
+    ) : (
+      <span className={cssClass}>{letter}</span>
+    );
+  }
+
+  function specialTag({ letter, cssClass, index }) {
+    return (
+      <span
+        className={cssClass}
+        style={{ animationDelay: `${index * 100 - 2300}ms` }}
+      >
+        {letter}
+      </span>
     );
   }
 
@@ -78,16 +96,25 @@ export function InteractiveContent({
     >
       <div className={styles["introduction--container__text"]}>
         <p>
-          Hello there <span className={styles["hand-move-animation"]}>👋🏻!</span>
-          .{" "}
+          Hello there!!!{" "}
+          <span className={styles["hand-move-animation"]}>👋🏻</span>{" "}
           <Wl
             text="This is my 2022 resume, I hope you like it!!!"
             textOptions={{
               SelectClass: {
-                wordToSearch: ["2022 resume", "I hope you like it!!!"],
-                classToAdd: [styles["resume-date"], styles["text-farwell"]],
+                wordToSearch: ["I hope you like it!!!", "2022", "resume"],
+                classToAdd: [
+                  styles["text-farwell"],
+                  styles["resume-date__number"],
+                  styles["resume-date"],
+                ],
+              },
+              SpecialWrapp: {
+                wordToSearch: ["I hope you like it!!!"],
+                structureToAdd: specialTag,
               },
             }}
+            structure={customStructure}
           />
         </p>
       </div>
@@ -97,17 +124,6 @@ export function InteractiveContent({
       >
         {descriptionToShow}
       </div>
-
-      {/* <div className={styles["introduction--container__aboutMe"]}></div> */}
-      {/* <div className={styles["introduction--container__image"]}>
-            <img
-               // here turn off the load screen.
-               onLoad={() => setLoader(true)}
-               width="300"
-               src="https://ttager.netlify.app/img/oaAhri4.jpg"
-               alt=""
-            />
-         </div> */}
     </div>
   );
 }
