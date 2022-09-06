@@ -80,9 +80,20 @@
             .hand-move-animation
                 display: inline-block
                 font-size: 30px
-
                 transform: rotate(0deg)
-                animation: handMove 3s ease-in-out infinite
+                transform-origin: 100% 100%
+                animation: handMove 2.5s ease-in-out infinite
+
+            .resume-date, .resume-date__number
+                font-weight: 500
+
+            .resume-date__number
+                font-family: 'Shippori Mincho'
+
+            .text-farwell
+                font-style: italic
+                color: #e80f83
+                animation: textFlash 5s linear infinite
 
         .introduction--container__description
             &.hidden
@@ -241,6 +252,12 @@
         transform: rotate(-15deg)
     50%
         transform: rotate(30deg)
+
+@keyframes textFlash
+    0%, 30%, 100%
+        color: #e80f83
+    5%
+        color: #db83b2
 
 @media (max-width: 1350px)
     .main--container
