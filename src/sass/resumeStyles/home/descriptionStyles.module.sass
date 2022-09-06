@@ -1,0 +1,75 @@
+.italic-letters
+  font-family: "Noto Sans Display"
+  font-style: italic
+
+.inline-container
+  display: inline-block
+  white-space: pre-wrap
+
+.down-animation
+  span
+    display: inline-block
+    transform: translateY(100%)
+    opacity: 0
+    transition: 200ms ease-in-out
+
+  &.normal-position
+    span
+      opacity: 1
+      transform: translateY(0%)
+
+.container-special__image
+  display: flex
+  justify-content: flex-end
+  margin-bottom: 10px
+  transition: 2s ease-in-out
+
+  .container--image
+    position: relative
+    width: 80%
+    cursor: help
+
+    .image-placeholder
+      display: flex
+      justify-content: center
+      align-items: center
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: #0e0d0d
+      transition: 1s ease-in-out
+      z-index: 1
+
+      span
+        color: #fff
+        text-transform: uppercase
+        font-family: "Noto Sans Display"
+
+  &.mouse-hover
+    .container--image
+      .image-placeholder
+        opacity: 0
+
+  &.mouse-ending_animation
+    opacity: 0%
+    visibility: hidden
+
+  &.mouse-widthOut-height
+    display: none
+
+.smooth-letters
+  opacity: 0.5
+  font-weight: 300
+  font-style: italic
+
+.levelUp-animation
+  animation: levelUp 3s linear infinite
+
+@keyframes levelUp
+  0%, 100%
+    color: #fff
+
+  50%
+    color: #d48c1e

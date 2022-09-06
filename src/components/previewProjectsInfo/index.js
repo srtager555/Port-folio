@@ -1,7 +1,7 @@
-import { IS_MOBILE } from "@contexts/constVarible";
+import { useConstVariable } from "@contexts/constVarible";
 
 import Link from "next/link";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import styles from "@sass/Projects.module.sass";
 
@@ -13,24 +13,8 @@ export function PreviewProjectsInfo({
   setCurrentInfo,
   mouseOver,
 }) {
-  return itsShowTime(
-    selectedProject,
-    setSelectedProject,
-    infoToShow,
-    BgImageRef,
-    setCurrentInfo,
-    mouseOver
-  );
-}
+  let { IS_MOBILE } = useConstVariable();
 
-function itsShowTime(
-  selectedProject,
-  setSelectedProject,
-  infoToShow = {},
-  BgImageRef,
-  setCurrentInfo,
-  mouseOver
-) {
   let bgImage = infoToShow.BackgroundImageDesktop || "";
   let bgImageMobile = infoToShow.BackgroundImageMobile || "";
 
@@ -72,15 +56,13 @@ function itsShowTime(
     </div>
   );
 }
+
 function anchorMobile(infoToShow) {
   return (
     <div className={styles["container__actionButton"]}>
-      <Link
-        href={`p/${infoToShow.Id || "/"}`}
-        className={styles["container-anchor"]}
-      >
-        <a>
-          <span>go to see </span>
+      <Link href={`p/${infoToShow.Id || "/"}`}>
+        <a className={styles["container-anchor"]}>
+          <span>go to see</span>
         </a>
       </Link>
       <span className={styles["span-notificationXd"]}>scroll to leave</span>

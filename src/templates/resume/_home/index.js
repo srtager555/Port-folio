@@ -8,9 +8,10 @@ import { HeadComponent } from "@components/Head.next";
 import upLetter from "@animations/defaultAnimation/upLetter";
 import downLetter from "@animations/defaultAnimation/downLetter";
 
-import styles from "@sass/resumeStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home/home.module.sass";
 
 export function Home({ handleClickChangePage, setLoader, chagePath }) {
+  const [showMeme, setShowMeme] = useState(true);
   const [ICClasses, setICClasses] = useState("");
   // here declare the REF of the elements
 
@@ -155,6 +156,8 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
             interactiveContentRef={interactiveContentRef}
             classChanger={classChanger}
             ICClasses={ICClasses}
+            showMeme={showMeme}
+            setShowMeme={setShowMeme}
           />
           <div className={styles["links--container"]}>
             <div className={styles["links--container__links"]}>
@@ -164,6 +167,7 @@ export function Home({ handleClickChangePage, setLoader, chagePath }) {
                 refArray={refArray}
                 pageNames={pageNames}
                 pageLinks={pageLinks}
+                showMeme={showMeme}
               />
             </div>
             <div

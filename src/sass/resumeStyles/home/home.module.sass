@@ -1,0 +1,361 @@
+.home
+    display: flex
+    align-items: center
+    position: relative
+    width: 100%
+    height: 100vh
+    overflow: hidden
+
+    .bgLetters
+        position: relative
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            background: rgb(0,0,0)
+            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.79892578125) 90%, rgba(0,0,0,1) 100%)
+
+        .letter
+            position: absolute
+            font-family: 'Poppins', sans-serif
+            font-size: 20rem
+            // font-weight: 400
+            color: #fff
+            opacity: .1
+
+            &:nth-child(1)
+                top: 0
+                left: 50%
+                transform: translate(-50%, -50%) rotate(0deg)
+            &:nth-child(2)
+                top: 50%
+                left: 60%
+                transform: translate(-50%, -50%) rotate(0deg)
+            &:nth-child(3)
+                top: 100%
+                left: 50%
+                transform: translate(-50%, -50%) rotate(0deg)
+
+.main--container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    width: 100%
+    height: 100%
+    // max-height: 607.5px
+
+    .links--container, .introduction--container
+        width: 42%
+        height: 100%
+
+    .introduction--container
+        position: relative
+        z-index: 1
+
+        .introduction--container__text, .introduction--container__description
+            position: absolute
+            top: 25%
+            right: 2rem
+            width: 400px
+            transition: all 500ms ease, opacity 200ms ease
+
+            p
+                text-align: end
+                color: #fff
+                font-size: 1.6rem
+                font-family: 'Yaldevi'
+
+        .introduction--container__text
+            .hand-move-animation
+                display: inline-block
+                font-size: 30px
+                transform: rotate(0deg)
+                transform-origin: 100% 100%
+                animation: handMove 2.5s ease-in-out infinite
+
+            .resume-date, .resume-date__number
+                font-weight: 500
+
+            .resume-date__number
+                font-family: 'Shippori Mincho'
+
+            .text-farwell
+                font-style: italic
+                color: #e80f83
+                animation: textFlash 5s linear infinite
+
+        .introduction--container__description
+            &.hidden
+                opacity: 0
+
+        &.profile
+            .introduction--container__text
+                top: 25%
+
+            .introduction--container__description
+                top: 40%
+
+        &.sq
+            .introduction--container__text
+                top: 5%
+
+            .introduction--container__description
+                top: 70%
+                transform: translateY(-50%)
+
+        &.experience
+            .introduction--container__text
+                top: 85%
+
+            .introduction--container__description
+                top: 5%
+
+        &.moreInfo
+            .introduction--container__text
+                top: 5%
+
+            .introduction--container__description
+                top: 25%
+
+    .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+        border: none
+        background-color: transparent
+        color: transparent
+        text-transform: uppercase
+        -webkit-text-stroke: 1px #fff
+        letter-spacing: .3rem
+        white-space: no-wrap
+        font-family: 'Poppins', sans-serif
+        font-size: 7.5rem
+        font-weight: 700
+
+    .links--container
+        position: relative
+        width: 58%
+        z-index: 2
+
+        .links--container__links
+            display: flex
+            justify-content: space-around
+            align-items: flex-start
+            flex-direction: column
+            height: 100%
+
+            .links--link
+                position: relative
+                height: 175px
+                transition: all .3s ease-in-out
+                cursor: pointer
+                z-index: 1
+
+                .links--container__text
+                    position: relative
+                    width: 100%
+                    overflow: hidden
+
+                    .links--link__letter
+                        display: inline-block
+
+                        &:last-child
+                            position: absolute
+                            top: 0%
+                            left: 0%
+
+                            .link--letter
+                                color: #fff
+                                transform: translate(-20px, -100%) rotate(-15deg)
+
+                        .link--letter
+                            white-space: pre-wrap
+                            display: inline-block
+                            transform: translateY(0)
+                            font-family: 'Poppins', sans-serif
+
+                .links--container__image
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    width: 0px
+                    height: auto
+                    background-color: #fff1
+                    opacity: 0.1
+                    visibility: hidden
+                    overflow: hidden
+                    transition: opacity 100ms ease, width 0s 100ms
+                    // z-index: 1
+
+                    &.show--image
+                        opacity: 1
+                        visibility: visible
+                        transition: opacity 200ms ease
+
+                    &.show--image.profile
+                        width: 175px
+
+                    &.show--image.sq
+                        width: 250px
+
+                    &.show--image.experience
+                        width: 400px
+
+                    &.show--image.moreInfo
+                        width: 450px
+
+                    img, video
+                        position: absolute
+                        top: 0%
+                        left: 0%
+                        // transform: translate(-50%, -50%)
+                        width: 100%
+
+        .links--container__pointer
+            position: absolute
+            top: 0%
+            left: 0%
+            width: 100%
+            height: 100%
+            opacity: .2
+            // visibility: hidden
+            transition: opacity .5s ease-in-out
+            z-index: -1
+
+            &.links--container__pointer--hover
+                opacity: 1
+                // visibility: visible
+
+                .links--word__pointer
+                    color: #fff
+
+            .links--word__pointer
+                display: inline-block
+                position: absolute
+                top: 66px
+                transform: translate(calc(-100% - 2rem), -50%)
+                -webkit-text-stroke: 1px #fff
+                transition: all .3s ease-in-out
+                color: #fff0
+
+@keyframes handMove
+    0%, 100%
+        transform: rotate(-15deg)
+    50%
+        transform: rotate(30deg)
+
+@keyframes textFlash
+    0%, 30%, 100%
+        color: #e80f83
+    5%
+        color: #db83b2
+
+@media (max-width: 1350px)
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 7rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 168px
+
+        .introduction--container
+            .introduction--container__text, .introduction--container__description
+                p
+                    font-size: 1.4rem
+
+@media (max-width: 1250px)
+    .main--container
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 70%
+
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 5rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 168px
+
+                    .links--container__image
+                        &.show--image
+                            width: 100px
+
+        .introduction--container
+            .introduction--container__text, .introduction--container__description
+                width: 300px
+                p
+                    font-size: 1rem
+
+@media (max-width: 910px)
+    .main--container
+        .links--container
+            width: 100%
+            max-width: 530px
+            margin: 0 auto
+
+            .links--container__pointer
+                display: none
+
+        .introduction--container
+            display: none
+
+@media (max-width: 530px)
+    .main--container
+        .links--container
+            :is(.links--container__links .links--link, .links--container__pointer span)
+                font-size: 4rem
+
+            .links--container__links
+                align-items: center
+
+@media (max-width: 450px)
+    .main--container
+        .links--container
+            :is(.links--container__links .links--link, .links--container__pointer span)
+                font-size: 3rem
+
+            .links--container__links
+                align-items: center
+
+@media (min-width: 1600px)
+    .home
+        .bgLetters
+            .letter
+                font-size: 25rem
+
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 9rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 215px
+
+@media (min-width: 1750px)
+    .home
+        .bgLetters
+            .letter
+                font-size: 30rem
+
+    .main--container
+        .links--container :is(.links--container__links .links--link, .links--container__pointer span)
+            font-size: 10rem
+
+        .links--container
+            .links--container__links
+                .links--link
+                    height: 240px

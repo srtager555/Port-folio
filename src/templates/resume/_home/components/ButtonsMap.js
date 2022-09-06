@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Wl from "wrapping-letters-react";
 
-import styles from "@sass/resumeStyles/home.module.sass";
+import styles from "@sass/resumeStyles/home/home.module.sass";
 
 export function ButtonsMap({
   handleClickChangePage,
@@ -10,13 +10,24 @@ export function ButtonsMap({
   refArray,
   pageNames,
   pageLinks,
+  showMeme,
 }) {
   // This array has the images url
   const arrImg = [
     "https://i.ibb.co/2Zcw0X4/flor.jpg",
-    "https://i.ibb.co/b56T388/Orianna-full-body.jpg",
-    "https://i.ibb.co/X5Wg7S5/kda.jpg",
-    "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
+    [
+      "/descriptionImage/normal_face_anime_girl.jpg",
+      "/descriptionImage/happy_face_anime_girl.jpg",
+    ],
+    "/descriptionImage/levelUp.mp4",
+    "/descriptionImage/A_simple_book1.mp4",
+  ];
+
+  const arrStyles = [
+    styles.profile,
+    styles.sq,
+    styles.experience,
+    styles.moreInfo,
   ];
 
   // Wrapping letter component for wrapp each letter in a <span />
@@ -116,8 +127,28 @@ export function ButtonsMap({
         className={styles["links--link"]}
         onClick={() => handleClickChangePage(pageLinks[index])}
       >
-        <div className={styles["links--container__image"]}>
-          <img src={arrImg[index]} alt="" />
+        <div
+          className={`${styles["links--container__image"]} ${arrStyles[index]}`}
+        >
+          {index === 2 || index === 3 ? (
+            <video src={arrImg[index]} loop={true} autoPlay={true} muted>
+              <p>your navegator not support video</p>
+            </video>
+          ) : (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={
+                  Array.isArray(arrImg[index])
+                    ? showMeme
+                      ? arrImg[index][0]
+                      : arrImg[index][1]
+                    : arrImg[index]
+                }
+                alt=""
+              />
+            </>
+          )}
         </div>
         <div className={styles["links--container__text"]}>
           <span className={styles["links--link__letter"]}>
