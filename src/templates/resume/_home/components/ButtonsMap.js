@@ -20,7 +20,7 @@ export function ButtonsMap({
       "/descriptionImage/happy_face_anime_girl.jpg",
     ],
     "/descriptionImage/levelUp.mp4",
-    "https://i.ibb.co/k95B6Mm/Ahri-de-perfil.jpg",
+    "/descriptionImage/A_simple_book1.mp4",
   ];
 
   const arrStyles = [
@@ -130,7 +130,7 @@ export function ButtonsMap({
         <div
           className={`${styles["links--container__image"]} ${arrStyles[index]}`}
         >
-          {index === 2 ? (
+          {index === 2 || index === 3 ? (
             <video src={arrImg[index]} loop={true} autoPlay={true} muted>
               <p>your navegator not support video</p>
             </video>
