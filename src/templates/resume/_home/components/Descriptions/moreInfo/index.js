@@ -1,7 +1,9 @@
+import styles from "@sass/resumeStyles/home/descriptionStyles.module.sass";
+
 export function MoreInfoDescription() {
   return (
-    <p>
-      Do you want to know more information about me? this is the right place.
+    <p className={styles["smooth-letters"]}>
+      Do you want to read more information about me? this is the right place.
     </p>
   );
 }
