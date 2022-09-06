@@ -1,3 +1,8 @@
+// the development of this page has been canceled
+// for terms to time and job
+// I don't need a resume to get a Job
+// I did remember the objective of this project.
+
 import { useEffect, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
 
