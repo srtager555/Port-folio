@@ -54,9 +54,17 @@ export function ProjectsElement({
           else forwardRef = null;
 
           return IS_MOBILE ? (
-            <MobileAnchor forwardRef={forwardRef} element={element} />
+            <MobileAnchor
+              forwardRef={forwardRef}
+              element={element}
+              key={`mobile-button-${index}`}
+            />
           ) : (
-            <DesktopButton forwardRef={forwardRef} element={element} />
+            <DesktopButton
+              forwardRef={forwardRef}
+              element={element}
+              key={`mobile-button-${index}`}
+            />
           );
         }
       )}
