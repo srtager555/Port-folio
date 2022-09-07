@@ -15,8 +15,8 @@ export function PreviewProjectsInfo({
 }) {
   let { IS_MOBILE } = useConstVariable();
 
-  let bgImage = infoToShow.BackgroundImageDesktop || "";
-  let bgImageMobile = infoToShow.BackgroundImageMobile || "";
+  let bgImage = infoToShow ? infoToShow.BackgroundImageDesktop : "";
+  let bgImageMobile = infoToShow ? infoToShow.BackgroundImageDesktop : "";
 
   return (
     <div className={styles.container__projectsInfo}>
@@ -26,6 +26,7 @@ export function PreviewProjectsInfo({
         }`}
       >
         <div className={styles["container__projectsInfo--background__image"]}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             ref={BgImageRef}
             onLoad={() => {
@@ -33,7 +34,7 @@ export function PreviewProjectsInfo({
               setCurrentInfo(infoToShow);
             }}
             src={IS_MOBILE ? bgImageMobile : bgImage}
-            alt={infoToShow.Title}
+            alt={infoToShow?.Title}
           />
         </div>
         <div
@@ -45,10 +46,10 @@ export function PreviewProjectsInfo({
           }
         >
           <div className={styles["container-title"]}>
-            <span>{infoToShow.Title}</span>
+            <span>{infoToShow?.Title}</span>
           </div>
           <div className={styles["container-date"]}>
-            <span>{infoToShow.Date}</span>
+            <span>{infoToShow?.Date}</span>
           </div>
           {IS_MOBILE ? anchorMobile(infoToShow) : null}
         </div>
@@ -60,7 +61,7 @@ export function PreviewProjectsInfo({
 function anchorMobile(infoToShow) {
   return (
     <div className={styles["container__actionButton"]}>
-      <Link href={`p/${infoToShow.Id || "/"}`}>
+      <Link href={`p/${infoToShow?.Id || "/"}`}>
         <a className={styles["container-anchor"]}>
           <span>go to see</span>
         </a>
