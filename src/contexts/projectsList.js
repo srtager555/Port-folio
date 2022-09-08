@@ -2,6 +2,18 @@ import { ProjectElement, ImageWithText } from "./projectsContexts";
 
 export const projectsList = [
   new ProjectElement({
+    Title: "Wrapping Letters - Demo Page",
+    Description:
+      "Here is the Wrapping Letters demo page, I made it together another devs, I was the team leader.",
+    Id: "wrapping-letters-demo",
+    Job: ["Front devepoler", "leader"],
+    PrincipalImageDesktop: "https://i.ibb.co/948qWRm/WLD-TD.png",
+    PrincipalImageMobile: "https://i.ibb.co/g9rJJvX/WLD-TM.png",
+    BackgroundImageDesktop: "https://i.ibb.co/h9jNxQ7/WLD-BGD.png",
+    BackgroundImageMobile: "https://i.ibb.co/LpvBy56/WLD-BGM.png",
+    Date: "09 08 2022",
+  }),
+  new ProjectElement({
     Title: "Wrapping Letters",
     Description:
       "Wrap any letter, word or phrase(or text), with package this job is so easy, only you need called the componet!",
@@ -53,7 +65,7 @@ export const projectsList = [
       ["WL", "https://wrapping-letters.vercel.app/"],
       ["WL's Github", "https://github.com/srtager555/wrapping-letters"],
     ],
-    Date: "10 12 2021",
+    Date: "12 10 2021",
   }),
   new ProjectElement({
     Title: "Port-folio",
@@ -112,7 +124,7 @@ export const projectsList = [
         Image: "https://i.ibb.co/0GGc8fw/the-Future1.jpg",
       }),
     ],
-    Date: "04 03 2022",
+    Date: "03 04 2022",
     Links: [
       ["Portfolio", "https://ttager.page/"],
       ["Port-folio's Github", "https://github.com/srtager555/Port-folio"],
