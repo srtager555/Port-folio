@@ -2,6 +2,18 @@ import { ProjectElement, ImageWithText } from "./projectsContexts";
 
 export const projectsList = [
   new ProjectElement({
+    Title: "Rynyk - DS bot",
+    Description:
+      "She is Rynyk, she is a Discord bot to moderate channels, her main goal is to remove spam and punish it.",
+    Id: "rynyk-discord",
+    Job: ["logic", "JS"],
+    PrincipalImageDesktop: "https://i.ibb.co/dtbsZxt/RYNYK-TD.png",
+    PrincipalImageMobile: "https://i.ibb.co/g7wjsF6/RYNYK-TM.png",
+    BackgroundImageDesktop: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
+    BackgroundImageMobile: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
+    Date: "06 12 2022",
+  }),
+  new ProjectElement({
     Title: "Wrapping Letters - Demo Page",
     Description:
       "Here is the Wrapping Letters demo page, I made it together another devs, I was the team leader.",
