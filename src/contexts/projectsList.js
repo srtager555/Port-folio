@@ -18,7 +18,7 @@ export const projectsList = [
     Description:
       "Here is the Wrapping Letters demo page, I made it together another devs, I was the team leader.",
     Id: "wrapping-letters-demo",
-    Job: ["Front devepoler", "leader"],
+    Job: ["FrontEnd Developer", "Next JS"],
     PrincipalImageDesktop: "https://i.ibb.co/N37yL6q/WLD-TB.jpg",
     PrincipalImageMobile: "https://i.ibb.co/CMq9WRk/WLD-TM.jpg",
     BackgroundImageDesktop: "https://i.ibb.co/d01xYZB/WLD-TD.jpg",
