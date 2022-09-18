@@ -119,9 +119,13 @@ export function ProjectsContainer() {
     }
 
     function hiddenPreviewProject() {
-      setSelectedProject(false);
-      setIsVisible(true);
-      setMouseOver(false);
+      clearTimeout(e);
+
+      var e = setTimeout(() => {
+        setSelectedProject(false);
+        setIsVisible(true);
+        setMouseOver(false);
+      }, 200);
 
       window.removeEventListener("scroll", hiddenPreviewProject);
     }
@@ -135,6 +139,8 @@ export function ProjectsContainer() {
     } else {
       if (mouseOver) {
         if (currentInfo === showPreviewProject) imageLoaded();
+
+        window.addEventListener("scroll", hiddenPreviewProject);
       } else {
         setSelectedProject(false);
         setIsVisible(true);
