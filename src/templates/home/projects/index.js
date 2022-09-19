@@ -1,3 +1,5 @@
+// the file is very extend but is very easy to read.
+
 import { useEffect, useRef, useState } from "react";
 import WrappingLetters from "wrapping-letters-react";
 
