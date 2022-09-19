@@ -12,6 +12,7 @@ export const projectsList = [
     BackgroundImageDesktop: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
     BackgroundImageMobile: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
     Date: "06 12 2022",
+    Developing: true,
   }),
   new ProjectElement({
     Title: "Wrapping Letters - Demo Page",
@@ -24,6 +25,7 @@ export const projectsList = [
     BackgroundImageDesktop: "https://i.ibb.co/d01xYZB/WLD-TD.jpg",
     BackgroundImageMobile: "https://i.ibb.co/jfz4pG1/WLD-TM.jpg",
     Date: "09 08 2022",
+    Developing: true,
   }),
   new ProjectElement({
     Title: "Wrapping Letters",
@@ -35,6 +37,7 @@ export const projectsList = [
     PrincipalImageMobile: "https://i.ibb.co/GvtMC7r/WL-TM.png",
     BackgroundImageDesktop: "https://i.ibb.co/yqG0jMS/WL-BGD.png",
     BackgroundImageMobile: "https://i.ibb.co/hMRHSQw/WL-BGM.png",
+    Developing: true,
     GaleryImages: [
       new ImageWithText({
         Title: "Wrapping Letters",
