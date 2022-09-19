@@ -19,10 +19,9 @@ export function ProjectsElement({
       onClick={(event) => PreviewProjects(event, true)}
       key={`project-${element.Id}`}
       ref={forwardRef}
-      className={`${styles["container__image-projects__scrollSlider"]} ${
-        element.Developing && styles["in-progess"]
-      }`}
+      className={styles["container__image-projects__scrollSlider"]}
     >
+      {element.Developing && <span>Developing...</span>}
       <img src={element.PrincipalImageMobile} alt={element.Id} />
     </button>
   );
@@ -39,6 +38,7 @@ export function ProjectsElement({
           element.Developing && styles["in-progess"]
         }`}
       >
+        {element.Developing && <span>Developing...</span>}
         <img src={element.PrincipalImageDesktop} alt={element.Id} />
       </a>
     </Link>
