@@ -14,6 +14,7 @@ export function ProjectElement({
 
   Links = [],
   Available = true,
+  Developing = false,
   Date = "",
 }) {
   this.Title = Title;
@@ -36,6 +37,7 @@ export function ProjectElement({
   ].flat();
   this.Date = Date;
   this.Available = Available;
+  this.Developing = Developing;
 }
 
 // This prototype is used to add text in the image of the projects and verify if the image is intance of it

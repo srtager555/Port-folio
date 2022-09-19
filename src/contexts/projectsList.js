@@ -12,18 +12,20 @@ export const projectsList = [
     BackgroundImageDesktop: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
     BackgroundImageMobile: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
     Date: "06 12 2022",
+    Developing: true,
   }),
   new ProjectElement({
     Title: "Wrapping Letters - Demo Page",
     Description:
       "Here is the Wrapping Letters demo page, I made it together another devs, I was the team leader.",
     Id: "wrapping-letters-demo",
-    Job: ["Front devepoler", "leader"],
-    PrincipalImageDesktop: "https://i.ibb.co/948qWRm/WLD-TD.png",
-    PrincipalImageMobile: "https://i.ibb.co/g9rJJvX/WLD-TM.png",
-    BackgroundImageDesktop: "https://i.ibb.co/h9jNxQ7/WLD-BGD.png",
-    BackgroundImageMobile: "https://i.ibb.co/LpvBy56/WLD-BGM.png",
+    Job: ["FrontEnd Developer", "Next JS"],
+    PrincipalImageDesktop: "https://i.ibb.co/N37yL6q/WLD-TB.jpg",
+    PrincipalImageMobile: "https://i.ibb.co/CMq9WRk/WLD-TM.jpg",
+    BackgroundImageDesktop: "https://i.ibb.co/d01xYZB/WLD-TD.jpg",
+    BackgroundImageMobile: "https://i.ibb.co/jfz4pG1/WLD-TM.jpg",
     Date: "09 08 2022",
+    Developing: true,
   }),
   new ProjectElement({
     Title: "Wrapping Letters",
@@ -35,6 +37,7 @@ export const projectsList = [
     PrincipalImageMobile: "https://i.ibb.co/GvtMC7r/WL-TM.png",
     BackgroundImageDesktop: "https://i.ibb.co/yqG0jMS/WL-BGD.png",
     BackgroundImageMobile: "https://i.ibb.co/hMRHSQw/WL-BGM.png",
+    Developing: true,
     GaleryImages: [
       new ImageWithText({
         Title: "Wrapping Letters",
