@@ -19,7 +19,9 @@ export function ProjectsElement({
       onClick={(event) => PreviewProjects(event, true)}
       key={`project-${element.Id}`}
       ref={forwardRef}
-      className={styles["container__image-projects__scrollSlider"]}
+      className={`${styles["container__image-projects__scrollSlider"]} ${
+        element.Developing && styles["in-progess"]
+      }`}
     >
       <img src={element.PrincipalImageMobile} alt={element.Id} />
     </button>
@@ -33,7 +35,9 @@ export function ProjectsElement({
         ref={forwardRef}
         onMouseOver={(event) => PreviewProjects(event, true)}
         onMouseLeave={(event) => PreviewProjects(event, false)}
-        className={styles["container__image-projects__scrollSlider"]}
+        className={`${styles["container__image-projects__scrollSlider"]} ${
+          element.Developing && styles["in-progess"]
+        }`}
       >
         <img src={element.PrincipalImageDesktop} alt={element.Id} />
       </a>
