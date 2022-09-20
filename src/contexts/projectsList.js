@@ -13,6 +13,7 @@ export const projectsList = [
     BackgroundImageMobile: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
     Date: "06 12 2022",
     Developing: true,
+    Available: false,
   }),
   new ProjectElement({
     Title: "Wrapping Letters - Demo Page",
