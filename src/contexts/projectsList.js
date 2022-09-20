@@ -13,6 +13,7 @@ export const projectsList = [
     BackgroundImageMobile: "https://i.ibb.co/xXHxDTb/the-Future1.jpg",
     Date: "06 12 2022",
     Developing: true,
+    Available: false,
   }),
   new ProjectElement({
     Title: "Wrapping Letters - Demo Page",
@@ -26,6 +27,69 @@ export const projectsList = [
     BackgroundImageMobile: "https://i.ibb.co/jfz4pG1/WLD-TM.jpg",
     Date: "09 08 2022",
     Developing: true,
+    GaleryImages: [
+      new ImageWithText({
+        Title: "The Demo page",
+        Description:
+          "To will start I want to talk a little about the history of this project, is very interesant how I have delayed the project for 2 things, the content and the desing, the second is the raeason most important",
+      }),
+      new ImageWithText({
+        Description:
+          "A few months ago I made the demo page but Design and logic of the site were trash, I didn't like this result and I dropped this project to the trash, that why the project Wrapping Letters has a different brand design, I don't think change it because it's a good story to tell",
+      }),
+      new ImageWithText({
+        Title: "Now with the current project",
+        Description: `The new design and syntax is better in UX and UI, more light and sweet.
+
+        More minimal and elegant design with smooth animation, I solved the problem with the previus home page "The content".
+
+        When I did the first version of the site, the content of the home was very useless, its not give a real information about the project, just "what you can do"`,
+        Image: "https://i.ibb.co/yN3nbv3/wld-mobile-version.png",
+      }),
+      new ImageWithText({
+        Image: "https://i.ibb.co/GMRmNbT/wld-desktop-version.png",
+      }),
+      new ImageWithText({
+        Title: "The previous version of the home page",
+        Description:
+          "The above design is not bad but for newbie but I am working on the Frontend since 4 years. It was not at my level.",
+        Image:
+          "https://i.ibb.co/pvZyJtK/Captura-de-Pantalla-2022-09-19-a-la-s-19-48-36.png",
+      }),
+      new ImageWithText({
+        Image:
+          "https://i.ibb.co/WcgVj0q/Captura-de-Pantalla-2022-09-19-a-la-s-19-45-21.png",
+      }),
+      new ImageWithText({
+        Title: "Now the part moust important the documentation!",
+      }),
+      new ImageWithText({
+        Title: "The new documentation design has a big update.",
+        Description: `Starting in the mobile design is most minimal and elegant, the desktop too!
+        
+        The most important change is in the syntax, now the code will search each attribute optimization the load of the page and the manipulation of the code
+        
+        Obviously the scale of the page with the new structure is "infinite", if necessary I can put a navigator in the nav to make it easier to find documents if the page scales too much`,
+        Image: "https://i.ibb.co/h12h5zC/wld-remastered-design-mobile.png",
+      }),
+      new ImageWithText({
+        Image: "https://i.ibb.co/qjMk8N5/wld-remastered-design-desktop.png",
+      }),
+      new ImageWithText({
+        Description:
+          "The different with the previous version I put the documentation from NPM in this part, quite ugly the truth",
+      }),
+      new ImageWithText({
+        Description: `I'm developing now the project, the hardest work is to make the API, I'm now working on the documentation to implement in the API and the API needs a structure that work with Wrapping Letters as well...`,
+      }),
+    ],
+    Links: [
+      ["The previus version", "https://wrapping-letters.netlify.app"],
+      [
+        "The project's Github",
+        "https://github.com/enddne/wrapping-letters-demopage",
+      ],
+    ],
   }),
   new ProjectElement({
     Title: "Wrapping Letters",
