@@ -49,7 +49,7 @@ export const projectsList = [
         Image: "https://i.ibb.co/GMRmNbT/wld-desktop-version.png",
       }),
       new ImageWithText({
-        Title: "Home page last version",
+        Title: "The previous version of the home page",
         Description:
           "The above design is not bad but for newbie but I am working on the Frontend since 4 years. It was not at my level.",
         Image:
@@ -59,6 +59,35 @@ export const projectsList = [
         Image:
           "https://i.ibb.co/WcgVj0q/Captura-de-Pantalla-2022-09-19-a-la-s-19-45-21.png",
       }),
+      new ImageWithText({
+        Title: "Now the part moust important the documentation!",
+      }),
+      new ImageWithText({
+        Title: "The new documentation design has a big update.",
+        Description: `Starting in the mobile design is most minimal and elegant, the desktop too!
+        
+        The most important change is in the syntax, now the code will search each attribute optimization the load of the page and the manipulation of the code
+        
+        Obviously the scale of the page with the new structure is "infinite", if necessary I can put a navigator in the nav to make it easier to find documents if the page scales too much`,
+        Image: "https://i.ibb.co/h12h5zC/wld-remastered-design-mobile.png",
+      }),
+      new ImageWithText({
+        Image: "https://i.ibb.co/qjMk8N5/wld-remastered-design-desktop.png",
+      }),
+      new ImageWithText({
+        Description:
+          "The different with the previous version I put the documentation from NPM in this part, quite ugly the truth",
+      }),
+      new ImageWithText({
+        Description: `I'm developing now the project, the hardest work is to make the API, I'm now working on the documentation to implement in the API and the API needs a structure that work with Wrapping Letters as well...`,
+      }),
+    ],
+    Links: [
+      ["The previus version", "https://wrapping-letters.netlify.app"],
+      [
+        "The project's Github",
+        "https://github.com/enddne/wrapping-letters-demopage",
+      ],
     ],
   }),
   new ProjectElement({
